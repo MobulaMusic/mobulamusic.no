@@ -1,0 +1,200 @@
+---
+interface Props {
+  formName: string;
+  serviceType?: string;
+  showServiceDropdown?: boolean;
+  heading?: string;
+  description?: string;
+}
+
+const {
+  formName,
+  serviceType,
+  showServiceDropdown = false,
+  heading = 'Ta kontakt',
+  description = 'Fyll ut skjemaet, så hører du fra oss innen kort tid.',
+} = Astro.props;
+
+const serviceOptions = [
+  { value: 'innspilling', label: 'Innspilling av musikk' },
+  { value: 'podkast', label: 'Podkast' },
+  { value: 'voice-over', label: 'Voice-over / Lydbok' },
+  { value: 'komponering', label: 'Komposisjon / Produksjon' },
+  { value: 'annet', label: 'Annet' },
+];
+---
+
+<section class="py-20 px-6">
+  <div class="max-w-2xl mx-auto">
+    <div class="text-center mb-10 fade-in">
+      <h2 class="text-3xl md:text-4xl font-serif font-semibold mb-4">{heading}</h2>
+      <p class="text-gray-text">{description}</p>
+    </div>
+
+    <form
+      id={`form-${formName.toLowerCase().replace(/\s/g, '-')}`}
+      class="space-y-6 fade-in"
+      data-form-name={formName}
+      data-service-type={serviceType || ''}
+    >
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <div>
+          <label for="fornavn" class="block text-sm font-medium text-cream/80 mb-2">Fornavn *</label>
+          <input
+            type="text"
+            id="fornavn"
+            name="fornavn"
+            required
+            class="w-full px-4 py-3 bg-dark-card border border-dark-border rounded text-cream placeholder-gray-text/50 focus:outline-none focus:border-gold transition-colors"
+            placeholder="Ditt fornavn"
+          />
+        </div>
+        <div>
+          <label for="etternavn" class="block text-sm font-medium text-cream/80 mb-2">Etternavn *</label>
+          <input
+            type="text"
+            id="etternavn"
+            name="etternavn"
+            required
+            class="w-full px-4 py-3 bg-dark-card border border-dark-border rounded text-cream placeholder-gray-text/50 focus:outline-none focus:border-gold transition-colors"
+            placeholder="Ditt etternavn"
+          />
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <div>
+          <label for="email" class="block text-sm font-medium text-cream/80 mb-2">E-post *</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            class="w-full px-4 py-3 bg-dark-card border border-dark-border rounded text-cream placeholder-gray-text/50 focus:outline-none focus:border-gold transition-colors"
+            placeholder="din@epost.no"
+          />
+        </div>
+        <div>
+          <label for="telefon" class="block text-sm font-medium text-cream/80 mb-2">Telefon</label>
+          <input
+            type="tel"
+            id="telefon"
+            name="telefon"
+            class="w-full px-4 py-3 bg-dark-card border border-dark-border rounded text-cream placeholder-gray-text/50 focus:outline-none focus:border-gold transition-colors"
+            placeholder="+47 000 00 000"
+          />
+        </div>
+      </div>
+
+      {showServiceDropdown && (
+        <div>
+          <label for="service" class="block text-sm font-medium text-cream/80 mb-2">Henvendelsen gjelder *</label>
+          <select
+            id="service"
+            name="service"
+            required
+            class="w-full px-4 py-3 bg-dark-card border border-dark-border rounded text-cream focus:outline-none focus:border-gold transition-colors"
+          >
+            <option value="">Velg tjeneste</option>
+            {serviceOptions.map(opt => (
+              <option value={opt.value}>{opt.label}</option>
+            ))}
+          </select>
+        </div>
+      )}
+
+      <div>
+        <label for="melding" class="block text-sm font-medium text-cream/80 mb-2">Din melding *</label>
+        <textarea
+          id="melding"
+          name="melding"
+          required
+          rows={5}
+          class="w-full px-4 py-3 bg-dark-card border border-dark-border rounded text-cream placeholder-gray-text/50 focus:outline-none focus:border-gold transition-colors resize-y"
+          placeholder="Fortell oss om prosjektet ditt..."
+        ></textarea>
+      </div>
+
+      <button
+        type="submit"
+        class="w-full sm:w-auto px-8 py-3.5 bg-gold text-dark font-semibold rounded tracking-wide uppercase hover:bg-gold-light transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+      >
+        Send inn
+      </button>
+
+      <!-- Status messages -->
+      <div id="form-success" class="hidden p-4 bg-green-900/30 border border-green-700/50 rounded text-green-300 text-sm">
+        Takk for din henvendelse! Vi tar kontakt med deg snart.
+      </div>
+      <div id="form-error" class="hidden p-4 bg-red-900/30 border border-red-700/50 rounded text-red-300 text-sm">
+        Noe gikk galt. Vennligst prøv igjen eller send e-post til post@mobulamusic.com.
+      </div>
+    </form>
+  </div>
+</section>
+
+<script>
+  document.querySelectorAll('form[data-form-name]').forEach(form => {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const formEl = e.target as HTMLFormElement;
+      const btn = formEl.querySelector('button[type="submit"]') as HTMLButtonElement;
+      const successEl = formEl.querySelector('#form-success') as HTMLElement;
+      const errorEl = formEl.querySelector('#form-error') as HTMLElement;
+
+      btn.disabled = true;
+      btn.textContent = 'Sender...';
+      successEl.classList.add('hidden');
+      errorEl.classList.add('hidden');
+
+      const formName = formEl.dataset.formName || 'Kontaktskjema';
+      const serviceType = formEl.dataset.serviceType || '';
+      const formData = new FormData(formEl);
+
+      const submissions: Array<{label: string; value: string}> = [];
+      submissions.push({ label: 'Fornavn', value: formData.get('fornavn') as string || '' });
+      submissions.push({ label: 'Etternavn', value: formData.get('etternavn') as string || '' });
+      submissions.push({ label: 'Email', value: formData.get('email') as string || '' });
+      submissions.push({ label: 'Telefon', value: formData.get('telefon') as string || '' });
+
+      const service = formData.get('service') as string || serviceType;
+      if (service) {
+        submissions.push({ label: 'Henvendelsen gjelder', value: service });
+      }
+
+      submissions.push({ label: 'Din melding', value: formData.get('melding') as string || '' });
+
+      const payload = {
+        data: {
+          formName,
+          submissions,
+        },
+      };
+
+      try {
+        const webhookUrl = import.meta.env.PUBLIC_CRM_WEBHOOK_URL || '';
+        if (!webhookUrl) {
+          throw new Error('Webhook URL not configured');
+        }
+
+        const response = await fetch(webhookUrl, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+        });
+
+        if (response.ok) {
+          successEl.classList.remove('hidden');
+          formEl.reset();
+        } else {
+          throw new Error('Server error');
+        }
+      } catch {
+        errorEl.classList.remove('hidden');
+      } finally {
+        btn.disabled = false;
+        btn.textContent = 'Send inn';
+      }
+    });
+  });
+</script>
