@@ -1,0 +1,7 @@
+GAMMEL SIDE
+node_modules
+dist
+.astro
+.git
+.env
+.DS_Store
