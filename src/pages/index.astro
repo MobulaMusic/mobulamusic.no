@@ -1,0 +1,157 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Mobula Music AS | Lydstudio i Lørenskog | Innspilling, Podkast, Komposisjon"
+  description="Mobula Music AS. Lydstudio for innspilling av musikk og podkast i Lørenskog. Produksjon av musikk for film og TV. Kort vei fra Oslo og Lillestrøm."
+>
+  <!-- Hero -->
+  <section class="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
+    <!-- Background image with slow Ken Burns zoom -->
+    <div class="absolute inset-0 hero-zoom">
+      <img
+        src="/images/hero-mobula.jpeg"
+        alt=""
+        class="w-full h-full object-cover"
+      />
+    </div>
+
+    <!-- Gradient overlays — lighter to show more of the image -->
+    <div class="absolute inset-0 bg-gradient-to-b from-dark/60 via-dark/30 to-dark"></div>
+    <div class="absolute inset-0 bg-gradient-to-r from-dark/40 via-transparent to-dark/40"></div>
+
+    <!-- Subtle golden glow matching the image -->
+    <div class="absolute top-[15%] right-[25%] w-[400px] h-[400px] bg-gold/5 rounded-full blur-[120px] hero-glow"></div>
+
+    <div class="relative z-10 text-center px-6 max-w-4xl">
+      <p class="hero-fade hero-fade-1 text-gold tracking-[0.3em] uppercase text-sm md:text-base mb-6 font-medium">Lydstudio i Lørenskog</p>
+      <h1 class="hero-fade hero-fade-2 text-4xl md:text-6xl lg:text-7xl font-serif font-bold leading-tight mb-6">
+        Rom for kreativitet<br />og <span class="text-gradient">god lyd</span>
+      </h1>
+      <p class="hero-fade hero-fade-3 text-cream/90 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
+        Innspilling, podkast og musikkproduksjon. Kort vei fra Oslo og Lillestrøm.
+      </p>
+      <div class="hero-fade hero-fade-4 flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/kontakt" class="px-8 py-4 bg-gold text-dark font-semibold rounded tracking-wide uppercase hover:bg-gold-light transition-colors">
+          Kontakt oss
+        </a>
+        <a href="#tjenester" class="px-8 py-4 border border-cream/30 text-cream rounded tracking-wide uppercase hover:border-gold hover:text-gold transition-colors">
+          Våre tjenester
+        </a>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+      <svg class="w-6 h-6 text-cream/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+      </svg>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="tjenester" class="py-28 px-6">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-16 fade-in">
+        <p class="text-gold tracking-[0.2em] uppercase text-sm mb-3">Våre tjenester</p>
+        <h2 class="text-3xl md:text-5xl font-serif font-semibold">Hva kan vi hjelpe deg med?</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+        <!-- Innspilling -->
+        <a href="/innspilling" class="group card-hover fade-in">
+          <div class="relative overflow-hidden rounded-lg aspect-[4/3]">
+            <img src="/images/studio/store-studio.jpeg" alt="Innspillingsstudio" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/20 to-transparent"></div>
+            <div class="absolute bottom-0 left-0 right-0 p-6">
+              <h3 class="text-2xl font-serif font-semibold mb-2">Innspilling</h3>
+              <p class="text-cream/85 text-sm">Vokal, lydbok, voice-over, band og ensemble. Profesjonelle fasiliteter med erfarne teknikere.</p>
+            </div>
+          </div>
+        </a>
+
+        <!-- Podkast -->
+        <a href="/podkast" class="group card-hover fade-in">
+          <div class="relative overflow-hidden rounded-lg aspect-[4/3]">
+            <img src="/images/podcast/podkast-studio.jpeg" alt="Podkaststudio" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/20 to-transparent"></div>
+            <div class="absolute bottom-0 left-0 right-0 p-6">
+              <h3 class="text-2xl font-serif font-semibold mb-2">Podkast</h3>
+              <p class="text-cream/85 text-sm">Profesjonell podkastinnspilling og opplæring. Lyd og bilde i topp kvalitet.</p>
+            </div>
+          </div>
+        </a>
+
+        <!-- Komposisjon -->
+        <a href="/komposisjon" class="group card-hover fade-in">
+          <div class="relative overflow-hidden rounded-lg aspect-[4/3]">
+            <img src="/images/strings/nordic-film-strings.jpg" alt="Orkesterinnspilling" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/20 to-transparent"></div>
+            <div class="absolute bottom-0 left-0 right-0 p-6">
+              <h3 class="text-2xl font-serif font-semibold mb-2">Komposisjon</h3>
+              <p class="text-cream/85 text-sm">Skreddersydd musikk til film, TV, reklame og podkast. Fra idé til ferdig produksjon.</p>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Mobula -->
+  <section class="py-28 px-6 bg-dark-light">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div class="fade-in">
+          <p class="text-gold tracking-[0.2em] uppercase text-sm mb-3">Hvorfor Mobula</p>
+          <h2 class="text-3xl md:text-4xl font-serif font-semibold mb-6">Et studio bygget for kvalitet</h2>
+          <p class="text-cream/85 leading-relaxed mb-8">
+            Mobula Music holder til i Lørenskog, kun minutter fra Oslo og Lillestrøm. Vårt studio er akustisk optimalisert
+            og utstyrt med profesjonelt utstyr for innspilling, podkast og musikkproduksjon. Vi kombinerer teknisk
+            kompetanse med kunstnerisk forståelse for å gi deg det beste resultatet.
+          </p>
+
+          <div class="grid grid-cols-2 gap-6">
+            <div class="space-y-1">
+              <div class="text-gold text-2xl font-serif font-bold">50 m²</div>
+              <div class="text-cream/75 text-sm">Hovedstudio</div>
+            </div>
+            <div class="space-y-1">
+              <div class="text-gold text-2xl font-serif font-bold">4</div>
+              <div class="text-cream/75 text-sm">Innspillingsrom</div>
+            </div>
+            <div class="space-y-1">
+              <div class="text-gold text-2xl font-serif font-bold">15 min</div>
+              <div class="text-cream/75 text-sm">Fra Oslo sentrum</div>
+            </div>
+            <div class="space-y-1">
+              <div class="text-gold text-2xl font-serif font-bold">Gratis</div>
+              <div class="text-cream/75 text-sm">Parkering</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="fade-in">
+          <div class="grid grid-cols-2 gap-4">
+            <img src="/images/studio/kontrollrom.jpeg" alt="Kontrollrom" class="rounded-lg w-full h-48 object-cover" />
+            <img src="/images/studio/vokalrom-1.jpeg" alt="Vokalrom" class="rounded-lg w-full h-48 object-cover" />
+            <img src="/images/studio/musikkrommet.jpeg" alt="Musikkrommet" class="rounded-lg w-full h-48 object-cover col-span-2" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-28 px-6">
+    <div class="max-w-3xl mx-auto text-center fade-in">
+      <h2 class="text-3xl md:text-4xl font-serif font-semibold mb-6">Klar for å komme i gang?</h2>
+      <p class="text-cream/85 text-lg mb-10">
+        Enten du trenger innspilling, podkastproduksjon eller skreddersydd musikk — vi hjelper deg fra idé til ferdig resultat.
+      </p>
+      <a href="/kontakt" class="inline-block px-10 py-4 bg-gold text-dark font-semibold rounded tracking-wide uppercase hover:bg-gold-light transition-colors">
+        Ta kontakt
+      </a>
+    </div>
+  </section>
+</Layout>
