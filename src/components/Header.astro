@@ -23,7 +23,7 @@ const currentPath = Astro.url.pathname;
           href={link.href}
           class:list={[
             'text-sm font-medium tracking-wide uppercase transition-colors duration-200 hover:text-gold',
-            currentPath.startsWith(link.href) ? 'text-gold' : 'text-cream/80',
+            currentPath.startsWith(link.href) ? 'text-gold' : 'text-cream/90',
           ]}
         >
           {link.label}
@@ -60,7 +60,7 @@ const currentPath = Astro.url.pathname;
           href={link.href}
           class:list={[
             'text-base font-medium tracking-wide uppercase py-2 transition-colors',
-            currentPath.startsWith(link.href) ? 'text-gold' : 'text-cream/80 hover:text-gold',
+            currentPath.startsWith(link.href) ? 'text-gold' : 'text-cream/90 hover:text-gold',
           ]}
         >
           {link.label}
