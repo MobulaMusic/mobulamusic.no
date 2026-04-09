@@ -8,26 +8,31 @@ import Layout from '../layouts/Layout.astro';
 >
   <!-- Hero -->
   <section class="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
-    <video
-      autoplay
-      muted
-      loop
-      playsinline
-      class="absolute inset-0 w-full h-full object-cover"
-    >
-      <source src="/videos/studio-promo.mp4" type="video/mp4" />
-    </video>
-    <div class="absolute inset-0 bg-gradient-to-b from-dark/60 via-dark/40 to-dark"></div>
+    <!-- Background image with slow Ken Burns zoom -->
+    <div class="absolute inset-0 hero-zoom">
+      <img
+        src="/images/hero-mobula.jpeg"
+        alt=""
+        class="w-full h-full object-cover"
+      />
+    </div>
+
+    <!-- Gradient overlays -->
+    <div class="absolute inset-0 bg-gradient-to-b from-dark/70 via-dark/40 to-dark"></div>
+    <div class="absolute inset-0 bg-gradient-to-r from-dark/50 via-transparent to-dark/50"></div>
+
+    <!-- Subtle golden glow matching the image -->
+    <div class="absolute top-[15%] right-[25%] w-[400px] h-[400px] bg-gold/5 rounded-full blur-[120px] hero-glow"></div>
 
     <div class="relative z-10 text-center px-6 max-w-4xl">
-      <p class="text-gold tracking-[0.3em] uppercase text-sm md:text-base mb-6 font-medium">Scoring &middot; Producing &middot; Recording</p>
-      <h1 class="text-4xl md:text-6xl lg:text-7xl font-serif font-bold leading-tight mb-6">
+      <p class="hero-fade hero-fade-1 text-gold tracking-[0.3em] uppercase text-sm md:text-base mb-6 font-medium">Scoring &middot; Producing &middot; Recording</p>
+      <h1 class="hero-fade hero-fade-2 text-4xl md:text-6xl lg:text-7xl font-serif font-bold leading-tight mb-6">
         Rom for kreativitet<br />og <span class="text-gradient">god lyd</span>
       </h1>
-      <p class="text-cream/70 text-lg md:text-xl max-w-2xl mx-auto mb-10">
+      <p class="hero-fade hero-fade-3 text-cream/70 text-lg md:text-xl max-w-2xl mx-auto mb-10">
         Profesjonelt lydstudio i Lørenskog for innspilling, podkast og musikkproduksjon. Kort vei fra Oslo og Lillestrøm.
       </p>
-      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <div class="hero-fade hero-fade-4 flex flex-col sm:flex-row gap-4 justify-center">
         <a href="/kontakt" class="px-8 py-4 bg-gold text-dark font-semibold rounded tracking-wide uppercase hover:bg-gold-light transition-colors">
           Kontakt oss
         </a>
