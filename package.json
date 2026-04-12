@@ -5,12 +5,16 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "seed": "node scripts/seed-data.mjs",
+    "start": "node scripts/seed-data.mjs && node dist/server/entry.mjs"
   },
   "dependencies": {
+    "@astrojs/node": "^10.0.4",
     "@astrojs/sitemap": "^3.7.2",
     "@tailwindcss/vite": "^4.2.2",
     "astro": "^6.1.5",
+    "marked": "^18.0.0",
     "tailwindcss": "^4.2.2"
   }
 }

@@ -1,0 +1,48 @@
+---
+export const prerender = false;
+import AdminLayout from '../../../layouts/AdminLayout.astro';
+import { getPost } from '../../../lib/content';
+
+const { slug } = Astro.params;
+const post = await getPost(slug!);
+if (!post) return Astro.redirect('/admin/posts');
+---
+<AdminLayout title={`Rediger: ${post.title}`}>
+  <form method="POST" action="/api/admin/posts" class="space-y-4 max-w-3xl">
+    <input type="hidden" name="mode" value="update" />
+    <input type="hidden" name="slug" value={post.slug} />
+    <label class="block">
+      <span class="text-sm text-neutral-400">Tittel</span>
+      <input name="title" required value={post.title} class="mt-1 w-full rounded bg-neutral-800 px-3 py-2" />
+    </label>
+    <label class="block">
+      <span class="text-sm text-neutral-400">Beskrivelse</span>
+      <input name="description" required value={post.description} class="mt-1 w-full rounded bg-neutral-800 px-3 py-2" />
+    </label>
+    <label class="block">
+      <span class="text-sm text-neutral-400">Dato</span>
+      <input name="date" type="date" value={post.date} required class="mt-1 rounded bg-neutral-800 px-3 py-2" />
+    </label>
+    <label class="block">
+      <span class="text-sm text-neutral-400">Bilde (URL)</span>
+      <input name="image" value={post.image || ''} class="mt-1 w-full rounded bg-neutral-800 px-3 py-2" />
+    </label>
+    <label class="block">
+      <span class="text-sm text-neutral-400">Tags (kommaseparert)</span>
+      <input name="tags" value={(post.tags || []).join(', ')} class="mt-1 w-full rounded bg-neutral-800 px-3 py-2" />
+    </label>
+    <label class="block">
+      <span class="text-sm text-neutral-400">Innhold (markdown)</span>
+      <textarea name="body" rows="16" required class="mt-1 w-full rounded bg-neutral-800 px-3 py-2 font-mono text-sm">{post.body}</textarea>
+    </label>
+    <div class="flex gap-2">
+      <button class="rounded bg-white text-black px-4 py-2 text-sm font-medium">Lagre</button>
+      <a href="/admin/posts" class="rounded border border-neutral-700 px-4 py-2 text-sm">Avbryt</a>
+    </div>
+  </form>
+
+  <form method="POST" action="/api/admin/posts/delete" class="mt-8 pt-8 border-t border-neutral-800">
+    <input type="hidden" name="slug" value={post.slug} />
+    <button class="text-sm text-red-400 hover:text-red-300" onclick="return confirm('Slette innlegg?')">Slett innlegg</button>
+  </form>
+</AdminLayout>

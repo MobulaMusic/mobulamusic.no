@@ -1,38 +1,32 @@
 ---
+export const prerender = false;
 import Layout from '../../layouts/Layout.astro';
-import { getCollection, render } from 'astro:content';
+import { getPost, renderMarkdown } from '../../lib/content';
 
-export async function getStaticPaths() {
-  const posts = await getCollection('blog');
-  return posts.map(post => ({
-    params: { slug: post.id },
-    props: { post },
-  }));
-}
-
-const { post } = Astro.props;
-const { Content } = await render(post);
+const { slug } = Astro.params;
+const post = await getPost(String(slug));
+if (!post) return Astro.redirect('/nyheter');
+const html = renderMarkdown(post.body);
 ---
 
 <Layout
-  title={`${post.data.title} | Mobula Music AS`}
-  description={post.data.description}
-  ogImage={post.data.image}
+  title={`${post.title} | Mobula Music AS`}
+  description={post.description}
+  ogImage={post.image}
 >
   <article class="pt-32 pb-20 px-6">
     <div class="max-w-3xl mx-auto">
-      <!-- Back link -->
       <a href="/nyheter" class="text-gold text-sm hover:underline mb-8 inline-block">&larr; Tilbake til blogg</a>
 
-      {post.data.image && (
-        <img src={post.data.image} alt={post.data.title} class="w-full h-64 md:h-96 object-cover rounded-lg mb-8" />
+      {post.image && (
+        <img src={post.image} alt={post.title} class="w-full h-64 md:h-96 object-cover rounded-lg mb-8" />
       )}
 
       <time class="text-gold text-sm uppercase tracking-wide">
-        {new Date(post.data.date).toLocaleDateString('nb-NO', { year: 'numeric', month: 'long', day: 'numeric' })}
+        {new Date(post.date).toLocaleDateString('nb-NO', { year: 'numeric', month: 'long', day: 'numeric' })}
       </time>
 
-      <h1 class="text-3xl md:text-5xl font-serif font-bold mt-3 mb-8">{post.data.title}</h1>
+      <h1 class="text-3xl md:text-5xl font-serif font-bold mt-3 mb-8">{post.title}</h1>
 
       <div class="prose prose-invert prose-lg max-w-none
         [&_h2]:font-serif [&_h2]:text-cream [&_h2]:text-2xl [&_h2]:mt-10 [&_h2]:mb-4
@@ -41,13 +35,11 @@ const { Content } = await render(post);
         [&_li]:text-cream/85
         [&_a]:text-gold [&_a:hover]:underline
         [&_strong]:text-cream
-      ">
-        <Content />
-      </div>
+      " set:html={html}></div>
 
-      {post.data.tags && (
+      {post.tags && (
         <div class="flex gap-2 mt-10 pt-8 border-t border-dark-border">
-          {post.data.tags.map((tag: string) => (
+          {post.tags.map((tag: string) => (
             <span class="text-xs px-3 py-1.5 bg-dark-card border border-dark-border rounded text-cream/50">{tag}</span>
           ))}
         </div>

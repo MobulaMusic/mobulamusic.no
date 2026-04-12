@@ -1,0 +1,28 @@
+---
+export const prerender = false;
+const error = Astro.url.searchParams.get('error');
+---
+<html lang="nb">
+  <head>
+    <meta charset="utf-8" />
+    <title>Logg inn – Mobula Admin</title>
+    <meta name="robots" content="noindex" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/src/styles/global.css" />
+  </head>
+  <body class="min-h-screen flex items-center justify-center bg-neutral-950 text-white">
+    <form method="POST" action="/api/auth/login" class="w-full max-w-sm space-y-4 p-8 bg-neutral-900 rounded-xl border border-neutral-800">
+      <h1 class="text-2xl font-semibold">Mobula Admin</h1>
+      {error && <p class="text-red-400 text-sm">Feil brukernavn eller passord</p>}
+      <label class="block">
+        <span class="text-sm text-neutral-400">Brukernavn</span>
+        <input name="user" required autocomplete="username" class="mt-1 w-full rounded bg-neutral-800 px-3 py-2" />
+      </label>
+      <label class="block">
+        <span class="text-sm text-neutral-400">Passord</span>
+        <input type="password" name="pass" required autocomplete="current-password" class="mt-1 w-full rounded bg-neutral-800 px-3 py-2" />
+      </label>
+      <button type="submit" class="w-full rounded bg-white text-black font-medium py-2 hover:bg-neutral-200">Logg inn</button>
+    </form>
+  </body>
+</html>

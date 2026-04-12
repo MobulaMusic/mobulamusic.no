@@ -5,9 +5,20 @@ RUN npm ci
 COPY . .
 RUN npm run build
 
-FROM nginx:alpine
-COPY --from=build /app/dist /usr/share/nginx/html
-COPY nginx.conf /etc/nginx/conf.d/default.conf
+FROM node:22-alpine AS runtime
+WORKDIR /app
+ENV NODE_ENV=production
+ENV HOST=0.0.0.0
 ENV PORT=8080
+
+# Only production deps
+COPY package*.json ./
+RUN npm ci --omit=dev && npm cache clean --force
+
+# Built server + seed content + startup script
+COPY --from=build /app/dist ./dist
+COPY --from=build /app/seed ./seed
+COPY --from=build /app/scripts ./scripts
+
 EXPOSE 8080
-CMD sh -c "sed -i s/__PORT__/$PORT/ /etc/nginx/conf.d/default.conf && nginx -g 'daemon off;'"
+CMD ["npm", "run", "start"]

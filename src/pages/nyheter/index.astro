@@ -1,10 +1,9 @@
 ---
+export const prerender = false;
 import Layout from '../../layouts/Layout.astro';
-import { getCollection } from 'astro:content';
+import { listPosts } from '../../lib/content';
 
-const posts = (await getCollection('blog')).sort(
-  (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
-);
+const posts = await listPosts();
 ---
 
 <Layout
@@ -20,23 +19,23 @@ const posts = (await getCollection('blog')).sort(
 
       <div class="space-y-8">
         {posts.map(post => (
-          <a href={`/nyheter/${post.id}`} class="block group">
+          <a href={`/nyheter/${post.slug}`} class="block group">
             <article class="bg-dark-card border border-dark-border rounded-lg overflow-hidden hover:border-gold/30 transition-colors">
               <div class="flex flex-col md:flex-row">
-                {post.data.image && (
+                {post.image && (
                   <div class="md:w-72 shrink-0">
-                    <img src={post.data.image} alt={post.data.title} class="w-full h-48 md:h-full object-cover" />
+                    <img src={post.image} alt={post.title} class="w-full h-48 md:h-full object-cover" />
                   </div>
                 )}
                 <div class="p-6 flex flex-col justify-center">
                   <time class="text-gold text-xs uppercase tracking-wide mb-2">
-                    {new Date(post.data.date).toLocaleDateString('nb-NO', { year: 'numeric', month: 'long', day: 'numeric' })}
+                    {new Date(post.date).toLocaleDateString('nb-NO', { year: 'numeric', month: 'long', day: 'numeric' })}
                   </time>
-                  <h2 class="text-xl font-serif font-semibold mb-2 group-hover:text-gold transition-colors">{post.data.title}</h2>
-                  <p class="text-cream/75 text-sm line-clamp-2">{post.data.description}</p>
-                  {post.data.tags && (
+                  <h2 class="text-xl font-serif font-semibold mb-2 group-hover:text-gold transition-colors">{post.title}</h2>
+                  <p class="text-cream/75 text-sm line-clamp-2">{post.description}</p>
+                  {post.tags && (
                     <div class="flex gap-2 mt-3">
-                      {post.data.tags.map((tag: string) => (
+                      {post.tags.map((tag: string) => (
                         <span class="text-xs px-2 py-1 bg-dark-border rounded text-cream/50">{tag}</span>
                       ))}
                     </div>

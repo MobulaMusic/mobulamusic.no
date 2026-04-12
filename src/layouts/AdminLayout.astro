@@ -1,0 +1,48 @@
+---
+import '../styles/global.css';
+interface Props { title: string; }
+const { title } = Astro.props;
+const user = Astro.locals.user;
+const nav = [
+  { href: '/admin', label: 'Dashboard' },
+  { href: '/admin/posts', label: 'Blogg' },
+  { href: '/admin/images', label: 'Bilder' },
+  { href: '/admin/texts', label: 'Tekster' },
+  { href: '/admin/forms', label: 'Skjemaer' },
+];
+const current = Astro.url.pathname;
+---
+<html lang="nb">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <title>{title} – Mobula Admin</title>
+  </head>
+  <body class="min-h-screen bg-neutral-950 text-white flex">
+    <aside class="w-60 shrink-0 border-r border-neutral-800 p-6 flex flex-col gap-6">
+      <div>
+        <h1 class="text-lg font-semibold">Mobula Admin</h1>
+        <p class="text-xs text-neutral-500">{user}</p>
+      </div>
+      <nav class="flex flex-col gap-1 text-sm">
+        {nav.map(item => (
+          <a
+            href={item.href}
+            class:list={[
+              'rounded px-3 py-2 hover:bg-neutral-800',
+              current === item.href || (item.href !== '/admin' && current.startsWith(item.href)) ? 'bg-neutral-800' : '',
+            ]}
+          >{item.label}</a>
+        ))}
+      </nav>
+      <form method="POST" action="/api/auth/logout" class="mt-auto">
+        <button class="text-sm text-neutral-400 hover:text-white">Logg ut</button>
+      </form>
+    </aside>
+    <main class="flex-1 p-8 max-w-5xl">
+      <h2 class="text-2xl font-semibold mb-6">{title}</h2>
+      <slot />
+    </main>
+  </body>
+</html>

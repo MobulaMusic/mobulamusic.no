@@ -1,0 +1,28 @@
+---
+export const prerender = false;
+import AdminLayout from '../../../layouts/AdminLayout.astro';
+import { listPosts } from '../../../lib/content';
+const posts = await listPosts();
+---
+<AdminLayout title="Blogg">
+  <div class="mb-4 flex justify-between items-center">
+    <p class="text-neutral-400 text-sm">{posts.length} innlegg</p>
+    <a href="/admin/posts/new" class="rounded bg-white text-black px-4 py-2 text-sm font-medium hover:bg-neutral-200">Nytt innlegg</a>
+  </div>
+  <table class="w-full text-sm">
+    <thead class="text-left text-neutral-500 border-b border-neutral-800">
+      <tr><th class="py-2">Tittel</th><th>Dato</th><th></th></tr>
+    </thead>
+    <tbody>
+      {posts.map(p => (
+        <tr class="border-b border-neutral-900">
+          <td class="py-3">{p.title}</td>
+          <td class="text-neutral-400">{p.date}</td>
+          <td class="text-right">
+            <a href={`/admin/posts/${p.slug}`} class="text-blue-400 hover:underline">Rediger</a>
+          </td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</AdminLayout>

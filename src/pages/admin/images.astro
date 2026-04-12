@@ -1,0 +1,38 @@
+---
+export const prerender = false;
+import AdminLayout from '../../layouts/AdminLayout.astro';
+import fs from 'node:fs/promises';
+import { UPLOADS_DIR } from '../../lib/content';
+
+await fs.mkdir(UPLOADS_DIR, { recursive: true });
+const files = (await fs.readdir(UPLOADS_DIR)).filter(f => !f.startsWith('.'));
+const urls = files.map(f => ({ name: f, url: `/uploads/${f}` }));
+---
+<AdminLayout title="Bilder">
+  <form method="POST" action="/api/admin/images" enctype="multipart/form-data" class="mb-6 flex gap-2 items-center">
+    <input type="file" name="file" accept="image/*" required class="text-sm" />
+    <button class="rounded bg-white text-black px-4 py-2 text-sm font-medium">Last opp</button>
+  </form>
+
+  {urls.length === 0 && <p class="text-neutral-500 text-sm">Ingen bilder lastet opp ennå.</p>}
+
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+    {urls.map(img => (
+      <div class="border border-neutral-800 rounded-lg overflow-hidden">
+        <img src={img.url} alt={img.name} class="w-full h-32 object-cover" />
+        <div class="p-2 flex items-center justify-between gap-2">
+          <span class="text-xs truncate" title={img.name}>{img.name}</span>
+          <form method="POST" action="/api/admin/images/delete">
+            <input type="hidden" name="name" value={img.name} />
+            <button class="text-xs text-red-400" onclick="return confirm('Slette?')">✕</button>
+          </form>
+        </div>
+        <button
+          type="button"
+          class="w-full text-xs text-neutral-400 hover:text-white p-1 border-t border-neutral-800"
+          onclick={`navigator.clipboard.writeText('${img.url}')`}
+        >Kopier URL</button>
+      </div>
+    ))}
+  </div>
+</AdminLayout>

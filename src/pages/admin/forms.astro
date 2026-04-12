@@ -1,0 +1,34 @@
+---
+export const prerender = false;
+import AdminLayout from '../../layouts/AdminLayout.astro';
+import { listSubmissions } from '../../lib/content';
+const subs = await listSubmissions();
+---
+<AdminLayout title="Skjemaer">
+  <p class="text-sm text-neutral-500 mb-4">{subs.length} innsendinger. Siden kan poste til <code>/api/forms</code> for å havne her.</p>
+  {subs.length === 0 && <p class="text-neutral-500">Ingen innsendinger ennå.</p>}
+  <div class="space-y-3">
+    {subs.map(s => (
+      <div class="rounded-lg border border-neutral-800 p-4">
+        <div class="flex justify-between items-start mb-2">
+          <div>
+            <p class="text-sm font-medium">{s.form}</p>
+            <p class="text-xs text-neutral-500">{new Date(s.createdAt).toLocaleString('nb-NO')}</p>
+          </div>
+          <form method="POST" action="/api/admin/forms/delete">
+            <input type="hidden" name="id" value={s.id} />
+            <button class="text-xs text-red-400" onclick="return confirm('Slette?')">Slett</button>
+          </form>
+        </div>
+        <dl class="text-sm grid grid-cols-[auto,1fr] gap-x-4 gap-y-1">
+          {Object.entries(s.data).map(([k, v]) => (
+            <>
+              <dt class="text-neutral-500">{k}</dt>
+              <dd class="text-neutral-200 break-words">{v}</dd>
+            </>
+          ))}
+        </dl>
+      </div>
+    ))}
+  </div>
+</AdminLayout>

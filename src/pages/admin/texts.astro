@@ -1,0 +1,28 @@
+---
+export const prerender = false;
+import AdminLayout from '../../layouts/AdminLayout.astro';
+import { listTexts } from '../../lib/content';
+const texts = await listTexts();
+const entries = Object.entries(texts);
+---
+<AdminLayout title="Tekster">
+  <p class="text-sm text-neutral-500 mb-4">Rediger tekstnøkler brukt på siden. Disse lagres i <code>src/content/texts/site.json</code>.</p>
+  <form method="POST" action="/api/admin/texts" class="space-y-4 max-w-3xl">
+    {entries.map(([key, value]) => (
+      <label class="block">
+        <span class="text-sm text-neutral-400 font-mono">{key}</span>
+        <textarea name={`field:${key}`} rows="2" class="mt-1 w-full rounded bg-neutral-800 px-3 py-2 text-sm">{value}</textarea>
+      </label>
+    ))}
+
+    <details class="pt-4 border-t border-neutral-800">
+      <summary class="text-sm text-neutral-400 cursor-pointer">Legg til ny nøkkel</summary>
+      <div class="mt-3 grid grid-cols-2 gap-2">
+        <input name="new_key" placeholder="key" class="rounded bg-neutral-800 px-3 py-2 text-sm font-mono" />
+        <input name="new_value" placeholder="verdi" class="rounded bg-neutral-800 px-3 py-2 text-sm" />
+      </div>
+    </details>
+
+    <button class="rounded bg-white text-black px-4 py-2 text-sm font-medium">Lagre</button>
+  </form>
+</AdminLayout>
