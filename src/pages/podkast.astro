@@ -11,37 +11,42 @@ const services = [
     title: 'Innspilling',
     intro: 'Lyd og bilde i samme studio. Profesjonelle mikrofoner, flerkamera-oppsett og tekniker — du kan fokusere på samtalen.',
     image: '/images/podcast/podkast-studio.jpeg',
+    alt: 'Podkastinnspilling med profesjonell mikrofon og videooppsett hos Mobula Music',
   },
   {
     num: '02',
     title: 'Klipping & redigering',
     intro: 'Vi tar opptaket og gjør det ferdig. Tonsetting, klipping av hum, pauser og feilstart, og leveranse i ditt foretrukne format.',
     image: '/images/podcast/klipping.jpeg',
+    alt: 'Podkastredigering i DAW med lydspor og klipping',
   },
   {
     num: '03',
     title: 'Lyddesign',
     intro: 'Intro, outro, overganger og lydlandskap som gir podkasten din en egen identitet.',
     image: '/images/podcast/lyddesign.jpeg',
+    alt: 'Lyddesign og lydlandskap for podkastproduksjon',
   },
   {
     num: '04',
     title: 'Originalmusikk',
     intro: 'Skreddersydd vignett, jingles og bakgrunnsmusikk komponert spesielt for serien din. Du eier musikken.',
     image: '/images/podcast/originalmusikk.png',
+    alt: 'Komposisjon av originalmusikk og vignett til podkast',
   },
   {
     num: '05',
     title: 'Opplæring',
     intro: 'Vil du lage podkast selv? Vi tar deg gjennom konsept, teknikk, intervjumetoder, redigering og publisering.',
     image: '/images/podcast/opplaring.jpeg',
+    alt: 'Podkastopplæring og kurs for nye podkastverter',
   },
 ];
 ---
 
 <Layout
-  title="Podkast | Mobula Music"
-  description="Profesjonell podkastinnspilling, klipping, lyddesign, originalmusikk og opplæring."
+  title="Podkaststudio i Lørenskog — Innspilling, Klipping & Produksjon | Mobula Music"
+  description="Komplett podkasttilbud: innspilling med lyd og video, klipping, lyddesign, originalmusikk og opplæring. Alt under ett tak, kort vei fra Oslo og Lillestrøm."
 >
   <!-- Hero -->
   <section class="relative pt-40 pb-24 px-6 overflow-hidden bg-dark">
@@ -92,7 +97,7 @@ const services = [
         {services.map((s) => (
           <div class="group fade-in">
             <div class="relative overflow-hidden aspect-[4/3] mb-5 bg-dark">
-              <img src={s.image} alt={s.title} class="w-full h-full object-cover transition-all duration-700 group-hover:scale-[1.04] [filter:saturate(0.72)_contrast(0.95)_brightness(0.92)] group-hover:[filter:saturate(0.85)_contrast(1)_brightness(1)]" />
+              <img src={s.image} alt={s.alt ?? s.title} class="w-full h-full object-cover transition-all duration-700 group-hover:scale-[1.04] [filter:saturate(0.72)_contrast(0.95)_brightness(0.92)] group-hover:[filter:saturate(0.85)_contrast(1)_brightness(1)]" />
               <div class="absolute inset-0 bg-[#0b1a22] mix-blend-multiply opacity-30 pointer-events-none"></div>
               <div class="absolute inset-0 bg-gradient-to-tr from-[#7af0c8]/10 via-transparent to-[#c9a2ff]/10 mix-blend-overlay pointer-events-none"></div>
               <div class="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-dark/80 to-transparent pointer-events-none"></div>

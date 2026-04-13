@@ -1,0 +1,172 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Mobula from '../../components/Mobula.astro';
+import PasserFor from '../../components/PasserFor.astro';
+import Faq from '../../components/Faq.astro';
+---
+
+<Layout
+  title="Mobula Music — Recording Studio & Film Composers in Norway"
+  description="Norwegian recording studio and production house. Original music for film, TV and theatre, score preparation from DAW projects, and recording for international clients."
+  lang="en"
+  altLang="/"
+>
+  <!-- Hero -->
+  <section class="relative h-screen min-h-[640px] flex items-center overflow-hidden bg-dark">
+    <div class="absolute inset-0" style="background: radial-gradient(ellipse at 70% 40%, #10242f 0%, #0b1a22 60%, #071217 100%);"></div>
+    <div class="absolute top-[15%] right-[10%] w-[640px] h-[640px] bg-gold/15 rounded-full blur-[160px] hero-glow"></div>
+    <div class="absolute bottom-[5%] left-[5%] w-[520px] h-[520px] bg-[color:var(--color-accent-2)]/12 rounded-full blur-[140px] hero-glow"></div>
+
+    <div class="absolute inset-y-0 right-0 flex items-center pointer-events-none">
+      <Mobula class="w-[min(120vw,1800px)] translate-x-[28%] opacity-[0.18] hero-zoom" c1="#7af0c8" c2="#7af0c8" c3="#7af0c8" />
+    </div>
+
+    <div class="absolute inset-0 bg-gradient-to-r from-dark via-dark/70 to-transparent"></div>
+
+    <div class="relative z-10 px-6 md:px-12 lg:px-20 max-w-7xl mx-auto w-full">
+      <p class="hero-fade hero-fade-1 font-mono text-gold tracking-[0.2em] uppercase text-sm md:text-base mb-6">From Norway, to the world</p>
+      <h1 class="hero-fade hero-fade-2 text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-[1.02] font-semibold mb-8 max-w-4xl">
+        Original music<br />&amp; recording from Norway
+      </h1>
+      <p class="hero-fade hero-fade-3 text-cream/80 text-xl md:text-2xl max-w-2xl mb-12 leading-relaxed">
+        Mobula Music is a recording studio and production house near Oslo. Film scores, theatre music, score preparation and recording — for directors, producers and artists worldwide.
+      </p>
+      <div class="hero-fade hero-fade-4 flex flex-col sm:flex-row gap-4">
+        <a href="/en/contact" class="group inline-flex items-center gap-3 px-8 py-4 bg-gold text-dark font-semibold tracking-wide uppercase text-sm rounded-sm hover:bg-gold-light transition-colors">
+          <span class="w-2 h-2 rounded-full bg-[#ff9f3d] bpm-pulse"></span>
+          Get in touch
+        </a>
+        <a href="/en/music" class="inline-flex items-center px-8 py-4 border border-cream/20 text-cream tracking-wide uppercase text-sm rounded-sm hover:border-gold hover:text-gold transition-all">
+          Our services
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="relative py-28 md:py-36 px-6 overflow-hidden">
+    <div class="relative max-w-7xl mx-auto">
+      <div class="flex flex-col md:flex-row md:items-end md:justify-between mb-20 gap-6 fade-in">
+        <div>
+          <p class="font-mono text-gold tracking-[0.15em] uppercase text-xs mb-4">01 — What we do</p>
+          <h2 class="text-4xl md:text-5xl lg:text-6xl font-serif font-semibold leading-[1.05] max-w-2xl">Music that travels<br />beyond borders</h2>
+        </div>
+        <p class="text-cream/70 text-base md:text-lg max-w-md leading-relaxed">
+          We work in Norwegian and English, with clients across Europe and beyond. Three areas where we bring the most value to international projects.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+        <a href="/en/music/film-and-tv" class="group fade-in">
+          <div class="relative overflow-hidden aspect-[4/3] mb-5 bg-dark">
+            <img src="/images/studio/nordic-film-strings.jpg" alt="Film score recording session with strings at Mobula Music" class="w-full h-full object-cover transition-all duration-700 group-hover:scale-[1.04] [filter:saturate(0.85)_contrast(0.98)_brightness(1)] group-hover:[filter:saturate(1)_contrast(1)_brightness(1.05)]" />
+            <div class="absolute inset-0 bg-[#0b1a22] mix-blend-multiply opacity-15 pointer-events-none"></div>
+            <div class="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-dark/80 to-transparent pointer-events-none"></div>
+            <div class="absolute inset-0 ring-1 ring-inset ring-cream/10 group-hover:ring-gold/60 transition-all duration-500"></div>
+            <span class="absolute top-4 left-4 font-mono text-gold text-xs tracking-widest">01</span>
+          </div>
+          <div class="flex items-start justify-between gap-4">
+            <div>
+              <h3 class="text-2xl md:text-3xl font-serif font-semibold mb-2 group-hover:text-gold transition-colors">Film &amp; TV Music</h3>
+              <p class="text-cream/70 text-sm leading-relaxed max-w-xs">Original scores for feature films, shorts, documentaries and TV series. By trained film composers.</p>
+            </div>
+            <span class="shrink-0 text-gold translate-y-1 transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true">→</span>
+          </div>
+        </a>
+
+        <a href="/en/music/score-preparation" class="group fade-in">
+          <div class="relative overflow-hidden aspect-[4/3] mb-5 bg-dark">
+            <img src="/images/studio/noter-daw.jpeg" alt="Professional sheet music and score preparation" class="w-full h-full object-cover transition-all duration-700 group-hover:scale-[1.04] [filter:saturate(0.85)_contrast(0.98)_brightness(1)] group-hover:[filter:saturate(1)_contrast(1)_brightness(1.05)]" />
+            <div class="absolute inset-0 bg-[#0b1a22] mix-blend-multiply opacity-15 pointer-events-none"></div>
+            <div class="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-dark/80 to-transparent pointer-events-none"></div>
+            <div class="absolute inset-0 ring-1 ring-inset ring-cream/10 group-hover:ring-gold/60 transition-all duration-500"></div>
+            <span class="absolute top-4 left-4 font-mono text-gold text-xs tracking-widest">02</span>
+          </div>
+          <div class="flex items-start justify-between gap-4">
+            <div>
+              <h3 class="text-2xl md:text-3xl font-serif font-semibold mb-2 group-hover:text-gold transition-colors">Score Preparation</h3>
+              <p class="text-cream/70 text-sm leading-relaxed max-w-xs">From your DAW project to ready-to-perform sheet music for strings, orchestra, band or ensemble.</p>
+            </div>
+            <span class="shrink-0 text-gold translate-y-1 transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true">→</span>
+          </div>
+        </a>
+
+        <a href="/en/music/composition-for-theatre" class="group fade-in">
+          <div class="relative overflow-hidden aspect-[4/3] mb-5 bg-dark">
+            <img src="/images/studio/scenekunst.jpeg" alt="Original music for dance, theatre and stage art" class="w-full h-full object-cover transition-all duration-700 group-hover:scale-[1.04] [filter:saturate(0.85)_contrast(0.98)_brightness(1)] group-hover:[filter:saturate(1)_contrast(1)_brightness(1.05)]" />
+            <div class="absolute inset-0 bg-[#0b1a22] mix-blend-multiply opacity-15 pointer-events-none"></div>
+            <div class="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-dark/80 to-transparent pointer-events-none"></div>
+            <div class="absolute inset-0 ring-1 ring-inset ring-cream/10 group-hover:ring-gold/60 transition-all duration-500"></div>
+            <span class="absolute top-4 left-4 font-mono text-gold text-xs tracking-widest">03</span>
+          </div>
+          <div class="flex items-start justify-between gap-4">
+            <div>
+              <h3 class="text-2xl md:text-3xl font-serif font-semibold mb-2 group-hover:text-gold transition-colors">Theatre &amp; Stage</h3>
+              <p class="text-cream/70 text-sm leading-relaxed max-w-xs">Original music and sound design for theatre, dance, performance and stage art productions.</p>
+            </div>
+            <span class="shrink-0 text-gold translate-y-1 transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true">→</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Passer for (English) -->
+  <PasserFor
+    title="Built for your project"
+    label="Welcome"
+    intro="From Oscar-nominated documentaries to first-time filmmakers. We bring the same craft and care to every project."
+    items={[
+      'You are a director, producer or screenwriter with a film project underway.',
+      'You work in theatre, dance or performance and need original music.',
+      'You compose in a DAW and need professional sheet music for your performers.',
+      'You are an agency or brand working on international campaigns.',
+      'You have a tight budget but big ambitions for your project.',
+    ]}
+  />
+
+  <!-- FAQ -->
+  <Faq
+    label="FAQ"
+    title="Frequently asked questions"
+    items={[
+      {
+        q: 'Do you work with international clients?',
+        a: 'Yes. We regularly collaborate with directors, producers and artists outside Norway. Most of our communication happens over video, file transfer and feedback on video/mix files — you don\'t need to be in Oslo to work with us.',
+      },
+      {
+        q: 'What does it cost to commission original music?',
+        a: 'It depends on scope. A 30-second theme is a fraction of a feature-length score. Send us a brief description of your project — length, number of cues, ensemble, delivery date — and we will send back a fixed quote.',
+      },
+      {
+        q: 'Do you use live musicians?',
+        a: 'Both live and virtual instruments. Many projects can be realised with modern virtual instruments for budget reasons, but we record live strings, winds, brass and vocals in our studio when the project calls for it.',
+      },
+      {
+        q: 'Who owns the music?',
+        a: 'We always write a clear contract before starting. For most projects we grant you a full license for use, while we retain copyright. For exclusive or commercial use, we agree on terms upfront.',
+      },
+    ]}
+  />
+
+  <!-- CTA -->
+  <section class="py-28 px-6">
+    <div class="max-w-3xl mx-auto text-center fade-in">
+      <h2 class="text-3xl md:text-5xl font-serif font-semibold mb-6 leading-tight">
+        Tell us about your project
+      </h2>
+      <p class="text-cream/80 text-lg mb-10 max-w-xl mx-auto">
+        Send us a short brief — we usually reply within 1–2 days with questions, ideas and a fixed quote.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/en/contact" class="inline-flex items-center justify-center gap-3 px-8 py-4 bg-gold text-dark font-semibold tracking-wide uppercase text-sm hover:bg-gold-light transition-colors">
+          <span class="w-2 h-2 rounded-full bg-[#ff9f3d] bpm-pulse"></span>
+          Get in touch
+        </a>
+        <a href="/en/music" class="inline-flex items-center justify-center px-8 py-4 border border-cream/20 text-cream tracking-wide uppercase text-sm hover:border-gold hover:text-gold transition-all">
+          Explore services
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

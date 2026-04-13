@@ -1,0 +1,104 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import Mobula from '../../../components/Mobula.astro';
+import PasserFor from '../../../components/PasserFor.astro';
+---
+
+<Layout
+  title="Music for Theatre & Stage — Original Scores and Sound Design | Mobula Music"
+  description="Original music and sound design for theatre, dance, performance and stage art. From small ensembles to full orchestration or digital productions. By trained Norwegian composers."
+  lang="en"
+  altLang="/musikk/scenekunst-og-teater"
+>
+  <!-- Hero -->
+  <section class="relative pt-40 pb-24 px-6 overflow-hidden bg-dark">
+    <div class="absolute inset-0" style="background: radial-gradient(ellipse at 30% 40%, #10242f 0%, #0b1a22 60%, #071217 100%);"></div>
+    <div class="absolute top-[10%] right-[5%] w-[500px] h-[500px] bg-gold/10 rounded-full blur-[140px] hero-glow"></div>
+    <div class="absolute inset-y-0 right-0 flex items-center pointer-events-none">
+      <Mobula class="w-[min(80vw,1000px)] translate-x-[30%] opacity-[0.12]" c1="#7af0c8" c2="#7af0c8" c3="#7af0c8" />
+    </div>
+
+    <div class="relative max-w-5xl mx-auto">
+      <p class="font-mono text-gold tracking-[0.2em] uppercase text-sm mb-6">
+        <a href="/en/music" class="hover:text-gold-light">We create music</a> / Theatre &amp; Stage
+      </p>
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif font-semibold leading-[1.05] mb-8 max-w-4xl">
+        Music for the stage
+      </h1>
+      <p class="text-cream/80 text-xl md:text-2xl max-w-2xl leading-relaxed">
+        Original music and sound design for theatre, dance and performance. We work closely with direction and dramaturgy to find how the music best supports the production.
+      </p>
+    </div>
+  </section>
+
+  <!-- What we create -->
+  <section class="py-28 px-6">
+    <div class="max-w-5xl mx-auto">
+      <div class="mb-16 fade-in">
+        <p class="font-mono text-gold tracking-[0.15em] uppercase text-xs mb-4">01 — What we create</p>
+        <h2 class="text-3xl md:text-4xl font-serif font-semibold leading-[1.05] max-w-2xl">From small ensembles<br />to full orchestration</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10 fade-in">
+        <div>
+          <h3 class="text-xl font-serif font-semibold mb-3 text-gold">Original music</h3>
+          <p class="text-cream/75 leading-relaxed">
+            Custom-composed music written for your production — from quiet underscore to dramatic highlights.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-xl font-serif font-semibold mb-3 text-gold">Sound design</h3>
+          <p class="text-cream/75 leading-relaxed">
+            Abstract soundscapes, foley and atmospheres that tie scenes together and build mood.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-xl font-serif font-semibold mb-3 text-gold">Arrangement &amp; notation</h3>
+          <p class="text-cream/75 leading-relaxed">
+            If you have live musicians in your ensemble, we write parts and arrange for the instrumentation you have.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-xl font-serif font-semibold mb-3 text-gold">Technical delivery</h3>
+          <p class="text-cream/75 leading-relaxed">
+            We deliver in the formats theatres and sound designers need — stems, cues and time-stamped files for live performance.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <PasserFor
+    title="Built for your project"
+    label="Welcome"
+    intro="We work with both established venues and independent companies. Size and genre don't matter — we adapt to the project."
+    items={[
+      'You are a director or dramaturg with a production in progress.',
+      'You are a choreographer who needs music for a dance piece.',
+      'You work with an independent company or production house.',
+      'You teach at or study at a drama or stage school.',
+      'You make children\'s theatre and want music that engages both young and old.',
+    ]}
+  />
+
+  <!-- CTA -->
+  <section class="py-28 px-6">
+    <div class="max-w-3xl mx-auto text-center fade-in">
+      <h2 class="text-3xl md:text-5xl font-serif font-semibold mb-6 leading-tight">
+        Got a production?
+      </h2>
+      <p class="text-cream/80 text-lg mb-10 max-w-xl mx-auto">
+        Tell us about your project — we'll have a no-obligation conversation about how music can play its part.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/en/contact" class="inline-flex items-center justify-center gap-3 px-8 py-4 bg-gold text-dark font-semibold tracking-wide uppercase text-sm hover:bg-gold-light transition-colors">
+          <span class="w-2 h-2 rounded-full bg-[#ff9f3d] bpm-pulse"></span>
+          Get in touch
+        </a>
+        <a href="/en/music" class="inline-flex items-center justify-center px-8 py-4 border border-cream/20 text-cream tracking-wide uppercase text-sm hover:border-gold hover:text-gold transition-all">
+          Other services
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

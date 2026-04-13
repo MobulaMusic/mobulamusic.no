@@ -12,6 +12,7 @@ const services = [
     title: 'Singer-songwriter',
     intro: 'Demo, singel eller EP. For deg som skriver egne låter og vil få dem ordentlig innspilt — alene eller med band.',
     image: '/images/studio/singer-songwriter.jpeg',
+    alt: 'Singer-songwriter spiller inn egen låt i studio hos Mobula Music',
   },
   {
     href: '/innspilling/vokal',
@@ -19,6 +20,7 @@ const services = [
     title: 'Vokalinnspilling',
     intro: 'Lead-vokal, korstemmer, solist eller klassisk vokalist. Mikrofoner og rom tilpasset din stemme.',
     image: '/images/studio/vokalinnspilling.jpeg',
+    alt: 'Vokalinnspilling med profesjonell kondensatormikrofon i vokalrom',
   },
   {
     href: '/innspilling/lydbok-og-voice-over',
@@ -26,6 +28,7 @@ const services = [
     title: 'Lydbok & voice-over',
     intro: 'Lydbøker, e-læring, reklame og spillvoicing. Stille rom, lav støybunn, tilrettelagt for lange økter.',
     image: '/images/voice-over/voice-studio.jpg',
+    alt: 'Lydbokinnleser i taleopptaksstudio med profesjonell mikrofon og regi',
   },
   {
     href: '/innspilling/band-og-ensemble',
@@ -33,6 +36,7 @@ const services = [
     title: 'Band & ensemble',
     intro: 'Band, korps, kor eller andre store besetninger. Hovedstudio på 50 m² med flere tilkoblede rom.',
     image: '/images/studio/fasttrack-5.jpeg',
+    alt: 'Band under live-innspilling i hovedstudio på 50 m² hos Mobula Music',
   },
   {
     href: '/innspilling/strykere-og-klassisk',
@@ -40,13 +44,14 @@ const services = [
     title: 'Strykere & klassisk',
     intro: 'Kammerensembler, strykeorkester og klassiske besetninger. Ta del i jevnlige fellesinnspillinger for å dele kostnad.',
     image: '/images/studio/nordic-film-strings.jpg',
+    alt: 'Strykeorkester under innspilling av klassisk musikk og filmmusikk',
   },
 ];
 ---
 
 <Layout
-  title="Innspilling | Mobula Music"
-  description="Profesjonell innspilling av vokal, band, strykere, lydbok og voice-over. Fra første demo til ferdig produksjon."
+  title="Innspillingsstudio i Lørenskog — Vokal, Band & Strykere | Mobula Music"
+  description="Profesjonell innspilling for artister, singer-songwriter, band og klassiske ensembler. Akustisk optimaliserte rom, erfarne teknikere og kort vei fra Oslo og Lillestrøm."
 >
   <!-- Hero -->
   <section class="relative pt-40 pb-24 px-6 overflow-hidden bg-dark">
@@ -62,7 +67,7 @@ const services = [
         Fra første demo<br />til ferdig produksjon
       </h1>
       <p class="text-cream/80 text-xl md:text-2xl max-w-2xl leading-relaxed">
-        Singer-songwriter, vokalist, band, strykere eller lydbok — vi har rommene, utstyret og erfaringen for å få det til å låte akkurat slik du vil.
+        Profesjonelt innspillingsstudio i Lørenskog for singer-songwriter, vokalist, band, strykere og lydbok. Kort vei fra Oslo og Lillestrøm — vi tilpasser rom, utstyr og teknikere til prosjektet ditt.
       </p>
     </div>
   </section>
@@ -70,7 +75,7 @@ const services = [
   <!-- Passer for deg -->
   <PasserFor
     title="Passer for deg uansett"
-    intro="Vi tar imot alt fra første forsøk til plateproduksjon. Målet er alltid at du skal føle deg trygg i rommet og fornøyd med det du går ut med."
+    intro="Vi tar imot alt fra førstegangs-singer-songwriter til etablerte band og klassiske ensembler. Lydstudioet er bygget for at du skal føle deg trygg i rommet og fornøyd med det du går ut med."
     items={[
       'Du har aldri vært i studio før og vil prøve en økt.',
       'Du er singer-songwriter med en låt som skal gis ut.',
@@ -97,7 +102,7 @@ const services = [
         {services.map((s) => (
           <a href={s.href} class="group fade-in">
             <div class="relative overflow-hidden aspect-[4/3] mb-5 bg-dark">
-              <img src={s.image} alt={s.title} class:list={["w-full h-full transition-all duration-700 group-hover:scale-[1.04] [filter:saturate(0.72)_contrast(0.95)_brightness(0.92)] group-hover:[filter:saturate(0.85)_contrast(1)_brightness(1)]", s.fit === 'contain' ? 'object-contain' : 'object-cover']} />
+              <img src={s.image} alt={s.alt ?? s.title} class:list={["w-full h-full transition-all duration-700 group-hover:scale-[1.04] [filter:saturate(0.72)_contrast(0.95)_brightness(0.92)] group-hover:[filter:saturate(0.85)_contrast(1)_brightness(1)]", s.fit === 'contain' ? 'object-contain' : 'object-cover']} />
               <div class="absolute inset-0 bg-[#0b1a22] mix-blend-multiply opacity-30 pointer-events-none"></div>
               <div class="absolute inset-0 bg-gradient-to-tr from-[#7af0c8]/10 via-transparent to-[#c9a2ff]/10 mix-blend-overlay pointer-events-none"></div>
               <div class="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-dark/80 to-transparent pointer-events-none"></div>

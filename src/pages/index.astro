@@ -4,8 +4,9 @@ import Mobula from '../components/Mobula.astro';
 ---
 
 <Layout
-  title="Mobula Music AS | Lydstudio i Lørenskog | Innspilling, Podkast, Komposisjon"
-  description="Mobula Music AS. Lydstudio for innspilling av musikk og podkast i Lørenskog. Produksjon av musikk for film og TV. Kort vei fra Oslo og Lillestrøm."
+  title="Lydstudio på Østlandet — Innspilling, Podkast & Musikkproduksjon | Mobula Music"
+  description="Lydstudio i Lørenskog med kort vei fra Oslo og Lillestrøm. Innspilling av vokal, band og strykere, podkastproduksjon, filmmusikk og noteproduksjon — alt under ett tak."
+  altLang="/en"
 >
   <!-- Hero -->
   <section class="relative h-screen min-h-[640px] flex items-center overflow-hidden bg-dark">
@@ -30,7 +31,7 @@ import Mobula from '../components/Mobula.astro';
         Rom for kreativitet<br />&amp; god lyd
       </h1>
       <p class="hero-fade hero-fade-3 text-cream/80 text-xl md:text-2xl max-w-2xl mb-12 leading-relaxed">
-        Innspilling, podkast og musikkproduksjon.<br class="hidden md:block" />Kort vei fra Oslo og Lillestrøm.
+        Lydstudio for innspilling, podkast og musikkproduksjon.<br class="hidden md:block" />Kort vei fra Oslo og Lillestrøm.
       </p>
       <div class="hero-fade hero-fade-4 flex flex-col sm:flex-row gap-4">
         <a href="/kontakt" class="group inline-flex items-center gap-3 px-8 py-4 bg-gold text-dark font-semibold tracking-wide uppercase text-sm rounded-sm hover:bg-gold-light transition-colors">
@@ -57,25 +58,28 @@ import Mobula from '../components/Mobula.astro';
       <div class="flex flex-col md:flex-row md:items-end md:justify-between mb-20 gap-6 fade-in">
         <div>
           <p class="font-mono text-gold tracking-[0.15em] uppercase text-xs mb-4">01 — Våre tjenester</p>
-          <h2 class="text-4xl md:text-6xl font-serif font-semibold leading-[1.05] max-w-2xl">Hva kan vi hjelpe<br />deg med?</h2>
+          <h2 class="text-4xl md:text-5xl lg:text-6xl font-serif font-semibold leading-[1.05] max-w-2xl">Hva kan vi hjelpe<br />deg med?</h2>
         </div>
         <p class="text-cream/70 text-base md:text-lg max-w-md leading-relaxed">
-          Fra første idé til ferdig mix. Tre kjerneområder — ett studio, samme kvalitet.
+          Innspilling, podkast og originalmusikk — tre kjerneområder under ett tak i Lørenskog. Fra første idé til ferdig mix og mastering.
         </p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
         <!-- Innspilling -->
         <a href="/innspilling" class="group fade-in">
-          <div class="relative overflow-hidden aspect-[4/5] mb-6">
-            <img src="/images/studio/store-studio.jpeg" alt="Innspillingsstudio" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]" />
+          <div class="relative overflow-hidden aspect-[4/3] mb-5 bg-dark">
+            <img src="/images/studio/store-studio.jpeg" alt="Hovedstudioet til Mobula Music — stor innspillingssal for band, ensemble og vokalist" class="w-full h-full object-cover transition-all duration-700 group-hover:scale-[1.04] [filter:saturate(0.85)_contrast(0.98)_brightness(1)] group-hover:[filter:saturate(1)_contrast(1)_brightness(1.05)]" />
+            <div class="absolute inset-0 bg-[#0b1a22] mix-blend-multiply opacity-15 pointer-events-none"></div>
+            <div class="absolute inset-0 bg-gradient-to-tr from-[#7af0c8]/10 via-transparent to-[#c9a2ff]/10 mix-blend-overlay pointer-events-none"></div>
+            <div class="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-dark/80 to-transparent pointer-events-none"></div>
             <div class="absolute inset-0 ring-1 ring-inset ring-cream/10 group-hover:ring-gold/60 transition-all duration-500"></div>
             <span class="absolute top-4 left-4 font-mono text-gold text-xs tracking-widest">01</span>
           </div>
           <div class="flex items-start justify-between gap-4">
             <div>
               <h3 class="text-2xl md:text-3xl font-serif font-semibold mb-2 group-hover:text-gold transition-colors">Innspilling</h3>
-              <p class="text-cream/70 text-sm leading-relaxed max-w-xs">Vokal, lydbok, voice-over, band og ensemble. Profesjonelle fasiliteter med erfarne teknikere.</p>
+              <p class="text-cream/70 text-sm leading-relaxed max-w-xs">Singer-songwriter, vokal, band, strykere, lydbok og voice-over. Fra første demo til ferdig produksjon.</p>
             </div>
             <span class="shrink-0 text-gold translate-y-1 transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true">→</span>
           </div>
@@ -83,31 +87,37 @@ import Mobula from '../components/Mobula.astro';
 
         <!-- Podkast -->
         <a href="/podkast" class="group fade-in">
-          <div class="relative overflow-hidden aspect-[4/5] mb-6">
-            <img src="/images/podcast/podkast-studio.jpeg" alt="Podkaststudio" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]" />
+          <div class="relative overflow-hidden aspect-[4/3] mb-5 bg-dark">
+            <img src="/images/podcast/podkast-studio.jpeg" alt="Podkaststudio i Lørenskog med profesjonelle mikrofoner og kamera-oppsett" class="w-full h-full object-cover transition-all duration-700 group-hover:scale-[1.04] [filter:saturate(0.85)_contrast(0.98)_brightness(1)] group-hover:[filter:saturate(1)_contrast(1)_brightness(1.05)]" />
+            <div class="absolute inset-0 bg-[#0b1a22] mix-blend-multiply opacity-15 pointer-events-none"></div>
+            <div class="absolute inset-0 bg-gradient-to-tr from-[#7af0c8]/10 via-transparent to-[#c9a2ff]/10 mix-blend-overlay pointer-events-none"></div>
+            <div class="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-dark/80 to-transparent pointer-events-none"></div>
             <div class="absolute inset-0 ring-1 ring-inset ring-cream/10 group-hover:ring-gold/60 transition-all duration-500"></div>
             <span class="absolute top-4 left-4 font-mono text-gold text-xs tracking-widest">02</span>
           </div>
           <div class="flex items-start justify-between gap-4">
             <div>
               <h3 class="text-2xl md:text-3xl font-serif font-semibold mb-2 group-hover:text-gold transition-colors">Podkast</h3>
-              <p class="text-cream/70 text-sm leading-relaxed max-w-xs">Profesjonell podkastinnspilling og opplæring. Lyd og bilde i topp kvalitet.</p>
+              <p class="text-cream/70 text-sm leading-relaxed max-w-xs">Innspilling, klipping, lyddesign, originalmusikk og opplæring — alt under ett tak.</p>
             </div>
             <span class="shrink-0 text-gold translate-y-1 transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true">→</span>
           </div>
         </a>
 
-        <!-- Komposisjon -->
+        <!-- Musikk -->
         <a href="/musikk" class="group fade-in">
-          <div class="relative overflow-hidden aspect-[4/5] mb-6">
-            <img src="/images/strings/nordic-film-strings.jpg" alt="Orkesterinnspilling" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]" />
+          <div class="relative overflow-hidden aspect-[4/3] mb-5 bg-dark">
+            <img src="/images/strings/nordic-film-strings.jpg" alt="Nordic Film Strings under innspilling av filmmusikk hos Mobula Music" class="w-full h-full object-cover transition-all duration-700 group-hover:scale-[1.04] [filter:saturate(0.85)_contrast(0.98)_brightness(1)] group-hover:[filter:saturate(1)_contrast(1)_brightness(1.05)]" />
+            <div class="absolute inset-0 bg-[#0b1a22] mix-blend-multiply opacity-15 pointer-events-none"></div>
+            <div class="absolute inset-0 bg-gradient-to-tr from-[#7af0c8]/10 via-transparent to-[#c9a2ff]/10 mix-blend-overlay pointer-events-none"></div>
+            <div class="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-dark/80 to-transparent pointer-events-none"></div>
             <div class="absolute inset-0 ring-1 ring-inset ring-cream/10 group-hover:ring-gold/60 transition-all duration-500"></div>
             <span class="absolute top-4 left-4 font-mono text-gold text-xs tracking-widest">03</span>
           </div>
           <div class="flex items-start justify-between gap-4">
             <div>
-              <h3 class="text-2xl md:text-3xl font-serif font-semibold mb-2 group-hover:text-gold transition-colors">Komposisjon</h3>
-              <p class="text-cream/70 text-sm leading-relaxed max-w-xs">Skreddersydd musikk til film, TV, reklame og podkast. Fra idé til ferdig produksjon.</p>
+              <h3 class="text-2xl md:text-3xl font-serif font-semibold mb-2 group-hover:text-gold transition-colors">Musikk</h3>
+              <p class="text-cream/70 text-sm leading-relaxed max-w-xs">Skreddersydd musikk til film, TV, scenekunst, reklame og produsering av låtprosjekter.</p>
             </div>
             <span class="shrink-0 text-gold translate-y-1 transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true">→</span>
           </div>
@@ -123,10 +133,10 @@ import Mobula from '../components/Mobula.astro';
       <div class="flex flex-col md:flex-row md:items-end md:justify-between mb-20 gap-6 fade-in">
         <div>
           <p class="font-mono text-gold tracking-[0.15em] uppercase text-xs mb-4">02 — Hvorfor Mobula</p>
-          <h2 class="text-4xl md:text-6xl font-serif font-semibold leading-[1.05] max-w-2xl">Et studio bygget<br />for kvalitet</h2>
+          <h2 class="text-4xl md:text-5xl lg:text-6xl font-serif font-semibold leading-[1.05] max-w-2xl">Et studio bygget<br />for kvalitet</h2>
         </div>
         <p class="text-cream/70 text-base md:text-lg max-w-md leading-relaxed">
-          Akustisk optimalisert, profesjonelt utstyrt, og plassert minutter fra Oslo sentrum. Vi kombinerer teknisk håndverk med kunstnerisk forståelse.
+          Akustisk optimaliserte innspillingsrom, profesjonelt utstyr og erfarne teknikere — plassert i Lørenskog, bare minutter fra Oslo sentrum med tog. Teknisk håndverk kombinert med kunstnerisk forståelse.
         </p>
       </div>
 
@@ -153,19 +163,19 @@ import Mobula from '../components/Mobula.astro';
       <!-- Asymmetric image grid -->
       <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 fade-in">
         <div class="md:col-span-2 md:row-span-2 relative overflow-hidden aspect-[4/3] md:aspect-auto group">
-          <img src="/images/studio/nordic-film-strings.jpg" alt="Hovedstudio" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]" />
+          <img src="/images/studio/nordic-film-strings.jpg" alt="Strykere fra Nordic Film Strings spiller inn filmmusikk i Mobulas hovedstudio" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03] [filter:saturate(0.72)_contrast(0.95)_brightness(0.92)]" />
           <div class="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-dark/90 to-transparent pointer-events-none"></div>
           <div class="absolute inset-0 ring-1 ring-inset ring-cream/10"></div>
           <span class="absolute bottom-4 left-4 font-mono text-white text-xs tracking-widest uppercase">Hovedstudio</span>
         </div>
         <div class="relative overflow-hidden aspect-[4/3] md:aspect-auto group">
-          <img src="/images/studio/sidestudio.jpeg" alt="Sidestudio" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]" />
+          <img src="/images/studio/sidestudio.jpeg" alt="Sidestudio for mindre innspillinger og lydopptak hos Mobula Music" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03] [filter:saturate(0.72)_contrast(0.95)_brightness(0.92)]" />
           <div class="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-dark/90 to-transparent pointer-events-none"></div>
           <div class="absolute inset-0 ring-1 ring-inset ring-cream/10"></div>
           <span class="absolute bottom-3 left-3 font-mono text-white text-[10px] tracking-widest uppercase">Sidestudio</span>
         </div>
         <div class="relative overflow-hidden aspect-[4/3] md:aspect-auto group">
-          <img src="/images/studio/vocal-recording.jpg" alt="Vokalrom" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]" />
+          <img src="/images/studio/vocal-recording.jpg" alt="Vokalist spiller inn i akustisk optimalisert vokalrom hos Mobula Music" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03] [filter:saturate(0.72)_contrast(0.95)_brightness(0.92)]" />
           <div class="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-dark/90 to-transparent pointer-events-none"></div>
           <div class="absolute inset-0 ring-1 ring-inset ring-cream/10"></div>
           <span class="absolute bottom-3 left-3 font-mono text-white text-[10px] tracking-widest uppercase">Vokalrom</span>
@@ -177,13 +187,21 @@ import Mobula from '../components/Mobula.astro';
   <!-- CTA -->
   <section class="py-28 px-6">
     <div class="max-w-3xl mx-auto text-center fade-in">
-      <h2 class="text-3xl md:text-4xl font-serif font-semibold mb-6">Klar for å komme i gang?</h2>
-      <p class="text-cream/85 text-lg mb-10">
-        Enten du trenger innspilling, podkastproduksjon eller skreddersydd musikk — vi hjelper deg fra idé til ferdig resultat.
+      <h2 class="text-3xl md:text-5xl font-serif font-semibold mb-6 leading-tight">
+        Klar for å komme i gang?
+      </h2>
+      <p class="text-cream/80 text-lg mb-10 max-w-xl mx-auto">
+        Enten du trenger innspilling, podkast eller skreddersydd musikk — vi hjelper deg fra idé til ferdig resultat.
       </p>
-      <a href="/kontakt" class="inline-block px-10 py-4 bg-gold text-dark font-semibold rounded tracking-wide uppercase hover:bg-gold-light transition-colors">
-        Ta kontakt
-      </a>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/kontakt" class="inline-flex items-center justify-center gap-3 px-8 py-4 bg-gold text-dark font-semibold tracking-wide uppercase text-sm hover:bg-gold-light transition-colors">
+          <span class="w-2 h-2 rounded-full bg-[#ff9f3d] bpm-pulse"></span>
+          Ta kontakt
+        </a>
+        <a href="tel:+4792039045" class="inline-flex items-center justify-center px-8 py-4 border border-cream/20 text-cream tracking-wide uppercase text-sm hover:border-gold hover:text-gold transition-all">
+          920 39 045
+        </a>
+      </div>
     </div>
   </section>
 </Layout>

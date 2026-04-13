@@ -1,0 +1,181 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Mobula from '../../components/Mobula.astro';
+import PasserFor from '../../components/PasserFor.astro';
+import SlikJobberVi from '../../components/SlikJobberVi.astro';
+import Faq from '../../components/Faq.astro';
+
+const services = [
+  {
+    href: '/en/music/film-and-tv',
+    num: '01',
+    title: 'Film & TV',
+    intro: 'Original scores for feature films, shorts, documentaries and drama. By trained film composers with experience from small and large productions.',
+    image: '/images/studio/nordic-film-strings.jpg',
+    alt: 'String recording session for film music at Mobula Music',
+  },
+  {
+    href: '/en/music/score-preparation',
+    num: '02',
+    title: 'Score Preparation',
+    intro: 'From DAW projects or audio recordings to professional sheet music. Ready for strings, orchestra, band, choir or ensemble.',
+    image: '/images/studio/noter-daw.jpeg',
+    alt: 'Professional sheet music and parts ready for performers',
+    tag: 'Unique service',
+  },
+  {
+    href: '/en/music/composition-for-theatre',
+    num: '03',
+    title: 'Theatre & Stage',
+    intro: 'Original music and sound design for theatre, dance, performance and stage art. From small ensembles to full orchestration.',
+    image: '/images/studio/scenekunst.jpeg',
+    alt: 'Dancer performing on stage with original music by Mobula Music',
+  },
+];
+---
+
+<Layout
+  title="Original Music for Film, TV & Theatre — Norwegian Composers | Mobula Music"
+  description="Original music and score preparation from trained Norwegian film composers. Film scores, theatre music, and professional sheet music from DAW projects. Working worldwide."
+  lang="en"
+  altLang="/musikk"
+>
+  <!-- Hero -->
+  <section class="relative pt-40 pb-24 px-6 overflow-hidden bg-dark">
+    <div class="absolute inset-0" style="background: radial-gradient(ellipse at 30% 40%, #10242f 0%, #0b1a22 60%, #071217 100%);"></div>
+    <div class="absolute top-[10%] right-[5%] w-[500px] h-[500px] bg-gold/10 rounded-full blur-[140px] hero-glow"></div>
+    <div class="absolute inset-y-0 right-0 flex items-center pointer-events-none">
+      <Mobula class="w-[min(90vw,1200px)] translate-x-[28%] opacity-[0.15]" c1="#7af0c8" c2="#7af0c8" c3="#7af0c8" />
+    </div>
+
+    <div class="relative max-w-7xl mx-auto">
+      <p class="font-mono text-gold tracking-[0.2em] uppercase text-sm mb-6">We create music</p>
+      <h1 class="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-serif font-semibold leading-[1.02] mb-8 max-w-4xl">
+        Music written for<br />your project
+      </h1>
+      <p class="text-cream/80 text-xl md:text-2xl max-w-2xl leading-relaxed">
+        Feature film, theatre production, score preparation for your orchestra — we compose, arrange and prepare the music your project needs. Working in Norway and internationally.
+      </p>
+    </div>
+  </section>
+
+  <!-- Passer for deg -->
+  <PasserFor
+    title="Built for your project"
+    label="Welcome"
+    intro="We've written music for everything from award-winning films to first-time demos. Same craft, same care."
+    items={[
+      'You are a director, producer or screenwriter with a film or TV project.',
+      'You work in theatre, dance or performance and need original music.',
+      'You have a song idea you don\'t know how to take further.',
+      'You compose in a DAW and need professional sheet music for your performers.',
+      'You are an agency or brand producing a campaign or event.',
+    ]}
+  />
+
+  <!-- Services grid -->
+  <section class="py-28 md:py-36 px-6">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex flex-col md:flex-row md:items-end md:justify-between mb-20 gap-6 fade-in">
+        <div>
+          <p class="font-mono text-gold tracking-[0.15em] uppercase text-xs mb-4">What we create</p>
+          <h2 class="text-4xl md:text-5xl lg:text-6xl font-serif font-semibold leading-[1.05] max-w-2xl">Three ways<br />to work with us</h2>
+        </div>
+        <p class="text-cream/70 text-base md:text-lg max-w-md leading-relaxed">
+          Click into the area that fits your project, or get in touch and we'll find the right approach together.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+        {services.map((s) => (
+          <a href={s.href} class="group fade-in">
+            <div class="relative overflow-hidden aspect-[4/3] mb-5 bg-dark">
+              <img src={s.image} alt={s.alt} class="w-full h-full object-cover transition-all duration-700 group-hover:scale-[1.04] [filter:saturate(0.72)_contrast(0.95)_brightness(0.92)] group-hover:[filter:saturate(0.85)_contrast(1)_brightness(1)]" />
+              <div class="absolute inset-0 bg-[#0b1a22] mix-blend-multiply opacity-30 pointer-events-none"></div>
+              <div class="absolute inset-0 bg-gradient-to-tr from-[#7af0c8]/10 via-transparent to-[#c9a2ff]/10 mix-blend-overlay pointer-events-none"></div>
+              <div class="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-dark/80 to-transparent pointer-events-none"></div>
+              <div class="absolute inset-0 ring-1 ring-inset ring-cream/10 group-hover:ring-gold/60 transition-all duration-500"></div>
+              <span class="absolute top-4 left-4 font-mono text-gold text-xs tracking-widest">{s.num}</span>
+              {s.tag && (
+                <span class="absolute top-4 right-4 font-mono text-[10px] tracking-widest uppercase px-2 py-1 bg-gold/90 text-dark">{s.tag}</span>
+              )}
+            </div>
+            <div class="flex items-start justify-between gap-4">
+              <div>
+                <h3 class="text-2xl md:text-3xl font-serif font-semibold mb-2 group-hover:text-gold transition-colors">{s.title}</h3>
+                <p class="text-cream/70 text-sm leading-relaxed max-w-xs">{s.intro}</p>
+              </div>
+              <span class="shrink-0 text-gold translate-y-1 transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true">→</span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <SlikJobberVi
+    label="Process"
+    title="From brief to finished music"
+    intro="This is a typical composition process. We always adapt pace and detail to your project."
+    steps={[
+      {
+        title: 'Brief & conversation',
+        body: 'You tell us about the project — style, timeline, budget and references. We listen, ask questions and send a fixed quote.',
+      },
+      {
+        title: 'Sketches & feedback',
+        body: 'We create musical sketches you can listen to. You give feedback, we adjust. No final production until the direction is right.',
+      },
+      {
+        title: 'Recording, mix & delivery',
+        body: 'Once the music is locked, we record with live musicians or produce in the studio. You receive final files in your preferred format.',
+      },
+    ]}
+  />
+
+  <!-- FAQ -->
+  <Faq
+    label="FAQ"
+    title="Frequently asked questions"
+    items={[
+      {
+        q: 'Do you work in English?',
+        a: 'Yes. Both composers speak fluent English and we regularly work with international clients over video, file sharing and remote feedback. You don\'t need to be in Norway to work with us.',
+      },
+      {
+        q: 'What does original music cost?',
+        a: 'It depends on length, number of cues, ensemble and delivery time. Send us a short brief describing your project and we\'ll reply with a fixed quote.',
+      },
+      {
+        q: 'Do you use live musicians or virtual instruments?',
+        a: 'Both. Many projects are realised with high-end virtual instruments for budget reasons. When the project calls for it, we record live strings, winds, brass or vocals at our studio in Norway.',
+      },
+      {
+        q: 'Who owns the music?',
+        a: 'We always sign a clear contract before we start. For most projects we grant you a full usage license while retaining copyright. For exclusive or commercial use we agree on terms upfront.',
+      },
+    ]}
+  />
+
+  <!-- CTA -->
+  <section class="py-28 px-6">
+    <div class="max-w-3xl mx-auto text-center fade-in">
+      <h2 class="text-3xl md:text-5xl font-serif font-semibold mb-6 leading-tight">
+        Tell us about your project
+      </h2>
+      <p class="text-cream/80 text-lg mb-10 max-w-xl mx-auto">
+        Send us a short brief — we usually reply within 1–2 days with questions, ideas and a fixed quote.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/en/contact" class="inline-flex items-center justify-center gap-3 px-8 py-4 bg-gold text-dark font-semibold tracking-wide uppercase text-sm hover:bg-gold-light transition-colors">
+          <span class="w-2 h-2 rounded-full bg-[#ff9f3d] bpm-pulse"></span>
+          Get in touch
+        </a>
+        <a href="tel:+4792039045" class="inline-flex items-center justify-center px-8 py-4 border border-cream/20 text-cream tracking-wide uppercase text-sm hover:border-gold hover:text-gold transition-all">
+          +47 920 39 045
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

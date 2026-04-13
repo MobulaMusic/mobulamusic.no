@@ -1,0 +1,168 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import Mobula from '../../../components/Mobula.astro';
+import SlikJobberVi from '../../../components/SlikJobberVi.astro';
+import Faq from '../../../components/Faq.astro';
+---
+
+<Layout
+  title="Score Preparation from DAW — Sheet Music from Ableton, Logic & Cubase | Mobula Music"
+  description="Professional score preparation from your DAW project, audio recording or MIDI. Ready-to-perform sheet music for strings, orchestra, concert band, choir or ensemble. Quality-checked and error-free."
+  lang="en"
+  altLang="/musikk/noter-for-daw"
+>
+  <!-- Hero -->
+  <section class="relative pt-40 pb-24 px-6 overflow-hidden bg-dark">
+    <div class="absolute inset-0" style="background: radial-gradient(ellipse at 30% 40%, #10242f 0%, #0b1a22 60%, #071217 100%);"></div>
+    <div class="absolute top-[10%] right-[5%] w-[500px] h-[500px] bg-gold/10 rounded-full blur-[140px] hero-glow"></div>
+    <div class="absolute inset-y-0 right-0 flex items-center pointer-events-none">
+      <Mobula class="w-[min(80vw,1000px)] translate-x-[30%] opacity-[0.12]" c1="#7af0c8" c2="#7af0c8" c3="#7af0c8" />
+    </div>
+
+    <div class="relative max-w-5xl mx-auto">
+      <p class="font-mono text-gold tracking-[0.2em] uppercase text-sm mb-6">
+        <a href="/en/music" class="hover:text-gold-light">We create music</a> / Score Preparation
+      </p>
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif font-semibold leading-[1.05] mb-8 max-w-4xl">
+        From DAW project<br />to performance-ready score
+      </h1>
+      <p class="text-cream/80 text-xl md:text-2xl max-w-2xl leading-relaxed">
+        You've written the music in Ableton, Logic or Cubase. The conductor asks for sheet music. That's where we come in — professional score preparation and transcription, delivered worldwide.
+      </p>
+    </div>
+  </section>
+
+  <!-- The problem -->
+  <section class="py-28 px-6">
+    <div class="max-w-4xl mx-auto">
+      <div class="mb-12 fade-in">
+        <p class="font-mono text-gold tracking-[0.15em] uppercase text-xs mb-4">01 — The problem</p>
+        <h2 class="text-3xl md:text-4xl font-serif font-semibold leading-[1.05] mb-6">Does this sound familiar?</h2>
+      </div>
+
+      <div class="space-y-6 fade-in">
+        <div class="p-6 md:p-8 border-l-2 border-gold/60 bg-dark-light/50">
+          <p class="text-cream/90 text-lg md:text-xl leading-relaxed italic">
+            "I've been writing music in Logic for years. Now I want a string quartet to play my song live — but I can't read notation well enough to write the parts myself."
+          </p>
+        </div>
+        <div class="p-6 md:p-8 border-l-2 border-gold/60 bg-dark-light/50">
+          <p class="text-cream/90 text-lg md:text-xl leading-relaxed italic">
+            "The concert band I play in wants to perform my song, but I only have MIDI files and no experience with full score layout."
+          </p>
+        </div>
+        <div class="p-6 md:p-8 border-l-2 border-gold/60 bg-dark-light/50">
+          <p class="text-cream/90 text-lg md:text-xl leading-relaxed italic">
+            "I have an audio recording of a melody I whistled, and I need to get it on paper for my musicians."
+          </p>
+        </div>
+      </div>
+
+      <p class="mt-12 text-cream/80 text-lg leading-relaxed fade-in">
+        Score preparation and music transcription is a rare service, but one that composers, arrangers and band leaders often need. We take your source — a DAW project, MIDI file, audio recording or hummed melody — and turn it into professionally engraved sheet music ready to be placed in the hands of performers. Worldwide delivery.
+      </p>
+    </div>
+  </section>
+
+  <!-- What we deliver -->
+  <section class="py-28 px-6 bg-dark-light">
+    <div class="max-w-5xl mx-auto">
+      <div class="mb-16 fade-in">
+        <p class="font-mono text-gold tracking-[0.15em] uppercase text-xs mb-4">02 — What we deliver</p>
+        <h2 class="text-3xl md:text-4xl font-serif font-semibold leading-[1.05] max-w-2xl">Sheet music ready<br />for the players</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10 fade-in">
+        <div>
+          <h3 class="text-xl font-serif font-semibold mb-3 text-gold">Full scores &amp; parts</h3>
+          <p class="text-cream/75 leading-relaxed">
+            Complete conductor's score and separate parts for each musician or instrument. Engraved to the standard professional performers expect — quality-checked and error-free. Ready for print or digital display on tablet.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-xl font-serif font-semibold mb-3 text-gold">Arrangement for your ensemble</h3>
+          <p class="text-cream/75 leading-relaxed">
+            Need a string quartet, concert band, big band, choir or mixed ensemble? We adapt and arrange based on what you've composed.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-xl font-serif font-semibold mb-3 text-gold">Lead sheets</h3>
+          <p class="text-cream/75 leading-relaxed">
+            Simple melody line with chord symbols and lyrics — perfect for band and singer-songwriter contexts.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-xl font-serif font-semibold mb-3 text-gold">Transcription from audio</h3>
+          <p class="text-cream/75 leading-relaxed">
+            Only have an audio file (your own or someone else's)? We can transcribe melody, harmony or a full arrangement into notation.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <SlikJobberVi
+    label="Process"
+    title="How it works"
+    intro="It's not complicated. You send us what you have, we reply with questions and a quote."
+    steps={[
+      {
+        title: 'Send us the source',
+        body: 'Export the DAW project as MIDI or audio, or send us the audio recording you have. We also need a brief description: which ensemble will perform, and by when.',
+      },
+      {
+        title: 'We engrave',
+        body: 'We prepare full score and parts. You receive PDFs for review and can request changes in dynamics, phrasing or arrangement.',
+      },
+      {
+        title: 'Final files',
+        body: 'You receive print-ready PDFs, along with the source files if you want to edit further yourself.',
+      },
+    ]}
+  />
+
+  <!-- FAQ -->
+  <Faq
+    title="Frequently asked questions"
+    items={[
+      {
+        q: 'Which DAWs do you work with?',
+        a: 'All of them. Ableton, Logic, Cubase, Pro Tools, FL Studio, Reaper — we just need MIDI export or audio files. If you don\'t have MIDI, we can usually work from stems or a full mix.',
+      },
+      {
+        q: 'I can\'t read sheet music. Does that matter?',
+        a: 'No. That\'s why you\'re contacting us. We\'ll happily explain our choices along the way if you want to understand how notation works — but you don\'t need that to use the service.',
+      },
+      {
+        q: 'Can you also re-arrange, not just transcribe?',
+        a: 'Yes. Many clients want their music adapted for a different ensemble than the one it was originally written for — from DAW project to string quartet, or from piano demo to concert band. We take on the musical work.',
+      },
+      {
+        q: 'Do you deliver internationally?',
+        a: 'Yes. Most deliveries are digital (PDF), so location is irrelevant. We\'ve worked with clients across Europe, North America and Asia.',
+      },
+    ]}
+  />
+
+  <!-- CTA -->
+  <section class="py-28 px-6">
+    <div class="max-w-3xl mx-auto text-center fade-in">
+      <h2 class="text-3xl md:text-5xl font-serif font-semibold mb-6 leading-tight">
+        Send us your DAW project
+      </h2>
+      <p class="text-cream/80 text-lg mb-10 max-w-xl mx-auto">
+        Or an audio file. Or just a description. We'll take it from there.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/en/contact" class="inline-flex items-center justify-center gap-3 px-8 py-4 bg-gold text-dark font-semibold tracking-wide uppercase text-sm hover:bg-gold-light transition-colors">
+          <span class="w-2 h-2 rounded-full bg-[#ff9f3d] bpm-pulse"></span>
+          Get in touch
+        </a>
+        <a href="/en/music" class="inline-flex items-center justify-center px-8 py-4 border border-cream/20 text-cream tracking-wide uppercase text-sm hover:border-gold hover:text-gold transition-all">
+          Other services
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

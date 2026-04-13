@@ -1,0 +1,151 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import Mobula from '../../../components/Mobula.astro';
+import PasserFor from '../../../components/PasserFor.astro';
+import SlikJobberVi from '../../../components/SlikJobberVi.astro';
+import Faq from '../../../components/Faq.astro';
+---
+
+<Layout
+  title="Film Music Composer Norway — Original Scores for Film & TV | Mobula Music"
+  description="Trained Norwegian film composers. Original music for feature films, short films, documentaries and TV series — from intimate piano cues to full orchestra. Working in Norway and internationally."
+  lang="en"
+  altLang="/musikk/film-og-tv"
+>
+  <!-- Hero -->
+  <section class="relative pt-40 pb-24 px-6 overflow-hidden bg-dark">
+    <div class="absolute inset-0" style="background: radial-gradient(ellipse at 30% 40%, #10242f 0%, #0b1a22 60%, #071217 100%);"></div>
+    <div class="absolute top-[10%] right-[5%] w-[500px] h-[500px] bg-gold/10 rounded-full blur-[140px] hero-glow"></div>
+    <div class="absolute inset-y-0 right-0 flex items-center pointer-events-none">
+      <Mobula class="w-[min(80vw,1000px)] translate-x-[30%] opacity-[0.12]" c1="#7af0c8" c2="#7af0c8" c3="#7af0c8" />
+    </div>
+
+    <div class="relative max-w-5xl mx-auto">
+      <p class="font-mono text-gold tracking-[0.2em] uppercase text-sm mb-6">
+        <a href="/en/music" class="hover:text-gold-light">We create music</a> / Film &amp; TV
+      </p>
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif font-semibold leading-[1.05] mb-8 max-w-4xl">
+        Music that lifts<br />the story
+      </h1>
+      <p class="text-cream/80 text-xl md:text-2xl max-w-2xl leading-relaxed">
+        Original scores and film music for feature films, shorts, documentaries, drama and series. Composed by trained Norwegian film composers who understand that music should serve the picture — not the other way around.
+      </p>
+    </div>
+  </section>
+
+  <!-- Why us -->
+  <section class="py-28 px-6">
+    <div class="max-w-5xl mx-auto">
+      <div class="mb-16 fade-in">
+        <p class="font-mono text-gold tracking-[0.15em] uppercase text-xs mb-4">01 — Why us</p>
+        <h2 class="text-3xl md:text-4xl font-serif font-semibold leading-[1.05] max-w-2xl">Film scoring is a craft,<br />not an afterthought</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10 fade-in">
+        <div>
+          <h3 class="text-xl font-serif font-semibold mb-3 text-gold">Trained film composers</h3>
+          <p class="text-cream/75 leading-relaxed">
+            Both of our composers have formal training in film scoring. We work methodically with motifs, themes, timbre and dynamics — so the music supports the story in ways your audience feels, but doesn't always notice.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-xl font-serif font-semibold mb-3 text-gold">Live musicians</h3>
+          <p class="text-cream/75 leading-relaxed">
+            When the project calls for it, we record with live musicians at our studio — strings, winds, percussion. We work with a network of top Norwegian players, so quality and flexibility go hand in hand.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-xl font-serif font-semibold mb-3 text-gold">Close collaboration</h3>
+          <p class="text-cream/75 leading-relaxed">
+            We like to be involved early in the process — not just once the edit is locked. The earlier we talk, the more naturally the music grows alongside the story.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-xl font-serif font-semibold mb-3 text-gold">The full spectrum</h3>
+          <p class="text-cream/75 leading-relaxed">
+            From quiet piano under-score to full orchestral statements. We're equally comfortable with documentary, drama, comedy, sci-fi or short film. Tell us what the film needs.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Passer for -->
+  <PasserFor
+    title="Built for your project"
+    label="Welcome"
+    intro="We've scored everything from film school submissions to TV productions. Budget shapes ambition — not quality."
+    items={[
+      'You are a director with a short or feature film in progress.',
+      'You are making a documentary that needs music to support without overpowering.',
+      'You work on a TV series or drama production.',
+      'You have locked a picture edit and need original music to replace temp tracks.',
+      'You have a tight budget but big ambitions for your project.',
+    ]}
+  />
+
+  <!-- Process -->
+  <SlikJobberVi
+    label="Process"
+    title="How a film project unfolds"
+    intro="The timeline is always adjusted to your project, but here's the typical rhythm."
+    steps={[
+      {
+        title: 'Spotting & brief',
+        body: 'We watch the film (or the cut) together, identify scenes that need music, and talk through style, tempo and feel. We then send a fixed quote.',
+      },
+      {
+        title: 'Sketches & dialogue',
+        body: 'We prepare sketches for key scenes that you can listen to. You give feedback. We fine-tune before moving on to full composition and arrangement.',
+      },
+      {
+        title: 'Recording & delivery',
+        body: 'Live recording or in-studio production, followed by mix and mastering. You receive final files in all requested formats.',
+      },
+    ]}
+  />
+
+  <!-- FAQ -->
+  <Faq
+    title="Frequently asked questions"
+    items={[
+      {
+        q: 'When should I reach out in the process?',
+        a: 'As early as possible — ideally before the edit is locked. That way the music can grow organically with the story, and you avoid locking the edit to temp music you were meant to replace.',
+      },
+      {
+        q: 'We have a small budget. Is there anything we can do?',
+        a: 'Yes. We adapt — fewer live musicians, more programming, shorter music cues. The important thing is that we are honest about what your budget allows and deliver quality within that frame. Nobody loves a film with bad music because we tried to do too much.',
+      },
+      {
+        q: 'Can we use music you already have?',
+        a: 'We primarily work on original music written for each project. But if you need something quickly and affordably, we also have a catalog of library music we can license.',
+      },
+      {
+        q: 'Can you work remote?',
+        a: 'Yes. Most of our communication with international clients happens over video, file transfer and comments directly on video or mix files. You don\'t need to be in Norway to work with us.',
+      },
+    ]}
+  />
+
+  <!-- CTA -->
+  <section class="py-28 px-6">
+    <div class="max-w-3xl mx-auto text-center fade-in">
+      <h2 class="text-3xl md:text-5xl font-serif font-semibold mb-6 leading-tight">
+        Got a film project?
+      </h2>
+      <p class="text-cream/80 text-lg mb-10 max-w-xl mx-auto">
+        Send us a short description — genre, timeline, budget — and we'll set up a no-obligation call.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/en/contact" class="inline-flex items-center justify-center gap-3 px-8 py-4 bg-gold text-dark font-semibold tracking-wide uppercase text-sm hover:bg-gold-light transition-colors">
+          <span class="w-2 h-2 rounded-full bg-[#ff9f3d] bpm-pulse"></span>
+          Get in touch
+        </a>
+        <a href="/en/music" class="inline-flex items-center justify-center px-8 py-4 border border-cream/20 text-cream tracking-wide uppercase text-sm hover:border-gold hover:text-gold transition-all">
+          Other services
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

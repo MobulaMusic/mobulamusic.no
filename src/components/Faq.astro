@@ -17,7 +17,25 @@ const {
   intro,
   items,
 } = Astro.props;
+
+// Strip HTML tags from answers for schema
+const stripHtml = (s: string) => s.replace(/<[^>]+>/g, '');
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": items.map((item) => ({
+    "@type": "Question",
+    "name": item.q,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": stripHtml(item.a),
+    },
+  })),
+};
 ---
+
+<script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 
 <section class="py-28 px-6">
   <div class="max-w-4xl mx-auto">

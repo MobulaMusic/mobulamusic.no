@@ -1,6 +1,7 @@
 ---
 interface Props {
   title?: string;
+  label?: string;
   intro?: string;
   items: string[];
   class?: string;
@@ -8,6 +9,7 @@ interface Props {
 
 const {
   title = 'Passer for deg uansett',
+  label = 'Velkommen',
   intro = 'Studio kan virke skummelt første gang. Det trenger det ikke å være.',
   items,
   class: className = '',
@@ -18,7 +20,7 @@ const {
   <div class="max-w-5xl mx-auto">
     <div class="flex flex-col md:flex-row md:items-start md:gap-16 gap-8 fade-in">
       <div class="md:w-2/5">
-        <p class="font-mono text-gold tracking-[0.15em] uppercase text-xs mb-4">Velkommen</p>
+        <p class="font-mono text-gold tracking-[0.15em] uppercase text-xs mb-4">{label}</p>
         <h2 class="text-3xl md:text-4xl font-serif font-semibold leading-tight mb-4">{title}</h2>
         <p class="text-cream/75 text-base leading-relaxed">{intro}</p>
       </div>

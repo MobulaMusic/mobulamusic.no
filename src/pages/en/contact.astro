@@ -1,0 +1,112 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Mobula from '../../components/Mobula.astro';
+import ContactForm from '../../components/ContactForm.astro';
+---
+
+<Layout
+  title="Contact Mobula Music — Recording Studio & Composers in Norway"
+  description="Get in touch for film music, score preparation, theatre music or recording. Call +47 920 39 045 or send us a message — we usually reply within 1–2 days."
+  lang="en"
+  altLang="/kontakt"
+>
+  <!-- Hero -->
+  <section class="relative pt-40 pb-24 px-6 overflow-hidden bg-dark">
+    <div class="absolute inset-0" style="background: radial-gradient(ellipse at 30% 40%, #10242f 0%, #0b1a22 60%, #071217 100%);"></div>
+    <div class="absolute top-[10%] right-[5%] w-[500px] h-[500px] bg-gold/10 rounded-full blur-[140px] hero-glow"></div>
+    <div class="absolute inset-y-0 right-0 flex items-center pointer-events-none">
+      <Mobula class="w-[min(90vw,1200px)] translate-x-[28%] opacity-[0.15]" c1="#7af0c8" c2="#7af0c8" c3="#7af0c8" />
+    </div>
+
+    <div class="relative max-w-5xl mx-auto">
+      <p class="font-mono text-gold tracking-[0.2em] uppercase text-sm mb-6">Contact</p>
+      <h1 class="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-serif font-semibold leading-[1.02] mb-8 max-w-4xl">
+        Get in touch
+      </h1>
+      <p class="text-cream/80 text-xl md:text-2xl max-w-2xl leading-relaxed">
+        Tell us about your project — big or small. We reply within 1–2 days with questions, ideas and a fixed quote.
+      </p>
+    </div>
+  </section>
+
+  <!-- Contact info -->
+  <section class="py-20 md:py-28 px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-0 border-y border-cream/10 fade-in">
+        <div class="py-10 px-6 md:px-8 md:border-r border-cream/10">
+          <p class="font-mono text-gold text-xs tracking-widest uppercase mb-4">Phone</p>
+          <p class="font-serif text-2xl md:text-3xl font-semibold mb-2">
+            <a href="tel:+4792039045" class="hover:text-gold transition-colors">+47 920 39 045</a>
+          </p>
+          <p class="text-cream/50 text-sm mb-4">Haakon</p>
+          <p class="font-serif text-2xl md:text-3xl font-semibold mb-2">
+            <a href="tel:+4792466150" class="hover:text-gold transition-colors">+47 924 66 150</a>
+          </p>
+          <p class="text-cream/50 text-sm">Olai</p>
+        </div>
+
+        <div class="py-10 px-6 md:px-8 md:border-r border-t md:border-t-0 border-cream/10">
+          <p class="font-mono text-gold text-xs tracking-widest uppercase mb-4">Email</p>
+          <p class="font-serif text-xl md:text-2xl font-semibold break-words">
+            <a href="mailto:post@mobulamusic.com" class="hover:text-gold transition-colors">post@mobulamusic.com</a>
+          </p>
+          <p class="text-cream/60 text-sm mt-4 leading-relaxed">
+            Send us a brief, a DAW project, a demo — or just an idea.
+          </p>
+        </div>
+
+        <div class="py-10 px-6 md:px-8 border-t md:border-t-0 border-cream/10">
+          <p class="font-mono text-gold text-xs tracking-widest uppercase mb-4">Address</p>
+          <p class="font-serif text-xl md:text-2xl font-semibold leading-tight mb-2">
+            Fjellhammerveien 52<br />1472 Fjellhamar, Norway
+          </p>
+          <p class="text-cream/60 text-sm mt-4 leading-relaxed">
+            3 min from Fjellhamar station<br />Free parking
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Form -->
+  <section class="pb-28 px-6">
+    <div class="max-w-3xl mx-auto fade-in">
+      <div class="mb-12">
+        <p class="font-mono text-gold tracking-[0.15em] uppercase text-xs mb-4">Form</p>
+        <h2 class="text-3xl md:text-4xl font-serif font-semibold leading-[1.05] mb-4">Or send us a message</h2>
+        <p class="text-cream/70 text-base md:text-lg max-w-2xl leading-relaxed">
+          The more you tell us, the better a quote you'll get back. But you don't need to have everything figured out — we're happy to help you work out what you actually need.
+        </p>
+      </div>
+
+      <ContactForm
+        formName="ContactEn"
+        showServiceDropdown={true}
+        heading=""
+        description=""
+      />
+    </div>
+  </section>
+
+  <!-- Map -->
+  <section class="pb-28 px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="mb-12 fade-in">
+        <p class="font-mono text-gold tracking-[0.15em] uppercase text-xs mb-4">How to find us</p>
+        <h2 class="text-3xl md:text-4xl font-serif font-semibold leading-[1.05]">Fjellhammerveien 52</h2>
+      </div>
+      <div class="relative overflow-hidden h-96 md:h-[500px] ring-1 ring-inset ring-cream/10 fade-in">
+        <iframe
+          src="https://maps.google.com/maps?q=Mobula+Music+AS&t=&z=16&ie=UTF8&iwloc=&output=embed"
+          width="100%"
+          height="100%"
+          style="border:0; filter: grayscale(0.5) contrast(0.95);"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Mobula Music location"
+        ></iframe>
+      </div>
+    </div>
+  </section>
+</Layout>
