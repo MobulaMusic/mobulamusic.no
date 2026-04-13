@@ -1,175 +1,171 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import ContactForm from '../components/ContactForm.astro';
+import Mobula from '../components/Mobula.astro';
+import PasserFor from '../components/PasserFor.astro';
+import SlikJobberVi from '../components/SlikJobberVi.astro';
+import Faq from '../components/Faq.astro';
+
+const services = [
+  {
+    href: '/innspilling/singer-songwriter',
+    num: '01',
+    title: 'Singer-songwriter',
+    intro: 'Demo, singel eller EP. For deg som skriver egne låter og vil få dem ordentlig innspilt — alene eller med band.',
+    image: '/images/studio/singer-songwriter.jpeg',
+  },
+  {
+    href: '/innspilling/vokal',
+    num: '02',
+    title: 'Vokalinnspilling',
+    intro: 'Lead-vokal, korstemmer, solist eller klassisk vokalist. Mikrofoner og rom tilpasset din stemme.',
+    image: '/images/studio/vokalinnspilling.jpeg',
+  },
+  {
+    href: '/innspilling/lydbok-og-voice-over',
+    num: '03',
+    title: 'Lydbok & voice-over',
+    intro: 'Lydbøker, e-læring, reklame og spillvoicing. Stille rom, lav støybunn, tilrettelagt for lange økter.',
+    image: '/images/voice-over/voice-studio.jpg',
+  },
+  {
+    href: '/innspilling/band-og-ensemble',
+    num: '04',
+    title: 'Band & ensemble',
+    intro: 'Band, korps, kor eller andre store besetninger. Hovedstudio på 50 m² med flere tilkoblede rom.',
+    image: '/images/studio/fasttrack-5.jpeg',
+  },
+  {
+    href: '/innspilling/strykere-og-klassisk',
+    num: '05',
+    title: 'Strykere & klassisk',
+    intro: 'Kammerensembler, strykeorkester og klassiske besetninger. Ta del i jevnlige fellesinnspillinger for å dele kostnad.',
+    image: '/images/studio/nordic-film-strings.jpg',
+  },
+];
 ---
 
 <Layout
-  title="Innspilling | Vokal, Lydbok, Band & Ensemble | Mobula Music AS"
-  description="Profesjonell innspilling av vokal, lydbok, voice-over og ensemble i akustisk optimaliserte studioer. Erfarne teknikere. Kort vei fra Oslo og Lillestrøm."
+  title="Innspilling | Mobula Music"
+  description="Profesjonell innspilling av vokal, band, strykere, lydbok og voice-over. Fra første demo til ferdig produksjon."
 >
   <!-- Hero -->
-  <section class="relative pt-32 pb-20 px-6">
-    <div class="absolute inset-0 z-0">
-      <img src="/images/studio/store-studio.jpeg" alt="Innspillingsstudio" class="w-full h-full object-cover" />
-      <div class="absolute inset-0 bg-gradient-to-b from-dark/80 via-dark/70 to-dark"></div>
+  <section class="relative pt-40 pb-24 px-6 overflow-hidden bg-dark">
+    <div class="absolute inset-0" style="background: radial-gradient(ellipse at 30% 40%, #10242f 0%, #0b1a22 60%, #071217 100%);"></div>
+    <div class="absolute top-[10%] right-[5%] w-[500px] h-[500px] bg-gold/10 rounded-full blur-[140px] hero-glow"></div>
+    <div class="absolute inset-y-0 right-0 flex items-center pointer-events-none">
+      <Mobula class="w-[min(90vw,1200px)] translate-x-[28%] opacity-[0.15]" c1="#7af0c8" c2="#7af0c8" c3="#7af0c8" />
     </div>
-    <div class="relative z-10 max-w-4xl mx-auto text-center">
-      <p class="font-mono text-gold tracking-[0.2em] uppercase text-xs mb-4">Innspilling</p>
-      <h1 class="text-4xl md:text-6xl font-serif font-bold mb-6">Profesjonell innspilling i studio</h1>
-      <p class="text-cream/85 text-lg max-w-2xl mx-auto">
-        Singel, album, demo, lydbok eller voice-over — vi hjelper deg å få det til å låte akkurat slik du vil.
+
+    <div class="relative max-w-7xl mx-auto">
+      <p class="font-mono text-gold tracking-[0.2em] uppercase text-sm mb-6">Innspilling</p>
+      <h1 class="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-serif font-semibold leading-[1.02] mb-8 max-w-4xl">
+        Fra første demo<br />til ferdig produksjon
+      </h1>
+      <p class="text-cream/80 text-xl md:text-2xl max-w-2xl leading-relaxed">
+        Singer-songwriter, vokalist, band, strykere eller lydbok — vi har rommene, utstyret og erfaringen for å få det til å låte akkurat slik du vil.
       </p>
     </div>
   </section>
 
-  <!-- Navigation tabs -->
-  <nav class="sticky top-16 z-30 bg-dark-light/95 backdrop-blur-md border-b border-dark-border">
-    <div class="max-w-4xl mx-auto px-6 flex gap-8 overflow-x-auto">
-      <a href="#vokal" class="py-4 text-sm font-medium tracking-wide uppercase text-cream/75 hover:text-gold border-b-2 border-transparent hover:border-gold transition-colors whitespace-nowrap">Vokal</a>
-      <a href="#lydbok" class="py-4 text-sm font-medium tracking-wide uppercase text-cream/75 hover:text-gold border-b-2 border-transparent hover:border-gold transition-colors whitespace-nowrap">Lydbok & Voice-over</a>
-      <a href="#ensemble" class="py-4 text-sm font-medium tracking-wide uppercase text-cream/75 hover:text-gold border-b-2 border-transparent hover:border-gold transition-colors whitespace-nowrap">Band & Ensemble</a>
-    </div>
-  </nav>
-
-  <!-- Vokal -->
-  <section id="vokal" class="py-24 px-6 scroll-mt-32">
-    <div class="max-w-7xl mx-auto">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-        <div class="fade-in">
-          <p class="font-mono text-gold tracking-[0.15em] uppercase text-xs mb-3">01 — Vokalinnspilling</p>
-          <h2 class="text-3xl md:text-4xl font-serif font-semibold mb-6">Få stemmen din til å skinne</h2>
-          <p class="text-cream/85 leading-relaxed mb-6">
-            Singel, album eller demo — hos oss får du teknikere som fokuserer på detaljene, et studio bygget for vokal, og tid til å gjøre det skikkelig. Vi sørger for at oppsett, mikrofoner og romakustikk er optimalt tilpasset din stemme.
-          </p>
-          <div class="space-y-4 mb-8">
-            <div class="flex items-start gap-3">
-              <div class="w-1.5 h-1.5 rounded-full bg-gold mt-2 shrink-0"></div>
-              <div>
-                <span class="text-cream font-medium">Innspilling med tekniker</span>
-                <span class="text-cream/75"> — Oppsett, mikrofoner, romakustikk inkludert. Fra 2 500,-</span>
-              </div>
-            </div>
-            <div class="flex items-start gap-3">
-              <div class="w-1.5 h-1.5 rounded-full bg-gold mt-2 shrink-0"></div>
-              <div>
-                <span class="text-cream font-medium">Gjør-det-selv</span>
-                <span class="text-cream/75"> — Tilgang til studio med utstyr. 985,- per time</span>
-              </div>
-            </div>
-            <div class="flex items-start gap-3">
-              <div class="w-1.5 h-1.5 rounded-full bg-gold mt-2 shrink-0"></div>
-              <div>
-                <span class="text-cream font-medium">Kun studio</span>
-                <span class="text-cream/75"> — Studiorom uten utstyr. 675,- per time</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="fade-in">
-          <img src="/images/studio/vokalrom-1.jpeg" alt="Vokalinnspilling" class="rounded-lg w-full object-cover aspect-[4/3]" />
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Lydbok & Voice-over -->
-  <section id="lydbok" class="py-24 px-6 bg-dark-light scroll-mt-32">
-    <div class="max-w-7xl mx-auto">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-        <div class="order-2 lg:order-1 fade-in">
-          <img src="/images/voice-over/voice-studio.jpg" alt="Lydbok og voice-over" class="rounded-lg w-full object-cover aspect-[4/3]" />
-        </div>
-        <div class="order-1 lg:order-2 fade-in">
-          <p class="font-mono text-gold tracking-[0.15em] uppercase text-xs mb-3">02 — Lydbok & Voice-over</p>
-          <h2 class="text-3xl md:text-4xl font-serif font-semibold mb-6">Profesjonelle taleopptak</h2>
-          <p class="text-cream/85 leading-relaxed mb-6">
-            Vi tilbyr moderne, stille og akustisk optimaliserte studioer som er perfekt egnet for innlesing av lydbøker, e-læringsmateriell og voicing til film og spill. Rommene er spesielt behandlet for å gi en ren, tørr og behagelig lyd.
-          </p>
-          <ul class="space-y-3 text-cream/85">
-            <li class="flex items-center gap-3">
-              <svg class="w-5 h-5 text-gold shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-              Lydisolerte rom med lav støybunn
-            </li>
-            <li class="flex items-center gap-3">
-              <svg class="w-5 h-5 text-gold shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-              Profesjonelle kondensatormikrofoner
-            </li>
-            <li class="flex items-center gap-3">
-              <svg class="w-5 h-5 text-gold shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-              Tilrettelagt for lange innlesingsøkter
-            </li>
-            <li class="flex items-center gap-3">
-              <svg class="w-5 h-5 text-gold shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-              Regi og teknikerbistand tilgjengelig
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Band & Ensemble -->
-  <section id="ensemble" class="py-24 px-6 scroll-mt-32">
-    <div class="max-w-7xl mx-auto">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-        <div class="fade-in">
-          <p class="font-mono text-gold tracking-[0.15em] uppercase text-xs mb-3">03 — Band & Ensemble</p>
-          <h2 class="text-3xl md:text-4xl font-serif font-semibold mb-6">Felles&shy;innspilling i stort studio</h2>
-          <p class="text-cream/85 leading-relaxed mb-6">
-            Vårt hovedstudio på 50 m² er designet for ensemble- og bandinnspillinger. Alle innspillingsrommene er koblet til samme kontrollrom, noe som gir fleksibilitet til å spille inn store besetninger med god separasjon og kontroll.
-          </p>
-
-          <div class="bg-dark-card border border-dark-border rounded-lg p-6 mb-6">
-            <h3 class="text-gold font-semibold mb-3">Slik fungerer det</h3>
-            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 text-center">
-              <div>
-                <div class="text-2xl mb-1">💬</div>
-                <div class="text-xs text-cream/85 uppercase tracking-wide">Dialog</div>
-              </div>
-              <div>
-                <div class="text-2xl mb-1">🎨</div>
-                <div class="text-xs text-cream/85 uppercase tracking-wide">Kreativt</div>
-              </div>
-              <div>
-                <div class="text-2xl mb-1">🎵</div>
-                <div class="text-xs text-cream/85 uppercase tracking-wide">Materiale</div>
-              </div>
-              <div>
-                <div class="text-2xl mb-1">🎙️</div>
-                <div class="text-xs text-cream/85 uppercase tracking-wide">Innspilling</div>
-              </div>
-            </div>
-          </div>
-
-          <p class="text-cream/85 text-sm">
-            Vi samarbeider med Nordic Film Strings og tilbyr jevnlige fellesinnspillinger for strykere.
-          </p>
-        </div>
-        <div class="fade-in">
-          <img src="/images/strings/strykeorkester-studio.jpeg" alt="Ensemble-innspilling" class="rounded-lg w-full object-cover aspect-[4/3]" />
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Gallery -->
-  <section class="py-24 px-6 bg-dark-light">
-    <div class="max-w-7xl mx-auto">
-      <h2 class="text-3xl font-serif font-semibold text-center mb-12 fade-in">Våre studioer</h2>
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 fade-in">
-        <img src="/images/studio/studio-1.jpg" alt="Studio 1" class="rounded-lg w-full h-48 object-cover" />
-        <img src="/images/studio/studio-2.jpg" alt="Studio 2" class="rounded-lg w-full h-48 object-cover" />
-        <img src="/images/studio/studio-3.jpg" alt="Studio 3" class="rounded-lg w-full h-48 object-cover" />
-        <img src="/images/studio/produsentrommet.jpeg" alt="Produsentrommet" class="rounded-lg w-full h-48 object-cover" />
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <ContactForm
-    formName="Innspilling"
-    serviceType="innspilling"
-    heading="Book innspilling"
-    description="Fortell oss om prosjektet ditt, så finner vi den beste løsningen for deg."
+  <!-- Passer for deg -->
+  <PasserFor
+    title="Passer for deg uansett"
+    intro="Vi tar imot alt fra første forsøk til plateproduksjon. Målet er alltid at du skal føle deg trygg i rommet og fornøyd med det du går ut med."
+    items={[
+      'Du har aldri vært i studio før og vil prøve en økt.',
+      'Du er singer-songwriter med en låt som skal gis ut.',
+      'Du er vokalist, skuespiller eller innleser som trenger profesjonelt taleopptak.',
+      'Du spiller i band, korps eller kor og vil spille inn sammen.',
+      'Du er klassisk musiker eller komponist med behov for strykere.',
+    ]}
   />
+
+  <!-- Services grid -->
+  <section class="py-28 md:py-36 px-6">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex flex-col md:flex-row md:items-end md:justify-between mb-20 gap-6 fade-in">
+        <div>
+          <p class="font-mono text-gold tracking-[0.15em] uppercase text-xs mb-4">Hva vi spiller inn</p>
+          <h2 class="text-4xl md:text-5xl lg:text-6xl font-serif font-semibold leading-[1.05] max-w-2xl">Fem områder,<br />ett studio</h2>
+        </div>
+        <p class="text-cream/70 text-base md:text-lg max-w-md leading-relaxed">
+          Hvert område har sine egne hensyn når det kommer til mikrofoner, rom og arbeidsmåte. Klikk deg inn på det som passer.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+        {services.map((s) => (
+          <a href={s.href} class="group fade-in">
+            <div class="relative overflow-hidden aspect-[4/3] mb-5 bg-dark">
+              <img src={s.image} alt={s.title} class:list={["w-full h-full transition-all duration-700 group-hover:scale-[1.04] [filter:saturate(0.72)_contrast(0.95)_brightness(0.92)] group-hover:[filter:saturate(0.85)_contrast(1)_brightness(1)]", s.fit === 'contain' ? 'object-contain' : 'object-cover']} />
+              <div class="absolute inset-0 bg-[#0b1a22] mix-blend-multiply opacity-30 pointer-events-none"></div>
+              <div class="absolute inset-0 bg-gradient-to-tr from-[#7af0c8]/10 via-transparent to-[#c9a2ff]/10 mix-blend-overlay pointer-events-none"></div>
+              <div class="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-dark/80 to-transparent pointer-events-none"></div>
+              <div class="absolute inset-0 ring-1 ring-inset ring-cream/10 group-hover:ring-gold/60 transition-all duration-500"></div>
+              <span class="absolute top-4 left-4 font-mono text-gold text-xs tracking-widest">{s.num}</span>
+            </div>
+            <div class="flex items-start justify-between gap-4">
+              <div>
+                <h3 class="text-2xl md:text-3xl font-serif font-semibold mb-2 group-hover:text-gold transition-colors">{s.title}</h3>
+                <p class="text-cream/70 text-sm leading-relaxed max-w-xs">{s.intro}</p>
+              </div>
+              <span class="shrink-0 text-gold translate-y-1 transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true">→</span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Slik jobber vi -->
+  <SlikJobberVi />
+
+  <!-- FAQ -->
+  <Faq
+    label="Vanlige spørsmål"
+    title="Spørsmål vi får ofte"
+    items={[
+      {
+        q: 'Jeg har aldri vært i studio før — er det greit?',
+        a: 'Ja, helt greit. Mange som kommer til oss har aldri spilt inn i studio før. Vi tar oss tid til å forklare alt, og lar deg finne roen før vi begynner.',
+      },
+      {
+        q: 'Kan jeg spille inn uten tekniker?',
+        a: 'Noen ganger, ja. For enkle vokalopptak tilbyr vi "gjør-det-selv"-tid i rommene våre til redusert timepris, hvis du har erfaring fra før. For alt annet anbefaler vi tekniker — det gir bedre resultat og tar mindre tid.',
+      },
+      {
+        q: 'Hva koster det?',
+        a: 'Avhenger av hva du skal spille inn og hvor mye tid du trenger. Se <a href="/priser" class="text-gold hover:underline">prisene våre</a> for startpakker og timespriser, eller ta kontakt så gir vi et fast tilbud.',
+      },
+      {
+        q: 'Har dere tilgjengelighet for musikere og instrumenter jeg ikke har selv?',
+        a: 'Ja. Vi har et nettverk av profesjonelle musikere vi ofte jobber med — vokalister, strykere, blåsere og rytmeseksjon. Vi tilrettelegger hvis du trenger hjelp til å finne riktige musikere for prosjektet.',
+      },
+      {
+        q: 'Hvor mye tid trenger jeg å bestille?',
+        a: 'Helt avhengig av prosjektet. En enkel vokalinnspilling av én låt kan være gjort på 2–3 timer. En full singel med band kan ta en hel dag. Vi gir deg ærlige estimater i forkant så du ikke booker for lite eller for mye.',
+      },
+    ]}
+  />
+
+  <!-- CTA -->
+  <section class="py-28 px-6">
+    <div class="max-w-3xl mx-auto text-center fade-in">
+      <h2 class="text-3xl md:text-5xl font-serif font-semibold mb-6 leading-tight">
+        Book en innspilling
+      </h2>
+      <p class="text-cream/80 text-lg mb-10 max-w-xl mx-auto">
+        Fortell oss om prosjektet — vi svarer innen 1–2 dager med spørsmål, forslag og et fast&nbsp;tilbud.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/kontakt" class="inline-flex items-center justify-center gap-3 px-8 py-4 bg-gold text-dark font-semibold tracking-wide uppercase text-sm hover:bg-gold-light transition-colors">
+          <span class="w-2 h-2 rounded-full bg-dark bpm-pulse"></span>
+          Ta kontakt
+        </a>
+        <a href="tel:+4792039045" class="inline-flex items-center justify-center px-8 py-4 border border-cream/20 text-cream tracking-wide uppercase text-sm hover:border-gold hover:text-gold transition-all">
+          920 39 045
+        </a>
+      </div>
+    </div>
+  </section>
 </Layout>

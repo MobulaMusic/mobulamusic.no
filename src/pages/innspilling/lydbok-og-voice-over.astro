@@ -1,0 +1,93 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Mobula from '../../components/Mobula.astro';
+import PasserFor from '../../components/PasserFor.astro';
+---
+
+<Layout
+  title="Lydbok & voice-over | Mobula Music"
+  description="Profesjonelle taleopptak: lydbok, e-læring, voice-over til reklame og spill."
+>
+  <section class="relative pt-40 pb-24 px-6 overflow-hidden bg-dark">
+    <div class="absolute inset-0" style="background: radial-gradient(ellipse at 30% 40%, #10242f 0%, #0b1a22 60%, #071217 100%);"></div>
+    <div class="absolute top-[10%] right-[5%] w-[500px] h-[500px] bg-gold/10 rounded-full blur-[140px] hero-glow"></div>
+    <div class="absolute inset-y-0 right-0 flex items-center pointer-events-none">
+      <Mobula class="w-[min(80vw,1000px)] translate-x-[30%] opacity-[0.12]" c1="#7af0c8" c2="#7af0c8" c3="#7af0c8" />
+    </div>
+
+    <div class="relative max-w-5xl mx-auto">
+      <p class="font-mono text-gold tracking-[0.2em] uppercase text-sm mb-6">
+        <a href="/innspilling" class="hover:text-gold-light">Innspilling</a> / Lydbok & voice-over
+      </p>
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif font-semibold leading-[1.05] mb-8 max-w-4xl">
+        Stemmen på sitt reneste
+      </h1>
+      <p class="text-cream/80 text-xl md:text-2xl max-w-2xl leading-relaxed">
+        Lydbøker, e-læring, reklame, spill og film. Stille rom, profesjonelle mikrofoner, og teknikere som kjenner forskjellen mellom en god take og en ferdig.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-28 px-6">
+    <div class="max-w-5xl mx-auto">
+      <div class="mb-16 fade-in">
+        <p class="font-mono text-gold tracking-[0.15em] uppercase text-xs mb-4">01 — Hva vi spiller inn</p>
+        <h2 class="text-3xl md:text-4xl font-serif font-semibold leading-[1.05] max-w-2xl">Taleopptak med ren lyd</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10 fade-in">
+        <div>
+          <h3 class="text-xl font-serif font-semibold mb-3 text-gold">Lydbøker</h3>
+          <p class="text-cream/75 leading-relaxed">
+            Hele bøker eller kortere tekster. Vi tilrettelegger for lange økter med regi, pauser og etterbehandling som gir ferdige filer klare for utgivelse.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-xl font-serif font-semibold mb-3 text-gold">Voice-over</h3>
+          <p class="text-cream/75 leading-relaxed">
+            Til reklame, forklarende video, e-læring, spill og film. Presis timing, flere takes og rask levering i formatet du trenger.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-xl font-serif font-semibold mb-3 text-gold">Innspilling til bilde</h3>
+          <p class="text-cream/75 leading-relaxed">
+            Vi spiller inn synkronisert med video — for film, animasjon, forklarende video og produksjoner der timingen må matche bildet eksakt.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-xl font-serif font-semibold mb-3 text-gold">Regi og teknikerbistand</h3>
+          <p class="text-cream/75 leading-relaxed">
+            Vi har erfarne teknikere som tilpasser oppsettet etter stemmen og sjangeren. Vi tilbyr også regi om du trenger det. Alt er klart når du kommer.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <PasserFor
+    intro="Vi jobber like gjerne med forfattere som spiller inn sin første bok, som med byråer og produksjonsselskaper på faste leveranser."
+    items={[
+      'Du er forfatter som skal lese inn din egen bok.',
+      'Du er forlag eller produksjonsselskap som trenger fast studio.',
+      'Du er byrå med behov for voice-over til reklame eller video.',
+      'Du jobber med e-læring og trenger rask levering av flere moduler.',
+      'Du utvikler spill, animasjon eller film og trenger karakterstemmer.',
+    ]}
+  />
+
+  <section class="py-28 px-6">
+    <div class="max-w-3xl mx-auto text-center fade-in">
+      <h2 class="text-3xl md:text-5xl font-serif font-semibold mb-6 leading-tight">Book taleopptak</h2>
+      <p class="text-cream/80 text-lg mb-10 max-w-xl mx-auto">Fortell oss om prosjektet — lengde, format og frist — så gir vi et fast&nbsp;tilbud.</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/kontakt" class="inline-flex items-center justify-center gap-3 px-8 py-4 bg-gold text-dark font-semibold tracking-wide uppercase text-sm hover:bg-gold-light transition-colors">
+          <span class="w-2 h-2 rounded-full bg-dark bpm-pulse"></span>
+          Ta kontakt
+        </a>
+        <a href="/innspilling" class="inline-flex items-center justify-center px-8 py-4 border border-cream/20 text-cream tracking-wide uppercase text-sm hover:border-gold hover:text-gold transition-all">
+          Se andre tjenester
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

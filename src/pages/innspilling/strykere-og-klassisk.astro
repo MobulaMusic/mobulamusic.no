@@ -1,0 +1,128 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Mobula from '../../components/Mobula.astro';
+import PasserFor from '../../components/PasserFor.astro';
+---
+
+<Layout
+  title="Strykere & klassisk innspilling | Mobula Music"
+  description="Innspilling av strykere, kammerensembler og klassiske besetninger. Jevnlige fellesinnspillinger for deling av kostnad."
+>
+  <section class="relative pt-40 pb-24 px-6 overflow-hidden bg-dark">
+    <div class="absolute inset-0" style="background: radial-gradient(ellipse at 30% 40%, #10242f 0%, #0b1a22 60%, #071217 100%);"></div>
+    <div class="absolute top-[10%] right-[5%] w-[500px] h-[500px] bg-gold/10 rounded-full blur-[140px] hero-glow"></div>
+    <div class="absolute inset-y-0 right-0 flex items-center pointer-events-none">
+      <Mobula class="w-[min(80vw,1000px)] translate-x-[30%] opacity-[0.12]" c1="#7af0c8" c2="#7af0c8" c3="#7af0c8" />
+    </div>
+
+    <div class="relative max-w-5xl mx-auto">
+      <p class="font-mono text-gold tracking-[0.2em] uppercase text-sm mb-6">
+        <a href="/innspilling" class="hover:text-gold-light">Innspilling</a> / Strykere & klassisk
+      </p>
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif font-semibold leading-[1.05] mb-8 max-w-4xl">
+        Strykere og klassiske<br />besetninger
+      </h1>
+      <p class="text-cream/80 text-xl md:text-2xl max-w-2xl leading-relaxed">
+        Fra solo og kammer til full strykeorkester. Vi samarbeider fast med profesjonelle strykemusikere og har rom som gir klangen pust.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-28 px-6">
+    <div class="max-w-5xl mx-auto">
+      <div class="mb-16 fade-in">
+        <p class="font-mono text-gold tracking-[0.15em] uppercase text-xs mb-4">01 — Hva vi spiller inn</p>
+        <h2 class="text-3xl md:text-4xl font-serif font-semibold leading-[1.05] max-w-2xl">Klassisk kvalitet,<br />hele veien</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10 fade-in">
+        <div>
+          <h3 class="text-xl font-serif font-semibold mb-3 text-gold">Solo og kammer</h3>
+          <p class="text-cream/75 leading-relaxed">
+            Fra fiolinsolo til strykekvartett og blåseensembler. Vi velger mikrofoner, plassering og rom etter besetning og repertoar.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-xl font-serif font-semibold mb-3 text-gold">Strykeorkester</h3>
+          <p class="text-cream/75 leading-relaxed">
+            Hovedstudioet tar komfortabelt inntil ca. 12 strykere i live-oppsett. For større besetninger tilrettelegger vi med overdubs eller ekstern lokasjon.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-xl font-serif font-semibold mb-3 text-gold">Klassiske vokalister og kor</h3>
+          <p class="text-cream/75 leading-relaxed">
+            Solo-vokalister, små kor, og ensemble med barokke eller moderne klassiske repertoar. Vi jobber tørt eller med naturlig klang etter preferanse.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-xl font-serif font-semibold mb-3 text-gold">Noter og arrangementer</h3>
+          <p class="text-cream/75 leading-relaxed">
+            Har du musikken, men mangler noter? Se <a href="/musikk/noter-for-daw" class="text-gold hover:underline">Noter til musikere</a> — vi lager ferdige partitur og stemmer.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Fellesinnspillinger -->
+  <section class="py-28 px-6 bg-dark-light">
+    <div class="max-w-5xl mx-auto">
+      <div class="mb-12 fade-in">
+        <p class="font-mono text-gold tracking-[0.15em] uppercase text-xs mb-4">02 — Fellesinnspillinger</p>
+        <h2 class="text-3xl md:text-4xl font-serif font-semibold leading-[1.05] max-w-2xl mb-6">Strykere til en brøkdel av prisen</h2>
+        <p class="text-cream/85 text-lg leading-relaxed max-w-3xl">
+          Ekte strykere er dyrt. Det vet vi. Derfor arrangerer vi jevnlige fellesinnspillinger der flere artister og komponister deler kostnaden for én innspillingsdag med profesjonelle strykere.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 fade-in">
+        <div class="p-6 border border-cream/10">
+          <p class="font-mono text-gold text-xs tracking-widest uppercase mb-3">01</p>
+          <h3 class="text-xl font-serif font-semibold mb-2">Meld interesse</h3>
+          <p class="text-cream/75 text-sm leading-relaxed">Send oss notene eller en skisse — har du ikke noter, kan vi lage strykearrangementet for deg.</p>
+        </div>
+        <div class="p-6 border border-cream/10">
+          <p class="font-mono text-gold text-xs tracking-widest uppercase mb-3">02</p>
+          <h3 class="text-xl font-serif font-semibold mb-2">Vi samler låter</h3>
+          <p class="text-cream/75 text-sm leading-relaxed">Når nok låter er bekreftet, setter vi en dato og booker musikerne.</p>
+        </div>
+        <div class="p-6 border border-cream/10">
+          <p class="font-mono text-gold text-xs tracking-widest uppercase mb-3">03</p>
+          <h3 class="text-xl font-serif font-semibold mb-2">Innspillingsdag</h3>
+          <p class="text-cream/75 text-sm leading-relaxed">Vi spiller inn låtene etter hverandre. Du får stems og ferdige opptak.</p>
+        </div>
+      </div>
+
+      <p class="mt-10 text-cream/70 text-sm max-w-3xl">
+        Fellesinnspillinger er en måte å få tilgang til profesjonelle strykere på et budsjett som passer både amatører og profesjonelle artister. <a href="/kontakt" class="text-gold hover:underline">Ta kontakt</a> for å bli informert om neste session.
+      </p>
+    </div>
+  </section>
+
+  <PasserFor
+    intro="Ekte strykere hører hjemme i profesjonelle prosjekter. Vi gjør terskelen lavere, uten å senke kvaliteten."
+    items={[
+      'Du er komponist med et prosjekt som krever ekte strykere.',
+      'Du er artist som vil ha levende strykearrangementer på låta di.',
+      'Du leder et kammerensemble som skal spille inn repertoar.',
+      'Du har en låt som trenger ekte strykere — uten å koste skjorta.',
+      'Du jobber med film, reklame eller scene og trenger klassisk lyd.',
+    ]}
+  />
+
+  <section class="py-28 px-6">
+    <div class="max-w-3xl mx-auto text-center fade-in">
+      <h2 class="text-3xl md:text-5xl font-serif font-semibold mb-6 leading-tight">Book strykere</h2>
+      <p class="text-cream/80 text-lg mb-10 max-w-xl mx-auto">Fortell oss om prosjektet, ensemble og budsjett — vi finner løsningen som passer.</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/kontakt" class="inline-flex items-center justify-center gap-3 px-8 py-4 bg-gold text-dark font-semibold tracking-wide uppercase text-sm hover:bg-gold-light transition-colors">
+          <span class="w-2 h-2 rounded-full bg-dark bpm-pulse"></span>
+          Ta kontakt
+        </a>
+        <a href="/innspilling" class="inline-flex items-center justify-center px-8 py-4 border border-cream/20 text-cream tracking-wide uppercase text-sm hover:border-gold hover:text-gold transition-all">
+          Se andre tjenester
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

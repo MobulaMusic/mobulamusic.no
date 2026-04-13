@@ -1,0 +1,92 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Mobula from '../../components/Mobula.astro';
+import PasserFor from '../../components/PasserFor.astro';
+---
+
+<Layout
+  title="Vokalinnspilling | Mobula Music"
+  description="Vokalinnspilling for artister, korister, solister og klassiske vokalister."
+>
+  <section class="relative pt-40 pb-24 px-6 overflow-hidden bg-dark">
+    <div class="absolute inset-0" style="background: radial-gradient(ellipse at 30% 40%, #10242f 0%, #0b1a22 60%, #071217 100%);"></div>
+    <div class="absolute top-[10%] right-[5%] w-[500px] h-[500px] bg-gold/10 rounded-full blur-[140px] hero-glow"></div>
+    <div class="absolute inset-y-0 right-0 flex items-center pointer-events-none">
+      <Mobula class="w-[min(80vw,1000px)] translate-x-[30%] opacity-[0.12]" c1="#7af0c8" c2="#7af0c8" c3="#7af0c8" />
+    </div>
+
+    <div class="relative max-w-5xl mx-auto">
+      <p class="font-mono text-gold tracking-[0.2em] uppercase text-sm mb-6">
+        <a href="/innspilling" class="hover:text-gold-light">Innspilling</a> / Vokalinnspilling
+      </p>
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif font-semibold leading-[1.05] mb-8 max-w-4xl">
+        Få stemmen din til å skinne
+      </h1>
+      <p class="text-cream/80 text-xl md:text-2xl max-w-2xl leading-relaxed">
+        Pop, soul, indie, klassisk, kor eller eksperimentell. Vi tilpasser mikrofoner, rom og arbeidsmåte etter din stemme og sjanger.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-28 px-6">
+    <div class="max-w-5xl mx-auto">
+      <div class="mb-16 fade-in">
+        <p class="font-mono text-gold tracking-[0.15em] uppercase text-xs mb-4">01 — Hva vi tilbyr</p>
+        <h2 class="text-3xl md:text-4xl font-serif font-semibold leading-[1.05] max-w-2xl">Rom tilpasset stemmen</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10 fade-in">
+        <div>
+          <h3 class="text-xl font-serif font-semibold mb-3 text-gold">Lead-vokal</h3>
+          <p class="text-cream/75 leading-relaxed">
+            Vi har flere vokalrom med ulik karakter — fra det tørre og nære til det mer luftige. Velg det som passer låta og stemmen din.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-xl font-serif font-semibold mb-3 text-gold">Korstemmer og backing</h3>
+          <p class="text-cream/75 leading-relaxed">
+            Lag på lag med backing-vokal, stemmeføring og harmonier. Flere av vokalrommene våre er koblet til samme kontrollrom, så det går raskt å bygge opp.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-xl font-serif font-semibold mb-3 text-gold">Klassisk solo og kor</h3>
+          <p class="text-cream/75 leading-relaxed">
+            Hovedstudioet vårt har naturlig klang som fungerer for klassiske vokalister og mindre kor. Vi kan også jobbe tørt og legge til romklang i etterkant.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-xl font-serif font-semibold mb-3 text-gold">Produsent i rommet</h3>
+          <p class="text-cream/75 leading-relaxed">
+            Trenger du noen til å pushe, foreslå fraseringer eller velge takes? Produsent er tilgjengelig på forespørsel.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <PasserFor
+    items={[
+      'Du er artist og trenger profesjonell lead-vokal på en utgivelse.',
+      'Du skal spille inn backing-vokal eller korstemmer.',
+      'Du er klassisk vokalist og vil spille inn repertoar eller søknadsopptak.',
+      'Du leder et kor som trenger innspilling.',
+      'Du vil ha en trygg ramme rundt vokalopptakene — ikke stress.',
+    ]}
+  />
+
+  <section class="py-28 px-6">
+    <div class="max-w-3xl mx-auto text-center fade-in">
+      <h2 class="text-3xl md:text-5xl font-serif font-semibold mb-6 leading-tight">Book vokalinnspilling</h2>
+      <p class="text-cream/80 text-lg mb-10 max-w-xl mx-auto">Fortell oss om prosjektet, så finner vi tid og rom som passer.</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/kontakt" class="inline-flex items-center justify-center gap-3 px-8 py-4 bg-gold text-dark font-semibold tracking-wide uppercase text-sm hover:bg-gold-light transition-colors">
+          <span class="w-2 h-2 rounded-full bg-dark bpm-pulse"></span>
+          Ta kontakt
+        </a>
+        <a href="/innspilling" class="inline-flex items-center justify-center px-8 py-4 border border-cream/20 text-cream tracking-wide uppercase text-sm hover:border-gold hover:text-gold transition-all">
+          Se andre tjenester
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

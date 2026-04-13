@@ -1,0 +1,93 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Mobula from '../../components/Mobula.astro';
+import PasserFor from '../../components/PasserFor.astro';
+---
+
+<Layout
+  title="Innspilling av band & ensemble | Mobula Music"
+  description="Innspilling av band, korps, kor og større besetninger. Hovedstudio med flere tilkoblede rom."
+>
+  <section class="relative pt-40 pb-24 px-6 overflow-hidden bg-dark">
+    <div class="absolute inset-0" style="background: radial-gradient(ellipse at 30% 40%, #10242f 0%, #0b1a22 60%, #071217 100%);"></div>
+    <div class="absolute top-[10%] right-[5%] w-[500px] h-[500px] bg-gold/10 rounded-full blur-[140px] hero-glow"></div>
+    <div class="absolute inset-y-0 right-0 flex items-center pointer-events-none">
+      <Mobula class="w-[min(80vw,1000px)] translate-x-[30%] opacity-[0.12]" c1="#7af0c8" c2="#7af0c8" c3="#7af0c8" />
+    </div>
+
+    <div class="relative max-w-5xl mx-auto">
+      <p class="font-mono text-gold tracking-[0.2em] uppercase text-sm mb-6">
+        <a href="/innspilling" class="hover:text-gold-light">Innspilling</a> / Band & ensemble
+      </p>
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif font-semibold leading-[1.05] mb-8 max-w-4xl">
+        Når dere spiller sammen
+      </h1>
+      <p class="text-cream/80 text-xl md:text-2xl max-w-2xl leading-relaxed">
+        Band, korps, kor og andre store besetninger. Hovedstudio på 50 m² med flere tilkoblede innspillingsrom — slik at dere kan spille sammen med både energi og separasjon.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-28 px-6">
+    <div class="max-w-5xl mx-auto">
+      <div class="mb-16 fade-in">
+        <p class="font-mono text-gold tracking-[0.15em] uppercase text-xs mb-4">01 — Hva vi har</p>
+        <h2 class="text-3xl md:text-4xl font-serif font-semibold leading-[1.05] max-w-2xl">Rom som henger sammen</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10 fade-in">
+        <div>
+          <h3 class="text-xl font-serif font-semibold mb-3 text-gold">Hovedstudio på 50 m²</h3>
+          <p class="text-cream/75 leading-relaxed">
+            Stort nok for bandoppsett med trommer, bass, gitar og keys samtidig. Naturlig klang som fungerer både for tette moderne produksjoner og mer luftige akustiske opptak.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-xl font-serif font-semibold mb-3 text-gold">Tilkoblede vokal- og isolasjonsrom</h3>
+          <p class="text-cream/75 leading-relaxed">
+            Flere rom som kobles til samme kontrollrom. Spill inn live uten at alt lekker inn i hver mikrofon — eller flytt vokalisten til eget rom når dere skal gjøre keepers.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-xl font-serif font-semibold mb-3 text-gold">Korps og kor</h3>
+          <p class="text-cream/75 leading-relaxed">
+            Hovedstudioet tåler mindre korps- og korbesetninger. Vi tilpasser mikrofonoppsett etter ensemblet og musikken.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-xl font-serif font-semibold mb-3 text-gold">Tekniker og produsent</h3>
+          <p class="text-cream/75 leading-relaxed">
+            Erfarne teknikere som vet hvordan man henter det beste ut av gruppedynamikk. Produsent tilgjengelig hvis dere vil ha ekstra hjelp med arrangement og valg underveis.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <PasserFor
+    intro="Band som spiller sammen, låter bedre sammen. Vi legger til rette for at dere kan gjøre nettopp det."
+    items={[
+      'Dere er et band som skal spille inn EP eller album.',
+      'Dere er et korps eller kor som vil ha en profesjonell innspilling.',
+      'Dere er et coverband eller tributeband som vil lage et livebilde.',
+      'Dere er et skoleband eller hobbyensemble som vil prøve studio.',
+      'Dere vil spille sammen, ikke spor for spor.',
+    ]}
+  />
+
+  <section class="py-28 px-6">
+    <div class="max-w-3xl mx-auto text-center fade-in">
+      <h2 class="text-3xl md:text-5xl font-serif font-semibold mb-6 leading-tight">Book innspilling</h2>
+      <p class="text-cream/80 text-lg mb-10 max-w-xl mx-auto">Fortell oss om besetningen, repertoaret og tidsrammen, så gir vi et fast&nbsp;tilbud.</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/kontakt" class="inline-flex items-center justify-center gap-3 px-8 py-4 bg-gold text-dark font-semibold tracking-wide uppercase text-sm hover:bg-gold-light transition-colors">
+          <span class="w-2 h-2 rounded-full bg-dark bpm-pulse"></span>
+          Ta kontakt
+        </a>
+        <a href="/innspilling" class="inline-flex items-center justify-center px-8 py-4 border border-cream/20 text-cream tracking-wide uppercase text-sm hover:border-gold hover:text-gold transition-all">
+          Se andre tjenester
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
