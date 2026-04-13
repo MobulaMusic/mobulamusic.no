@@ -9,9 +9,10 @@ import Faq from '../components/Faq.astro';
 <Layout
   title="Priser & Pakker — Studio, Mix, Mastering & Komposisjon | Mobula Music"
   description="Gjennomsiktige priser for innspilling, mix, mastering, podkast og musikkproduksjon. Startpakker fra 4 500 kr inkl. mva. Fast tilbud før vi starter, ingen overraskelser."
+  altLang="/en/pricing"
 >
   <!-- Hero -->
-  <section class="relative pt-40 pb-24 px-6 overflow-hidden bg-dark">
+  <section class="relative pt-32 md:pt-40 pb-20 md:pb-24 px-6 overflow-hidden bg-dark">
     <div class="absolute inset-0" style="background: radial-gradient(ellipse at 30% 40%, #10242f 0%, #0b1a22 60%, #071217 100%);"></div>
     <div class="absolute top-[10%] right-[5%] w-[500px] h-[500px] bg-gold/10 rounded-full blur-[140px] hero-glow"></div>
     <div class="absolute inset-y-0 right-0 flex items-center pointer-events-none">
@@ -158,57 +159,57 @@ import Faq from '../components/Faq.astro';
       </div>
 
       <div class="divide-y divide-cream/10 border-y border-cream/10 fade-in">
-        <div class="grid grid-cols-1 md:grid-cols-[1fr_auto_auto] gap-4 md:gap-10 py-6 items-baseline">
+        <div class="grid grid-cols-[1fr_auto] md:grid-cols-[1fr_auto_auto] gap-3 md:gap-10 py-6 items-baseline">
           <div>
             <h3 class="text-xl font-serif font-semibold mb-1">Studio med tekniker</h3>
             <p class="text-cream/60 text-sm">Innspilling, opptak, overdubs</p>
           </div>
-          <p class="font-mono text-cream/50 text-xs tracking-widest uppercase">Fra <span class="text-cream/40 normal-case">· inkl. mva</span></p>
+          <p class="hidden md:block font-mono text-cream/50 text-xs tracking-widest uppercase">Fra <span class="text-cream/40 normal-case">· inkl. mva</span></p>
           <p class="font-serif text-gold text-2xl md:text-3xl font-semibold">1 500 kr/t</p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-[1fr_auto_auto] gap-4 md:gap-10 py-6 items-baseline">
+        <div class="grid grid-cols-[1fr_auto] md:grid-cols-[1fr_auto_auto] gap-3 md:gap-10 py-6 items-baseline">
           <div>
             <h3 class="text-xl font-serif font-semibold mb-1">Mix</h3>
             <p class="text-cream/60 text-sm">Enkeltspor, stem-mix, full produksjon</p>
           </div>
-          <p class="font-mono text-cream/50 text-xs tracking-widest uppercase">Fra <span class="text-cream/40 normal-case">· inkl. mva</span></p>
+          <p class="hidden md:block font-mono text-cream/50 text-xs tracking-widest uppercase">Fra <span class="text-cream/40 normal-case">· inkl. mva</span></p>
           <p class="font-serif text-gold text-2xl md:text-3xl font-semibold">850 kr/t</p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-[1fr_auto_auto] gap-4 md:gap-10 py-6 items-baseline">
+        <div class="grid grid-cols-[1fr_auto] md:grid-cols-[1fr_auto_auto] gap-3 md:gap-10 py-6 items-baseline">
           <div>
             <h3 class="text-xl font-serif font-semibold mb-1">Mastering</h3>
             <p class="text-cream/60 text-sm">Pr. låt, klar for streaming</p>
           </div>
-          <p class="font-mono text-cream/50 text-xs tracking-widest uppercase">Fra <span class="text-cream/40 normal-case">· inkl. mva</span></p>
+          <p class="hidden md:block font-mono text-cream/50 text-xs tracking-widest uppercase">Fra <span class="text-cream/40 normal-case">· inkl. mva</span></p>
           <p class="font-serif text-gold text-2xl md:text-3xl font-semibold">1 000 kr/låt</p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-[1fr_auto_auto] gap-4 md:gap-10 py-6 items-baseline">
+        <div class="grid grid-cols-[1fr_auto] md:grid-cols-[1fr_auto_auto] gap-3 md:gap-10 py-6 items-baseline">
           <div>
             <h3 class="text-xl font-serif font-semibold mb-1">Komposisjon &amp; arrangement</h3>
             <p class="text-cream/60 text-sm">Musikk til film, scene, reklame, event</p>
           </div>
-          <p class="font-mono text-cream/50 text-xs tracking-widest uppercase">Fra <span class="text-cream/40 normal-case">· inkl. mva</span></p>
+          <p class="hidden md:block font-mono text-cream/50 text-xs tracking-widest uppercase">Fra <span class="text-cream/40 normal-case">· inkl. mva</span></p>
           <p class="font-serif text-gold text-2xl md:text-3xl font-semibold">Tilbud</p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-[1fr_auto_auto] gap-4 md:gap-10 py-6 items-baseline">
+        <div class="grid grid-cols-[1fr_auto] md:grid-cols-[1fr_auto_auto] gap-3 md:gap-10 py-6 items-baseline">
           <div>
             <h3 class="text-xl font-serif font-semibold mb-1">Noteproduksjon</h3>
             <p class="text-cream/60 text-sm">Fra DAW-prosjekt, lydopptak eller andre kilder</p>
           </div>
-          <p class="font-mono text-cream/50 text-xs tracking-widest uppercase">Fra <span class="text-cream/40 normal-case">· inkl. mva</span></p>
+          <p class="hidden md:block font-mono text-cream/50 text-xs tracking-widest uppercase">Fra <span class="text-cream/40 normal-case">· inkl. mva</span></p>
           <p class="font-serif text-gold text-2xl md:text-3xl font-semibold">850 kr/t</p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-[1fr_auto_auto] gap-4 md:gap-10 py-6 items-baseline">
+        <div class="grid grid-cols-[1fr_auto] md:grid-cols-[1fr_auto_auto] gap-3 md:gap-10 py-6 items-baseline">
           <div>
             <h3 class="text-xl font-serif font-semibold mb-1">Podkast-redigering</h3>
             <p class="text-cream/60 text-sm">Klipping, lyddesign, musikk</p>
           </div>
-          <p class="font-mono text-cream/50 text-xs tracking-widest uppercase">Fra <span class="text-cream/40 normal-case">· inkl. mva</span></p>
+          <p class="hidden md:block font-mono text-cream/50 text-xs tracking-widest uppercase">Fra <span class="text-cream/40 normal-case">· inkl. mva</span></p>
           <p class="font-serif text-gold text-2xl md:text-3xl font-semibold">950 kr/t</p>
         </div>
       </div>

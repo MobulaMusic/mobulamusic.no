@@ -1,0 +1,286 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Mobula from '../../components/Mobula.astro';
+import PasserFor from '../../components/PasserFor.astro';
+import SlikJobberVi from '../../components/SlikJobberVi.astro';
+import Faq from '../../components/Faq.astro';
+---
+
+<Layout
+  title="Pricing & Packages — Studio, Mix, Mastering & Composition | Mobula Music"
+  description="Transparent prices in NOK for recording, mix, mastering, podcast and music production. Starter packages from 4 500 NOK incl. VAT. Fixed quote before we start."
+  lang="en"
+  altLang="/priser"
+>
+  <!-- Hero -->
+  <section class="relative pt-32 md:pt-40 pb-20 md:pb-24 px-6 overflow-hidden bg-dark">
+    <div class="absolute inset-0" style="background: radial-gradient(ellipse at 30% 40%, #10242f 0%, #0b1a22 60%, #071217 100%);"></div>
+    <div class="absolute top-[10%] right-[5%] w-[500px] h-[500px] bg-gold/10 rounded-full blur-[140px] hero-glow"></div>
+    <div class="absolute inset-y-0 right-0 flex items-center pointer-events-none">
+      <Mobula class="w-[min(80vw,900px)] translate-x-[30%] opacity-[0.1]" c1="#7af0c8" c2="#7af0c8" c3="#7af0c8" />
+    </div>
+
+    <div class="relative max-w-5xl mx-auto">
+      <p class="font-mono text-gold tracking-[0.2em] uppercase text-sm mb-6">Pricing &amp; packages</p>
+      <h1 class="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-serif font-semibold leading-[1.02] mb-8 max-w-4xl">
+        It should be easy<br />to ask for a price.
+      </h1>
+      <p class="text-cream/80 text-xl md:text-2xl max-w-2xl leading-relaxed">
+        Starting points below. The actual quote you get after a short conversation —
+        we adapt to your project and your budget.
+      </p>
+    </div>
+  </section>
+
+  <!-- Passer for deg uansett -->
+  <PasserFor
+    title="Built for you, whatever the project"
+    label="Welcome"
+    intro="Studio can feel intimidating the first time. It doesn't need to be."
+    items={[
+      'You\'ve never been in a studio before, and just want to try.',
+      'You have a phone demo you want to turn into something you can share.',
+      'You\'re a hobby musician saving up for a day in the studio.',
+      'You\'re a professional artist with a bigger project on the way.',
+      'You\'re a teacher, director or producer who needs help with a production.',
+    ]}
+  />
+
+  <!-- Packages -->
+  <section class="py-28 px-6 bg-dark-light">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex flex-col md:flex-row md:items-end md:justify-between mb-16 gap-6 fade-in">
+        <div>
+          <p class="font-mono text-gold tracking-[0.15em] uppercase text-xs mb-4">01 — Starter packages</p>
+          <h2 class="text-4xl md:text-5xl font-serif font-semibold leading-[1.05] max-w-2xl">Good places<br />to start</h2>
+        </div>
+        <p class="text-cream/70 text-base md:text-lg max-w-md leading-relaxed">
+          Three simple packages that cover most short jobs. We always send a fixed quote
+          before we start, so you don't get any surprises.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 fade-in">
+        <!-- Demo -->
+        <div class="relative p-8 md:p-10 border border-cream/10 hover:border-gold/50 transition-colors duration-500 group flex flex-col">
+          <p class="font-mono text-gold text-xs tracking-widest uppercase mb-6">01 — Demo</p>
+          <h3 class="text-2xl md:text-3xl font-serif font-semibold mb-3">First time in studio</h3>
+          <p class="font-mono text-cream/60 text-[11px] tracking-widest uppercase mb-4">Suited for</p>
+          <p class="text-cream/85 text-sm leading-relaxed mb-6">
+            Yourself, friends, family, an audition or an application. A nice way to try the studio without committing to a big project.
+          </p>
+          <div class="border-t border-cream/10 pt-6 mb-6">
+            <p class="font-mono text-cream/50 text-xs uppercase tracking-widest mb-2">From <span class="text-cream/40 normal-case">· incl. VAT</span></p>
+            <p class="font-serif text-gold text-4xl md:text-5xl font-semibold">4 500 NOK</p>
+            <p class="text-cream/60 text-sm mt-2">3 hours in the studio + simple mix</p>
+          </div>
+          <ul class="text-cream/80 text-sm space-y-2 mb-6">
+            <li class="flex gap-2"><span class="text-gold">—</span> Pre-session walkthrough</li>
+            <li class="flex gap-2"><span class="text-gold">—</span> Vocals + guitar/piano/etc.</li>
+            <li class="flex gap-2"><span class="text-gold">—</span> Simple mix delivered within 1 week</li>
+            <li class="flex gap-2"><span class="text-gold">—</span> You own the recording</li>
+          </ul>
+          <div class="flex flex-wrap gap-2 mb-6">
+            <span class="text-[11px] font-mono tracking-wider uppercase px-2.5 py-1 border border-gold/40 text-gold/90">✓ Listening</span>
+            <span class="text-[11px] font-mono tracking-wider uppercase px-2.5 py-1 border border-gold/40 text-gold/90">✓ Audition</span>
+            <span class="text-[11px] font-mono tracking-wider uppercase px-2.5 py-1 border border-cream/15 text-cream/40 line-through decoration-cream/30">Streaming</span>
+          </div>
+          <p class="text-cream/55 text-xs leading-relaxed mb-6 border-l-2 border-gold/40 pl-3">
+            Want to release on Spotify or Apple Music? You'll need the <strong class="text-cream/80">Single package</strong> — it includes a better mix and mastering required for streaming.
+          </p>
+          <a href="/en/contact" class="mt-auto inline-flex items-center gap-2 text-gold text-sm font-medium group-hover:gap-3 transition-all">
+            Ask about this <span aria-hidden="true">→</span>
+          </a>
+        </div>
+
+        <!-- Single -->
+        <div class="relative p-8 md:p-10 border border-gold/40 bg-gold/[0.03] hover:border-gold transition-colors duration-500 group flex flex-col">
+          <p class="font-mono text-gold text-xs tracking-widest uppercase mb-6">02 — Single</p>
+          <h3 class="text-2xl md:text-3xl font-serif font-semibold mb-3">One song, ready for Spotify</h3>
+          <p class="font-mono text-cream/60 text-[11px] tracking-widest uppercase mb-4">Suited for</p>
+          <p class="text-cream/85 text-sm leading-relaxed mb-6">
+            Official release on Spotify, Apple Music, YouTube and elsewhere. Singer-songwriter, vocalist or band releasing their first or next song.
+          </p>
+          <div class="border-t border-cream/10 pt-6 mb-6">
+            <p class="font-mono text-cream/50 text-xs uppercase tracking-widest mb-2">From <span class="text-cream/40 normal-case">· incl. VAT</span></p>
+            <p class="font-serif text-gold text-4xl md:text-5xl font-semibold">7 500 NOK</p>
+            <p class="text-cream/60 text-sm mt-2">1 full studio day + mix and mastering</p>
+          </div>
+          <ul class="text-cream/80 text-sm space-y-2 mb-6">
+            <li class="flex gap-2"><span class="text-gold">—</span> Planning meeting</li>
+            <li class="flex gap-2"><span class="text-gold">—</span> One full recording day (~8 h)</li>
+            <li class="flex gap-2"><span class="text-gold">—</span> Detailed full mix</li>
+            <li class="flex gap-2"><span class="text-gold">—</span> <strong class="text-cream">Mastering ready for streaming</strong></li>
+          </ul>
+          <div class="flex flex-wrap gap-2 mb-6">
+            <span class="text-[11px] font-mono tracking-wider uppercase px-2.5 py-1 border border-gold/40 text-gold/90">✓ Listening</span>
+            <span class="text-[11px] font-mono tracking-wider uppercase px-2.5 py-1 border border-gold/40 text-gold/90">✓ Streaming</span>
+            <span class="text-[11px] font-mono tracking-wider uppercase px-2.5 py-1 border border-gold/40 text-gold/90">✓ Radio</span>
+          </div>
+          <a href="/en/contact" class="mt-auto inline-flex items-center gap-2 text-gold text-sm font-medium group-hover:gap-3 transition-all">
+            Ask about this <span aria-hidden="true">→</span>
+          </a>
+        </div>
+
+        <!-- Project -->
+        <div class="relative p-8 md:p-10 border border-cream/10 hover:border-gold/50 transition-colors duration-500 group flex flex-col">
+          <p class="font-mono text-gold text-xs tracking-widest uppercase mb-6">03 — Project</p>
+          <h3 class="text-2xl md:text-3xl font-serif font-semibold mb-3">EP, album or score</h3>
+          <p class="font-mono text-cream/60 text-[11px] tracking-widest uppercase mb-4">Suited for</p>
+          <p class="text-cream/85 text-sm leading-relaxed mb-6">
+            Larger productions: EP, album, film score, commercial release. We design a plan around scope, ensemble and delivery date.
+          </p>
+          <div class="border-t border-cream/10 pt-6 mb-6">
+            <p class="font-mono text-cream/50 text-xs uppercase tracking-widest mb-2">From <span class="text-cream/40 normal-case">· incl. VAT</span></p>
+            <p class="font-serif text-gold text-4xl md:text-5xl font-semibold">Quote</p>
+            <p class="text-cream/60 text-sm mt-2">Always a fixed price before we start</p>
+          </div>
+          <ul class="text-cream/80 text-sm space-y-2 mb-6">
+            <li class="flex gap-2"><span class="text-gold">—</span> Pre-production and budget</li>
+            <li class="flex gap-2"><span class="text-gold">—</span> Multiple recording sessions</li>
+            <li class="flex gap-2"><span class="text-gold">—</span> Producer, mix, mastering</li>
+            <li class="flex gap-2"><span class="text-gold">—</span> Close follow-up throughout</li>
+          </ul>
+          <div class="flex flex-wrap gap-2 mb-6">
+            <span class="text-[11px] font-mono tracking-wider uppercase px-2.5 py-1 border border-gold/40 text-gold/90">✓ Streaming</span>
+            <span class="text-[11px] font-mono tracking-wider uppercase px-2.5 py-1 border border-gold/40 text-gold/90">✓ Radio</span>
+            <span class="text-[11px] font-mono tracking-wider uppercase px-2.5 py-1 border border-gold/40 text-gold/90">✓ Commercial</span>
+          </div>
+          <a href="/en/contact" class="mt-auto inline-flex items-center gap-2 text-gold text-sm font-medium group-hover:gap-3 transition-all">
+            Get a quote <span aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hourly rates -->
+  <section class="py-28 px-6">
+    <div class="max-w-5xl mx-auto">
+      <div class="mb-16 fade-in">
+        <p class="font-mono text-gold tracking-[0.15em] uppercase text-xs mb-4">02 — Hourly rates</p>
+        <h2 class="text-4xl md:text-5xl font-serif font-semibold leading-[1.05] max-w-2xl">Other services,<br />by the hour</h2>
+      </div>
+
+      <div class="divide-y divide-cream/10 border-y border-cream/10 fade-in">
+        <div class="grid grid-cols-[1fr_auto] md:grid-cols-[1fr_auto_auto] gap-3 md:gap-10 py-6 items-baseline">
+          <div>
+            <h3 class="text-xl font-serif font-semibold mb-1">Studio with engineer</h3>
+            <p class="text-cream/60 text-sm">Recording, tracking, overdubs</p>
+          </div>
+          <p class="hidden md:block font-mono text-cream/50 text-xs tracking-widest uppercase">From <span class="text-cream/40 normal-case">· incl. VAT</span></p>
+          <p class="font-serif text-gold text-2xl md:text-3xl font-semibold">1 500 NOK/h</p>
+        </div>
+
+        <div class="grid grid-cols-[1fr_auto] md:grid-cols-[1fr_auto_auto] gap-3 md:gap-10 py-6 items-baseline">
+          <div>
+            <h3 class="text-xl font-serif font-semibold mb-1">Mix</h3>
+            <p class="text-cream/60 text-sm">Single track, stem mix, full production</p>
+          </div>
+          <p class="hidden md:block font-mono text-cream/50 text-xs tracking-widest uppercase">From <span class="text-cream/40 normal-case">· incl. VAT</span></p>
+          <p class="font-serif text-gold text-2xl md:text-3xl font-semibold">850 NOK/h</p>
+        </div>
+
+        <div class="grid grid-cols-[1fr_auto] md:grid-cols-[1fr_auto_auto] gap-3 md:gap-10 py-6 items-baseline">
+          <div>
+            <h3 class="text-xl font-serif font-semibold mb-1">Mastering</h3>
+            <p class="text-cream/60 text-sm">Per song, ready for streaming</p>
+          </div>
+          <p class="hidden md:block font-mono text-cream/50 text-xs tracking-widest uppercase">From <span class="text-cream/40 normal-case">· incl. VAT</span></p>
+          <p class="font-serif text-gold text-2xl md:text-3xl font-semibold">1 000 NOK/song</p>
+        </div>
+
+        <div class="grid grid-cols-[1fr_auto] md:grid-cols-[1fr_auto_auto] gap-3 md:gap-10 py-6 items-baseline">
+          <div>
+            <h3 class="text-xl font-serif font-semibold mb-1">Composition &amp; arrangement</h3>
+            <p class="text-cream/60 text-sm">Music for film, stage, advertising, event</p>
+          </div>
+          <p class="hidden md:block font-mono text-cream/50 text-xs tracking-widest uppercase">From <span class="text-cream/40 normal-case">· incl. VAT</span></p>
+          <p class="font-serif text-gold text-2xl md:text-3xl font-semibold">Quote</p>
+        </div>
+
+        <div class="grid grid-cols-[1fr_auto] md:grid-cols-[1fr_auto_auto] gap-3 md:gap-10 py-6 items-baseline">
+          <div>
+            <h3 class="text-xl font-serif font-semibold mb-1">Score preparation</h3>
+            <p class="text-cream/60 text-sm">From DAW project, audio recording or other source</p>
+          </div>
+          <p class="hidden md:block font-mono text-cream/50 text-xs tracking-widest uppercase">From <span class="text-cream/40 normal-case">· incl. VAT</span></p>
+          <p class="font-serif text-gold text-2xl md:text-3xl font-semibold">850 NOK/h</p>
+        </div>
+
+        <div class="grid grid-cols-[1fr_auto] md:grid-cols-[1fr_auto_auto] gap-3 md:gap-10 py-6 items-baseline">
+          <div>
+            <h3 class="text-xl font-serif font-semibold mb-1">Podcast editing</h3>
+            <p class="text-cream/60 text-sm">Editing, sound design, music</p>
+          </div>
+          <p class="hidden md:block font-mono text-cream/50 text-xs tracking-widest uppercase">From <span class="text-cream/40 normal-case">· incl. VAT</span></p>
+          <p class="font-serif text-gold text-2xl md:text-3xl font-semibold">950 NOK/h</p>
+        </div>
+      </div>
+
+      <p class="mt-8 text-cream/60 text-sm leading-relaxed max-w-2xl">
+        All prices are indicative and include VAT. We always send a fixed quote before we start,
+        and often offer better rates for students, hobbyists and longer projects.
+        <strong class="text-cream/90">Just ask — we don't bite.</strong>
+      </p>
+    </div>
+  </section>
+
+  <!-- What affects the price -->
+  <section class="py-28 px-6 bg-dark-light">
+    <div class="max-w-5xl mx-auto">
+      <div class="mb-16 fade-in">
+        <p class="font-mono text-gold tracking-[0.15em] uppercase text-xs mb-4">03 — Transparency</p>
+        <h2 class="text-4xl md:text-5xl font-serif font-semibold leading-[1.05] max-w-2xl">What affects the price?</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10 fade-in">
+        <div>
+          <h3 class="text-xl font-serif font-semibold mb-3 text-gold">Scope</h3>
+          <p class="text-cream/75 leading-relaxed">
+            One song costs less than an EP. A 30-second commercial costs less than a feature film score. We calculate based on actual workload.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-xl font-serif font-semibold mb-3 text-gold">Number of musicians</h3>
+          <p class="text-cream/75 leading-relaxed">
+            A solo vocal recording is affordable. A string quartet or band costs more because there are more setup and technical demands. Ask about shared sessions if you want to split the cost.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-xl font-serif font-semibold mb-3 text-gold">Delivery time</h3>
+          <p class="text-cream/75 leading-relaxed">
+            If you have time, it costs the standard rate. If you need something done by tomorrow, we have to prioritise — that costs a bit more.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-xl font-serif font-semibold mb-3 text-gold">Rights</h3>
+          <p class="text-cream/75 leading-relaxed">
+            Your own song you release yourself: standard rate. Commercial use (advertising, podcast, film) of music we create for you with sync or exclusive rights: we agree on terms and write a clear contract.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-28 px-6">
+    <div class="max-w-3xl mx-auto text-center fade-in">
+      <h2 class="text-3xl md:text-5xl font-serif font-semibold mb-6 leading-tight">
+        Still not sure?<br />Give us a call.
+      </h2>
+      <p class="text-cream/80 text-lg mb-10 max-w-xl mx-auto">
+        It costs nothing to ask, and we promise to be honest about what we think your project will&nbsp;cost.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/en/contact" class="inline-flex items-center justify-center gap-3 px-8 py-4 bg-gold text-dark font-semibold tracking-wide uppercase text-sm hover:bg-gold-light transition-colors">
+          <span class="w-2 h-2 rounded-full bg-[#ff9f3d] bpm-pulse"></span>
+          Get a quote
+        </a>
+        <a href="tel:+4792039045" class="inline-flex items-center justify-center px-8 py-4 border border-cream/20 text-cream tracking-wide uppercase text-sm hover:border-gold hover:text-gold transition-all">
+          +47 920 39 045
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

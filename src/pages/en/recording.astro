@@ -1,0 +1,189 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Mobula from '../../components/Mobula.astro';
+import PasserFor from '../../components/PasserFor.astro';
+import SlikJobberVi from '../../components/SlikJobberVi.astro';
+import Faq from '../../components/Faq.astro';
+
+const services = [
+  {
+    num: '01',
+    title: 'Singer-Songwriter',
+    intro: 'Demo, single or EP. For artists writing their own songs and ready to record them properly — alone or with a band.',
+    image: '/images/studio/singer-songwriter.jpeg',
+    alt: 'Singer-songwriter recording an original song at Mobula Music',
+  },
+  {
+    num: '02',
+    title: 'Vocal Recording',
+    intro: 'Lead vocals, backing vocals, classical soloists or choirs. Microphones and rooms tailored to your voice.',
+    image: '/images/studio/vokalinnspilling.jpeg',
+    alt: 'Vocal recording with professional condenser microphone',
+  },
+  {
+    num: '03',
+    title: 'Voice-Over & Audiobook',
+    intro: 'Audiobooks, e-learning, advertising, film and game voicing. Quiet rooms, low noise floor, set up for long sessions.',
+    image: '/images/voice-over/voice-studio.jpg',
+    alt: 'Voice-over recording session at Mobula Music',
+  },
+  {
+    num: '04',
+    title: 'Band & Ensemble',
+    intro: 'Bands, concert bands, choirs and larger ensembles. 50 m² main studio with multiple connected live rooms.',
+    image: '/images/studio/fasttrack-5.jpeg',
+    alt: 'Band recording live in the main studio at Mobula Music',
+  },
+  {
+    num: '05',
+    title: 'Strings & Classical',
+    intro: 'Chamber ensembles, string orchestra and classical groups. Join our regular shared sessions to split the cost of live strings.',
+    image: '/images/studio/nordic-film-strings.jpg',
+    alt: 'String orchestra recording session at Mobula Music',
+  },
+];
+---
+
+<Layout
+  title="Recording Studio in Oslo — Vocal, Band & Strings | Mobula Music"
+  description="Professional recording studio just outside Oslo. Vocal recording, band, choir, strings, voice-over and audiobook. From first demo to finished single — for artists and English-speaking residents in Norway."
+  lang="en"
+  altLang="/innspilling"
+>
+  <!-- Hero -->
+  <section class="relative pt-32 md:pt-40 pb-20 md:pb-24 px-6 overflow-hidden bg-dark">
+    <div class="absolute inset-0" style="background: radial-gradient(ellipse at 30% 40%, #10242f 0%, #0b1a22 60%, #071217 100%);"></div>
+    <div class="absolute top-[10%] right-[5%] w-[500px] h-[500px] bg-gold/10 rounded-full blur-[140px] hero-glow"></div>
+    <div class="absolute inset-y-0 right-0 flex items-center pointer-events-none">
+      <Mobula class="w-[min(90vw,1200px)] translate-x-[28%] opacity-[0.15]" c1="#7af0c8" c2="#7af0c8" c3="#7af0c8" />
+    </div>
+
+    <div class="relative max-w-7xl mx-auto">
+      <p class="font-mono text-gold tracking-[0.2em] uppercase text-sm mb-6">Recording</p>
+      <h1 class="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-serif font-semibold leading-[1.02] mb-8 max-w-4xl">
+        From first demo<br />to finished record
+      </h1>
+      <p class="text-cream/80 text-xl md:text-2xl max-w-2xl leading-relaxed">
+        A professional recording studio in Lørenskog — 15 minutes from Oslo by train. Singer-songwriter, vocalist, band, strings or audiobook. We have the rooms, gear and engineers to make it sound the way you want.
+      </p>
+    </div>
+  </section>
+
+  <!-- Passer for -->
+  <PasserFor
+    title="Built for you, whatever the project"
+    label="Welcome"
+    intro="From first-time singer-songwriters to established bands and classical ensembles. We want you to feel at ease in the room and proud of what you take home."
+    items={[
+      'You\'ve never been in a studio and want to give it a try.',
+      'You\'re a singer-songwriter releasing your first or next single.',
+      'You\'re a vocalist, performer or narrator who needs professional voice recording.',
+      'You play in a band, brass band or choir and want to record together.',
+      'You\'re a classical musician or composer who needs strings.',
+    ]}
+  />
+
+  <!-- Services grid -->
+  <section class="py-28 md:py-36 px-6">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex flex-col md:flex-row md:items-end md:justify-between mb-20 gap-6 fade-in">
+        <div>
+          <p class="font-mono text-gold tracking-[0.15em] uppercase text-xs mb-4">What we record</p>
+          <h2 class="text-4xl md:text-5xl lg:text-6xl font-serif font-semibold leading-[1.05] max-w-2xl">Five areas,<br />one studio</h2>
+        </div>
+        <p class="text-cream/70 text-base md:text-lg max-w-md leading-relaxed">
+          Each area calls for different microphones, room treatment and workflow. We adapt to your project.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+        {services.map((s) => (
+          <div class="group fade-in">
+            <div class="relative overflow-hidden aspect-[4/3] mb-5 bg-dark">
+              <img src={s.image} alt={s.alt} class="w-full h-full object-cover transition-all duration-700 group-hover:scale-[1.04] [filter:saturate(0.72)_contrast(0.95)_brightness(0.92)] group-hover:[filter:saturate(0.85)_contrast(1)_brightness(1)]" />
+              <div class="absolute inset-0 bg-[#0b1a22] mix-blend-multiply opacity-30 pointer-events-none"></div>
+              <div class="absolute inset-0 bg-gradient-to-tr from-[#7af0c8]/10 via-transparent to-[#c9a2ff]/10 mix-blend-overlay pointer-events-none"></div>
+              <div class="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-dark/80 to-transparent pointer-events-none"></div>
+              <div class="absolute inset-0 ring-1 ring-inset ring-cream/10"></div>
+              <span class="absolute top-4 left-4 font-mono text-gold text-xs tracking-widest">{s.num}</span>
+            </div>
+            <div>
+              <h3 class="text-2xl md:text-3xl font-serif font-semibold mb-2">{s.title}</h3>
+              <p class="text-cream/70 text-sm leading-relaxed">{s.intro}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Slik jobber vi -->
+  <SlikJobberVi
+    label="Process"
+    title="How we work"
+    intro="Three simple steps from first email to finished delivery. No surprises along the way."
+    steps={[
+      {
+        title: 'Get in touch',
+        body: 'Send us a short brief about your project. We reply within 1–2 days with questions, ideas and a fixed quote.',
+      },
+      {
+        title: 'Studio session',
+        body: 'You come to the studio in Lørenskog. The engineer and gear are ready. You focus on the music — we handle the rest.',
+      },
+      {
+        title: 'Mix, master & deliver',
+        body: 'After the session we mix and master the recording. You hear progress along the way and receive final files ready for release.',
+      },
+    ]}
+  />
+
+  <!-- FAQ -->
+  <Faq
+    label="FAQ"
+    title="Frequently asked questions"
+    items={[
+      {
+        q: 'I\'ve never been in a studio. Is that OK?',
+        a: 'Yes, completely. Many of our clients are first-timers. We take time at the start to make you comfortable, explain what\'s happening, and let you settle in before we hit record.',
+      },
+      {
+        q: 'Do you speak English?',
+        a: 'Yes, both engineers speak fluent English. We work regularly with English-speaking artists living in Norway and abroad.',
+      },
+      {
+        q: 'What does it cost?',
+        a: 'It depends on what you\'re recording and how much time you need. Take a look at our prices on the Norwegian price page or get in touch and we\'ll send a fixed quote.',
+      },
+      {
+        q: 'Can you provide musicians and instruments I don\'t have?',
+        a: 'Yes. We have a network of professional musicians we work with — vocalists, strings, winds and rhythm section. We can help you find the right players for your project.',
+      },
+      {
+        q: 'How much time should I book?',
+        a: 'It depends on the project. A simple vocal recording for one song can be done in 2–3 hours. A full single with a band can take a whole day. We\'ll give you an honest estimate before you book so you don\'t end up with too much or too little time.',
+      },
+    ]}
+  />
+
+  <!-- CTA -->
+  <section class="py-28 px-6">
+    <div class="max-w-3xl mx-auto text-center fade-in">
+      <h2 class="text-3xl md:text-5xl font-serif font-semibold mb-6 leading-tight">
+        Book a session
+      </h2>
+      <p class="text-cream/80 text-lg mb-10 max-w-xl mx-auto">
+        Tell us about your project — we'll reply within 1–2 days with questions, ideas and a fixed&nbsp;quote.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/en/contact" class="inline-flex items-center justify-center gap-3 px-8 py-4 bg-gold text-dark font-semibold tracking-wide uppercase text-sm hover:bg-gold-light transition-colors">
+          <span class="w-2 h-2 rounded-full bg-[#ff9f3d] bpm-pulse"></span>
+          Get in touch
+        </a>
+        <a href="tel:+4792039045" class="inline-flex items-center justify-center px-8 py-4 border border-cream/20 text-cream tracking-wide uppercase text-sm hover:border-gold hover:text-gold transition-all">
+          +47 920 39 045
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
