@@ -1,136 +1,184 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import ContactForm from '../components/ContactForm.astro';
+import Mobula from '../components/Mobula.astro';
+import PasserFor from '../components/PasserFor.astro';
+import SlikJobberVi from '../components/SlikJobberVi.astro';
+import Faq from '../components/Faq.astro';
+
+const services = [
+  {
+    num: '01',
+    title: 'Innspilling',
+    intro: 'Lyd og bilde i samme studio. Profesjonelle mikrofoner, flerkamera-oppsett og tekniker — du kan fokusere på samtalen.',
+    image: '/images/podcast/podkast-studio.jpeg',
+  },
+  {
+    num: '02',
+    title: 'Klipping & redigering',
+    intro: 'Vi tar opptaket og gjør det ferdig. Tonsetting, klipping av hum, pauser og feilstart, og leveranse i ditt foretrukne format.',
+    image: '/images/podcast/klipping.jpeg',
+  },
+  {
+    num: '03',
+    title: 'Lyddesign',
+    intro: 'Intro, outro, overganger og lydlandskap som gir podkasten din en egen identitet.',
+    image: '/images/podcast/lyddesign.jpeg',
+  },
+  {
+    num: '04',
+    title: 'Originalmusikk',
+    intro: 'Skreddersydd vignett, jingles og bakgrunnsmusikk komponert spesielt for serien din. Du eier musikken.',
+    image: '/images/podcast/originalmusikk.png',
+  },
+  {
+    num: '05',
+    title: 'Opplæring',
+    intro: 'Vil du lage podkast selv? Vi tar deg gjennom konsept, teknikk, intervjumetoder, redigering og publisering.',
+    image: '/images/podcast/opplaring.jpeg',
+  },
+];
 ---
 
 <Layout
-  title="Podkast | Innspilling og opplæring | Mobula Music AS"
-  description="Profesjonell podkastinnspilling med lyd og bilde i toppkvalitet. Vi tilbyr også podkast-opplæring slik at du kan komme i gang på riktig måte."
-  ogImage="/images/podcast/podkast-studio.jpeg"
+  title="Podkast | Mobula Music"
+  description="Profesjonell podkastinnspilling, klipping, lyddesign, originalmusikk og opplæring."
 >
   <!-- Hero -->
-  <section class="relative pt-32 pb-20 px-6">
-    <div class="absolute inset-0 z-0">
-      <img src="/images/podcast/podkast-panorama.jpeg" alt="Podkaststudio" class="w-full h-full object-cover" />
-      <div class="absolute inset-0 bg-gradient-to-b from-dark/80 via-dark/70 to-dark"></div>
+  <section class="relative pt-40 pb-24 px-6 overflow-hidden bg-dark">
+    <div class="absolute inset-0" style="background: radial-gradient(ellipse at 30% 40%, #10242f 0%, #0b1a22 60%, #071217 100%);"></div>
+    <div class="absolute top-[10%] right-[5%] w-[500px] h-[500px] bg-gold/10 rounded-full blur-[140px] hero-glow"></div>
+    <div class="absolute inset-y-0 right-0 flex items-center pointer-events-none">
+      <Mobula class="w-[min(90vw,1200px)] translate-x-[28%] opacity-[0.15]" c1="#7af0c8" c2="#7af0c8" c3="#7af0c8" />
     </div>
-    <div class="relative z-10 max-w-4xl mx-auto text-center">
-      <p class="font-mono text-gold tracking-[0.2em] uppercase text-xs mb-4">Podkast</p>
-      <h1 class="text-4xl md:text-6xl font-serif font-bold mb-6">Spill inn din podkast hos oss</h1>
-      <p class="text-cream/85 text-lg max-w-2xl mx-auto">
-        En god podkast krever godt innhold, men ikke minst god kvalitet på lyd og bilde. Vi hjelper deg med begge deler.
+
+    <div class="relative max-w-7xl mx-auto">
+      <p class="font-mono text-gold tracking-[0.2em] uppercase text-sm mb-6">Podkast</p>
+      <h1 class="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-serif font-semibold leading-[1.02] mb-8 max-w-4xl">
+        Hele veien fra<br />idé til lytter
+      </h1>
+      <p class="text-cream/80 text-xl md:text-2xl max-w-2xl leading-relaxed">
+        Innspilling, klipping, lyddesign, musikk og opplæring — alt under ett tak. Du kommer med samtalen, vi tar oss av resten.
       </p>
     </div>
   </section>
 
-  <!-- Innspilling i studio -->
-  <section class="py-24 px-6">
-    <div class="max-w-7xl mx-auto">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-        <div class="fade-in">
-          <p class="font-mono text-gold tracking-[0.15em] uppercase text-xs mb-3">01 — Innspilling</p>
-          <h2 class="text-3xl md:text-4xl font-serif font-semibold mb-6">Profesjonelt podkaststudio</h2>
-          <p class="text-cream/85 leading-relaxed mb-6">
-            Lyttere blir stadig mer kresne og forlater raskt podkaster som ikke er behagelige å høre på. Hos oss får du et ferdig oppsatt studio med profesjonelle mikrofoner, kameraer og belysning — klar til innspilling.
-          </p>
-
-          <div class="space-y-4">
-            <div class="flex items-start gap-4 p-4 card-glass rounded-lg">
-              <div class="w-10 h-10 bg-gold/10 rounded-lg flex items-center justify-center shrink-0">
-                <svg class="w-5 h-5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" /></svg>
-              </div>
-              <div>
-                <h3 class="text-cream font-medium mb-1">Profesjonell lyd</h3>
-                <p class="text-cream/75 text-sm">Akustisk behandlet rom med topp mikrofoner og miksepult for krystallklar lyd.</p>
-              </div>
-            </div>
-
-            <div class="flex items-start gap-4 p-4 card-glass rounded-lg">
-              <div class="w-10 h-10 bg-gold/10 rounded-lg flex items-center justify-center shrink-0">
-                <svg class="w-5 h-5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
-              </div>
-              <div>
-                <h3 class="text-cream font-medium mb-1">Videoopptak</h3>
-                <p class="text-cream/75 text-sm">Flerkamera-oppsett med profesjonell belysning for videopodkast.</p>
-              </div>
-            </div>
-
-            <div class="flex items-start gap-4 p-4 card-glass rounded-lg">
-              <div class="w-10 h-10 bg-gold/10 rounded-lg flex items-center justify-center shrink-0">
-                <svg class="w-5 h-5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-              </div>
-              <div>
-                <h3 class="text-cream font-medium mb-1">Ferdig oppsatt</h3>
-                <p class="text-cream/75 text-sm">Kom inn, sett deg ned og start innspillingen. Vi tar oss av det tekniske.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="fade-in">
-          <img src="/images/podcast/podkast-studio.jpeg" alt="Podkaststudio" class="rounded-lg w-full object-cover aspect-[4/3]" />
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Opplæring -->
-  <section class="py-24 px-6 bg-dark-light">
-    <div class="max-w-7xl mx-auto">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-        <div class="order-2 lg:order-1 fade-in">
-          <img src="/images/podcast/podkast-2.jpeg" alt="Podkast-opplæring" class="rounded-lg w-full object-cover aspect-[4/3]" />
-        </div>
-        <div class="order-1 lg:order-2 fade-in">
-          <p class="font-mono text-gold tracking-[0.15em] uppercase text-xs mb-3">02 — Opplæring</p>
-          <h2 class="text-3xl md:text-4xl font-serif font-semibold mb-6">Lær å lage profesjonell podkast</h2>
-          <p class="text-cream/85 leading-relaxed mb-6">
-            Vil du starte egen podkast, men vet ikke hvor du skal begynne? Vi tilbyr opplæring som tar deg gjennom hele prosessen — fra konseptutvikling og teknisk oppsett til redigering og publisering.
-          </p>
-
-          <div class="space-y-3">
-            <div class="flex items-center gap-3">
-              <svg class="w-5 h-5 text-gold shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-              <span class="text-cream/85">Konseptutvikling og planlegging</span>
-            </div>
-            <div class="flex items-center gap-3">
-              <svg class="w-5 h-5 text-gold shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-              <span class="text-cream/85">Teknisk oppsett og utstyr</span>
-            </div>
-            <div class="flex items-center gap-3">
-              <svg class="w-5 h-5 text-gold shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-              <span class="text-cream/85">Innspillingsteknikk og intervjumetoder</span>
-            </div>
-            <div class="flex items-center gap-3">
-              <svg class="w-5 h-5 text-gold shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-              <span class="text-cream/85">Redigering og etterarbeid</span>
-            </div>
-            <div class="flex items-center gap-3">
-              <svg class="w-5 h-5 text-gold shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-              <span class="text-cream/85">Publisering og distribusjon</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA image strip -->
-  <section class="py-24 px-6">
-    <div class="max-w-5xl mx-auto">
-      <div class="grid grid-cols-3 gap-4 fade-in">
-        <img src="/images/podcast/pod-pic.jpeg" alt="Podkast innspilling" class="rounded-lg w-full h-64 object-cover" />
-        <img src="/images/podcast/podkast-panorama.jpeg" alt="Podkaststudio panorama" class="rounded-lg w-full h-64 object-cover" />
-        <img src="/images/podcast/podkast-2.jpeg" alt="Podkast produksjon" class="rounded-lg w-full h-64 object-cover" />
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <ContactForm
-    formName="Podkast"
-    serviceType="podkast"
-    heading="Kom i gang med podkast"
-    description="Fortell oss om podkast-prosjektet ditt, så hjelper vi deg videre."
+  <!-- Passer for deg -->
+  <PasserFor
+    title="Passer for deg uansett"
+    intro="Vi spiller inn alt fra den aller første episoden i en hobbyserie til ferdige produksjoner for podkastselskap."
+    items={[
+      'Du har en god idé til en podkast og vil gjøre den ordentlig fra start.',
+      'Du har allerede en serie og trenger fast innspillingssted.',
+      'Du er bedrift som vil starte podkast som del av merkevaren.',
+      'Du er forfatter, foredragsholder eller fagperson som vil dele kunnskap.',
+      'Du vil lære å lage podkast selv — fra A til Å.',
+    ]}
   />
+
+  <!-- Services grid -->
+  <section class="py-28 md:py-36 px-6">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex flex-col md:flex-row md:items-end md:justify-between mb-20 gap-6 fade-in">
+        <div>
+          <p class="font-mono text-gold tracking-[0.15em] uppercase text-xs mb-4">Hva vi tilbyr</p>
+          <h2 class="text-4xl md:text-5xl lg:text-6xl font-serif font-semibold leading-[1.05] max-w-2xl">Alt du trenger,<br />på ett sted</h2>
+        </div>
+        <p class="text-cream/70 text-base md:text-lg max-w-md leading-relaxed">
+          Velg én tjeneste eller hele pakka — vi tilpasser oss prosjektet og budsjettet ditt.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+        {services.map((s) => (
+          <div class="group fade-in">
+            <div class="relative overflow-hidden aspect-[4/3] mb-5 bg-dark">
+              <img src={s.image} alt={s.title} class="w-full h-full object-cover transition-all duration-700 group-hover:scale-[1.04] [filter:saturate(0.72)_contrast(0.95)_brightness(0.92)] group-hover:[filter:saturate(0.85)_contrast(1)_brightness(1)]" />
+              <div class="absolute inset-0 bg-[#0b1a22] mix-blend-multiply opacity-30 pointer-events-none"></div>
+              <div class="absolute inset-0 bg-gradient-to-tr from-[#7af0c8]/10 via-transparent to-[#c9a2ff]/10 mix-blend-overlay pointer-events-none"></div>
+              <div class="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-dark/80 to-transparent pointer-events-none"></div>
+              <div class="absolute inset-0 ring-1 ring-inset ring-cream/10"></div>
+              <span class="absolute top-4 left-4 font-mono text-gold text-xs tracking-widest">{s.num}</span>
+            </div>
+            <div>
+              <h3 class="text-2xl md:text-3xl font-serif font-semibold mb-2">{s.title}</h3>
+              <p class="text-cream/70 text-sm leading-relaxed">{s.intro}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Slik jobber vi -->
+  <SlikJobberVi
+    title="Slik kommer du i gang"
+    intro="Du trenger ikke ha alt klart fra start. Vi hjelper deg gjennom hele prosessen."
+    steps={[
+      {
+        title: 'Idé & samtale',
+        body: 'Vi snakker om konseptet ditt — målgruppe, tema, format og frekvens. Du får forslag, vi gir et fast tilbud.',
+      },
+      {
+        title: 'Studio & innspilling',
+        body: 'Du kommer til studio, tekniker setter opp alt, og dere kan starte direkte. Lyd og bilde i toppkvalitet, hver gang.',
+      },
+      {
+        title: 'Klipping & levering',
+        body: 'Vi klipper, mikser og legger til musikk og lyddesign. Du får ferdige episoder klare for opplasting til Spotify eller andre podkasttjenester.',
+      },
+    ]}
+  />
+
+  <!-- FAQ -->
+  <Faq
+    label="Vanlige spørsmål"
+    title="Spørsmål vi får ofte"
+    items={[
+      {
+        q: 'Jeg har aldri spilt inn podkast før — kan jeg fortsatt starte?',
+        a: 'Ja, definitivt. Mange av kundene våre starter sin første podkast hos oss. Vi tar oss tid til å forklare alt, og du trenger verken teknisk kunnskap eller egen erfaring foran mikrofonen.',
+      },
+      {
+        q: 'Hva koster det?',
+        a: 'Avhenger av hvor mye du trenger hjelp til. Ren innspilling i studioet vårt er rimeligere enn en full pakke med klipping, lyddesign og musikk. Se <a href="/priser" class="text-gold hover:underline">prisene våre</a> for indikasjon, eller ta kontakt for et fast tilbud.',
+      },
+      {
+        q: 'Kan jeg ta opp video samtidig?',
+        a: 'Ja. Vi har flerkamera-oppsett med profesjonell belysning, så du kan enkelt lage videopodkast for YouTube samtidig som du spiller inn lyd.',
+      },
+      {
+        q: 'Eier jeg podkasten min?',
+        a: 'Ja, alltid. Du eier opptakene og rettighetene til alt vi lager til deg — også musikk og lyddesign. Vi kan også hjelpe deg med publisering hvis du ikke vil gjøre det selv.',
+      },
+      {
+        q: 'Hvor mye tid trenger jeg å booke?',
+        a: 'En enkel innspilling med to gjester på 45 minutter går unna på en time eller to inkludert oppsett. Lengre formater eller flere gjester tar mer tid. Vi gir deg ærlig estimat i forkant.',
+      },
+      {
+        q: 'Kan dere hjelpe meg å komme i gang fra null?',
+        a: 'Ja. Vi tilbyr <strong class="text-cream">opplæring</strong> som tar deg gjennom hele prosessen — fra idé og konseptutvikling til teknisk oppsett, intervjumetoder, redigering og publisering.',
+      },
+    ]}
+  />
+
+  <!-- CTA -->
+  <section class="py-28 px-6">
+    <div class="max-w-3xl mx-auto text-center fade-in">
+      <h2 class="text-3xl md:text-5xl font-serif font-semibold mb-6 leading-tight">
+        Klar for å spille inn?
+      </h2>
+      <p class="text-cream/80 text-lg mb-10 max-w-xl mx-auto">
+        Fortell oss om podkast-prosjektet ditt — vi svarer innen 1–2 dager med spørsmål, forslag og et fast&nbsp;tilbud.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/kontakt" class="inline-flex items-center justify-center gap-3 px-8 py-4 bg-gold text-dark font-semibold tracking-wide uppercase text-sm hover:bg-gold-light transition-colors">
+          <span class="w-2 h-2 rounded-full bg-[#ff9f3d] bpm-pulse"></span>
+          Ta kontakt
+        </a>
+        <a href="tel:+4792039045" class="inline-flex items-center justify-center px-8 py-4 border border-cream/20 text-cream tracking-wide uppercase text-sm hover:border-gold hover:text-gold transition-all">
+          920 39 045
+        </a>
+      </div>
+    </div>
+  </section>
 </Layout>

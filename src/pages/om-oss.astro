@@ -1,136 +1,243 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Mobula from '../components/Mobula.astro';
 ---
 
 <Layout
-  title="Om oss | Teamet og studioet | Mobula Music AS"
-  description="Møt teamet bak Mobula Music og se våre profesjonelle lydstudioer i Lørenskog. Kort vei fra Oslo og Lillestrøm med gratis parkering."
+  title="Om oss | Mobula Music"
+  description="Mobula Music er et lydstudio og produksjonsselskap i Lørenskog. Møt teamet, se studioene og finn frem til oss."
 >
   <!-- Hero -->
-  <section class="relative pt-32 pb-20 px-6">
-    <div class="absolute inset-0 z-0">
-      <img src="/images/studio/studio-wide.jpeg" alt="Mobula Music Studio" class="w-full h-full object-cover" />
-      <div class="absolute inset-0 bg-gradient-to-b from-dark/80 via-dark/70 to-dark"></div>
+  <section class="relative pt-40 pb-24 px-6 overflow-hidden bg-dark">
+    <div class="absolute inset-0" style="background: radial-gradient(ellipse at 30% 40%, #10242f 0%, #0b1a22 60%, #071217 100%);"></div>
+    <div class="absolute top-[10%] right-[5%] w-[500px] h-[500px] bg-gold/10 rounded-full blur-[140px] hero-glow"></div>
+    <div class="absolute inset-y-0 right-0 flex items-center pointer-events-none">
+      <Mobula class="w-[min(90vw,1200px)] translate-x-[28%] opacity-[0.15]" c1="#7af0c8" c2="#7af0c8" c3="#7af0c8" />
     </div>
-    <div class="relative z-10 max-w-4xl mx-auto text-center">
-      <p class="font-mono text-gold tracking-[0.2em] uppercase text-xs mb-4">Om oss</p>
-      <h1 class="text-4xl md:text-6xl font-serif font-bold mb-6">Mobula Music</h1>
-      <p class="text-cream/85 text-lg max-w-2xl mx-auto">
-        Et kreativt miljø for innspilling, produksjon og komposisjon — drevet av lidenskapen for god lyd.
+
+    <div class="relative max-w-7xl mx-auto">
+      <p class="font-mono text-gold tracking-[0.2em] uppercase text-sm mb-6">Om oss</p>
+      <h1 class="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-serif font-semibold leading-[1.02] mb-8 max-w-4xl">
+        Et lydstudio bygget<br />for skapere
+      </h1>
+      <p class="text-cream/80 text-xl md:text-2xl max-w-2xl leading-relaxed">
+        Mobula Music holder til i Lørenskog, like utenfor Oslo. Vi tilbyr innspilling, produksjon og komposisjon — og setter alltid mennesker og musikk foran utstyr.
       </p>
     </div>
   </section>
 
-  <!-- About -->
-  <section class="py-24 px-6">
-    <div class="max-w-3xl mx-auto fade-in">
-      <h2 class="text-3xl md:text-4xl font-serif font-semibold mb-6">Hvem vi er</h2>
-      <p class="text-cream/85 leading-relaxed mb-6">
-        Mobula Music AS er et lydstudio og produksjonsselskap basert i Lørenskog, like utenfor Oslo. Vi tilbyr profesjonell innspilling av musikk og podkast, produksjon av musikk til film og TV, og komposisjon for alle typer medier.
-      </p>
-      <p class="text-cream/85 leading-relaxed">
-        Vårt fokus er å kombinere teknisk kvalitet med kunstnerisk forståelse. Vi tror at den beste lyden oppstår når man gir musikere og skapere rom til å utfolde seg — i et miljø som er bygget for formålet.
-      </p>
+  <!-- Hvem vi er -->
+  <section class="py-28 px-6">
+    <div class="max-w-4xl mx-auto">
+      <div class="mb-12 fade-in">
+        <p class="font-mono text-gold tracking-[0.15em] uppercase text-xs mb-4">01 — Hvem vi er</p>
+        <h2 class="text-4xl md:text-5xl font-serif font-semibold leading-[1.05] mb-8">Et sted å lage musikk</h2>
+      </div>
+      <div class="space-y-6 text-cream/85 text-lg leading-relaxed fade-in">
+        <p>
+          Mobula Music er et lydstudio og produksjonsselskap drevet av to komponister og musikere som har valgt å samle alt under ett tak: innspilling, klipping, mix, mastering og komposisjon.
+        </p>
+        <p>
+          Vi liker både den kreative samtalen før en innspilling og det stille håndverket etterpå — og vi tror det beste resultatet kommer når man får tid til å gjøre begge deler skikkelig. Derfor jobber vi tett med kunder over hele spekteret: fra førstegangs-singer-songwriter til etablerte filmskapere og produksjonsselskap.
+        </p>
+        <p>
+          Vi er ikke det største studioet i Norge. Men vi er stedet der du blir sett, hørt og tatt på alvor — uavhengig av størrelsen på prosjektet ditt.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="py-12 px-6 bg-dark-light">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid grid-cols-2 md:grid-cols-4 border-y border-cream/10 fade-in">
+        <div class="py-8 px-4 md:px-6 border-r border-cream/10">
+          <div class="font-serif text-gold text-4xl md:text-5xl font-semibold mb-2">50m²</div>
+          <div class="font-mono text-cream/60 text-xs tracking-widest uppercase">Hovedstudio</div>
+        </div>
+        <div class="py-8 px-4 md:px-6 md:border-r border-cream/10">
+          <div class="font-serif text-gold text-4xl md:text-5xl font-semibold mb-2">4</div>
+          <div class="font-mono text-cream/60 text-xs tracking-widest uppercase">Innspillingsrom</div>
+        </div>
+        <div class="py-8 px-4 md:px-6 border-r border-t md:border-t-0 border-cream/10">
+          <div class="font-serif text-gold text-4xl md:text-5xl font-semibold mb-2">15 min</div>
+          <div class="font-mono text-cream/60 text-xs tracking-widest uppercase">Fra Oslo</div>
+        </div>
+        <div class="py-8 px-4 md:px-6 border-t md:border-t-0 border-cream/10">
+          <div class="font-serif text-gold text-4xl md:text-5xl font-semibold mb-2">Gratis</div>
+          <div class="font-mono text-cream/60 text-xs tracking-widest uppercase">Parkering</div>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- Team -->
-  <section class="py-24 px-6 bg-dark-light">
-    <div class="max-w-7xl mx-auto">
-      <h2 class="text-3xl md:text-4xl font-serif font-semibold text-center mb-20 fade-in">Teamet</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
-        <div class="flex flex-col items-center text-center fade-in">
-          <div class="w-48 h-48 rounded-full overflow-hidden mb-6">
-            <img src="/images/team/haakon-esplo.jpg" alt="Haakon Esplo" class="w-full h-full object-cover" />
+  <section class="py-28 px-6">
+    <div class="max-w-5xl mx-auto">
+      <div class="mb-16 fade-in">
+        <p class="font-mono text-gold tracking-[0.15em] uppercase text-xs mb-4">02 — Teamet</p>
+        <h2 class="text-4xl md:text-5xl font-serif font-semibold leading-[1.05] max-w-2xl">To komponister<br />på laget</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10 fade-in">
+        <div>
+          <div class="relative overflow-hidden aspect-[3/4] mb-6 group bg-dark">
+            <img src="/images/team/haakon-esplo.jpg" alt="Haakon Esplo" class="w-full h-full object-cover object-top scale-[1.25] origin-top -translate-y-[6%] transition-all duration-700 group-hover:scale-[1.28] [filter:saturate(0.72)_contrast(0.82)_brightness(0.98)] group-hover:[filter:saturate(0.85)_contrast(0.88)_brightness(1.02)]" />
+            <div class="absolute inset-0 bg-[#0b1a22] mix-blend-multiply opacity-30 pointer-events-none"></div>
+            <div class="absolute inset-0 bg-gradient-to-tr from-[#7af0c8]/10 via-transparent to-[#c9a2ff]/10 mix-blend-overlay pointer-events-none"></div>
+            <div class="absolute inset-0 ring-1 ring-inset ring-cream/10"></div>
           </div>
-          <h3 class="text-xl font-serif font-semibold mb-1">Haakon Esplo</h3>
-          <p class="text-gold text-sm mb-3">Daglig leder, komponist og musiker</p>
-          <p class="text-cream/85 text-sm leading-relaxed max-w-sm">
-            Komponist og musiker med solid bakgrunn innen musikkteori og produksjon. Haakon driver Mobula Music og har lang erfaring med komposisjon og studioarbeid.
+          <p class="font-mono text-gold text-xs tracking-widest uppercase mb-2">Komponist og musiker</p>
+          <h3 class="text-2xl font-serif font-semibold mb-3">Haakon Esplo</h3>
+          <p class="text-cream/75 leading-relaxed text-sm">
+            Med over 200 noteutgivelser bak seg har Haakon skrevet musikk for symfoniorkester, kor, korps og kammerensembler — både som originalkomposisjoner og arrangementer. Han beveger seg naturlig mellom klassisk håndverk og moderne produksjon, og er i tillegg etablert artist og sceneformidler.
           </p>
         </div>
-        <div class="flex flex-col items-center text-center fade-in">
-          <div class="w-48 h-48 rounded-full overflow-hidden mb-6">
-            <img src="/images/team/olai-forsund.jpeg" alt="Olai Førsund" class="w-full h-full object-cover" />
+
+        <div>
+          <div class="relative overflow-hidden aspect-[3/4] mb-6 group bg-dark">
+            <img src="/images/team/olai-forsund.jpeg" alt="Olai Førsund" class="w-full h-full object-cover transition-all duration-700 group-hover:scale-[1.03] [filter:saturate(0.63)_contrast(0.95)_brightness(0.92)] group-hover:[filter:saturate(0.78)_contrast(1)_brightness(1)]" />
+            <div class="absolute inset-0 bg-[#0b1a22] mix-blend-multiply opacity-30 pointer-events-none"></div>
+            <div class="absolute inset-0 bg-gradient-to-tr from-[#7af0c8]/10 via-transparent to-[#c9a2ff]/10 mix-blend-overlay pointer-events-none"></div>
+            <div class="absolute inset-0 ring-1 ring-inset ring-cream/10"></div>
           </div>
-          <h3 class="text-xl font-serif font-semibold mb-1">Olai Førsund</h3>
-          <p class="text-gold text-sm mb-3">Komponist og musiker</p>
-          <p class="text-cream/85 text-sm leading-relaxed max-w-sm">
-            Komponist og musiker basert i Oslo med bred erfaring innen komposisjon og arrangement for orkester, film og TV.
+          <p class="font-mono text-gold text-xs tracking-widest uppercase mb-2">Komponist og musiker</p>
+          <h3 class="text-2xl font-serif font-semibold mb-3">Olai Førsund</h3>
+          <p class="text-cream/75 leading-relaxed text-sm">
+            Komponist og musiker med klassisk skolering og solid fot i moderne studioproduksjon. Olai jobber like komfortabelt med orkesterarrangementer til film og TV som med elektroniske skisser og elektroakustisk lyddesign — en sjelden bredde som gjør ham til en fleksibel samarbeidspartner på hvert prosjekt.
           </p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Studio -->
-  <section id="studio" class="py-24 px-6 scroll-mt-24">
+  <!-- Studioene -->
+  <section class="py-28 px-6 bg-dark-light">
     <div class="max-w-7xl mx-auto">
-      <div class="text-center mb-20 fade-in">
-        <p class="font-mono text-gold tracking-[0.15em] uppercase text-xs mb-3">01 — Fasiliteter</p>
-        <h2 class="text-3xl md:text-4xl font-serif font-semibold">Våre studioer</h2>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 fade-in">
-        <div class="card-glass rounded-lg overflow-hidden">
-          <img src="/images/studio/musikkrommet.jpeg" alt="Musikkrommet" class="w-full h-48 object-cover" />
-          <div class="p-6">
-            <h3 class="text-lg font-serif font-semibold mb-2">Musikkrommet</h3>
-            <p class="text-cream/75 text-sm">Hovedstudioet på 50 m² — ideelt for band, ensemble og større innspillinger.</p>
-          </div>
-        </div>
-
-        <div class="card-glass rounded-lg overflow-hidden">
-          <img src="/images/studio/produsentrommet.jpeg" alt="Produsentrommet" class="w-full h-48 object-cover" />
-          <div class="p-6">
-            <h3 class="text-lg font-serif font-semibold mb-2">Produsentrommet</h3>
-            <p class="text-cream/75 text-sm">Produksjonsrom for komponering, miksing og produksjonsarbeid.</p>
-          </div>
-        </div>
-
-        <div class="card-glass rounded-lg overflow-hidden">
-          <img src="/images/studio/vokalrom-1.jpeg" alt="Vokalrommet" class="w-full h-48 object-cover" />
-          <div class="p-6">
-            <h3 class="text-lg font-serif font-semibold mb-2">Vokalrommet</h3>
-            <p class="text-cream/75 text-sm">Akustisk optimalisert for vokal, lydbok og voice-over.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Location -->
-      <div class="mt-16 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center fade-in">
+      <div class="flex flex-col md:flex-row md:items-end md:justify-between mb-16 gap-6 fade-in">
         <div>
-          <h3 class="text-2xl font-serif font-semibold mb-4">Beliggenhet</h3>
-          <p class="text-cream/85 leading-relaxed mb-6">
-            Vi holder til i Fjellhammerveien 52 i Lørenskog — kort vei fra Oslo og Lillestrøm. Fjellhamar stasjon er kun 5 minutter unna, med tog hvert 15. minutt. Vi har gratis parkering rett utenfor døra.
+          <p class="font-mono text-gold tracking-[0.15em] uppercase text-xs mb-4">03 — Studioene</p>
+          <h2 class="text-4xl md:text-5xl font-serif font-semibold leading-[1.05] max-w-2xl">Fire rom som<br />henger sammen</h2>
+        </div>
+        <p class="text-cream/70 text-base md:text-lg max-w-md leading-relaxed">
+          Alle innspillingsrommene er koblet til samme kontrollrom — du kan spille inn store besetninger med god separasjon, eller flytte vokalisten til et eget rom underveis.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 fade-in">
+        <div class="relative overflow-hidden aspect-[3/4] group">
+          <img src="/images/studio/store-studio.jpeg" alt="Hovedstudio" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04] [filter:saturate(0.72)_contrast(0.95)_brightness(0.92)]" />
+          <div class="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-dark to-transparent pointer-events-none"></div>
+          <div class="absolute inset-0 ring-1 ring-inset ring-cream/10"></div>
+          <div class="absolute bottom-4 left-4 right-4">
+            <p class="font-mono text-cream/60 text-[10px] tracking-widest uppercase mb-1">50 m²</p>
+            <h3 class="text-lg font-serif font-semibold text-white">Hovedstudio</h3>
+          </div>
+        </div>
+
+        <div class="relative overflow-hidden aspect-[3/4] group">
+          <img src="/images/studio/kontrollrom.jpeg" alt="Kontrollrom" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04] [filter:saturate(0.72)_contrast(0.95)_brightness(0.92)]" />
+          <div class="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-dark to-transparent pointer-events-none"></div>
+          <div class="absolute inset-0 ring-1 ring-inset ring-cream/10"></div>
+          <div class="absolute bottom-4 left-4 right-4">
+            <p class="font-mono text-cream/60 text-[10px] tracking-widest uppercase mb-1">Mix &amp; produksjon</p>
+            <h3 class="text-lg font-serif font-semibold text-white">Kontrollrom</h3>
+          </div>
+        </div>
+
+        <div class="relative overflow-hidden aspect-[3/4] group">
+          <img src="/images/studio/vokalrom-1.jpeg" alt="Vokalrom" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04] [filter:saturate(0.72)_contrast(0.95)_brightness(0.92)]" />
+          <div class="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-dark to-transparent pointer-events-none"></div>
+          <div class="absolute inset-0 ring-1 ring-inset ring-cream/10"></div>
+          <div class="absolute bottom-4 left-4 right-4">
+            <p class="font-mono text-cream/60 text-[10px] tracking-widest uppercase mb-1">Tørt &amp; nært</p>
+            <h3 class="text-lg font-serif font-semibold text-white">Vokalrom</h3>
+          </div>
+        </div>
+
+        <div class="relative overflow-hidden aspect-[3/4] group">
+          <img src="/images/studio/sidestudio.jpeg" alt="Sidestudio" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04] [filter:saturate(0.72)_contrast(0.95)_brightness(0.92)]" />
+          <div class="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-dark to-transparent pointer-events-none"></div>
+          <div class="absolute inset-0 ring-1 ring-inset ring-cream/10"></div>
+          <div class="absolute bottom-4 left-4 right-4">
+            <p class="font-mono text-cream/60 text-[10px] tracking-widest uppercase mb-1">Mindre besetninger</p>
+            <h3 class="text-lg font-serif font-semibold text-white">Sidestudio</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Beliggenhet -->
+  <section class="py-28 px-6">
+    <div class="max-w-7xl mx-auto">
+      <div class="mb-16 fade-in">
+        <p class="font-mono text-gold tracking-[0.15em] uppercase text-xs mb-4">04 — Beliggenhet</p>
+        <h2 class="text-4xl md:text-5xl font-serif font-semibold leading-[1.05] max-w-2xl">Lett å komme til</h2>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start fade-in">
+        <div>
+          <p class="text-cream/85 text-lg leading-relaxed mb-8">
+            Vi holder til i Fjellhammerveien 52 i Lørenskog — kort vei fra både Oslo og Lillestrøm. Fjellhamar stasjon er tre minutter unna med tog hvert kvarter, og vi har gratis parkering rett utenfor døra.
           </p>
-          <div class="space-y-3 text-cream/85">
-            <div class="flex items-center gap-3">
-              <svg class="w-5 h-5 text-gold shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
-              Fjellhammerveien 52, 1472 Fjellhamar
+
+          <div class="space-y-4 mb-10">
+            <div class="flex items-start gap-4 pb-4 border-b border-cream/10">
+              <p class="font-mono text-gold text-xs tracking-widest uppercase shrink-0 w-24">Adresse</p>
+              <p class="text-cream/85">Fjellhammerveien 52<br />1472 Fjellhamar</p>
             </div>
-            <div class="flex items-center gap-3">
-              <svg class="w-5 h-5 text-gold shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-              15 min fra Oslo sentrum med tog
+            <div class="flex items-start gap-4 pb-4 border-b border-cream/10">
+              <p class="font-mono text-gold text-xs tracking-widest uppercase shrink-0 w-24">Tog</p>
+              <p class="text-cream/85">Fjellhamar stasjon, 3 min fra studio<br />15 min fra Oslo S</p>
             </div>
-            <div class="flex items-center gap-3">
-              <svg class="w-5 h-5 text-gold shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-              Gratis parkering
+            <div class="flex items-start gap-4 pb-4 border-b border-cream/10">
+              <p class="font-mono text-gold text-xs tracking-widest uppercase shrink-0 w-24">Bil</p>
+              <p class="text-cream/85">Gratis parkering rett utenfor</p>
+            </div>
+            <div class="flex items-start gap-4">
+              <p class="font-mono text-gold text-xs tracking-widest uppercase shrink-0 w-24">Telefon</p>
+              <p class="text-cream/85">
+                <a href="tel:+4792039045" class="hover:text-gold transition-colors">920 39 045</a> <span class="text-cream/50">· Haakon</span><br />
+                <a href="tel:+4792466150" class="hover:text-gold transition-colors">924 66 150</a> <span class="text-cream/50">· Olai</span>
+              </p>
             </div>
           </div>
         </div>
-        <div class="rounded-lg overflow-hidden h-80">
+
+        <div class="relative overflow-hidden h-96 lg:h-[500px] ring-1 ring-inset ring-cream/10">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2000!2d10.9578!3d59.9342!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTnCsDU2JzAzLjEiTiAxMMKwNTcnMjguMSJF!5e0!3m2!1sno!2sno!4v1"
+            src="https://maps.google.com/maps?q=Mobula+Music+AS&t=&z=16&ie=UTF8&iwloc=&output=embed"
             width="100%"
             height="100%"
-            style="border:0;"
+            style="border:0; filter: grayscale(0.5) contrast(0.95);"
             allowfullscreen=""
             loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"
             title="Mobula Music lokasjon"
           ></iframe>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-28 px-6 bg-dark-light">
+    <div class="max-w-3xl mx-auto text-center fade-in">
+      <h2 class="text-3xl md:text-5xl font-serif font-semibold mb-6 leading-tight">
+        Kom innom på en kaffe
+      </h2>
+      <p class="text-cream/80 text-lg mb-10 max-w-xl mx-auto">
+        Det forplikter ikke til noe. Vi viser deg gjerne rundt og hører om prosjektet ditt.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/kontakt" class="inline-flex items-center justify-center gap-3 px-8 py-4 bg-gold text-dark font-semibold tracking-wide uppercase text-sm hover:bg-gold-light transition-colors">
+          <span class="w-2 h-2 rounded-full bg-[#ff9f3d] bpm-pulse"></span>
+          Avtal et besøk
+        </a>
+        <a href="tel:+4792039045" class="inline-flex items-center justify-center px-8 py-4 border border-cream/20 text-cream tracking-wide uppercase text-sm hover:border-gold hover:text-gold transition-all">
+          920 39 045
+        </a>
       </div>
     </div>
   </section>

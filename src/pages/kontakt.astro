@@ -1,75 +1,113 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Mobula from '../components/Mobula.astro';
 import ContactForm from '../components/ContactForm.astro';
 ---
 
 <Layout
-  title="Kontakt oss | Mobula Music AS"
-  description="Kontakt Mobula Music AS. Kort vei fra Oslo. Vi har gratis parkering. Tog til Fjellhamar stasjon går hvert 15. minutt fra Oslo og Lillestrøm."
+  title="Kontakt | Mobula Music"
+  description="Kontakt Mobula Music. Ring, send e-post eller bruk skjemaet — vi svarer innen kort tid."
 >
   <!-- Hero -->
-  <section class="pt-32 pb-12 px-6">
-    <div class="max-w-4xl mx-auto text-center">
-      <p class="font-mono text-gold tracking-[0.2em] uppercase text-xs mb-4">Kontakt</p>
-      <h1 class="text-4xl md:text-5xl font-serif font-bold mb-6">Ta kontakt med oss</h1>
-      <p class="text-cream/85 text-lg max-w-xl mx-auto">
-        Har du spørsmål eller vil booke studio? Fyll ut skjemaet eller ta direkte kontakt.
+  <section class="relative pt-40 pb-24 px-6 overflow-hidden bg-dark">
+    <div class="absolute inset-0" style="background: radial-gradient(ellipse at 30% 40%, #10242f 0%, #0b1a22 60%, #071217 100%);"></div>
+    <div class="absolute top-[10%] right-[5%] w-[500px] h-[500px] bg-gold/10 rounded-full blur-[140px] hero-glow"></div>
+    <div class="absolute inset-y-0 right-0 flex items-center pointer-events-none">
+      <Mobula class="w-[min(90vw,1200px)] translate-x-[28%] opacity-[0.15]" c1="#7af0c8" c2="#7af0c8" c3="#7af0c8" />
+    </div>
+
+    <div class="relative max-w-5xl mx-auto">
+      <p class="font-mono text-gold tracking-[0.2em] uppercase text-sm mb-6">Kontakt</p>
+      <h1 class="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-serif font-semibold leading-[1.02] mb-8 max-w-4xl">
+        Ta kontakt
+      </h1>
+      <p class="text-cream/80 text-xl md:text-2xl max-w-2xl leading-relaxed">
+        Fortell oss om prosjektet ditt — stort eller lite.
       </p>
     </div>
   </section>
 
-  <!-- Contact Info Cards -->
-  <section class="px-6 pb-12">
-    <div class="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-6">
-      <div class="card-glass rounded-lg p-6 text-center fade-in">
-        <div class="w-12 h-12 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-4">
-          <svg class="w-6 h-6 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
+  <!-- Kontaktinfo -->
+  <section class="py-20 md:py-28 px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-0 border-y border-cream/10 fade-in">
+        <!-- Telefon -->
+        <div class="py-10 px-6 md:px-8 md:border-r border-cream/10">
+          <p class="font-mono text-gold text-xs tracking-widest uppercase mb-4">Telefon</p>
+          <p class="font-serif text-2xl md:text-3xl font-semibold mb-2">
+            <a href="tel:+4792039045" class="hover:text-gold transition-colors">920 39 045</a>
+          </p>
+          <p class="text-cream/50 text-sm mb-4">Haakon</p>
+          <p class="font-serif text-2xl md:text-3xl font-semibold mb-2">
+            <a href="tel:+4792466150" class="hover:text-gold transition-colors">924 66 150</a>
+          </p>
+          <p class="text-cream/50 text-sm">Olai</p>
         </div>
-        <h3 class="text-cream font-semibold mb-2">Telefon</h3>
-        <a href="tel:+4792039045" class="text-cream/85 hover:text-gold transition-colors">+47 920 39 045</a>
-        <br />
-        <a href="tel:+4792466150" class="text-cream/85 hover:text-gold transition-colors">+47 924 66 150</a>
-      </div>
 
-      <div class="card-glass rounded-lg p-6 text-center fade-in">
-        <div class="w-12 h-12 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-4">
-          <svg class="w-6 h-6 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+        <!-- E-post -->
+        <div class="py-10 px-6 md:px-8 md:border-r border-t md:border-t-0 border-cream/10">
+          <p class="font-mono text-gold text-xs tracking-widest uppercase mb-4">E-post</p>
+          <p class="font-serif text-xl md:text-2xl font-semibold break-words">
+            <a href="mailto:post@mobulamusic.com" class="hover:text-gold transition-colors">post@mobulamusic.com</a>
+          </p>
+          <p class="text-cream/60 text-sm mt-4 leading-relaxed">
+            Send oss gjerne en beskrivelse, et DAW-prosjekt, en demo — eller bare en idé.
+          </p>
         </div>
-        <h3 class="text-cream font-semibold mb-2">E-post</h3>
-        <a href="mailto:post@mobulamusic.com" class="text-cream/85 hover:text-gold transition-colors">post@mobulamusic.com</a>
-      </div>
 
-      <div class="card-glass rounded-lg p-6 text-center fade-in">
-        <div class="w-12 h-12 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-4">
-          <svg class="w-6 h-6 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+        <!-- Adresse -->
+        <div class="py-10 px-6 md:px-8 border-t md:border-t-0 border-cream/10">
+          <p class="font-mono text-gold text-xs tracking-widest uppercase mb-4">Adresse</p>
+          <p class="font-serif text-xl md:text-2xl font-semibold leading-tight mb-2">
+            Fjellhammerveien 52<br />1472 Fjellhamar
+          </p>
+          <p class="text-cream/60 text-sm mt-4 leading-relaxed">
+            3 min fra Fjellhamar stasjon<br />Gratis parkering
+          </p>
         </div>
-        <h3 class="text-cream font-semibold mb-2">Adresse</h3>
-        <p class="text-cream/85">Fjellhammerveien 52<br />1472 Fjellhamar</p>
       </div>
     </div>
   </section>
 
   <!-- Contact Form -->
-  <ContactForm
-    formName="Kontaktskjema"
-    showServiceDropdown={true}
-    heading="Send oss en melding"
-    description="Fyll ut skjemaet under, så hører du fra oss innen kort tid."
-  />
+  <section class="pb-28 px-6">
+    <div class="max-w-3xl mx-auto fade-in">
+      <div class="mb-12">
+        <p class="font-mono text-gold tracking-[0.15em] uppercase text-xs mb-4">Skjema</p>
+        <h2 class="text-3xl md:text-4xl font-serif font-semibold leading-[1.05] mb-4">Eller send oss en melding</h2>
+        <p class="text-cream/70 text-base md:text-lg max-w-2xl leading-relaxed">
+          Jo mer du forteller oss, jo bedre tilbud får du tilbake. Men du trenger ikke ha alt klart — vi hjelper deg gjerne med å finne ut hva du faktisk trenger.
+        </p>
+      </div>
+
+      <ContactForm
+        formName="Kontaktskjema"
+        showServiceDropdown={true}
+        heading=""
+        description=""
+      />
+    </div>
+  </section>
 
   <!-- Map -->
-  <section class="px-6 pb-20">
-    <div class="max-w-4xl mx-auto rounded-lg overflow-hidden h-96 fade-in">
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2000!2d10.9578!3d59.9342!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTnCsDU2JzAzLjEiTiAxMMKwNTcnMjguMSJF!5e0!3m2!1sno!2sno!4v1"
-        width="100%"
-        height="100%"
-        style="border:0;"
-        allowfullscreen=""
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"
-        title="Mobula Music lokasjon"
-      ></iframe>
+  <section class="pb-28 px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="mb-12 fade-in">
+        <p class="font-mono text-gold tracking-[0.15em] uppercase text-xs mb-4">Slik finner du oss</p>
+        <h2 class="text-3xl md:text-4xl font-serif font-semibold leading-[1.05]">Fjellhammerveien 52</h2>
+      </div>
+      <div class="relative overflow-hidden h-96 md:h-[500px] ring-1 ring-inset ring-cream/10 fade-in">
+        <iframe
+          src="https://maps.google.com/maps?q=Mobula+Music+AS&t=&z=16&ie=UTF8&iwloc=&output=embed"
+          width="100%"
+          height="100%"
+          style="border:0; filter: grayscale(0.5) contrast(0.95);"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Mobula Music lokasjon"
+        ></iframe>
+      </div>
     </div>
   </section>
 </Layout>
