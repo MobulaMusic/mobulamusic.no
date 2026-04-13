@@ -1,0 +1,101 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Mobula from '../../components/Mobula.astro';
+import PasserFor from '../../components/PasserFor.astro';
+---
+
+<Layout
+  title="Musikk til scenekunst & teater | Mobula Music"
+  description="Originalmusikk og lyddesign til teater, dans, performance og scenekunst."
+>
+  <!-- Hero -->
+  <section class="relative pt-40 pb-24 px-6 overflow-hidden bg-dark">
+    <div class="absolute inset-0" style="background: radial-gradient(ellipse at 30% 40%, #10242f 0%, #0b1a22 60%, #071217 100%);"></div>
+    <div class="absolute top-[10%] right-[5%] w-[500px] h-[500px] bg-gold/10 rounded-full blur-[140px] hero-glow"></div>
+    <div class="absolute inset-y-0 right-0 flex items-center pointer-events-none">
+      <Mobula class="w-[min(80vw,1000px)] translate-x-[30%] opacity-[0.12]" c1="#7af0c8" c2="#7af0c8" c3="#7af0c8" />
+    </div>
+
+    <div class="relative max-w-5xl mx-auto">
+      <p class="font-mono text-gold tracking-[0.2em] uppercase text-sm mb-6">
+        <a href="/musikk" class="hover:text-gold-light">Vi skaper musikk</a> / Scenekunst &amp; teater
+      </p>
+      <h1 class="text-5xl md:text-6xl lg:text-7xl font-serif font-semibold leading-[1.05] mb-8 max-w-4xl">
+        Musikk for scenen
+      </h1>
+      <p class="text-cream/80 text-xl md:text-2xl max-w-2xl leading-relaxed">
+        Originalmusikk og lyddesign til teater, dans og performance. Vi jobber tett med regi og dramaturgi for å finne hvordan musikken best kan støtte forestillingen.
+      </p>
+    </div>
+  </section>
+
+  <!-- Hva vi lager -->
+  <section class="py-28 px-6">
+    <div class="max-w-5xl mx-auto">
+      <div class="mb-16 fade-in">
+        <p class="font-mono text-gold tracking-[0.15em] uppercase text-xs mb-4">01 — Hva vi lager</p>
+        <h2 class="text-4xl md:text-5xl font-serif font-semibold leading-[1.05] max-w-2xl">Fra små ensembler<br />til full orkestrering</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10 fade-in">
+        <div>
+          <h3 class="text-xl font-serif font-semibold mb-3 text-gold">Originalmusikk</h3>
+          <p class="text-cream/75 leading-relaxed">
+            Skreddersydd musikk komponert for forestillingen din — alt fra stilleste underscore til dramatiske høydepunkter.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-xl font-serif font-semibold mb-3 text-gold">Lyddesign</h3>
+          <p class="text-cream/75 leading-relaxed">
+            Abstrakte lydlandskap, foley og atmosfærer som binder sammen scener og bygger stemning.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-xl font-serif font-semibold mb-3 text-gold">Arrangement &amp; noter</h3>
+          <p class="text-cream/75 leading-relaxed">
+            Hvis dere har levende musikere i ensemblet, skriver vi ut noter og arrangerer for det instrumentariet dere har.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-xl font-serif font-semibold mb-3 text-gold">Teknisk leveranse</h3>
+          <p class="text-cream/75 leading-relaxed">
+            Vi leverer i formatene teatret og lydteknikeren trenger — stems, cues og tidsstempler for forestillingsbruk.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Passer for deg -->
+  <PasserFor
+    intro="Vi jobber både med etablerte scener og frie grupper. Størrelse og sjanger har ingen betydning — vi tilpasser oss prosjektet."
+    items={[
+      'Du er regissør eller dramaturg med en forestilling under arbeid.',
+      'Du er koreograf som trenger musikk til en danseforestilling.',
+      'Du jobber med en fri gruppe eller produksjonsselskap.',
+      'Du er lærer eller student ved en teater-/sceneskole.',
+      'Du lager barneteater og trenger musikk som engasjerer både små og store.',
+    ]}
+  />
+
+  <!-- CTA -->
+  <section class="py-28 px-6">
+    <div class="max-w-3xl mx-auto text-center fade-in">
+      <h2 class="text-3xl md:text-5xl font-serif font-semibold mb-6 leading-tight">
+        Har du en forestilling?
+      </h2>
+      <p class="text-cream/80 text-lg mb-10 max-w-xl mx-auto">
+        Fortell oss om prosjektet — vi tar en uforpliktende prat om hvordan musikken kan spille en rolle.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/kontakt" class="inline-flex items-center justify-center gap-3 px-8 py-4 bg-gold text-dark font-semibold tracking-wide uppercase text-sm hover:bg-gold-light transition-colors">
+          <span class="w-2 h-2 rounded-full bg-dark bpm-pulse"></span>
+          Ta kontakt
+        </a>
+        <a href="/musikk" class="inline-flex items-center justify-center px-8 py-4 border border-cream/20 text-cream tracking-wide uppercase text-sm hover:border-gold hover:text-gold transition-all">
+          Se andre tjenester
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

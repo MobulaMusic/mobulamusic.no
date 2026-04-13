@@ -1,0 +1,235 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Mobula from '../components/Mobula.astro';
+import PasserFor from '../components/PasserFor.astro';
+import SlikJobberVi from '../components/SlikJobberVi.astro';
+import Faq from '../components/Faq.astro';
+
+const services = [
+  {
+    href: '/musikk/film-og-tv',
+    num: '01',
+    title: 'Film & TV',
+    intro: 'Originalmusikk til spillefilm, kortfilm, dokumentar og drama. Utdannede filmkomponister med erfaring fra små og store produksjoner.',
+    image: '/images/studio/nordic-film-strings.jpg',
+  },
+  {
+    href: '/musikk/scenekunst-og-teater',
+    num: '02',
+    title: 'Scenekunst & teater',
+    intro: 'Musikk og lyddesign til teater, dans, performance og scenekunst. Fra små ensembler til full orkestrering eller digitale produksjoner.',
+    image: '/images/studio/scenekunst.jpeg',
+  },
+  {
+    href: '/musikk/reklame-og-event',
+    num: '03',
+    title: 'Reklame & event',
+    intro: 'Musikk til reklamefilm, kampanjer, events og produktlanseringer. Skreddersydd for budskapet ditt.',
+    image: '/images/studio/reklame.jpeg',
+  },
+  {
+    href: '/musikk/produsering',
+    num: '04',
+    title: 'Produsering',
+    intro: 'Har du en låt-idé, men vet ikke hvordan du skal ta den videre? Vi hjelper deg fra demo til ferdig track.',
+    image: '/images/studio/latskriving.jpg',
+  },
+  {
+    href: '/musikk/noter-for-daw',
+    num: '05',
+    title: 'Noter til musikere',
+    intro: 'Du lager musikk i DAW, men trenger noter. Vi gjør prosjektet ditt klart for musikerne.',
+    image: '/images/studio/noter-daw.jpeg',
+    tag: 'Unik tjeneste',
+  },
+];
+---
+
+<Layout
+  title="Vi skaper musikk | Mobula Music"
+  description="Originalmusikk til film, TV, scenekunst, reklame og event. Produsering, arrangement og noteproduksjon fra utdannede filmkomponister."
+>
+  <!-- Hero -->
+  <section class="relative pt-40 pb-24 px-6 overflow-hidden bg-dark">
+    <div class="absolute inset-0" style="background: radial-gradient(ellipse at 30% 40%, #10242f 0%, #0b1a22 60%, #071217 100%);"></div>
+    <div class="absolute top-[10%] right-[5%] w-[500px] h-[500px] bg-gold/10 rounded-full blur-[140px] hero-glow"></div>
+    <div class="absolute inset-y-0 right-0 flex items-center pointer-events-none">
+      <Mobula class="w-[min(90vw,1200px)] translate-x-[28%] opacity-[0.15]" c1="#7af0c8" c2="#7af0c8" c3="#7af0c8" />
+    </div>
+
+    <div class="relative max-w-7xl mx-auto">
+      <p class="font-mono text-gold tracking-[0.2em] uppercase text-sm mb-6">Vi skaper musikk</p>
+      <h1 class="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-serif font-semibold leading-[1.02] mb-8 max-w-5xl">
+        Musikk skrevet<br />for nettopp ditt prosjekt
+      </h1>
+      <p class="text-cream/80 text-xl md:text-2xl max-w-2xl leading-relaxed">
+        Enten det er en spillefilm, en teaterforestilling eller en låt-idé på telefonen — vi komponerer, arrangerer og produserer musikken som løfter prosjektet ditt.
+      </p>
+    </div>
+  </section>
+
+  <!-- Passer for deg -->
+  <PasserFor
+    title="Passer for deg uansett"
+    intro="Vi har skrevet musikk til alt fra prisbelønnede filmer til 16-åringers første demo. Samme omsorg, samme håndverk."
+    items={[
+      'Du er regissør, produsent eller manusforfatter med et film- eller TV-prosjekt.',
+      'Du jobber med teater, dans eller performance og trenger originalmusikk.',
+      'Du har en låt-idé du ikke vet hvordan du skal ta videre.',
+      'Du lager musikk i DAW og trenger ferdige noter til orkesteret.',
+      'Du er byrå eller bedrift med behov for musikk til kampanje eller event.',
+    ]}
+  />
+
+  <!-- Services grid -->
+  <section class="py-28 md:py-36 px-6">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex flex-col md:flex-row md:items-end md:justify-between mb-20 gap-6 fade-in">
+        <div>
+          <p class="font-mono text-gold tracking-[0.15em] uppercase text-xs mb-4">Hva vi lager</p>
+          <h2 class="text-4xl md:text-6xl font-serif font-semibold leading-[1.05] max-w-2xl">Fem måter å<br />jobbe med oss</h2>
+        </div>
+        <p class="text-cream/70 text-base md:text-lg max-w-md leading-relaxed">
+          Klikk deg inn på området som passer ditt prosjekt, eller ta kontakt så finner vi riktig innfallsvinkel sammen.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+        {services.map((s) => (
+          <a href={s.href} class="group fade-in">
+            <div class="relative overflow-hidden aspect-[4/3] mb-5 bg-dark">
+              <img src={s.image} alt={s.title} class="w-full h-full object-cover transition-all duration-700 group-hover:scale-[1.04] [filter:saturate(0.72)_contrast(0.95)_brightness(0.92)] group-hover:[filter:saturate(0.85)_contrast(1)_brightness(1)]" />
+              <div class="absolute inset-0 bg-[#0b1a22] mix-blend-multiply opacity-30 pointer-events-none"></div>
+              <div class="absolute inset-0 bg-gradient-to-tr from-[#7af0c8]/10 via-transparent to-[#c9a2ff]/10 mix-blend-overlay pointer-events-none"></div>
+              <div class="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-dark/80 to-transparent pointer-events-none"></div>
+              <div class="absolute inset-0 ring-1 ring-inset ring-cream/10 group-hover:ring-gold/60 transition-all duration-500"></div>
+              <span class="absolute top-4 left-4 font-mono text-gold text-xs tracking-widest">{s.num}</span>
+              {s.tag && (
+                <span class="absolute top-4 right-4 font-mono text-[10px] tracking-widest uppercase px-2 py-1 bg-gold/90 text-dark">{s.tag}</span>
+              )}
+            </div>
+            <div class="flex items-start justify-between gap-4">
+              <div>
+                <h3 class="text-2xl md:text-3xl font-serif font-semibold mb-2 group-hover:text-gold transition-colors">{s.title}</h3>
+                <p class="text-cream/70 text-sm leading-relaxed max-w-xs">{s.intro}</p>
+              </div>
+              <span class="shrink-0 text-gold translate-y-1 transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true">→</span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Team -->
+  <section class="py-28 px-6 bg-dark-light">
+    <div class="max-w-5xl mx-auto">
+      <div class="mb-16 fade-in">
+        <p class="font-mono text-gold tracking-[0.15em] uppercase text-xs mb-4">Komponistene</p>
+        <h2 class="text-4xl md:text-5xl font-serif font-semibold leading-[1.05] max-w-2xl">Utdannede filmkomponister</h2>
+        <p class="text-cream/70 text-base md:text-lg max-w-2xl leading-relaxed mt-4">
+          To erfarne filmkomponister med formell utdanning og solid verktøykasse. Vi vet hvordan musikk kan løfte en scene — og minst like viktig, når den skal holde seg unna.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10 fade-in">
+        <div>
+          <div class="relative overflow-hidden aspect-[3/4] mb-6 group bg-dark">
+            <img src="/images/team/olai-forsund.jpeg" alt="Olai Førsund" class="w-full h-full object-cover transition-all duration-700 group-hover:scale-[1.03] [filter:saturate(0.63)_contrast(0.95)_brightness(0.92)] group-hover:[filter:saturate(0.78)_contrast(1)_brightness(1)]" />
+            <div class="absolute inset-0 bg-[#0b1a22] mix-blend-multiply opacity-30 pointer-events-none"></div>
+            <div class="absolute inset-0 bg-gradient-to-tr from-[#7af0c8]/10 via-transparent to-[#c9a2ff]/10 mix-blend-overlay pointer-events-none"></div>
+            <div class="absolute inset-0 ring-1 ring-inset ring-cream/10"></div>
+          </div>
+          <p class="font-mono text-gold text-xs tracking-widest uppercase mb-2">Komponist og arrangør</p>
+          <h3 class="text-2xl font-serif font-semibold mb-3">Olai Førsund</h3>
+          <p class="text-cream/75 leading-relaxed text-sm">
+            Komponist og musiker med klassisk skolering og solid fot i moderne studioproduksjon. Olai jobber like komfortabelt med orkesterarrangementer til film og TV som med elektroniske skisser og elektroakustisk lyddesign — en sjelden bredde som gjør ham til en fleksibel samarbeidspartner på hvert prosjekt.
+          </p>
+        </div>
+
+        <div>
+          <div class="relative overflow-hidden aspect-[3/4] mb-6 group bg-dark">
+            <img src="/images/team/haakon-esplo.jpg" alt="Haakon Esplo" class="w-full h-full object-cover object-top scale-[1.25] origin-top -translate-y-[6%] transition-all duration-700 group-hover:scale-[1.28] [filter:saturate(0.72)_contrast(0.82)_brightness(0.98)] group-hover:[filter:saturate(0.85)_contrast(0.88)_brightness(1.02)]" />
+            <div class="absolute inset-0 bg-[#0b1a22] mix-blend-multiply opacity-30 pointer-events-none"></div>
+            <div class="absolute inset-0 bg-gradient-to-tr from-[#7af0c8]/10 via-transparent to-[#c9a2ff]/10 mix-blend-overlay pointer-events-none"></div>
+            <div class="absolute inset-0 ring-1 ring-inset ring-cream/10"></div>
+          </div>
+          <p class="font-mono text-gold text-xs tracking-widest uppercase mb-2">Komponist og arrangør</p>
+          <h3 class="text-2xl font-serif font-semibold mb-3">Haakon Esplo</h3>
+          <p class="text-cream/75 leading-relaxed text-sm">
+            Med over 200 noteutgivelser bak seg har Haakon skrevet musikk for symfoniorkester, kor, korps og kammerensembler — både som originalkomposisjoner og arrangementer. Han beveger seg naturlig mellom klassisk håndverk og moderne produksjon, og er i tillegg etablert artist og sceneformidler.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slik jobber vi -->
+  <SlikJobberVi
+    title="Fra brief til ferdig musikk"
+    intro="Slik ser en typisk komposisjonsprosess ut hos oss. Vi tilpasser alltid tempo og detaljnivå til ditt prosjekt."
+    steps={[
+      {
+        title: 'Brief & samtale',
+        body: 'Du forteller oss om prosjektet — stil, tidsramme, budsjett og referanser. Vi lytter, stiller spørsmål og gir et fast tilbud.',
+      },
+      {
+        title: 'Skisser & feedback',
+        body: 'Vi lager musikalske skisser du kan lytte til. Du gir tilbakemelding, vi justerer. Ingen ferdig produksjon før retningen er riktig.',
+      },
+      {
+        title: 'Innspilling, mix & levering',
+        body: 'Når musikken sitter, spiller vi inn med levende musikere eller programmerer i studio. Du mottar ferdige filer i ønsket format.',
+      },
+    ]}
+  />
+
+  <!-- FAQ -->
+  <Faq
+    label="Vanlige spørsmål"
+    title="Ofte stilte spørsmål"
+    items={[
+      {
+        q: 'Hva koster det å få skrevet originalmusikk?',
+        a: 'Det varierer mye med omfang. En kort tittelmelodi på 30 sekunder koster vesentlig mindre enn en full spillefilm-score. Se <a href="/priser" class="text-gold hover:underline">prisene våre</a> for en indikasjon, eller send oss en beskrivelse av prosjektet så gir vi et fast tilbud.',
+      },
+      {
+        q: 'Bruker dere levende musikere eller virtuelle instrumenter?',
+        a: 'Begge deler. Mye kan løses profesjonelt med moderne virtuelle instrumenter, og det holder budsjettet nede. Men når prosjektet krever det — en filmscore, en scene som trenger ekte stryk — spiller vi inn med levende musikere i studio.',
+      },
+      {
+        q: 'Eier jeg musikken etterpå?',
+        a: 'Vi lager alltid en tydelig kontrakt før vi starter, slik at det ikke er tvil om rettigheter. For de fleste oppdrag gir vi deg full brukerrett til prosjektet, og vi beholder opphavsretten. For eksklusiv/kommersiell bruk avtaler vi særskilt.',
+      },
+      {
+        q: 'Hvor lang tid tar det?',
+        a: 'En kort tittelmelodi kan leveres på 1–2 uker. En full film-score tar flere måneder. Jo tidligere du tar kontakt, jo bedre — vi trenger tid til å bli kjent med prosjektet.',
+      },
+      {
+        q: 'Jeg har en låt-idé, men jeg er ikke musiker — kan dere hjelpe?',
+        a: 'Ja. Det er faktisk en av de mest morsomme tingene vi gjør. Du summer en melodi, beskriver følelsen, eller viser oss en lydfil — vi tar det videre. Se <a href="/musikk/produsering" class="text-gold hover:underline">Produsering</a>.',
+      },
+    ]}
+  />
+
+  <!-- CTA -->
+  <section class="py-28 px-6">
+    <div class="max-w-3xl mx-auto text-center fade-in">
+      <h2 class="text-3xl md:text-5xl font-serif font-semibold mb-6 leading-tight">
+        Fortell oss om prosjektet
+      </h2>
+      <p class="text-cream/80 text-lg mb-10 max-w-xl mx-auto">
+        Send oss en kort beskrivelse — vi svarer innen 1–2 dager med spørsmål, forslag og et fast tilbud.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/kontakt" class="inline-flex items-center justify-center gap-3 px-8 py-4 bg-gold text-dark font-semibold tracking-wide uppercase text-sm hover:bg-gold-light transition-colors">
+          <span class="w-2 h-2 rounded-full bg-dark bpm-pulse"></span>
+          Ta kontakt
+        </a>
+        <a href="tel:+4792039045" class="inline-flex items-center justify-center px-8 py-4 border border-cream/20 text-cream tracking-wide uppercase text-sm hover:border-gold hover:text-gold transition-all">
+          920 39 045
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

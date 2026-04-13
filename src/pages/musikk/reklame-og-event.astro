@@ -1,0 +1,101 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Mobula from '../../components/Mobula.astro';
+import PasserFor from '../../components/PasserFor.astro';
+---
+
+<Layout
+  title="Musikk til reklame & event | Mobula Music"
+  description="Skreddersydd musikk til reklamefilm, kampanjer, produktlanseringer og eventer."
+>
+  <!-- Hero -->
+  <section class="relative pt-40 pb-24 px-6 overflow-hidden bg-dark">
+    <div class="absolute inset-0" style="background: radial-gradient(ellipse at 30% 40%, #10242f 0%, #0b1a22 60%, #071217 100%);"></div>
+    <div class="absolute top-[10%] right-[5%] w-[500px] h-[500px] bg-gold/10 rounded-full blur-[140px] hero-glow"></div>
+    <div class="absolute inset-y-0 right-0 flex items-center pointer-events-none">
+      <Mobula class="w-[min(80vw,1000px)] translate-x-[30%] opacity-[0.12]" c1="#7af0c8" c2="#7af0c8" c3="#7af0c8" />
+    </div>
+
+    <div class="relative max-w-5xl mx-auto">
+      <p class="font-mono text-gold tracking-[0.2em] uppercase text-sm mb-6">
+        <a href="/musikk" class="hover:text-gold-light">Vi skaper musikk</a> / Reklame &amp; event
+      </p>
+      <h1 class="text-5xl md:text-6xl lg:text-7xl font-serif font-semibold leading-[1.05] mb-8 max-w-4xl">
+        Musikk som selger budskapet
+      </h1>
+      <p class="text-cream/80 text-xl md:text-2xl max-w-2xl leading-relaxed">
+        Originalmusikk til reklamefilm, kampanjer, produktlanseringer og eventer. Fra jingle til fullt orkestrert spot — skreddersydd merkevaren din.
+      </p>
+    </div>
+  </section>
+
+  <!-- Hva vi lager -->
+  <section class="py-28 px-6">
+    <div class="max-w-5xl mx-auto">
+      <div class="mb-16 fade-in">
+        <p class="font-mono text-gold tracking-[0.15em] uppercase text-xs mb-4">01 — Hva vi lager</p>
+        <h2 class="text-4xl md:text-5xl font-serif font-semibold leading-[1.05] max-w-2xl">Format som passer<br />budskapet</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10 fade-in">
+        <div>
+          <h3 class="text-xl font-serif font-semibold mb-3 text-gold">Reklamefilm</h3>
+          <p class="text-cream/75 leading-relaxed">
+            Musikk til TV-reklame, sosiale medier og kinoreklame. Vi tilpasser lengder og versjoner til alle plattformer.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-xl font-serif font-semibold mb-3 text-gold">Kampanje &amp; lansering</h3>
+          <p class="text-cream/75 leading-relaxed">
+            Gjennomgående musikalsk identitet for lengre kampanjer, produktlanseringer og merkevareserier.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-xl font-serif font-semibold mb-3 text-gold">Event &amp; scene</h3>
+          <p class="text-cream/75 leading-relaxed">
+            Musikk til konferanser, gallamiddager, messer og produktpresentasjoner — klar for avspilling eller live-framføring.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-xl font-serif font-semibold mb-3 text-gold">Sound logo &amp; jingle</h3>
+          <p class="text-cream/75 leading-relaxed">
+            Korte, gjenkjennelige musikalske signaturer du kan bruke konsekvent på tvers av alle kanaler.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Passer for deg -->
+  <PasserFor
+    intro="Vi jobber både direkte med oppdragsgivere og med byråer i prosjekter der musikken må treffe helt presist."
+    items={[
+      'Du er byrå med en klient som trenger originalmusikk.',
+      'Du er merkevare med en ny kampanje eller produktlansering.',
+      'Du arrangerer event og trenger musikk som setter stemningen.',
+      'Du lager innhold til sosiale medier og trenger lyd som skiller seg ut.',
+      'Du vil bygge en egen musikalsk identitet for merkevaren din.',
+    ]}
+  />
+
+  <!-- CTA -->
+  <section class="py-28 px-6">
+    <div class="max-w-3xl mx-auto text-center fade-in">
+      <h2 class="text-3xl md:text-5xl font-serif font-semibold mb-6 leading-tight">
+        Har du et brief?
+      </h2>
+      <p class="text-cream/80 text-lg mb-10 max-w-xl mx-auto">
+        Send oss kampanjebriefen eller en beskrivelse — vi svarer med forslag og et fast tilbud.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/kontakt" class="inline-flex items-center justify-center gap-3 px-8 py-4 bg-gold text-dark font-semibold tracking-wide uppercase text-sm hover:bg-gold-light transition-colors">
+          <span class="w-2 h-2 rounded-full bg-dark bpm-pulse"></span>
+          Ta kontakt
+        </a>
+        <a href="/musikk" class="inline-flex items-center justify-center px-8 py-4 border border-cream/20 text-cream tracking-wide uppercase text-sm hover:border-gold hover:text-gold transition-all">
+          Se andre tjenester
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

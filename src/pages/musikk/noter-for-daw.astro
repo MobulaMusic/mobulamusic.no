@@ -1,0 +1,166 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Mobula from '../../components/Mobula.astro';
+import SlikJobberVi from '../../components/SlikJobberVi.astro';
+import Faq from '../../components/Faq.astro';
+---
+
+<Layout
+  title="Noter fra DAW-prosjekt | Mobula Music"
+  description="Vi gjør Ableton-, Logic- eller Cubase-prosjektet ditt klart for orkesteret. Fra DAW til profesjonelle noter."
+>
+  <!-- Hero -->
+  <section class="relative pt-40 pb-24 px-6 overflow-hidden bg-dark">
+    <div class="absolute inset-0" style="background: radial-gradient(ellipse at 30% 40%, #10242f 0%, #0b1a22 60%, #071217 100%);"></div>
+    <div class="absolute top-[10%] right-[5%] w-[500px] h-[500px] bg-gold/10 rounded-full blur-[140px] hero-glow"></div>
+    <div class="absolute inset-y-0 right-0 flex items-center pointer-events-none">
+      <Mobula class="w-[min(80vw,1000px)] translate-x-[30%] opacity-[0.12]" c1="#7af0c8" c2="#7af0c8" c3="#7af0c8" />
+    </div>
+
+    <div class="relative max-w-5xl mx-auto">
+      <p class="font-mono text-gold tracking-[0.2em] uppercase text-sm mb-6">
+        <a href="/musikk" class="hover:text-gold-light">Vi skaper musikk</a> / Noter fra DAW
+      </p>
+      <h1 class="text-5xl md:text-6xl lg:text-7xl font-serif font-semibold leading-[1.05] mb-8 max-w-4xl">
+        Fra DAW-prosjekt til<br />profesjonelle noter
+      </h1>
+      <p class="text-cream/80 text-xl md:text-2xl max-w-2xl leading-relaxed">
+        Du har laget musikken i Ableton, Logic eller Cubase. Dirigenten spør etter noter. Det er her vi kommer inn.
+      </p>
+    </div>
+  </section>
+
+  <!-- Problemet -->
+  <section class="py-28 px-6">
+    <div class="max-w-4xl mx-auto">
+      <div class="mb-12 fade-in">
+        <p class="font-mono text-gold tracking-[0.15em] uppercase text-xs mb-4">01 — Problemet</p>
+        <h2 class="text-4xl md:text-5xl font-serif font-semibold leading-[1.05] mb-6">Kjenner du deg igjen?</h2>
+      </div>
+
+      <div class="space-y-6 fade-in">
+        <div class="p-6 md:p-8 border-l-2 border-gold/60 bg-dark-light/50">
+          <p class="text-cream/90 text-lg md:text-xl leading-relaxed italic">
+            "Jeg har laget musikk i Logic i mange år. Nå vil jeg ha en strykekvartett til å spille låta mi live — men jeg kan ikke noter godt nok til å skrive dem ut selv."
+          </p>
+        </div>
+        <div class="p-6 md:p-8 border-l-2 border-gold/60 bg-dark-light/50">
+          <p class="text-cream/90 text-lg md:text-xl leading-relaxed italic">
+            "Korpset jeg spiller i skal framføre låta mi, men jeg har bare MIDI-filer og ingen erfaring med partitur."
+          </p>
+        </div>
+        <div class="p-6 md:p-8 border-l-2 border-gold/60 bg-dark-light/50">
+          <p class="text-cream/90 text-lg md:text-xl leading-relaxed italic">
+            "Jeg har opptak av en melodi jeg plystret, og jeg trenger å få den ned på papir for musikerne."
+          </p>
+        </div>
+      </div>
+
+      <p class="mt-12 text-cream/80 text-lg leading-relaxed fade-in">
+        Dette er en tjeneste få tilbyr, men som musikere, arrangører og band ofte trenger. Vi tar kilden din — DAW-prosjekt, MIDI, lydopptak eller innsunget melodi — og gjør det om til profesjonelt renskrevne noter klare til å settes i hendene på musikere.
+      </p>
+    </div>
+  </section>
+
+  <!-- Hva vi gjør -->
+  <section class="py-28 px-6 bg-dark-light">
+    <div class="max-w-5xl mx-auto">
+      <div class="mb-16 fade-in">
+        <p class="font-mono text-gold tracking-[0.15em] uppercase text-xs mb-4">02 — Hva vi leverer</p>
+        <h2 class="text-4xl md:text-5xl font-serif font-semibold leading-[1.05] max-w-2xl">Noter som er klare<br />for musikerne</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10 fade-in">
+        <div>
+          <h3 class="text-xl font-serif font-semibold mb-3 text-gold">Partitur &amp; stemmer</h3>
+          <p class="text-cream/75 leading-relaxed">
+            Fullt partitur og separate stemmer til hver musiker/instrument — notegrafikk som møter den standarden profesjonelle musikere forventer, kvalitetssikret og uten feil. Klart til utskrift eller digital visning på nettbrett.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-xl font-serif font-semibold mb-3 text-gold">Arrangement for ditt ensemble</h3>
+          <p class="text-cream/75 leading-relaxed">
+            Trenger du strykekvartett, korps, storband, kor eller blandet ensemble? Vi tilpasser og arrangerer ut fra det du har komponert.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-xl font-serif font-semibold mb-3 text-gold">Leadsheets</h3>
+          <p class="text-cream/75 leading-relaxed">
+            Enkel melodilinje med akkorder og tekst, perfekt for band- og singer-songwriter-kontekst.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-xl font-serif font-semibold mb-3 text-gold">Transkripsjon fra lyd</h3>
+          <p class="text-cream/75 leading-relaxed">
+            Har du bare en lydfil (egen eller andres)? Vi kan transkribere melodi, harmonikk eller hele arrangementet ned på noter.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slik jobber vi -->
+  <SlikJobberVi
+    label="Prosessen"
+    title="Slik fungerer det"
+    intro="Det er ikke komplisert. Du sender oss det du har, vi svarer med spørsmål og et tilbud."
+    steps={[
+      {
+        title: 'Send oss kilden',
+        body: 'Eksporter DAW-prosjektet som MIDI eller audio, eller send oss lydopptaket du har. Vi trenger også en kort beskrivelse: hvilket ensemble skal spille, og når.',
+      },
+      {
+        title: 'Vi skriver ut',
+        body: 'Vi lager partitur, stemmer eller det som er avtalt. Du får PDF til gjennomgang, og kan be om endringer i dynamikk, fraseringer eller arrangement.',
+      },
+      {
+        title: 'Ferdige filer',
+        body: 'Du mottar ferdige PDF-er til utskrift, og originalfilene om du vil redigere videre selv.',
+      },
+    ]}
+  />
+
+  <!-- FAQ -->
+  <Faq
+    title="Vanlige spørsmål"
+    items={[
+      {
+        q: 'Hvilke DAW-er fungerer?',
+        a: 'Alle. Ableton, Logic, Cubase, Pro Tools, FL Studio, Reaper — vi trenger bare MIDI-eksport eller audio-filer. Har du ikke MIDI, går det som regel også an å jobbe ut fra stems eller en fullmiks.',
+      },
+      {
+        q: 'Jeg kan ikke lese noter. Spiller det noen rolle?',
+        a: 'Nei. Det er derfor du kontakter oss. Vi forklarer gjerne valgene våre underveis hvis du vil forstå hvordan noter fungerer — men du trenger ikke det for å bruke tjenesten.',
+      },
+      {
+        q: 'Kan dere også arrangere om musikken, ikke bare transkribere?',
+        a: 'Ja. Mange vil ha musikken tilpasset et annet ensemble enn den opprinnelig var laget for — fra DAW-prosjekt til strykekvartett, eller fra piano-demo til korps. Vi tar den musikalske jobben.',
+      },
+      {
+        q: 'Hva koster det?',
+        a: 'Fra <strong class="text-cream">850 kr/t inkl. mva</strong>. Tidsbruken avhenger av lengde, kompleksitet og om det er ren transkripsjon eller nytt arrangement. Send oss kilden, så gir vi et fast tilbud.',
+      },
+    ]}
+  />
+
+  <!-- CTA -->
+  <section class="py-28 px-6">
+    <div class="max-w-3xl mx-auto text-center fade-in">
+      <h2 class="text-3xl md:text-5xl font-serif font-semibold mb-6 leading-tight">
+        Send oss DAW-prosjektet
+      </h2>
+      <p class="text-cream/80 text-lg mb-10 max-w-xl mx-auto">
+        Eller audio-filen. Eller bare en beskrivelse. Vi tar det videre derfra.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/kontakt" class="inline-flex items-center justify-center gap-3 px-8 py-4 bg-gold text-dark font-semibold tracking-wide uppercase text-sm hover:bg-gold-light transition-colors">
+          <span class="w-2 h-2 rounded-full bg-dark bpm-pulse"></span>
+          Ta kontakt
+        </a>
+        <a href="/musikk" class="inline-flex items-center justify-center px-8 py-4 border border-cream/20 text-cream tracking-wide uppercase text-sm hover:border-gold hover:text-gold transition-all">
+          Se andre tjenester
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

@@ -1,17 +1,28 @@
 @import "tailwindcss";
 
 @theme {
-  --color-dark: #121218;
-  --color-dark-light: #1a1a22;
-  --color-dark-card: #222230;
-  --color-dark-border: #2e2e3a;
-  --color-gold: #c8a45e;
-  --color-gold-light: #d9c078;
-  --color-gold-dark: #a8883e;
-  --color-cream: #f0eee6;
-  --color-gray-text: #a0a8b4;
-  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
-  --font-serif: 'Playfair Display', Georgia, serif;
+  /* Base – deep water, not pitch black */
+  --color-dark: #0b1a22;
+  --color-dark-light: #10242f;
+  --color-dark-card: #17303d;
+  --color-dark-border: #1f3a48;
+
+  /* Accents – mint + lavender duo replaces gold */
+  --color-gold: #7af0c8;        /* kept name for compat; now mint */
+  --color-gold-light: #a8f7dc;
+  --color-gold-dark: #4fd4a6;
+  --color-accent-2: #c9a2ff;    /* lavender */
+  --color-accent-hot: #ff5f6d;  /* sparing CTA */
+
+  /* Text */
+  --color-cream: #eef4f2;
+  --color-gray-text: #8aa3ad;
+  --color-fg-dim: #5a7684;
+
+  --font-sans: 'Satoshi', 'Inter', system-ui, -apple-system, sans-serif;
+  --font-serif: 'Satoshi', 'Inter', sans-serif;
+  --font-display: 'Satoshi', 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
 }
 
 html {
@@ -28,7 +39,18 @@ body {
 }
 
 h1, h2, h3 {
-  font-family: var(--font-serif);
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+/* Monospace labels — small caps tags above sections */
+.label-mono {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-fg-dim);
 }
 
 /* Fade-in animation on scroll */
@@ -43,12 +65,21 @@ h1, h2, h3 {
   transform: translateY(0);
 }
 
-/* Gold gradient text */
+/* Accent gradient text (mint → lavender) */
 .text-gradient {
-  background: linear-gradient(135deg, var(--color-gold), var(--color-gold-light));
+  background: linear-gradient(135deg, var(--color-gold), var(--color-accent-2));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+/* Mint underline for inline highlights */
+.text-underline-accent {
+  background-image: linear-gradient(var(--color-gold), var(--color-gold));
+  background-repeat: no-repeat;
+  background-position: 0 92%;
+  background-size: 100% 2px;
+  padding-bottom: 2px;
 }
 
 /* Hero animations */
@@ -58,8 +89,8 @@ h1, h2, h3 {
 }
 
 @keyframes heroGlow {
-  0%, 100% { opacity: 0.4; transform: translate(0, 0) scale(1); }
-  50% { opacity: 0.7; transform: translate(-20px, 10px) scale(1.1); }
+  0%, 100% { opacity: 0.35; transform: translate(0, 0) scale(1); }
+  50% { opacity: 0.6; transform: translate(-20px, 10px) scale(1.1); }
 }
 
 @keyframes heroFadeUp {
@@ -87,17 +118,29 @@ h1, h2, h3 {
 
 /* Glass card variant */
 .card-glass {
-  background: color-mix(in srgb, var(--color-dark-card) 80%, transparent);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: color-mix(in srgb, var(--color-dark-card) 75%, transparent);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   border: 1px solid color-mix(in srgb, var(--color-cream) 8%, transparent);
 }
 
-/* Smooth hover on cards */
+/* Card hover — neon border glow instead of heavy drop shadow */
 .card-hover {
   transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 .card-hover:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(200, 164, 94, 0.1);
+  transform: translateY(-2px);
+  border-color: color-mix(in srgb, var(--color-gold) 50%, transparent);
+  box-shadow:
+    0 0 0 1px color-mix(in srgb, var(--color-gold) 40%, transparent),
+    0 20px 60px -20px color-mix(in srgb, var(--color-gold) 35%, transparent);
+}
+
+/* Subtle BPM pulse (120bpm ≈ 500ms) for CTA dots */
+@keyframes bpmPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.85); }
+}
+.bpm-pulse {
+  animation: bpmPulse 500ms ease-in-out infinite;
 }

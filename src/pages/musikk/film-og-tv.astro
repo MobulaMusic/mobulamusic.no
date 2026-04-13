@@ -1,0 +1,148 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Mobula from '../../components/Mobula.astro';
+import PasserFor from '../../components/PasserFor.astro';
+import SlikJobberVi from '../../components/SlikJobberVi.astro';
+import Faq from '../../components/Faq.astro';
+---
+
+<Layout
+  title="Musikk til film & TV | Mobula Music"
+  description="Originalmusikk til spillefilm, kortfilm, dokumentar og TV-serier fra utdannede filmkomponister."
+>
+  <!-- Hero -->
+  <section class="relative pt-40 pb-24 px-6 overflow-hidden bg-dark">
+    <div class="absolute inset-0" style="background: radial-gradient(ellipse at 30% 40%, #10242f 0%, #0b1a22 60%, #071217 100%);"></div>
+    <div class="absolute top-[10%] right-[5%] w-[500px] h-[500px] bg-gold/10 rounded-full blur-[140px] hero-glow"></div>
+    <div class="absolute inset-y-0 right-0 flex items-center pointer-events-none">
+      <Mobula class="w-[min(80vw,1000px)] translate-x-[30%] opacity-[0.12]" c1="#7af0c8" c2="#7af0c8" c3="#7af0c8" />
+    </div>
+
+    <div class="relative max-w-5xl mx-auto">
+      <p class="font-mono text-gold tracking-[0.2em] uppercase text-sm mb-6">
+        <a href="/musikk" class="hover:text-gold-light">Vi skaper musikk</a> / Film &amp; TV
+      </p>
+      <h1 class="text-5xl md:text-6xl lg:text-7xl font-serif font-semibold leading-[1.05] mb-8 max-w-4xl">
+        Musikk som løfter<br />fortellingen
+      </h1>
+      <p class="text-cream/80 text-xl md:text-2xl max-w-2xl leading-relaxed">
+        Originalmusikk til spillefilm, kortfilm, dokumentar, drama og serie. Komponert av utdannede filmkomponister som forstår at musikken skal tjene bildet, ikke tvert imot.
+      </p>
+    </div>
+  </section>
+
+  <!-- Hvorfor oss -->
+  <section class="py-28 px-6">
+    <div class="max-w-5xl mx-auto">
+      <div class="mb-16 fade-in">
+        <p class="font-mono text-gold tracking-[0.15em] uppercase text-xs mb-4">01 — Hvorfor oss</p>
+        <h2 class="text-4xl md:text-5xl font-serif font-semibold leading-[1.05] max-w-2xl">Filmmusikk er et fag,<br />ikke en ettertanke</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10 fade-in">
+        <div>
+          <h3 class="text-xl font-serif font-semibold mb-3 text-gold">Formell utdanning</h3>
+          <p class="text-cream/75 leading-relaxed">
+            Begge komponistene våre har formell utdanning innen filmmusikk. Vi jobber metodisk med motiver, temaer, klangfarge og dynamikk — slik at musikken støtter fortellingen på en måte publikum kjenner, men ikke alltid legger merke til.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-xl font-serif font-semibold mb-3 text-gold">Levende musikere</h3>
+          <p class="text-cream/75 leading-relaxed">
+            Når prosjektet krever det, spiller vi inn med levende musikere i studio — strykere, blåsere, perkusjon. Vi har et nettverk av topp musikere og tilgang til eget studio, så kvalitet og fleksibilitet går hånd i hånd.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-xl font-serif font-semibold mb-3 text-gold">Tett samarbeid</h3>
+          <p class="text-cream/75 leading-relaxed">
+            Vi liker å komme inn tidlig i prosessen — ikke først når filmen er ferdigklippet. Jo tidligere vi snakker, jo bedre kan musikken vokse fram sammen med fortellingen.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-xl font-serif font-semibold mb-3 text-gold">Hele spektrumet</h3>
+          <p class="text-cream/75 leading-relaxed">
+            Fra stilleste piano-undertekst til fullt orkester. Vi er like komfortable med dokumentar, drama, komedie, sci-fi eller kortfilmer. Fortell oss hva filmen trenger.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Passer for deg -->
+  <PasserFor
+    title="Passer for deg uansett"
+    intro="Vi har skrevet for alt fra film til TV-produksjoner. Budsjettet styrer ambisjonsnivået — ikke kvaliteten."
+    items={[
+      'Du er regissør med en kortfilm eller spillefilm under arbeid.',
+      'Du lager dokumentar og trenger musikk som støtter uten å ta over.',
+      'Du har et lite budsjett, men store ambisjoner for prosjektet ditt.',
+      'Du jobber med en TV-serie eller dramaproduksjon.',
+      'Du har klippet filmen ferdig og trenger temp-musikk erstattet med original.',
+    ]}
+  />
+
+  <!-- Slik jobber vi -->
+  <SlikJobberVi
+    label="Prosessen"
+    title="Slik ser et filmprosjekt ut"
+    intro="Timeline tilpasses alltid prosjektet ditt, men her er rammen vi vanligvis jobber etter."
+    steps={[
+      {
+        title: 'Spotting & brief',
+        body: 'Vi ser filmen (eller klippet) sammen, identifiserer scener som trenger musikk, og diskuterer stil, tempo og følelse. Deretter leverer vi et fast tilbud.',
+      },
+      {
+        title: 'Skisser & dialog',
+        body: 'Vi lager skisser til nøkkelscener som du kan lytte til. Du gir tilbakemelding. Vi finjusterer før vi går videre med full komposisjon og arrangement.',
+      },
+      {
+        title: 'Innspilling & levering',
+        body: 'Innspilling med levende musikere eller produksjon i studio, etterfulgt av mix og mastering. Du får ferdige filer i alle ønskede formater.',
+      },
+    ]}
+  />
+
+  <!-- FAQ -->
+  <Faq
+    title="Vanlige spørsmål"
+    items={[
+      {
+        q: 'Når bør jeg ta kontakt i prosessen?',
+        a: 'Så tidlig som mulig — aller helst før filmen er ferdigklippet. Da kan musikken vokse organisk sammen med fortellingen, og du slipper at klippet kjennes låst til temp-musikk du egentlig skulle byttet ut.',
+      },
+      {
+        q: 'Vi har et lite budsjett. Er det noe vi kan gjøre?',
+        a: 'Ja. Vi tilpasser oss — færre musikere, mer programmering, kortere musikk-cues. Det viktigste er at vi er ærlige om hva budsjettet gir rom for, og leverer kvalitet innenfor den rammen. Ingen elsker en film med dårlig musikk fordi vi prøvde å gjøre for mye.',
+      },
+      {
+        q: 'Kan vi bruke musikk dere allerede har laget?',
+        a: 'Vi jobber primært med originalmusikk skrevet for hvert prosjekt. Men hvis du trenger noe raskt og rimelig har vi også katalogmusikk (library) vi kan lisensiere ut til bruk.',
+      },
+      {
+        q: 'Kan dere jobbe remote?',
+        a: 'Ja. Mye av kommunikasjonen vår skjer via video, filoverføring og kommentarer direkte i video/mix-filer. Du trenger ikke være i Oslo for å jobbe med oss.',
+      },
+    ]}
+  />
+
+  <!-- CTA -->
+  <section class="py-28 px-6">
+    <div class="max-w-3xl mx-auto text-center fade-in">
+      <h2 class="text-3xl md:text-5xl font-serif font-semibold mb-6 leading-tight">
+        Har du et filmprosjekt?
+      </h2>
+      <p class="text-cream/80 text-lg mb-10 max-w-xl mx-auto">
+        Send oss en kort beskrivelse av prosjektet — sjanger, tidsramme, budsjett — så tar vi en uforpliktende prat.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/kontakt" class="inline-flex items-center justify-center gap-3 px-8 py-4 bg-gold text-dark font-semibold tracking-wide uppercase text-sm hover:bg-gold-light transition-colors">
+          <span class="w-2 h-2 rounded-full bg-dark bpm-pulse"></span>
+          Ta kontakt
+        </a>
+        <a href="/musikk" class="inline-flex items-center justify-center px-8 py-4 border border-cream/20 text-cream tracking-wide uppercase text-sm hover:border-gold hover:text-gold transition-all">
+          Se andre tjenester
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,47 @@
+---
+interface Props {
+  variant?: 'watermark' | 'divider' | 'inline';
+  class?: string;
+  /** Dark accent (flipped wingtip / tail) */
+  c1?: string;
+  /** Main body wave */
+  c2?: string;
+  /** Light trail / water */
+  c3?: string;
+}
+
+const {
+  variant = 'inline',
+  class: className = '',
+  c1 = '#33414e',
+  c2 = '#80afca',
+  c3 = '#c6dbe8',
+} = Astro.props;
+
+const baseClass = {
+  watermark:
+    'pointer-events-none absolute inset-0 m-auto w-[min(90%,1000px)] opacity-[0.08] select-none',
+  divider: 'mx-auto my-16 w-56',
+  inline: 'inline-block',
+}[variant];
+---
+
+<svg
+  class={`${baseClass} ${className}`}
+  viewBox="600 1050 3300 1620"
+  xmlns="http://www.w3.org/2000/svg"
+  aria-hidden="true"
+>
+  <path
+    fill={c1}
+    d="M2351,1955c456,251,1191,74,1185-675,153,127,271,303,303,504,30,193-19,409-192,560-165,142-399,199-654,196l-642-585Z"
+  />
+  <path
+    fill={c2}
+    d="M697,2168c650-368,1176,22,1692,242,350,149,834,220,1192-17-213,67-434-48-534-179-276-362-284-1092-1012-1025,229,94,290,338,227,514-102,282-430,208-645,199-289-14-614,25-920,266Z"
+  />
+  <path
+    fill={c3}
+    d="M697,2168c1079-498,1909,994,2955,450-1028,288-1964-1066-2955-450Z"
+  />
+</svg>

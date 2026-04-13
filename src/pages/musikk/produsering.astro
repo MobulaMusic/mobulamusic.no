@@ -1,0 +1,124 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Mobula from '../../components/Mobula.astro';
+import PasserFor from '../../components/PasserFor.astro';
+import SlikJobberVi from '../../components/SlikJobberVi.astro';
+---
+
+<Layout
+  title="Produsering & arrangement | Mobula Music"
+  description="Har du en låt-idé og vet ikke hvordan du tar den videre? Vi produserer, arrangerer og hjelper deg å fullføre prosjektet."
+>
+  <!-- Hero -->
+  <section class="relative pt-40 pb-24 px-6 overflow-hidden bg-dark">
+    <div class="absolute inset-0" style="background: radial-gradient(ellipse at 30% 40%, #10242f 0%, #0b1a22 60%, #071217 100%);"></div>
+    <div class="absolute top-[10%] right-[5%] w-[500px] h-[500px] bg-gold/10 rounded-full blur-[140px] hero-glow"></div>
+    <div class="absolute inset-y-0 right-0 flex items-center pointer-events-none">
+      <Mobula class="w-[min(80vw,1000px)] translate-x-[30%] opacity-[0.12]" c1="#7af0c8" c2="#7af0c8" c3="#7af0c8" />
+    </div>
+
+    <div class="relative max-w-5xl mx-auto">
+      <p class="font-mono text-gold tracking-[0.2em] uppercase text-sm mb-6">
+        <a href="/musikk" class="hover:text-gold-light">Vi skaper musikk</a> / Produsering
+      </p>
+      <h1 class="text-5xl md:text-6xl lg:text-7xl font-serif font-semibold leading-[1.05] mb-8 max-w-4xl">
+        Fullfør låta du startet
+      </h1>
+      <p class="text-cream/80 text-xl md:text-2xl max-w-2xl leading-relaxed">
+        Alle sitter på en idé som aldri ble ferdig. En voice-memo, en halvferdig demo, en tekst du summer melodien til. Vi tar det videre.
+      </p>
+    </div>
+  </section>
+
+  <!-- Hva vi gjør -->
+  <section class="py-28 px-6">
+    <div class="max-w-5xl mx-auto">
+      <div class="mb-16 fade-in">
+        <p class="font-mono text-gold tracking-[0.15em] uppercase text-xs mb-4">01 — Hva vi gjør</p>
+        <h2 class="text-4xl md:text-5xl font-serif font-semibold leading-[1.05] max-w-2xl">Fra idé til track</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10 fade-in">
+        <div>
+          <h3 class="text-xl font-serif font-semibold mb-3 text-gold">Produksjon fra bunnen</h3>
+          <p class="text-cream/75 leading-relaxed">
+            Du summer, synger eller spiller oss en idé. Vi bygger hele produksjonen — trommer, bass, harmonikk, arrangement og mix — rundt den.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-xl font-serif font-semibold mb-3 text-gold">Ferdigstill din demo</h3>
+          <p class="text-cream/75 leading-relaxed">
+            Har du en låt i Logic, Ableton eller GarageBand som ikke helt blir ferdig? Vi hjelper deg med arrangement, mix og mastering for å få den dit du vil.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-xl font-serif font-semibold mb-3 text-gold">Co-writing &amp; arrangement</h3>
+          <p class="text-cream/75 leading-relaxed">
+            Vi jobber sammen med deg på låtskriving — både melodi, tekst og arrangement. Du holder stemmen, vi bringer verktøykassa.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-xl font-serif font-semibold mb-3 text-gold">Track for streaming</h3>
+          <p class="text-cream/75 leading-relaxed">
+            Vi leverer ferdig masteret track klart for Spotify, Apple Music og alle andre plattformer. Du eier musikken.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Passer for deg -->
+  <PasserFor
+    title="Passer for deg uansett"
+    intro="Du trenger ikke kunne noter, lese akkorder eller ha et ferdig arrangement. Det er det vi er her for."
+    items={[
+      'Du har en voice-memo med en melodi-idé du ikke vet hva du skal gjøre med.',
+      'Du er singer-songwriter med låter som trenger produksjon før utgivelse.',
+      'Du lager musikk i DAW, men får ikke helt proffheten du leter etter.',
+      'Du er tekstforfatter og trenger en komponist/produsent til å lage musikken.',
+      'Du vil teste ut en låt-idé for første gang og ser etter en trygg samarbeidspartner.',
+    ]}
+  />
+
+  <!-- Slik jobber vi -->
+  <SlikJobberVi
+    label="Prosessen"
+    title="Slik ser det ut"
+    intro="Hvert prosjekt er unikt — men vi har noen faste steg som gjør arbeidet forutsigbart."
+    steps={[
+      {
+        title: 'Del ideen',
+        body: 'Send oss det du har: en lydopptak, en demo, en tekst, eller bare en beskrivelse av hva du vil. Vi tar en prat om retning og tilbud.',
+      },
+      {
+        title: 'Skisse & dialog',
+        body: 'Vi lager en første skisse du kan lytte til. Du gir tilbakemelding. Vi finjusterer til retningen kjennes riktig.',
+      },
+      {
+        title: 'Produksjon & mastering',
+        body: 'Full produksjon, mix og mastering. Du får ferdige filer klare for utgivelse eller videre bruk.',
+      },
+    ]}
+  />
+
+  <!-- CTA -->
+  <section class="py-28 px-6">
+    <div class="max-w-3xl mx-auto text-center fade-in">
+      <h2 class="text-3xl md:text-5xl font-serif font-semibold mb-6 leading-tight">
+        Send oss låta di
+      </h2>
+      <p class="text-cream/80 text-lg mb-10 max-w-xl mx-auto">
+        Uansett format — voice-memo, DAW-prosjekt, tekstfil, eller bare en beskrivelse. Vi tar det videre.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/kontakt" class="inline-flex items-center justify-center gap-3 px-8 py-4 bg-gold text-dark font-semibold tracking-wide uppercase text-sm hover:bg-gold-light transition-colors">
+          <span class="w-2 h-2 rounded-full bg-dark bpm-pulse"></span>
+          Ta kontakt
+        </a>
+        <a href="/musikk" class="inline-flex items-center justify-center px-8 py-4 border border-cream/20 text-cream tracking-wide uppercase text-sm hover:border-gold hover:text-gold transition-all">
+          Se andre tjenester
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

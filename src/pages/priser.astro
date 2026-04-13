@@ -1,0 +1,326 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Mobula from '../components/Mobula.astro';
+import PasserFor from '../components/PasserFor.astro';
+import SlikJobberVi from '../components/SlikJobberVi.astro';
+import Faq from '../components/Faq.astro';
+---
+
+<Layout
+  title="Priser & pakker | Mobula Music"
+  description="Gjennomsiktige priser for innspilling, podkast og musikkproduksjon. Pakker for alt fra første demo til full produksjon."
+>
+  <!-- Hero -->
+  <section class="relative pt-40 pb-24 px-6 overflow-hidden bg-dark">
+    <div class="absolute inset-0" style="background: radial-gradient(ellipse at 30% 40%, #10242f 0%, #0b1a22 60%, #071217 100%);"></div>
+    <div class="absolute top-[10%] right-[5%] w-[500px] h-[500px] bg-gold/10 rounded-full blur-[140px] hero-glow"></div>
+    <div class="absolute inset-y-0 right-0 flex items-center pointer-events-none">
+      <Mobula class="w-[min(80vw,900px)] translate-x-[30%] opacity-[0.1]" c1="#7af0c8" c2="#7af0c8" c3="#7af0c8" />
+    </div>
+
+    <div class="relative max-w-5xl mx-auto">
+      <p class="font-mono text-gold tracking-[0.2em] uppercase text-sm mb-6">Priser &amp; pakker</p>
+      <h1 class="text-5xl md:text-6xl lg:text-7xl font-serif font-semibold leading-[1.05] mb-8 max-w-4xl">
+        Det skal være lett<br />å spørre om pris.
+      </h1>
+      <p class="text-cream/80 text-xl md:text-2xl max-w-2xl leading-relaxed">
+        Her finner du startpunktene. Det faktiske tilbudet får du etter en kort samtale —
+        vi tilpasser oss prosjektet og budsjettet ditt.
+      </p>
+    </div>
+  </section>
+
+  <!-- Passer for deg uansett -->
+  <PasserFor
+    items={[
+      'Du har aldri vært i et studio før, og vil bare prøve.',
+      'Du har en demo på telefonen som du vil gjøre om til noe du kan dele.',
+      'Du er hobbymusiker som sparer opp til én dag i studio.',
+      'Du er profesjonell artist med et større prosjekt under oppseiling.',
+      'Du er lærer, regissør eller produsent som trenger hjelp til en produksjon.',
+    ]}
+  />
+
+  <!-- Pakker -->
+  <section class="py-28 px-6 bg-dark-light">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex flex-col md:flex-row md:items-end md:justify-between mb-16 gap-6 fade-in">
+        <div>
+          <p class="font-mono text-gold tracking-[0.15em] uppercase text-xs mb-4">01 — Startpakker</p>
+          <h2 class="text-4xl md:text-5xl font-serif font-semibold leading-[1.05] max-w-2xl">Gode steder<br />å begynne</h2>
+        </div>
+        <p class="text-cream/70 text-base md:text-lg max-w-md leading-relaxed">
+          Tre enkle pakker som dekker de fleste småoppdrag. Vi lager alltid et fast tilbud
+          før vi starter, så du slipper overraskelser.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 fade-in">
+        <!-- Demo -->
+        <div class="relative p-8 md:p-10 border border-cream/10 hover:border-gold/50 transition-colors duration-500 group flex flex-col">
+          <p class="font-mono text-gold text-xs tracking-widest uppercase mb-6">01 — Demo</p>
+          <h3 class="text-2xl md:text-3xl font-serif font-semibold mb-3">Første gang i studio</h3>
+          <p class="font-mono text-cream/60 text-[11px] tracking-widest uppercase mb-4">Passer til</p>
+          <p class="text-cream/85 text-sm leading-relaxed mb-6">
+            Deg selv, venner, familie, audition eller søknad. En fin måte å prøve studio uten å binde deg til et stort prosjekt.
+          </p>
+          <div class="border-t border-cream/10 pt-6 mb-6">
+            <p class="font-mono text-cream/50 text-xs uppercase tracking-widest mb-2">Fra <span class="text-cream/40 normal-case">· inkl. mva</span></p>
+            <p class="font-serif text-gold text-4xl md:text-5xl font-semibold">4 500 kr</p>
+            <p class="text-cream/60 text-sm mt-2">3 timer i studio + enkel mix</p>
+          </div>
+          <ul class="text-cream/80 text-sm space-y-2 mb-6">
+            <li class="flex gap-2"><span class="text-gold">—</span> Gjennomgang før økta</li>
+            <li class="flex gap-2"><span class="text-gold">—</span> Vokal + gitar/piano/lignende</li>
+            <li class="flex gap-2"><span class="text-gold">—</span> Enkel mix levert innen 1 uke</li>
+            <li class="flex gap-2"><span class="text-gold">—</span> Du eier opptaket</li>
+          </ul>
+          <div class="flex flex-wrap gap-2 mb-6">
+            <span class="text-[11px] font-mono tracking-wider uppercase px-2.5 py-1 border border-gold/40 text-gold/90">✓ Lytting</span>
+            <span class="text-[11px] font-mono tracking-wider uppercase px-2.5 py-1 border border-gold/40 text-gold/90">✓ Audition</span>
+            <span class="text-[11px] font-mono tracking-wider uppercase px-2.5 py-1 border border-cream/15 text-cream/40 line-through decoration-cream/30">Streaming</span>
+          </div>
+          <p class="text-cream/55 text-xs leading-relaxed mb-6 border-l-2 border-gold/40 pl-3">
+            Vil du gi det ut på Spotify eller Apple Music? Da trenger du <strong class="text-cream/80">Single-pakken</strong> — den inkluderer bedre mix og mastering som kreves for streaming.
+          </p>
+          <a href="/kontakt" class="mt-auto inline-flex items-center gap-2 text-gold text-sm font-medium group-hover:gap-3 transition-all">
+            Spør om denne <span aria-hidden="true">→</span>
+          </a>
+        </div>
+
+        <!-- Single -->
+        <div class="relative p-8 md:p-10 border border-gold/40 bg-gold/[0.03] hover:border-gold transition-colors duration-500 group flex flex-col">
+          <span class="absolute -top-3 left-8 bg-gold text-dark text-xs font-semibold tracking-widest uppercase px-3 py-1">Mest valgt</span>
+          <p class="font-mono text-gold text-xs tracking-widest uppercase mb-6">02 — Single</p>
+          <h3 class="text-2xl md:text-3xl font-serif font-semibold mb-3">Én låt, klar for Spotify</h3>
+          <p class="font-mono text-cream/60 text-[11px] tracking-widest uppercase mb-4">Passer til</p>
+          <p class="text-cream/85 text-sm leading-relaxed mb-6">
+            Offisiell utgivelse på Spotify, Apple Music, YouTube og alt annet. Singer-songwriter, vokalist eller band som skal gi ut sin første eller neste låt.
+          </p>
+          <div class="border-t border-cream/10 pt-6 mb-6">
+            <p class="font-mono text-cream/50 text-xs uppercase tracking-widest mb-2">Fra <span class="text-cream/40 normal-case">· inkl. mva</span></p>
+            <p class="font-serif text-gold text-4xl md:text-5xl font-semibold">7 500 kr</p>
+            <p class="text-cream/60 text-sm mt-2">1 hel dag i studio + mix og mastering</p>
+          </div>
+          <ul class="text-cream/80 text-sm space-y-2 mb-6">
+            <li class="flex gap-2"><span class="text-gold">—</span> Planleggingsmøte</li>
+            <li class="flex gap-2"><span class="text-gold">—</span> Én full innspillingsdag (ca. 8 t)</li>
+            <li class="flex gap-2"><span class="text-gold">—</span> Full mix med detaljert bearbeiding</li>
+            <li class="flex gap-2"><span class="text-gold">—</span> <strong class="text-cream">Mastering klar for streaming</strong></li>
+          </ul>
+          <div class="flex flex-wrap gap-2 mb-6">
+            <span class="text-[11px] font-mono tracking-wider uppercase px-2.5 py-1 border border-gold/40 text-gold/90">✓ Lytting</span>
+            <span class="text-[11px] font-mono tracking-wider uppercase px-2.5 py-1 border border-gold/40 text-gold/90">✓ Streaming</span>
+            <span class="text-[11px] font-mono tracking-wider uppercase px-2.5 py-1 border border-gold/40 text-gold/90">✓ Radio</span>
+          </div>
+          <a href="/kontakt" class="mt-auto inline-flex items-center gap-2 text-gold text-sm font-medium group-hover:gap-3 transition-all">
+            Spør om denne <span aria-hidden="true">→</span>
+          </a>
+        </div>
+
+        <!-- Prosjekt -->
+        <div class="relative p-8 md:p-10 border border-cream/10 hover:border-gold/50 transition-colors duration-500 group flex flex-col">
+          <p class="font-mono text-gold text-xs tracking-widest uppercase mb-6">03 — Prosjekt</p>
+          <h3 class="text-2xl md:text-3xl font-serif font-semibold mb-3">EP, album eller score</h3>
+          <p class="font-mono text-cream/60 text-[11px] tracking-widest uppercase mb-4">Passer til</p>
+          <p class="text-cream/85 text-sm leading-relaxed mb-6">
+            Større produksjoner: EP, album, filmmusikk, kommersiell utgivelse. Vi skreddersyr en plan etter omfang, ensemble og leveringstidspunkt.
+          </p>
+          <div class="border-t border-cream/10 pt-6 mb-6">
+            <p class="font-mono text-cream/50 text-xs uppercase tracking-widest mb-2">Fra <span class="text-cream/40 normal-case">· inkl. mva</span></p>
+            <p class="font-serif text-gold text-4xl md:text-5xl font-semibold">Tilbud</p>
+            <p class="text-cream/60 text-sm mt-2">Alltid fast pris før vi starter</p>
+          </div>
+          <ul class="text-cream/80 text-sm space-y-2 mb-6">
+            <li class="flex gap-2"><span class="text-gold">—</span> Forprosjekt og kalkyle</li>
+            <li class="flex gap-2"><span class="text-gold">—</span> Flere innspillingsøkter</li>
+            <li class="flex gap-2"><span class="text-gold">—</span> Produsent, mix, mastering</li>
+            <li class="flex gap-2"><span class="text-gold">—</span> Tett oppfølging underveis</li>
+          </ul>
+          <div class="flex flex-wrap gap-2 mb-6">
+            <span class="text-[11px] font-mono tracking-wider uppercase px-2.5 py-1 border border-gold/40 text-gold/90">✓ Streaming</span>
+            <span class="text-[11px] font-mono tracking-wider uppercase px-2.5 py-1 border border-gold/40 text-gold/90">✓ Radio</span>
+            <span class="text-[11px] font-mono tracking-wider uppercase px-2.5 py-1 border border-gold/40 text-gold/90">✓ Kommersielt</span>
+          </div>
+          <a href="/kontakt" class="mt-auto inline-flex items-center gap-2 text-gold text-sm font-medium group-hover:gap-3 transition-all">
+            Få et tilbud <span aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Timespris / andre tjenester -->
+  <section class="py-28 px-6">
+    <div class="max-w-5xl mx-auto">
+      <div class="mb-16 fade-in">
+        <p class="font-mono text-gold tracking-[0.15em] uppercase text-xs mb-4">02 — Timespriser</p>
+        <h2 class="text-4xl md:text-5xl font-serif font-semibold leading-[1.05] max-w-2xl">Andre tjenester,<br />pr. time</h2>
+      </div>
+
+      <div class="divide-y divide-cream/10 border-y border-cream/10 fade-in">
+        <div class="grid grid-cols-1 md:grid-cols-[1fr_auto_auto] gap-4 md:gap-10 py-6 items-baseline">
+          <div>
+            <h3 class="text-xl font-serif font-semibold mb-1">Studio med tekniker</h3>
+            <p class="text-cream/60 text-sm">Innspilling, opptak, overdubs</p>
+          </div>
+          <p class="font-mono text-cream/50 text-xs tracking-widest uppercase">Fra <span class="text-cream/40 normal-case">· inkl. mva</span></p>
+          <p class="font-serif text-gold text-2xl md:text-3xl font-semibold">1 500 kr/t</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-[1fr_auto_auto] gap-4 md:gap-10 py-6 items-baseline">
+          <div>
+            <h3 class="text-xl font-serif font-semibold mb-1">Mix</h3>
+            <p class="text-cream/60 text-sm">Enkeltspor, stem-mix, full produksjon</p>
+          </div>
+          <p class="font-mono text-cream/50 text-xs tracking-widest uppercase">Fra <span class="text-cream/40 normal-case">· inkl. mva</span></p>
+          <p class="font-serif text-gold text-2xl md:text-3xl font-semibold">850 kr/t</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-[1fr_auto_auto] gap-4 md:gap-10 py-6 items-baseline">
+          <div>
+            <h3 class="text-xl font-serif font-semibold mb-1">Mastering</h3>
+            <p class="text-cream/60 text-sm">Pr. låt, klar for streaming</p>
+          </div>
+          <p class="font-mono text-cream/50 text-xs tracking-widest uppercase">Fra <span class="text-cream/40 normal-case">· inkl. mva</span></p>
+          <p class="font-serif text-gold text-2xl md:text-3xl font-semibold">1 000 kr/låt</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-[1fr_auto_auto] gap-4 md:gap-10 py-6 items-baseline">
+          <div>
+            <h3 class="text-xl font-serif font-semibold mb-1">Komposisjon &amp; arrangement</h3>
+            <p class="text-cream/60 text-sm">Musikk til film, scene, reklame, event</p>
+          </div>
+          <p class="font-mono text-cream/50 text-xs tracking-widest uppercase">Fra <span class="text-cream/40 normal-case">· inkl. mva</span></p>
+          <p class="font-serif text-gold text-2xl md:text-3xl font-semibold">Tilbud</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-[1fr_auto_auto] gap-4 md:gap-10 py-6 items-baseline">
+          <div>
+            <h3 class="text-xl font-serif font-semibold mb-1">Noteproduksjon</h3>
+            <p class="text-cream/60 text-sm">Fra DAW-prosjekt, lydopptak eller andre kilder</p>
+          </div>
+          <p class="font-mono text-cream/50 text-xs tracking-widest uppercase">Fra <span class="text-cream/40 normal-case">· inkl. mva</span></p>
+          <p class="font-serif text-gold text-2xl md:text-3xl font-semibold">850 kr/t</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-[1fr_auto_auto] gap-4 md:gap-10 py-6 items-baseline">
+          <div>
+            <h3 class="text-xl font-serif font-semibold mb-1">Podkast-redigering</h3>
+            <p class="text-cream/60 text-sm">Klipping, lyddesign, musikk</p>
+          </div>
+          <p class="font-mono text-cream/50 text-xs tracking-widest uppercase">Fra <span class="text-cream/40 normal-case">· inkl. mva</span></p>
+          <p class="font-serif text-gold text-2xl md:text-3xl font-semibold">950 kr/t</p>
+        </div>
+      </div>
+
+      <p class="mt-8 text-cream/60 text-sm leading-relaxed max-w-2xl">
+        Alle priser er veiledende og inkludert mva. Vi gir deg naturligvis et tilbud før vi starter,
+        og har ofte bedre priser for studenter, hobbyister og lengre prosjekter.
+        <strong class="text-cream/90">Spør oss gjerne — vi biter ikke.</strong>
+      </p>
+    </div>
+  </section>
+
+  <!-- Hva påvirker prisen -->
+  <section class="py-28 px-6 bg-dark-light">
+    <div class="max-w-5xl mx-auto">
+      <div class="mb-16 fade-in">
+        <p class="font-mono text-gold tracking-[0.15em] uppercase text-xs mb-4">03 — Åpenhet</p>
+        <h2 class="text-4xl md:text-5xl font-serif font-semibold leading-[1.05] max-w-2xl">Hva påvirker prisen?</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10 fade-in">
+        <div>
+          <h3 class="text-xl font-serif font-semibold mb-3 text-gold">Omfang</h3>
+          <p class="text-cream/75 leading-relaxed">
+            Én låt koster mindre enn en EP. En 30-sekunders reklame koster mindre enn en spillefilm-score.
+            Vi regner tid basert på reell arbeidsmengde.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-xl font-serif font-semibold mb-3 text-gold">Antall musikere</h3>
+          <p class="text-cream/75 leading-relaxed">
+            En solo vokalinnspilling er rimelig. En strykekvartett eller et band koster mer fordi det er større krav til rigg og teknisk utstyr.
+            Spør om fellesinnspillinger hvis du vil dele kostnad.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-xl font-serif font-semibold mb-3 text-gold">Leveringstid</h3>
+          <p class="text-cream/75 leading-relaxed">
+            Har du god tid koster det som normalt. Trenger du noe ferdig til i morgen, må vi prioritere —
+            det koster litt mer.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-xl font-serif font-semibold mb-3 text-gold">Rettigheter</h3>
+          <p class="text-cream/75 leading-relaxed">
+            Egen låt du gir ut selv: standard pris. Kommersiell bruk (reklame, podkast, film) av musikk vi skaper for deg
+            med synkroniserings- eller eksklusive rettigheter: vi gjør avtale og lager tydelig kontrakt.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slik jobber vi -->
+  <SlikJobberVi />
+
+  <!-- FAQ -->
+  <Faq
+    label="Vanlige spørsmål"
+    title="Spørsmål vi får ofte"
+    intro="Hvis du lurer på noe som ikke står her, er det bare å ringe eller sende oss en melding. Det koster ingenting."
+    items={[
+      {
+        q: 'Jeg har aldri vært i studio før — er det greit?',
+        a: 'Ja, helt greit. Mange av kundene våre er hos oss for første gang. Vi bruker litt tid i starten på å gjøre deg komfortabel, forklarer hva som skjer, og lar deg finne roen før vi tar opp. Du trenger ingen forkunnskaper — bare lyst til å prøve.',
+      },
+      {
+        q: 'Jeg har bare en demo på telefonen. Kan dere hjelpe?',
+        a: 'Absolutt. Send oss lydfilen eller en Spotify/YouTube-lenke, så hører vi gjennom og foreslår hva som er smart å gjøre videre. Enten vi starter fra scratch eller bygger videre på demoen din, finner vi en vei.',
+      },
+      {
+        q: 'Hvor mye koster det egentlig?',
+        a: 'Det avhenger av prosjektet. På denne siden finner du startpriser og pakker som gir deg en indikasjon, men vi gir deg alltid et <strong class="text-cream">fast tilbud</strong> før vi starter slik at du vet nøyaktig hva det vil koste. Spør oss — det er gratis.',
+      },
+      {
+        q: 'Eier jeg musikken etterpå?',
+        a: 'Ja. Når du spiller inn din egen musikk hos oss, eier du opptaket og rettighetene. Kommersiell bruk av musikk vi skaper for deg (til film, reklame, podkast osv.) avklarer vi i en tydelig kontrakt før prosjektet starter.',
+      },
+      {
+        q: 'Kan jeg bestille bare mix eller bare mastering?',
+        a: 'Ja. Du kan sende oss ferdige opptak fra andre studioer eller eget hjemmestudio for mix og/eller mastering. Vi jobber med stems, multitracks eller ferdige miks — bare si hva du har.',
+      },
+      {
+        q: 'Har dere rabatter for studenter eller hobbyister?',
+        a: 'Ofte, ja. Vi tilpasser prisen etter prosjektet og situasjonen. Er du student, hobbymusiker eller har et stramt budsjett — si det når du tar kontakt. Vi biter ikke, og vi finner som regel en løsning.',
+      },
+      {
+        q: 'Kan jeg komme innom og se studioet først?',
+        a: 'Gjerne. Vi tar gjerne en kopp kaffe og viser deg rundt. Send oss en melding og avtal en tid — det forplikter ikke til noe.',
+      },
+    ]}
+  />
+
+  <!-- CTA -->
+  <section class="py-28 px-6">
+    <div class="max-w-3xl mx-auto text-center fade-in">
+      <h2 class="text-3xl md:text-5xl font-serif font-semibold mb-6 leading-tight">
+        Fortsatt usikker?<br />Ring oss.
+      </h2>
+      <p class="text-cream/80 text-lg mb-10 max-w-xl mx-auto">
+        Det koster ingenting å spørre, og vi lover å være ærlige om hva prosjektet ditt vil koste.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/kontakt" class="inline-flex items-center justify-center gap-3 px-8 py-4 bg-gold text-dark font-semibold tracking-wide uppercase text-sm hover:bg-gold-light transition-colors">
+          <span class="w-2 h-2 rounded-full bg-dark bpm-pulse"></span>
+          Få et tilbud
+        </a>
+        <a href="tel:+4792039045" class="inline-flex items-center justify-center px-8 py-4 border border-cream/20 text-cream tracking-wide uppercase text-sm hover:border-gold hover:text-gold transition-all">
+          920 39 045
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

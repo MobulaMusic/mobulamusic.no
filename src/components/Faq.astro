@@ -1,0 +1,51 @@
+---
+interface FaqItem {
+  q: string;
+  a: string;
+}
+
+interface Props {
+  title?: string;
+  label?: string;
+  intro?: string;
+  items: FaqItem[];
+}
+
+const {
+  title = 'Vanlige spørsmål',
+  label,
+  intro,
+  items,
+} = Astro.props;
+---
+
+<section class="py-28 px-6">
+  <div class="max-w-4xl mx-auto">
+    <div class="mb-16 fade-in">
+      {label && <p class="font-mono text-gold tracking-[0.15em] uppercase text-xs mb-4">{label}</p>}
+      <h2 class="text-4xl md:text-5xl font-serif font-semibold leading-[1.05] mb-4">{title}</h2>
+      {intro && <p class="text-cream/70 text-base md:text-lg max-w-2xl leading-relaxed">{intro}</p>}
+    </div>
+
+    <div class="border-t border-cream/10 fade-in">
+      {items.map((item) => (
+        <details class="group border-b border-cream/10">
+          <summary class="flex items-center justify-between gap-6 py-6 cursor-pointer list-none hover:text-gold transition-colors">
+            <span class="text-lg md:text-xl font-serif font-medium pr-4">{item.q}</span>
+            <span class="shrink-0 w-8 h-8 flex items-center justify-center border border-cream/20 group-hover:border-gold text-gold transition-all duration-300 group-open:rotate-45" aria-hidden="true">
+              <svg class="w-3.5 h-3.5" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                <path d="M7 1 V13 M1 7 H13" />
+              </svg>
+            </span>
+          </summary>
+          <div class="pb-6 pr-14 text-cream/75 leading-relaxed text-base md:text-lg" set:html={item.a}></div>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  details > summary::-webkit-details-marker { display: none; }
+  details[open] summary { color: var(--color-gold); }
+</style>
