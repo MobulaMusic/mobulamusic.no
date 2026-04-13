@@ -7,7 +7,20 @@ export default defineConfig({
   site: 'https://mobula.no',
   output: 'static',
   adapter: node({ mode: 'standalone' }),
-  integrations: [sitemap()],
+  integrations: [
+    sitemap({
+      i18n: {
+        defaultLocale: 'no',
+        locales: {
+          no: 'nb-NO',
+          en: 'en-US',
+        },
+      },
+      filter: (page) => !page.includes('/admin'),
+      changefreq: 'weekly',
+      priority: 0.7,
+    }),
+  ],
   vite: {
     plugins: [tailwindcss()],
   },

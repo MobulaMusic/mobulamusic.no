@@ -1,0 +1,51 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Mobula from '../components/Mobula.astro';
+---
+
+<Layout
+  title="Side ikke funnet | Mobula Music"
+  description="Siden du leter etter finnes ikke. Gå tilbake til forsiden eller utforsk tjenestene våre."
+>
+  <section class="relative min-h-screen flex items-center overflow-hidden bg-dark px-6">
+    <div class="absolute inset-0" style="background: radial-gradient(ellipse at 70% 40%, #10242f 0%, #0b1a22 60%, #071217 100%);"></div>
+    <div class="absolute top-[15%] right-[10%] w-[640px] h-[640px] bg-gold/15 rounded-full blur-[160px] hero-glow"></div>
+    <div class="absolute bottom-[5%] left-[5%] w-[520px] h-[520px] bg-[color:var(--color-accent-2)]/12 rounded-full blur-[140px] hero-glow"></div>
+
+    <div class="absolute inset-y-0 right-0 flex items-center pointer-events-none">
+      <Mobula class="w-[min(120vw,1800px)] translate-x-[28%] opacity-[0.18]" c1="#7af0c8" c2="#7af0c8" c3="#7af0c8" />
+    </div>
+
+    <div class="absolute inset-0 bg-gradient-to-r from-dark via-dark/70 to-transparent"></div>
+
+    <div class="relative z-10 max-w-4xl mx-auto w-full text-center md:text-left fade-in">
+      <p class="font-mono text-gold tracking-[0.2em] uppercase text-sm mb-6">404 — Ikke funnet</p>
+      <h1 class="text-5xl md:text-7xl lg:text-8xl font-serif font-semibold leading-[1.02] mb-8">
+        Mobulaen<br />svømte vekk
+      </h1>
+      <p class="text-cream/80 text-xl md:text-2xl max-w-xl mx-auto md:mx-0 mb-12 leading-relaxed">
+        Siden du leter etter finnes ikke — eller den har flyttet. Gå tilbake til forsiden eller bla deg gjennom tjenestene.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+        <a href="/" class="inline-flex items-center justify-center gap-3 px-8 py-4 bg-gold text-dark font-semibold tracking-wide uppercase text-sm hover:bg-gold-light transition-colors">
+          <span class="w-2 h-2 rounded-full bg-[#ff9f3d] bpm-pulse"></span>
+          Til forsiden
+        </a>
+        <a href="/kontakt" class="inline-flex items-center justify-center px-8 py-4 border border-cream/20 text-cream tracking-wide uppercase text-sm hover:border-gold hover:text-gold transition-all">
+          Ta kontakt
+        </a>
+      </div>
+
+      <div class="mt-16 pt-8 border-t border-cream/10 max-w-2xl mx-auto md:mx-0">
+        <p class="font-mono text-cream/40 text-xs tracking-widest uppercase mb-4">Eller utforsk</p>
+        <div class="flex flex-wrap gap-x-6 gap-y-2 justify-center md:justify-start text-cream/70">
+          <a href="/innspilling" class="hover:text-gold transition-colors">Innspilling</a>
+          <a href="/podkast" class="hover:text-gold transition-colors">Podkast</a>
+          <a href="/musikk" class="hover:text-gold transition-colors">Musikk</a>
+          <a href="/priser" class="hover:text-gold transition-colors">Priser</a>
+          <a href="/om-oss" class="hover:text-gold transition-colors">Om oss</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
