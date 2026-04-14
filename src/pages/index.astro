@@ -1,6 +1,5 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Mobula from '../components/Mobula.astro';
 ---
 
 <Layout
@@ -10,28 +9,38 @@ import Mobula from '../components/Mobula.astro';
 >
   <!-- Hero -->
   <section class="relative h-screen min-h-[560px] md:min-h-[640px] flex items-center overflow-hidden bg-dark pt-24 md:pt-0">
-    <!-- Deep teal radial base -->
-    <div class="absolute inset-0" style="background: radial-gradient(ellipse at 70% 40%, #10242f 0%, #0b1a22 60%, #071217 100%);"></div>
-
-    <!-- Accent glows -->
-    <div class="absolute top-[15%] right-[10%] w-[640px] h-[640px] bg-gold/15 rounded-full blur-[160px] hero-glow"></div>
-    <div class="absolute bottom-[5%] left-[5%] w-[520px] h-[520px] bg-[color:var(--color-accent-2)]/12 rounded-full blur-[140px] hero-glow"></div>
-
-    <!-- Large mobula silhouette as hero visual — dramatic bleed -->
-    <div class="absolute inset-y-0 right-0 flex items-center pointer-events-none">
-      <Mobula class="w-[min(120vw,1800px)] translate-x-[28%] opacity-[0.18] hero-zoom" c1="#7af0c8" c2="#7af0c8" c3="#7af0c8" />
+    <!-- Studio photo background -->
+    <div class="absolute inset-0">
+      <img
+        src="/images/studio/gemini-studio-3.png"
+        alt=""
+        class="w-full h-full object-cover scale-105 hero-zoom"
+        style="filter: brightness(1.2);"
+        loading="eager"
+        decoding="async"
+      />
     </div>
 
+    <!-- Warm tonal wash over the photo -->
+    <div class="absolute inset-0 mix-blend-multiply" style="background: radial-gradient(ellipse at 65% 40%, rgba(40,28,18,0.35) 0%, rgba(11,26,34,0.85) 55%, rgba(7,18,23,0.95) 100%);"></div>
+
+    <!-- Accent glows: warm amber + mint + lavender -->
+    <div class="absolute top-[20%] right-[15%] w-[560px] h-[560px] rounded-full blur-[160px] hero-glow" style="background: rgba(255,159,61,0.18);"></div>
+    <div class="absolute top-[10%] right-[5%] w-[480px] h-[480px] bg-gold/10 rounded-full blur-[160px] hero-glow"></div>
+    <div class="absolute bottom-[5%] left-[5%] w-[520px] h-[520px] bg-[color:var(--color-accent-2)]/10 rounded-full blur-[140px] hero-glow"></div>
+
     <!-- Left fade so title stays legible -->
-    <div class="absolute inset-0 bg-gradient-to-r from-dark via-dark/70 to-transparent"></div>
+    <div class="absolute inset-0 bg-gradient-to-r from-dark via-dark/85 via-40% to-transparent"></div>
+    <!-- Bottom fade into page -->
+    <div class="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-dark to-transparent"></div>
 
     <div class="relative z-10 px-6 md:px-12 lg:px-20 max-w-7xl mx-auto w-full">
-      <p class="hero-fade hero-fade-1 font-mono text-gold tracking-[0.2em] uppercase text-sm md:text-base mb-6">Ditt studio i Lørenskog</p>
+      <p class="hero-fade hero-fade-1 font-mono text-gold tracking-[0.2em] uppercase text-sm md:text-base mb-6">Velkommen til studioet vårt i Lørenskog</p>
       <h1 class="hero-fade hero-fade-2 text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-[1.02] font-semibold mb-8 max-w-4xl">
         Rom for kreativitet<br />&amp; god lyd
       </h1>
-      <p class="hero-fade hero-fade-3 text-cream/80 text-xl md:text-2xl max-w-2xl mb-12 leading-relaxed">
-        Lydstudio for innspilling, podkast og musikkproduksjon.<br class="hidden md:block" />Kort vei fra Oslo og Lillestrøm.
+      <p class="hero-fade hero-fade-3 text-cream/85 text-xl md:text-2xl max-w-2xl mb-12 leading-relaxed">
+        Innspilling, podkast og musikkproduksjon — fra første idé til ferdig mix.<br class="hidden md:block" />Lørenskog, en kort kjøretur fra Oslo og Lillestrøm.
       </p>
       <div class="hero-fade hero-fade-4 flex flex-col sm:flex-row gap-4">
         <a href="/kontakt" class="group inline-flex items-center gap-3 px-8 py-4 bg-gold text-dark font-semibold tracking-wide uppercase text-sm rounded-sm hover:bg-gold-light transition-colors">
