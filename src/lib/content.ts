@@ -12,6 +12,9 @@ export const BLOG_DIR = path.join(DATA_DIR, 'content', 'blog');
 export const TEXTS_FILE = path.join(DATA_DIR, 'content', 'texts', 'site.json');
 export const UPLOADS_DIR = path.join(DATA_DIR, 'uploads');
 export const FORMS_FILE = path.join(DATA_DIR, 'forms.json');
+export const FILM_DIR = path.join(DATA_DIR, 'content', 'film');
+export const REFERANSER_DIR = path.join(DATA_DIR, 'content', 'referanser');
+export const KUNDER_DIR = path.join(DATA_DIR, 'content', 'kunder');
 
 export function slugify(s: string): string {
   return s
@@ -160,3 +163,135 @@ export async function deleteSubmission(id: string): Promise<void> {
   const all = (await listSubmissions()).filter(s => s.id !== id);
   await fs.writeFile(FORMS_FILE, JSON.stringify(all, null, 2), 'utf8');
 }
+
+// ---------- Generic JSON-collection helpers ----------
+
+async function listJsonCollection<T extends { slug: string }>(dir: string): Promise<T[]> {
+  await fs.mkdir(dir, { recursive: true });
+  const files = await fs.readdir(dir);
+  const items: T[] = [];
+  for (const file of files) {
+    if (!file.endsWith('.json')) continue;
+    try {
+      const raw = await fs.readFile(path.join(dir, file), 'utf8');
+      const data = JSON.parse(raw) as T;
+      items.push({ ...data, slug: file.replace(/\.json$/, '') });
+    } catch {}
+  }
+  return items;
+}
+
+async function getJsonItem<T extends { slug: string }>(dir: string, slug: string): Promise<T | null> {
+  try {
+    const raw = await fs.readFile(path.join(dir, `${slug}.json`), 'utf8');
+    const data = JSON.parse(raw) as T;
+    return { ...data, slug };
+  } catch {
+    return null;
+  }
+}
+
+async function saveJsonItem<T extends { slug: string }>(dir: string, slug: string, data: Omit<T, 'slug'>): Promise<void> {
+  await fs.mkdir(dir, { recursive: true });
+  await fs.writeFile(path.join(dir, `${slug}.json`), JSON.stringify(data, null, 2), 'utf8');
+}
+
+async function deleteJsonItem(dir: string, slug: string): Promise<void> {
+  await fs.unlink(path.join(dir, `${slug}.json`)).catch(() => {});
+}
+
+// ---------- Film projects ----------
+
+export interface FilmTrack {
+  title: string;
+  src: string;
+  duration?: string;
+}
+
+export interface FilmProject {
+  slug: string;
+  title: string;
+  role: string;
+  year?: string;
+  poster?: string;
+  description?: string;
+  director?: string;
+  producer?: string;
+  composer?: string;
+  editor?: string;
+  soundDesign?: string;
+  photo?: string;
+  sound?: string;
+  postProduction?: string;
+  tracks: FilmTrack[];
+  order?: number;
+}
+
+export const listFilms = () =>
+  listJsonCollection<FilmProject>(FILM_DIR).then(items =>
+    items.sort((a, b) => (a.order ?? 999) - (b.order ?? 999) || (a.year && b.year ? (a.year < b.year ? 1 : -1) : 0))
+  );
+export const getFilm = (slug: string) => getJsonItem<FilmProject>(FILM_DIR, slug);
+export const saveFilm = (slug: string, data: Omit<FilmProject, 'slug'>) => saveJsonItem<FilmProject>(FILM_DIR, slug, data);
+export const deleteFilm = (slug: string) => deleteJsonItem(FILM_DIR, slug);
+
+// ---------- Referanser (før/etter A/B) ----------
+
+export type ReferanseKategori =
+  | 'vokal'
+  | 'band-og-ensemble'
+  | 'singer-songwriter'
+  | 'strykere-og-klassisk'
+  | 'lydbok-og-voice-over'
+  | 'annet';
+
+export interface Referanse {
+  slug: string;
+  title: string;
+  description?: string;
+  kategori: ReferanseKategori;
+  rawSrc: string;
+  mixedSrc: string;
+  rawLabel?: string;
+  mixedLabel?: string;
+  order?: number;
+}
+
+export const REFERANSE_KATEGORIER: { value: ReferanseKategori; label: string }[] = [
+  { value: 'vokal', label: 'Vokal' },
+  { value: 'band-og-ensemble', label: 'Band & ensemble' },
+  { value: 'singer-songwriter', label: 'Singer-songwriter' },
+  { value: 'strykere-og-klassisk', label: 'Strykere & klassisk' },
+  { value: 'lydbok-og-voice-over', label: 'Lydbok & voice-over' },
+  { value: 'annet', label: 'Annet' },
+];
+
+export const listReferanser = () =>
+  listJsonCollection<Referanse>(REFERANSER_DIR).then(items =>
+    items.sort((a, b) => (a.order ?? 999) - (b.order ?? 999))
+  );
+export const getReferanse = (slug: string) => getJsonItem<Referanse>(REFERANSER_DIR, slug);
+export const saveReferanse = (slug: string, data: Omit<Referanse, 'slug'>) => saveJsonItem<Referanse>(REFERANSER_DIR, slug, data);
+export const deleteReferanse = (slug: string) => deleteJsonItem(REFERANSER_DIR, slug);
+
+// ---------- Kundedokumentasjon ----------
+
+export interface Kunde {
+  slug: string;
+  kunde: string;
+  sitat: string;
+  rolle?: string;
+  prosjekt?: string;
+  prosjektUrl?: string;
+  logo?: string;
+  tags: string[];
+  order?: number;
+}
+
+export const listKunder = () =>
+  listJsonCollection<Kunde>(KUNDER_DIR).then(items =>
+    items.sort((a, b) => (a.order ?? 999) - (b.order ?? 999))
+  );
+export const getKunde = (slug: string) => getJsonItem<Kunde>(KUNDER_DIR, slug);
+export const saveKunde = (slug: string, data: Omit<Kunde, 'slug'>) => saveJsonItem<Kunde>(KUNDER_DIR, slug, data);
+export const deleteKunde = (slug: string) => deleteJsonItem(KUNDER_DIR, slug);

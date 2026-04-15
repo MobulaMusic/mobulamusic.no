@@ -1,0 +1,13 @@
+---
+export const prerender = false;
+import AdminLayout from '../../../layouts/AdminLayout.astro';
+import ReferanseEditor from '../../../components/admin/ReferanseEditor.astro';
+import { getReferanse } from '../../../lib/content';
+
+const { slug } = Astro.params;
+const ref = await getReferanse(slug!);
+if (!ref) return Astro.redirect('/admin/referanser');
+---
+<AdminLayout title={`Rediger: ${ref.title}`}>
+  <ReferanseEditor mode="update" ref={ref} />
+</AdminLayout>

@@ -1,0 +1,109 @@
+---
+import { REFERANSE_KATEGORIER, type Referanse } from '../../lib/content';
+interface Props { ref?: Referanse; mode: 'create' | 'update'; }
+const { ref, mode } = Astro.props;
+---
+<form method="POST" action="/api/admin/referanser" class="space-y-4 max-w-3xl">
+  <input type="hidden" name="mode" value={mode} />
+  {mode === 'update' && ref && <input type="hidden" name="slug" value={ref.slug} />}
+
+  <label class="block">
+    <span class="text-sm text-neutral-400">Tittel</span>
+    <input name="title" required value={ref?.title || ''} class="mt-1 w-full rounded bg-neutral-800 px-3 py-2" />
+  </label>
+
+  <label class="block">
+    <span class="text-sm text-neutral-400">Kategori</span>
+    <select name="kategori" required class="mt-1 w-full rounded bg-neutral-800 px-3 py-2">
+      {REFERANSE_KATEGORIER.map(k => (
+        <option value={k.value} selected={ref?.kategori === k.value}>{k.label}</option>
+      ))}
+    </select>
+  </label>
+
+  <label class="block">
+    <span class="text-sm text-neutral-400">Beskrivelse</span>
+    <textarea name="description" rows="2" class="mt-1 w-full rounded bg-neutral-800 px-3 py-2">{ref?.description || ''}</textarea>
+  </label>
+
+  <div class="grid grid-cols-2 gap-4">
+    <fieldset class="border border-neutral-800 rounded p-4">
+      <legend class="text-xs text-neutral-400 px-2">Rå (før mix)</legend>
+      <label class="block">
+        <span class="text-xs text-neutral-500">Fil-URL</span>
+        <input name="rawSrc" id="rawSrc" required value={ref?.rawSrc || ''} class="mt-1 w-full rounded bg-neutral-800 px-2 py-1.5 text-sm font-mono" />
+      </label>
+      <label class="block mt-2">
+        <span class="text-xs text-neutral-500">Etikett</span>
+        <input name="rawLabel" value={ref?.rawLabel || ''} placeholder="Rå" class="mt-1 w-full rounded bg-neutral-800 px-2 py-1.5 text-sm" />
+      </label>
+      <label class="mt-2 rounded border border-neutral-700 px-3 py-1.5 text-xs hover:bg-neutral-800 cursor-pointer inline-block">
+        Last opp
+        <input type="file" accept="audio/*" data-upload-target="rawSrc" class="hidden audio-upload" />
+      </label>
+      <span class="upload-status text-xs text-neutral-500 ml-2"></span>
+    </fieldset>
+    <fieldset class="border border-neutral-800 rounded p-4">
+      <legend class="text-xs text-neutral-400 px-2">Mikset / mastret</legend>
+      <label class="block">
+        <span class="text-xs text-neutral-500">Fil-URL</span>
+        <input name="mixedSrc" id="mixedSrc" required value={ref?.mixedSrc || ''} class="mt-1 w-full rounded bg-neutral-800 px-2 py-1.5 text-sm font-mono" />
+      </label>
+      <label class="block mt-2">
+        <span class="text-xs text-neutral-500">Etikett</span>
+        <input name="mixedLabel" value={ref?.mixedLabel || ''} placeholder="Mikset" class="mt-1 w-full rounded bg-neutral-800 px-2 py-1.5 text-sm" />
+      </label>
+      <label class="mt-2 rounded border border-neutral-700 px-3 py-1.5 text-xs hover:bg-neutral-800 cursor-pointer inline-block">
+        Last opp
+        <input type="file" accept="audio/*" data-upload-target="mixedSrc" class="hidden audio-upload" />
+      </label>
+      <span class="upload-status text-xs text-neutral-500 ml-2"></span>
+    </fieldset>
+  </div>
+
+  <label class="block">
+    <span class="text-sm text-neutral-400">Sorteringsrekkefølge</span>
+    <input name="order" type="number" value={ref?.order ?? ''} class="mt-1 w-32 rounded bg-neutral-800 px-3 py-2" />
+  </label>
+
+  <div class="flex gap-2">
+    <button class="rounded bg-white text-black px-4 py-2 text-sm font-medium">Lagre</button>
+    <a href="/admin/referanser" class="rounded border border-neutral-700 px-4 py-2 text-sm">Avbryt</a>
+  </div>
+</form>
+
+{mode === 'update' && ref && (
+  <form method="POST" action="/api/admin/referanser/delete" class="mt-8 pt-8 border-t border-neutral-800">
+    <input type="hidden" name="slug" value={ref.slug} />
+    <button class="text-sm text-red-400 hover:text-red-300" onclick="return confirm('Slette referanse?')">Slett referanse</button>
+  </form>
+)}
+
+<script>
+  document.querySelectorAll<HTMLInputElement>('.audio-upload').forEach((input) => {
+    input.addEventListener('change', async () => {
+      const file = input.files?.[0];
+      if (!file) return;
+      const targetId = input.dataset.uploadTarget!;
+      const target = document.getElementById(targetId) as HTMLInputElement;
+      const status = input.closest('fieldset')!.querySelector('.upload-status')!;
+      status.textContent = 'Laster opp…';
+      const fd = new FormData();
+      fd.append('file', file);
+      try {
+        const res = await fetch('/api/admin/audio', { method: 'POST', body: fd });
+        const data = await res.json();
+        if (data.url) {
+          target.value = data.url;
+          status.textContent = 'OK';
+          setTimeout(() => status.textContent = '', 2000);
+        } else {
+          status.textContent = 'Feil';
+        }
+      } catch {
+        status.textContent = 'Feil';
+      }
+      input.value = '';
+    });
+  });
+</script>

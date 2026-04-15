@@ -1,0 +1,8 @@
+---
+export const prerender = false;
+import AdminLayout from '../../../layouts/AdminLayout.astro';
+import FilmEditor from '../../../components/admin/FilmEditor.astro';
+---
+<AdminLayout title="Nytt filmprosjekt">
+  <FilmEditor mode="create" />
+</AdminLayout>

@@ -4,6 +4,9 @@ import Mobula from '../../components/Mobula.astro';
 import PasserFor from '../../components/PasserFor.astro';
 import SlikJobberVi from '../../components/SlikJobberVi.astro';
 import Faq from '../../components/Faq.astro';
+import FilmProjects from '../../components/FilmProjects.astro';
+import { listFilms } from '../../lib/content';
+const films = await listFilms();
 ---
 
 <Layout
@@ -102,6 +105,18 @@ import Faq from '../../components/Faq.astro';
       },
     ]}
   />
+
+  {films.length > 0 && (
+    <section class="py-28 px-6 bg-dark-light/30">
+      <div class="max-w-5xl mx-auto">
+        <div class="mb-12 fade-in">
+          <p class="font-mono text-gold tracking-[0.15em] uppercase text-xs mb-4">Utvalgte prosjekter</p>
+          <h2 class="text-4xl md:text-5xl font-serif font-semibold leading-[1.05]">Filmer vi har jobbet med</h2>
+        </div>
+        <FilmProjects projects={films} />
+      </div>
+    </section>
+  )}
 
   <!-- FAQ -->
   <Faq

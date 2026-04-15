@@ -1,0 +1,29 @@
+---
+export const prerender = false;
+import AdminLayout from '../../../layouts/AdminLayout.astro';
+import { listKunder } from '../../../lib/content';
+const items = await listKunder();
+---
+<AdminLayout title="Kundedokumentasjon">
+  <div class="mb-4 flex justify-between items-center">
+    <p class="text-neutral-400 text-sm">{items.length} kunder</p>
+    <a href="/admin/kunder/new" class="rounded bg-white text-black px-4 py-2 text-sm font-medium hover:bg-neutral-200">Ny kunde</a>
+  </div>
+  <table class="w-full text-sm">
+    <thead class="text-left text-neutral-500 border-b border-neutral-800">
+      <tr><th class="py-2">Kunde</th><th>Prosjekt</th><th>Tags</th><th></th></tr>
+    </thead>
+    <tbody>
+      {items.map(k => (
+        <tr class="border-b border-neutral-900">
+          <td class="py-3">{k.kunde}</td>
+          <td class="text-neutral-400">{k.prosjekt}</td>
+          <td class="text-neutral-500 text-xs">{(k.tags || []).join(', ')}</td>
+          <td class="text-right">
+            <a href={`/admin/kunder/${k.slug}`} class="text-blue-400 hover:underline">Rediger</a>
+          </td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</AdminLayout>

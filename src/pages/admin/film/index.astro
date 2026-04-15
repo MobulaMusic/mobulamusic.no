@@ -1,0 +1,30 @@
+---
+export const prerender = false;
+import AdminLayout from '../../../layouts/AdminLayout.astro';
+import { listFilms } from '../../../lib/content';
+const films = await listFilms();
+---
+<AdminLayout title="Filmprosjekter">
+  <div class="mb-4 flex justify-between items-center">
+    <p class="text-neutral-400 text-sm">{films.length} prosjekt</p>
+    <a href="/admin/film/new" class="rounded bg-white text-black px-4 py-2 text-sm font-medium hover:bg-neutral-200">Nytt prosjekt</a>
+  </div>
+  <table class="w-full text-sm">
+    <thead class="text-left text-neutral-500 border-b border-neutral-800">
+      <tr><th class="py-2">Tittel</th><th>Rolle</th><th>År</th><th>Spor</th><th></th></tr>
+    </thead>
+    <tbody>
+      {films.map(f => (
+        <tr class="border-b border-neutral-900">
+          <td class="py-3">{f.title}</td>
+          <td class="text-neutral-400">{f.role}</td>
+          <td class="text-neutral-400">{f.year}</td>
+          <td class="text-neutral-400">{f.tracks?.length || 0}</td>
+          <td class="text-right">
+            <a href={`/admin/film/${f.slug}`} class="text-blue-400 hover:underline">Rediger</a>
+          </td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</AdminLayout>

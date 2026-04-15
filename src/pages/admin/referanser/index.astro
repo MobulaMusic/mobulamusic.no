@@ -1,0 +1,29 @@
+---
+export const prerender = false;
+import AdminLayout from '../../../layouts/AdminLayout.astro';
+import { listReferanser, REFERANSE_KATEGORIER } from '../../../lib/content';
+const items = await listReferanser();
+const kategoriLabel = Object.fromEntries(REFERANSE_KATEGORIER.map(k => [k.value, k.label]));
+---
+<AdminLayout title="Referanser (før/etter)">
+  <div class="mb-4 flex justify-between items-center">
+    <p class="text-neutral-400 text-sm">{items.length} referanser</p>
+    <a href="/admin/referanser/new" class="rounded bg-white text-black px-4 py-2 text-sm font-medium hover:bg-neutral-200">Ny referanse</a>
+  </div>
+  <table class="w-full text-sm">
+    <thead class="text-left text-neutral-500 border-b border-neutral-800">
+      <tr><th class="py-2">Tittel</th><th>Kategori</th><th></th></tr>
+    </thead>
+    <tbody>
+      {items.map(r => (
+        <tr class="border-b border-neutral-900">
+          <td class="py-3">{r.title}</td>
+          <td class="text-neutral-400">{kategoriLabel[r.kategori] || r.kategori}</td>
+          <td class="text-right">
+            <a href={`/admin/referanser/${r.slug}`} class="text-blue-400 hover:underline">Rediger</a>
+          </td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</AdminLayout>

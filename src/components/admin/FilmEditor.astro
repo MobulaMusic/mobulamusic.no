@@ -1,0 +1,163 @@
+---
+import type { FilmProject } from '../../lib/content';
+interface Props { film?: FilmProject; mode: 'create' | 'update'; }
+const { film, mode } = Astro.props;
+const tracksJson = film?.tracks ? JSON.stringify(film.tracks, null, 2) : '[]';
+---
+<form method="POST" action="/api/admin/film" class="space-y-4 max-w-3xl">
+  <input type="hidden" name="mode" value={mode} />
+  {mode === 'update' && film && <input type="hidden" name="slug" value={film.slug} />}
+
+  <div class="grid grid-cols-2 gap-4">
+    <label class="block col-span-2">
+      <span class="text-sm text-neutral-400">Tittel</span>
+      <input name="title" required value={film?.title || ''} class="mt-1 w-full rounded bg-neutral-800 px-3 py-2" />
+    </label>
+    <label class="block">
+      <span class="text-sm text-neutral-400">Rolle (f.eks. Komponist)</span>
+      <input name="role" value={film?.role || ''} class="mt-1 w-full rounded bg-neutral-800 px-3 py-2" />
+    </label>
+    <label class="block">
+      <span class="text-sm text-neutral-400">År</span>
+      <input name="year" value={film?.year || ''} class="mt-1 w-full rounded bg-neutral-800 px-3 py-2" />
+    </label>
+  </div>
+
+  <label class="block">
+    <span class="text-sm text-neutral-400">Plakat (URL)</span>
+    <input name="poster" value={film?.poster || ''} class="mt-1 w-full rounded bg-neutral-800 px-3 py-2" />
+  </label>
+
+  <label class="block">
+    <span class="text-sm text-neutral-400">Beskrivelse</span>
+    <textarea name="description" rows="3" class="mt-1 w-full rounded bg-neutral-800 px-3 py-2">{film?.description || ''}</textarea>
+  </label>
+
+  <fieldset class="border border-neutral-800 rounded p-4">
+    <legend class="text-sm text-neutral-400 px-2">Medvirkende</legend>
+    <div class="grid grid-cols-2 gap-3">
+      {[
+        ['director', 'Regi'],
+        ['producer', 'Produsent'],
+        ['composer', 'Komponist'],
+        ['editor', 'Klipp'],
+        ['soundDesign', 'Lyddesign'],
+        ['photo', 'Foto'],
+        ['sound', 'Lyd'],
+        ['postProduction', 'Postproduksjon'],
+      ].map(([key, label]) => (
+        <label class="block">
+          <span class="text-xs text-neutral-500">{label}</span>
+          <input name={key} value={(film as any)?.[key] || ''} class="mt-1 w-full rounded bg-neutral-800 px-3 py-2 text-sm" />
+        </label>
+      ))}
+    </div>
+  </fieldset>
+
+  <fieldset class="border border-neutral-800 rounded p-4">
+    <legend class="text-sm text-neutral-400 px-2">Lydspor</legend>
+    <div id="track-list" class="space-y-2"></div>
+    <div class="mt-3 flex gap-2">
+      <button type="button" id="add-track" class="rounded border border-neutral-700 px-3 py-1.5 text-xs hover:bg-neutral-800">+ Legg til spor</button>
+      <label class="rounded border border-neutral-700 px-3 py-1.5 text-xs hover:bg-neutral-800 cursor-pointer">
+        Last opp lydfil
+        <input type="file" accept="audio/*" id="track-upload" class="hidden" />
+      </label>
+      <span id="upload-status" class="text-xs text-neutral-500 self-center"></span>
+    </div>
+    <textarea name="tracks" id="tracks-json" class="hidden">{tracksJson}</textarea>
+  </fieldset>
+
+  <label class="block">
+    <span class="text-sm text-neutral-400">Sorteringsrekkefølge (lavere = først)</span>
+    <input name="order" type="number" value={film?.order ?? ''} class="mt-1 w-32 rounded bg-neutral-800 px-3 py-2" />
+  </label>
+
+  <div class="flex gap-2">
+    <button class="rounded bg-white text-black px-4 py-2 text-sm font-medium">Lagre</button>
+    <a href="/admin/film" class="rounded border border-neutral-700 px-4 py-2 text-sm">Avbryt</a>
+  </div>
+</form>
+
+{mode === 'update' && film && (
+  <form method="POST" action="/api/admin/film/delete" class="mt-8 pt-8 border-t border-neutral-800">
+    <input type="hidden" name="slug" value={film.slug} />
+    <button class="text-sm text-red-400 hover:text-red-300" onclick="return confirm('Slette prosjekt?')">Slett prosjekt</button>
+  </form>
+)}
+
+<script>
+  type Track = { title: string; src: string; duration?: string };
+  const tracksField = document.getElementById('tracks-json') as HTMLTextAreaElement;
+  const list = document.getElementById('track-list')!;
+  const addBtn = document.getElementById('add-track')!;
+  const uploadInput = document.getElementById('track-upload') as HTMLInputElement;
+  const uploadStatus = document.getElementById('upload-status')!;
+
+  let tracks: Track[] = [];
+  try { tracks = JSON.parse(tracksField.value) || []; } catch {}
+
+  function render() {
+    list.innerHTML = '';
+    tracks.forEach((t, i) => {
+      const row = document.createElement('div');
+      row.className = 'flex gap-2 items-start';
+      row.innerHTML = `
+        <div class="flex-1 grid grid-cols-[1fr_2fr_80px] gap-2">
+          <input placeholder="Tittel" value="${escapeHtml(t.title)}" data-i="${i}" data-k="title" class="rounded bg-neutral-800 px-2 py-1.5 text-sm" />
+          <input placeholder="/uploads/audio/..." value="${escapeHtml(t.src)}" data-i="${i}" data-k="src" class="rounded bg-neutral-800 px-2 py-1.5 text-sm font-mono" />
+          <input placeholder="3:14" value="${escapeHtml(t.duration || '')}" data-i="${i}" data-k="duration" class="rounded bg-neutral-800 px-2 py-1.5 text-sm" />
+        </div>
+        <button type="button" data-del="${i}" class="text-red-400 text-xs px-2 py-1.5 hover:bg-neutral-800 rounded">✕</button>
+      `;
+      list.appendChild(row);
+    });
+    sync();
+  }
+  function escapeHtml(s: string) { return s.replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]!)); }
+  function sync() { tracksField.value = JSON.stringify(tracks, null, 2); }
+
+  list.addEventListener('input', (e) => {
+    const t = e.target as HTMLInputElement;
+    const i = Number(t.dataset.i), k = t.dataset.k;
+    if (isNaN(i) || !k) return;
+    (tracks[i] as any)[k] = t.value;
+    sync();
+  });
+  list.addEventListener('click', (e) => {
+    const t = e.target as HTMLElement;
+    const del = t.dataset.del;
+    if (del != null) {
+      tracks.splice(Number(del), 1);
+      render();
+    }
+  });
+  addBtn.addEventListener('click', () => {
+    tracks.push({ title: '', src: '', duration: '' });
+    render();
+  });
+  uploadInput.addEventListener('change', async () => {
+    const file = uploadInput.files?.[0];
+    if (!file) return;
+    uploadStatus.textContent = 'Laster opp…';
+    const fd = new FormData();
+    fd.append('file', file);
+    try {
+      const res = await fetch('/api/admin/audio', { method: 'POST', body: fd });
+      const data = await res.json();
+      if (data.url) {
+        tracks.push({ title: file.name.replace(/\.[^.]+$/, ''), src: data.url, duration: '' });
+        render();
+        uploadStatus.textContent = 'OK';
+        setTimeout(() => uploadStatus.textContent = '', 2000);
+      } else {
+        uploadStatus.textContent = 'Feil';
+      }
+    } catch {
+      uploadStatus.textContent = 'Feil';
+    }
+    uploadInput.value = '';
+  });
+
+  render();
+</script>

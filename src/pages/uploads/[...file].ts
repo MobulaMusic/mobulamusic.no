@@ -14,6 +14,14 @@ const MIME: Record<string, string> = {
   '.svg': 'image/svg+xml',
   '.pdf': 'application/pdf',
   '.txt': 'text/plain; charset=utf-8',
+  '.mp3': 'audio/mpeg',
+  '.m4a': 'audio/mp4',
+  '.mp4': 'audio/mp4',
+  '.wav': 'audio/wav',
+  '.ogg': 'audio/ogg',
+  '.oga': 'audio/ogg',
+  '.flac': 'audio/flac',
+  '.webm': 'audio/webm',
 };
 
 export const GET: APIRoute = async ({ params }) => {

@@ -1,0 +1,63 @@
+---
+import type { Kunde } from '../../lib/content';
+interface Props { kunde?: Kunde; mode: 'create' | 'update'; }
+const { kunde, mode } = Astro.props;
+---
+<form method="POST" action="/api/admin/kunder" class="space-y-4 max-w-3xl">
+  <input type="hidden" name="mode" value={mode} />
+  {mode === 'update' && kunde && <input type="hidden" name="slug" value={kunde.slug} />}
+
+  <div class="grid grid-cols-2 gap-4">
+    <label class="block">
+      <span class="text-sm text-neutral-400">Kunde / navn</span>
+      <input name="kunde" required value={kunde?.kunde || ''} class="mt-1 w-full rounded bg-neutral-800 px-3 py-2" />
+    </label>
+    <label class="block">
+      <span class="text-sm text-neutral-400">Rolle</span>
+      <input name="rolle" value={kunde?.rolle || ''} class="mt-1 w-full rounded bg-neutral-800 px-3 py-2" />
+    </label>
+  </div>
+
+  <label class="block">
+    <span class="text-sm text-neutral-400">Sitat</span>
+    <textarea name="sitat" required rows="4" class="mt-1 w-full rounded bg-neutral-800 px-3 py-2">{kunde?.sitat || ''}</textarea>
+  </label>
+
+  <div class="grid grid-cols-2 gap-4">
+    <label class="block">
+      <span class="text-sm text-neutral-400">Prosjekt</span>
+      <input name="prosjekt" value={kunde?.prosjekt || ''} class="mt-1 w-full rounded bg-neutral-800 px-3 py-2" />
+    </label>
+    <label class="block">
+      <span class="text-sm text-neutral-400">Prosjekt-URL</span>
+      <input name="prosjektUrl" value={kunde?.prosjektUrl || ''} class="mt-1 w-full rounded bg-neutral-800 px-3 py-2" />
+    </label>
+  </div>
+
+  <label class="block">
+    <span class="text-sm text-neutral-400">Logo (URL)</span>
+    <input name="logo" value={kunde?.logo || ''} class="mt-1 w-full rounded bg-neutral-800 px-3 py-2" />
+  </label>
+
+  <label class="block">
+    <span class="text-sm text-neutral-400">Tags (kommaseparert — brukes for å plassere sitatet på relevante sider)</span>
+    <input name="tags" value={(kunde?.tags || []).join(', ')} placeholder="film, vokal, band" class="mt-1 w-full rounded bg-neutral-800 px-3 py-2" />
+  </label>
+
+  <label class="block">
+    <span class="text-sm text-neutral-400">Sorteringsrekkefølge</span>
+    <input name="order" type="number" value={kunde?.order ?? ''} class="mt-1 w-32 rounded bg-neutral-800 px-3 py-2" />
+  </label>
+
+  <div class="flex gap-2">
+    <button class="rounded bg-white text-black px-4 py-2 text-sm font-medium">Lagre</button>
+    <a href="/admin/kunder" class="rounded border border-neutral-700 px-4 py-2 text-sm">Avbryt</a>
+  </div>
+</form>
+
+{mode === 'update' && kunde && (
+  <form method="POST" action="/api/admin/kunder/delete" class="mt-8 pt-8 border-t border-neutral-800">
+    <input type="hidden" name="slug" value={kunde.slug} />
+    <button class="text-sm text-red-400 hover:text-red-300" onclick="return confirm('Slette kunde?')">Slett</button>
+  </form>
+)}

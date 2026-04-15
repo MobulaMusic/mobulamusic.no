@@ -4,6 +4,11 @@ import Mobula from '../components/Mobula.astro';
 import PasserFor from '../components/PasserFor.astro';
 import SlikJobberVi from '../components/SlikJobberVi.astro';
 import Faq from '../components/Faq.astro';
+import ABPlayer from '../components/ABPlayer.astro';
+import KundeSitater from '../components/KundeSitater.astro';
+import { listReferanser, listKunder } from '../lib/content';
+const referanser = await listReferanser();
+const kunder = (await listKunder()).filter(k => k.tags?.some(t => ['innspilling', 'mix', 'mastering', 'vokal', 'band', 'strykere'].includes(t))).slice(0, 4);
 
 const services = [
   {
@@ -122,6 +127,31 @@ const services = [
       </div>
     </div>
   </section>
+
+  {referanser.length > 0 && (
+    <section class="py-28 px-6 bg-dark-light/30">
+      <div class="max-w-5xl mx-auto">
+        <div class="mb-12 fade-in">
+          <p class="font-mono text-gold tracking-[0.15em] uppercase text-xs mb-4">Før / etter</p>
+          <h2 class="text-4xl md:text-5xl font-serif font-semibold leading-[1.05] mb-4">Hør forskjellen</h2>
+          <p class="text-cream/70 max-w-2xl">Råopptak sammenlignet med ferdig mikset og mastret versjon. Bytt mellom variantene underveis — avspillingen holder seg på samme sted.</p>
+        </div>
+        <ABPlayer referanser={referanser} />
+      </div>
+    </section>
+  )}
+
+  {kunder.length > 0 && (
+    <section class="py-28 px-6">
+      <div class="max-w-5xl mx-auto">
+        <div class="mb-12 fade-in">
+          <p class="font-mono text-gold tracking-[0.15em] uppercase text-xs mb-4">Kundehistorier</p>
+          <h2 class="text-4xl md:text-5xl font-serif font-semibold leading-[1.05]">Det kundene sier</h2>
+        </div>
+        <KundeSitater kunder={kunder} />
+      </div>
+    </section>
+  )}
 
   <!-- Slik jobber vi -->
   <SlikJobberVi />

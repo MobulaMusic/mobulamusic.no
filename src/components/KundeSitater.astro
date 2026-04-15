@@ -1,0 +1,29 @@
+---
+import type { Kunde } from '../lib/content';
+interface Props { kunder: Kunde[]; }
+const { kunder } = Astro.props;
+---
+{kunder.length > 0 && (
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    {kunder.map((k) => (
+      <figure class="bg-dark-card border border-dark-border/60 rounded-2xl p-6 flex flex-col">
+        <blockquote class="text-cream/85 leading-relaxed flex-1">
+          <span class="text-gold text-3xl leading-none font-serif">“</span>
+          {k.sitat}
+        </blockquote>
+        <figcaption class="mt-4 pt-4 border-t border-dark-border/60 flex items-center gap-4">
+          {k.logo && <img src={k.logo} alt={k.kunde} class="h-10 w-10 object-contain shrink-0" loading="lazy" />}
+          <div class="min-w-0">
+            <p class="font-semibold text-sm">{k.kunde}</p>
+            {k.rolle && <p class="text-cream/50 text-xs">{k.rolle}</p>}
+            {k.prosjekt && (
+              <p class="text-gold text-xs mt-0.5">
+                {k.prosjektUrl ? <a href={k.prosjektUrl} class="hover:underline">{k.prosjekt}</a> : k.prosjekt}
+              </p>
+            )}
+          </div>
+        </figcaption>
+      </figure>
+    ))}
+  </div>
+)}

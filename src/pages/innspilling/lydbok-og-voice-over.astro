@@ -2,6 +2,9 @@
 import Layout from '../../layouts/Layout.astro';
 import Mobula from '../../components/Mobula.astro';
 import PasserFor from '../../components/PasserFor.astro';
+import ABPlayer from '../../components/ABPlayer.astro';
+import { listReferanser } from '../../lib/content';
+const referanser = (await listReferanser()).filter(r => r.kategori === 'lydbok-og-voice-over');
 ---
 
 <Layout
@@ -74,6 +77,18 @@ import PasserFor from '../../components/PasserFor.astro';
       'Du utvikler spill, animasjon eller film og trenger karakterstemmer.',
     ]}
   />
+
+  {referanser.length > 0 && (
+    <section class="py-28 px-6 bg-dark-light/30">
+      <div class="max-w-5xl mx-auto">
+        <div class="mb-12 fade-in">
+          <p class="font-mono text-gold tracking-[0.15em] uppercase text-xs mb-4">Før / etter</p>
+          <h2 class="text-3xl md:text-4xl font-serif font-semibold leading-[1.05]">Taleopptak — rå vs. ferdig</h2>
+        </div>
+        <ABPlayer referanser={referanser} />
+      </div>
+    </section>
+  )}
 
   <section class="py-28 px-6">
     <div class="max-w-3xl mx-auto text-center fade-in">
