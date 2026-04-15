@@ -1,8 +1,47 @@
 ---
 import Mobula from './Mobula.astro';
 
+interface Props { altLang?: string }
+const { altLang } = Astro.props;
+
 const currentPath = Astro.url.pathname;
 const isEn = currentPath.startsWith('/en');
+
+// Map between language versions so the language-switch button preserves context.
+// Keys are the non-prefixed path; values are the alternate-language equivalent.
+const pathMap: Record<string, string> = {
+  '/': '/en',
+  '/innspilling': '/en/recording',
+  '/innspilling/singer-songwriter': '/en/recording/singer-songwriter',
+  '/innspilling/vokal': '/en/recording/vocal',
+  '/innspilling/lydbok-og-voice-over': '/en/recording/voice-over-and-audiobook',
+  '/innspilling/band-og-ensemble': '/en/recording/band-and-ensemble',
+  '/innspilling/strykere-og-klassisk': '/en/recording/strings-and-classical',
+  '/podkast': '/en/podcast',
+  '/musikk': '/en/music',
+  '/musikk/film-og-tv': '/en/music/film-and-tv',
+  '/musikk/produsering': '/en/music/production',
+  '/musikk/reklame-og-event': '/en/music/advertising-and-events',
+  '/musikk/scenekunst-og-teater': '/en/music/stage-and-theatre',
+  '/musikk/noter-for-daw': '/en/music/score-preparation',
+  '/priser': '/en/pricing',
+  '/om-oss': '/en/about',
+  '/kontakt': '/en/contact',
+  '/timeleie': '/en/rental',
+  '/personvern': '/en/privacy',
+  '/nyheter': '/nyheter',
+};
+const reverseMap: Record<string, string> = Object.fromEntries(
+  Object.entries(pathMap).map(([no, en]) => [en, no])
+);
+
+function resolveSwitch(): string {
+  if (altLang) return altLang;
+  const cleaned = currentPath.replace(/\/$/, '') || '/';
+  if (isEn) return reverseMap[cleaned] || '/';
+  return pathMap[cleaned] || '/en';
+}
+const langSwitchHref = resolveSwitch();
 
 const navLinks = isEn
   ? [
@@ -22,7 +61,6 @@ const navLinks = isEn
 
 const contactHref = isEn ? '/en/contact' : '/kontakt';
 const contactLabel = isEn ? 'Get in touch' : 'Kontakt oss';
-const langSwitchHref = isEn ? '/' : '/en';
 const langSwitchLabel = isEn ? 'NO' : 'EN';
 ---
 
