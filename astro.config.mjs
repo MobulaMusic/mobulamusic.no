@@ -7,6 +7,9 @@ export default defineConfig({
   site: 'https://mobula.no',
   output: 'static',
   adapter: node({ mode: 'standalone' }),
+  security: {
+    checkOrigin: false,
+  },
   integrations: [
     sitemap({
       i18n: {
