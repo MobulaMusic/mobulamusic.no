@@ -1,9 +1,13 @@
 ---
+export const prerender = false;
 import Layout from '../layouts/Layout.astro';
 import Mobula from '../components/Mobula.astro';
 import PasserFor from '../components/PasserFor.astro';
 import SlikJobberVi from '../components/SlikJobberVi.astro';
 import Faq from '../components/Faq.astro';
+import KundeSitater from '../components/KundeSitater.astro';
+import { listKunder } from '../lib/content';
+const kunder = (await listKunder()).filter(k => k.tags?.some(t => ['podkast', 'podcast'].includes(t))).slice(0, 2);
 
 const services = [
   {
@@ -45,8 +49,8 @@ const services = [
 ---
 
 <Layout
-  title="Podkaststudio i Lørenskog — Innspilling, Klipping & Produksjon | Mobula Music"
-  description="Komplett podkasttilbud: innspilling med lyd og video, klipping, lyddesign, originalmusikk og opplæring. Alt under ett tak, kort vei fra Oslo og Lillestrøm."
+  title="Podkaststudio i Lørenskog — fra opptak til ferdig episode | Mobula Music"
+  description="Komplett podkasttilbud: innspilling med lyd og video, klipping, lyddesign, originalmusikk og opplæring. Pakker fra 4 500 kr inkl. mva. 15 min fra Oslo S."
   altLang="/en/podcast"
 >
   <!-- Hero -->
@@ -60,11 +64,45 @@ const services = [
     <div class="relative max-w-7xl mx-auto">
       <p class="font-mono text-gold tracking-[0.2em] uppercase text-sm mb-6">Podkast</p>
       <h1 class="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-serif font-semibold leading-[1.02] mb-8 max-w-4xl">
-        Hele veien fra<br />idé til lytter
+        Podkaststudio<br />i Lørenskog
       </h1>
-      <p class="text-cream/80 text-xl md:text-2xl max-w-2xl leading-relaxed">
-        Innspilling, klipping, lyddesign, musikk og opplæring — alt under ett tak. Du kommer med samtalen, vi tar oss av resten.
+      <p class="text-cream/80 text-xl md:text-2xl max-w-2xl leading-relaxed mb-4">
+        Innspilling, klipping, lyddesign, musikk og opplæring — alt under ett tak. Fra opptak til ferdig episode. 15 min fra Oslo S.
       </p>
+      <p class="text-gold text-lg md:text-xl font-semibold mb-10">Pakker fra 4 500 kr inkl. mva.</p>
+      <div class="flex flex-col sm:flex-row gap-4">
+        <a href="/kontakt?tjeneste=podkast" class="inline-flex items-center justify-center gap-3 px-8 py-4 bg-gold text-dark font-semibold tracking-wide uppercase text-sm hover:bg-gold-light transition-colors">
+          <span class="w-2 h-2 rounded-full bg-[#ff9f3d] bpm-pulse"></span>
+          Få tilbud
+        </a>
+        <a href="tel:+4792039045" class="inline-flex items-center justify-center px-8 py-4 border border-cream/20 text-cream tracking-wide uppercase text-sm hover:border-gold hover:text-gold transition-all">
+          Ring 920 39 045
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Fordeler -->
+  <section class="py-20 px-6 border-b border-dark-border/40">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 fade-in">
+        {[
+          ['Lyd og video i samme studio', 'Flerkamera-oppsett med profesjonell belysning.'],
+          ['Fast pris før oppstart', 'Du vet hva det koster før vi begynner.'],
+          ['Erfarne teknikere', '10+ års erfaring med lydproduksjon.'],
+          ['15 min fra Oslo S', '3 min gange fra Fjellhamar stasjon.'],
+          ['Gratis parkering', 'Enkelt å komme med gjester og utstyr.'],
+          ['Ferdig for publisering', 'Vi leverer i alle vanlige podkastformater.'],
+        ].map(([title, desc]) => (
+          <div class="flex gap-3 items-start">
+            <span class="text-gold text-lg leading-none mt-0.5">✓</span>
+            <div>
+              <p class="font-semibold text-sm mb-1">{title}</p>
+              <p class="text-cream/60 text-sm">{desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   </section>
 
@@ -134,6 +172,33 @@ const services = [
       },
     ]}
   />
+
+  <!-- Studiobilder -->
+  <section class="py-24 px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="mb-10 fade-in">
+        <p class="font-mono text-gold tracking-[0.15em] uppercase text-xs mb-4">Studioet</p>
+        <h2 class="text-3xl md:text-4xl font-serif font-semibold leading-[1.05]">Rommet du spiller inn i</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 fade-in">
+        <img src="/images/podcast/podkast-studio.jpeg" alt="Podkaststudio med profesjonell belysning hos Mobula Music" loading="lazy" class="w-full aspect-[4/3] object-cover md:col-span-2 md:row-span-2 md:aspect-auto md:h-full" />
+        <img src="/images/podcast/podkast-2.jpeg" alt="Podkastinnspilling i studio" loading="lazy" class="w-full aspect-[4/3] object-cover" />
+        <img src="/images/podcast/pod-pic.jpeg" alt="Mikrofoner og lydoppsett for podkast" loading="lazy" class="w-full aspect-[4/3] object-cover" />
+      </div>
+    </div>
+  </section>
+
+  {kunder.length > 0 && (
+    <section class="py-24 px-6 bg-dark-light/30">
+      <div class="max-w-5xl mx-auto">
+        <div class="mb-10 fade-in">
+          <p class="font-mono text-gold tracking-[0.15em] uppercase text-xs mb-4">Kundehistorier</p>
+          <h2 class="text-3xl md:text-4xl font-serif font-semibold leading-[1.05]">Det podkast-kundene sier</h2>
+        </div>
+        <KundeSitater kunder={kunder} />
+      </div>
+    </section>
+  )}
 
   <!-- FAQ -->
   <Faq

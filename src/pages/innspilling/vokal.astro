@@ -4,13 +4,17 @@ import Layout from '../../layouts/Layout.astro';
 import Mobula from '../../components/Mobula.astro';
 import PasserFor from '../../components/PasserFor.astro';
 import ABPlayer from '../../components/ABPlayer.astro';
-import { listReferanser } from '../../lib/content';
+import Faq from '../../components/Faq.astro';
+import KundeSitater from '../../components/KundeSitater.astro';
+import { listReferanser, listKunder } from '../../lib/content';
 const referanser = (await listReferanser()).filter(r => r.kategori === 'vokal');
+const kunder = (await listKunder()).filter(k => k.tags?.some(t => ['vokal', 'innspilling'].includes(t))).slice(0, 2);
 ---
 
 <Layout
-  title="Vokalinnspilling på Østlandet — Lead, Kor & Klassisk | Mobula Music"
-  description="Profesjonell vokalinnspilling i akustisk optimaliserte rom. Lead-vokal, korstemmer, klassisk solo eller kor — vi tilpasser mikrofoner og rom etter stemmen din. Lydstudio i Lørenskog, kort vei fra Oslo."
+  title="Vokalinnspilling i Lørenskog — 15 min fra Oslo S | Mobula Music"
+  description="Profesjonell vokalinnspilling i akustisk behandlede rom. Lead-vokal, kor eller klassisk. Pakker fra 4 500 kr inkl. mva. 15 min fra Oslo S, gratis parkering."
+  altLang="/en/recording/vocal"
 >
   <section class="relative pt-32 md:pt-40 pb-20 md:pb-24 px-6 overflow-hidden bg-dark">
     <div class="absolute inset-0" style="background: radial-gradient(ellipse at 30% 40%, #10242f 0%, #0b1a22 60%, #071217 100%);"></div>
@@ -24,11 +28,45 @@ const referanser = (await listReferanser()).filter(r => r.kategori === 'vokal');
         <a href="/innspilling" class="hover:text-gold-light">Innspilling</a> / Vokalinnspilling
       </p>
       <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif font-semibold leading-[1.05] mb-8 max-w-4xl">
-        Få stemmen din til å skinne
+        Vokalinnspilling<br />i Lørenskog
       </h1>
-      <p class="text-cream/80 text-xl md:text-2xl max-w-2xl leading-relaxed">
-        Profesjonell vokalinnspilling for artister, korister og klassiske vokalister. Akustisk optimaliserte vokalrom i Lørenskog — kort vei fra Oslo og Lillestrøm.
+      <p class="text-cream/80 text-xl md:text-2xl max-w-2xl leading-relaxed mb-4">
+        Akustisk behandlede vokalrom, erfarne teknikere og fast pris før vi starter. Lead-vokal, kor eller klassisk — 15 min fra Oslo S.
       </p>
+      <p class="text-gold text-lg md:text-xl font-semibold mb-10">Pakker fra 4 500 kr inkl. mva.</p>
+      <div class="flex flex-col sm:flex-row gap-4">
+        <a href="/kontakt?tjeneste=vokal" class="inline-flex items-center justify-center gap-3 px-8 py-4 bg-gold text-dark font-semibold tracking-wide uppercase text-sm hover:bg-gold-light transition-colors">
+          <span class="w-2 h-2 rounded-full bg-[#ff9f3d] bpm-pulse"></span>
+          Få tilbud
+        </a>
+        <a href="tel:+4792039045" class="inline-flex items-center justify-center px-8 py-4 border border-cream/20 text-cream tracking-wide uppercase text-sm hover:border-gold hover:text-gold transition-all">
+          Ring 920 39 045
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Fordeler -->
+  <section class="py-20 px-6 border-b border-dark-border/40">
+    <div class="max-w-5xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 fade-in">
+        {[
+          ['Akustisk behandlede vokalrom', 'Flere rom for ulike stemmer og sjangre.'],
+          ['Fast pris før oppstart', 'Du vet hva det koster før vi begynner.'],
+          ['Erfarne teknikere', '10+ års erfaring med vokalopptak.'],
+          ['15 min fra Oslo S', '3 min gange fra Fjellhamar stasjon.'],
+          ['Gratis parkering', 'Lett å komme med utstyr eller band.'],
+          ['Topp mikrofoner', 'Neumann, Sennheiser, Shure — vi velger etter stemmen.'],
+        ].map(([title, desc]) => (
+          <div class="flex gap-3 items-start">
+            <span class="text-gold text-lg leading-none mt-0.5">✓</span>
+            <div>
+              <p class="font-semibold text-sm mb-1">{title}</p>
+              <p class="text-cream/60 text-sm">{desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   </section>
 
@@ -78,6 +116,21 @@ const referanser = (await listReferanser()).filter(r => r.kategori === 'vokal');
     ]}
   />
 
+  <!-- Studiobilder -->
+  <section class="py-24 px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="mb-10 fade-in">
+        <p class="font-mono text-gold tracking-[0.15em] uppercase text-xs mb-4">Studioet</p>
+        <h2 class="text-3xl md:text-4xl font-serif font-semibold leading-[1.05]">Rommene vi spiller inn i</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 fade-in">
+        <img src="/images/studio/vokalrom-1.jpeg" alt="Vokalrom med akustisk behandling hos Mobula Music" loading="lazy" class="w-full aspect-[4/5] object-cover" />
+        <img src="/images/studio/vokalrom-2.jpeg" alt="Vokalrom med Neumann-mikrofon hos Mobula Music" loading="lazy" class="w-full aspect-[4/5] object-cover" />
+        <img src="/images/studio/vokalinnspilling.jpeg" alt="Vokalist under innspilling i studio hos Mobula Music" loading="lazy" class="w-full aspect-[4/5] object-cover" />
+      </div>
+    </div>
+  </section>
+
   {referanser.length > 0 && (
     <section class="py-28 px-6 bg-dark-light/30">
       <div class="max-w-5xl mx-auto">
@@ -89,6 +142,48 @@ const referanser = (await listReferanser()).filter(r => r.kategori === 'vokal');
       </div>
     </section>
   )}
+
+  {kunder.length > 0 && (
+    <section class="py-24 px-6">
+      <div class="max-w-5xl mx-auto">
+        <div class="mb-10 fade-in">
+          <p class="font-mono text-gold tracking-[0.15em] uppercase text-xs mb-4">Kundehistorier</p>
+          <h2 class="text-3xl md:text-4xl font-serif font-semibold leading-[1.05]">Det vokalistene sier</h2>
+        </div>
+        <KundeSitater kunder={kunder} />
+      </div>
+    </section>
+  )}
+
+  <Faq
+    title="Vanlige spørsmål"
+    items={[
+      {
+        q: 'Hva koster det?',
+        a: 'Vi har startpakker fra 4 500 kr inkl. mva. som dekker innspilling, mix og mastering av en vokallåt. Se <a href="/priser" class="text-gold hover:underline">prisene våre</a> for full oversikt, eller send oss en henvendelse så gir vi et fast tilbud før vi starter.',
+      },
+      {
+        q: 'Hvordan booker jeg?',
+        a: 'Send oss en melding via <a href="/kontakt" class="text-gold hover:underline">skjemaet</a>, ring 920 39 045, eller send e-post til post@mobulamusic.com. Vi svarer innen 1–2 dager med spørsmål og et fast tilbud.',
+      },
+      {
+        q: 'Kan jeg komme innom først for å se studioet?',
+        a: 'Ja, helt fint. Mange ønsker å se rommet og møte teknikeren før de booker. Send oss en melding så avtaler vi et tidspunkt som passer.',
+      },
+      {
+        q: 'Hvor lang tid tar en vokalinnspilling?',
+        a: 'En enkel lead-vokal på én låt går unna på 2–3 timer inkludert oppsett. Flere låter eller lagde harmonier tar lengre tid. Vi gir deg et ærlig estimat før du booker slik at du ikke booker for lite eller for mye.',
+      },
+      {
+        q: 'Hvor mange opptak kan jeg gjøre?',
+        a: 'Så mange du trenger innenfor tiden du har booket. Vi anbefaler flere takes av hver frase slik at vi kan komponere den beste versjonen i miksen.',
+      },
+      {
+        q: 'Hva skjer etter at jeg sender skjemaet?',
+        a: 'Du får svar innen 1–2 dager. Vi stiller noen oppfølgingsspørsmål om prosjektet, foreslår et opplegg, og sender et fast tilbud. Når du godtar, finner vi en dato som passer.',
+      },
+    ]}
+  />
 
   <section class="py-28 px-6">
     <div class="max-w-3xl mx-auto text-center fade-in">

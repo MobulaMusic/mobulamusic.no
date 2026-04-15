@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Mobula from '../components/Mobula.astro';
 import ContactForm from '../components/ContactForm.astro';
+import Faq from '../components/Faq.astro';
 ---
 
 <Layout
@@ -20,11 +21,42 @@ import ContactForm from '../components/ContactForm.astro';
     <div class="relative max-w-5xl mx-auto">
       <p class="font-mono text-gold tracking-[0.2em] uppercase text-sm mb-6">Kontakt</p>
       <h1 class="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-serif font-semibold leading-[1.02] mb-8 max-w-4xl">
-        Ta kontakt
+        Kontakt Mobula Music
       </h1>
-      <p class="text-cream/80 text-xl md:text-2xl max-w-2xl leading-relaxed">
-        Fortell oss om prosjektet ditt — stort eller lite.
+      <p class="text-cream/80 text-xl md:text-2xl max-w-2xl leading-relaxed mb-10">
+        Fortell oss om prosjektet ditt — stort eller lite. Vi svarer innen 1–2 dager med spørsmål, forslag og et fast tilbud.
       </p>
+      <div class="flex flex-col sm:flex-row gap-4">
+        <a href="#skjema" class="inline-flex items-center justify-center gap-3 px-8 py-4 bg-gold text-dark font-semibold tracking-wide uppercase text-sm hover:bg-gold-light transition-colors">
+          <span class="w-2 h-2 rounded-full bg-[#ff9f3d] bpm-pulse"></span>
+          Send forespørsel
+        </a>
+        <a href="tel:+4792039045" class="inline-flex items-center justify-center px-8 py-4 border border-cream/20 text-cream tracking-wide uppercase text-sm hover:border-gold hover:text-gold transition-all">
+          Ring 920 39 045
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Fordeler -->
+  <section class="py-16 px-6 border-b border-dark-border/40">
+    <div class="max-w-5xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 fade-in">
+        {[
+          ['Svar innen 1–2 dager', 'Vi leser hver henvendelse og svarer personlig.'],
+          ['Fast pris før oppstart', 'Du vet hva det koster — ingen overraskelser.'],
+          ['10+ års erfaring', 'Erfarne teknikere og komponister.'],
+          ['15 min fra Oslo S', 'Gratis parkering, kort vei fra Lillestrøm.'],
+        ].map(([title, desc]) => (
+          <div class="flex gap-3 items-start">
+            <span class="text-gold text-lg leading-none mt-0.5">✓</span>
+            <div>
+              <p class="font-semibold text-sm mb-1">{title}</p>
+              <p class="text-cream/60 text-sm">{desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   </section>
 
@@ -71,7 +103,7 @@ import ContactForm from '../components/ContactForm.astro';
   </section>
 
   <!-- Contact Form -->
-  <section class="pb-28 px-6">
+  <section id="skjema" class="pb-28 px-6 scroll-mt-24">
     <div class="max-w-3xl mx-auto fade-in">
       <div class="mb-12">
         <p class="font-mono text-gold tracking-[0.15em] uppercase text-xs mb-4">Skjema</p>
@@ -89,6 +121,28 @@ import ContactForm from '../components/ContactForm.astro';
       />
     </div>
   </section>
+
+  <Faq
+    title="Vanlige spørsmål"
+    items={[
+      {
+        q: 'Hva skjer etter at jeg sender skjemaet?',
+        a: 'Vi leser henvendelsen og svarer innen 1–2 dager med oppfølgingsspørsmål, forslag til opplegg og et fast tilbud. Når du godtar, finner vi en dato som passer.',
+      },
+      {
+        q: 'Hva koster det?',
+        a: 'Startpakker fra 4 500 kr inkl. mva. Se <a href="/priser" class="text-gold hover:underline">prisene våre</a> for full oversikt. Du får alltid et fast tilbud før vi starter.',
+      },
+      {
+        q: 'Kan jeg komme innom først for å se studioet?',
+        a: 'Ja. Send oss en melding så avtaler vi et tidspunkt — du er velkommen til å stikke innom og se rommene før du booker.',
+      },
+      {
+        q: 'Kan jeg ringe direkte?',
+        a: 'Ja, ring 920 39 045 (Haakon) eller 924 66 150 (Olai). Vi svarer helst i kontortid, men kan ringe tilbake om vi er opptatt.',
+      },
+    ]}
+  />
 
   <!-- Map -->
   <section class="pb-28 px-6">
