@@ -3,6 +3,30 @@ import type { FilmProject } from '../lib/content';
 interface Props { projects: FilmProject[]; }
 const { projects } = Astro.props;
 
+function toEmbedUrl(url: string): string | null {
+  try {
+    const u = new URL(url);
+    const host = u.hostname.replace(/^www\./, '');
+    if (host === 'youtube.com' || host === 'm.youtube.com') {
+      const id = u.searchParams.get('v');
+      if (id) return `https://www.youtube.com/embed/${id}?rel=0`;
+      if (u.pathname.startsWith('/embed/')) return url;
+    }
+    if (host === 'youtu.be') {
+      const id = u.pathname.slice(1);
+      if (id) return `https://www.youtube.com/embed/${id}?rel=0`;
+    }
+    if (host === 'vimeo.com') {
+      const id = u.pathname.split('/').filter(Boolean)[0];
+      if (id && /^\d+$/.test(id)) return `https://player.vimeo.com/video/${id}`;
+    }
+    if (host === 'player.vimeo.com') return url;
+    return null;
+  } catch {
+    return null;
+  }
+}
+
 const CREW: { key: keyof FilmProject; label: string }[] = [
   { key: 'director', label: 'Regi' },
   { key: 'producer', label: 'Produsent' },
@@ -15,20 +39,36 @@ const CREW: { key: keyof FilmProject; label: string }[] = [
 ];
 ---
 <div class="space-y-12">
-  {projects.map((project, pi) => (
+  {projects.map((project, pi) => {
+    const embedUrl = project.videoUrl ? toEmbedUrl(project.videoUrl) : null;
+    return (
     <article class="bg-dark-card border border-dark-border/60 rounded-2xl overflow-hidden" data-film-project={pi}>
-      <div class="md:flex">
-        <div class="md:w-[320px] md:shrink-0 relative">
-          <div class="aspect-[2/3] md:aspect-auto md:absolute md:inset-0">
-            {project.poster ? (
-              <img src={project.poster} alt={project.title} loading="lazy" class="w-full h-full object-cover object-top" />
-            ) : (
-              <div class="w-full h-full bg-cream/5 flex items-center justify-center">
-                <span class="text-cream/20 text-xs uppercase tracking-wider">Film</span>
-              </div>
-            )}
-          </div>
+      {embedUrl && (
+        <div class="aspect-video w-full bg-black">
+          <iframe
+            src={embedUrl}
+            title={project.title}
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            class="w-full h-full"
+          />
         </div>
+      )}
+      <div class:list={["md:flex", embedUrl && 'md:block']}>
+        {!embedUrl && (
+          <div class="md:w-[320px] md:shrink-0 relative">
+            <div class="aspect-[2/3] md:aspect-auto md:absolute md:inset-0">
+              {project.poster ? (
+                <img src={project.poster} alt={project.title} loading="lazy" class="w-full h-full object-cover object-top" />
+              ) : (
+                <div class="w-full h-full bg-cream/5 flex items-center justify-center">
+                  <span class="text-cream/20 text-xs uppercase tracking-wider">Film</span>
+                </div>
+              )}
+            </div>
+          </div>
+        )}
 
         <div class="p-6 md:p-8 flex flex-col flex-1 min-w-0">
           <div class="mb-3">
@@ -83,7 +123,8 @@ const CREW: { key: keyof FilmProject; label: string }[] = [
         </div>
       </div>
     </article>
-  ))}
+    );
+  })}
 </div>
 
 <script>

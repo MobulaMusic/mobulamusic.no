@@ -214,6 +214,7 @@ export interface FilmProject {
   role: string;
   year?: string;
   poster?: string;
+  videoUrl?: string;
   description?: string;
   director?: string;
   producer?: string;

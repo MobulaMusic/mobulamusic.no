@@ -37,6 +37,11 @@ const tracksJson = film?.tracks ? JSON.stringify(film.tracks, null, 2) : '[]';
   </div>
 
   <label class="block">
+    <span class="text-sm text-neutral-400">Video (YouTube eller Vimeo URL) — valgfritt, erstatter plakaten når satt</span>
+    <input name="videoUrl" value={film?.videoUrl || ''} placeholder="https://www.youtube.com/watch?v=..." class="mt-1 w-full rounded bg-neutral-800 px-3 py-2 font-mono text-sm" />
+  </label>
+
+  <label class="block">
     <span class="text-sm text-neutral-400">Beskrivelse</span>
     <textarea name="description" rows="3" class="mt-1 w-full rounded bg-neutral-800 px-3 py-2">{film?.description || ''}</textarea>
   </label>

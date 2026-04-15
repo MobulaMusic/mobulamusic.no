@@ -34,6 +34,7 @@ export const POST: APIRoute = async ({ request, redirect }) => {
     role: String(form.get('role') || '').trim(),
     year: String(form.get('year') || '').trim() || undefined,
     poster: String(form.get('poster') || '').trim() || undefined,
+    videoUrl: String(form.get('videoUrl') || '').trim() || undefined,
     description: String(form.get('description') || '').trim() || undefined,
     director: String(form.get('director') || '').trim() || undefined,
     producer: String(form.get('producer') || '').trim() || undefined,
