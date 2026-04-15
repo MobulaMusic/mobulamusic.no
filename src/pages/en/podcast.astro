@@ -1,16 +1,20 @@
 ---
+export const prerender = false;
 import Layout from '../../layouts/Layout.astro';
 import Mobula from '../../components/Mobula.astro';
 import PasserFor from '../../components/PasserFor.astro';
 import SlikJobberVi from '../../components/SlikJobberVi.astro';
 import Faq from '../../components/Faq.astro';
+import KundeSitater from '../../components/KundeSitater.astro';
+import { listKunder } from '../../lib/content';
+const kunder = (await listKunder()).filter(k => k.tags?.some(t => ['podkast', 'podcast'].includes(t))).slice(0, 2);
 
 const services = [
   {
     num: '01',
     title: 'Recording',
     intro: 'Audio and video in the same studio. Professional microphones, multi-camera setup and an engineer — you focus on the conversation.',
-    image: '/images/podcast/podkast-studio.jpeg',
+    image: '/images/podcast/recording-podcast.png',
     alt: 'Podcast recording with professional microphones and video setup',
   },
   {
@@ -45,8 +49,8 @@ const services = [
 ---
 
 <Layout
-  title="Podcast Studio in Oslo — Recording, Editing & Production | Mobula Music"
-  description="Professional podcast studio in Lørenskog, just 15 minutes from Oslo. Audio and video recording, editing, sound design, original music and coaching — all under one roof."
+  title="Podcast Studio in Lørenskog — from recording to finished episode | Mobula Music"
+  description="Professional podcast studio in Lørenskog, 15 minutes from Oslo. Audio and video recording, editing, sound design, original music and coaching. Packages from NOK 4 500 incl. VAT."
   lang="en"
   altLang="/podkast"
 >
@@ -61,11 +65,45 @@ const services = [
     <div class="relative max-w-7xl mx-auto">
       <p class="font-mono text-gold tracking-[0.2em] uppercase text-sm mb-6">Podcast</p>
       <h1 class="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-serif font-semibold leading-[1.02] mb-8 max-w-4xl">
-        From idea to listener
+        Podcast studio<br />in Lørenskog
       </h1>
-      <p class="text-cream/80 text-xl md:text-2xl max-w-2xl leading-relaxed">
-        Recording, editing, sound design, music and coaching — everything you need under one roof. You bring the conversation, we handle the rest. Just 15 minutes from Oslo by train.
+      <p class="text-cream/80 text-xl md:text-2xl max-w-2xl leading-relaxed mb-4">
+        Recording, editing, sound design, music and coaching — everything under one roof. From recording to finished episode. 15 min from Oslo central.
       </p>
+      <p class="text-gold text-lg md:text-xl font-semibold mb-10">Packages from NOK 4 500 incl. VAT</p>
+      <div class="flex flex-col sm:flex-row gap-4">
+        <a href="/en/contact?tjeneste=podkast" class="inline-flex items-center justify-center gap-3 px-8 py-4 bg-gold text-dark font-semibold tracking-wide uppercase text-sm hover:bg-gold-light transition-colors">
+          <span class="w-2 h-2 rounded-full bg-[#ff9f3d] bpm-pulse"></span>
+          Get a quote
+        </a>
+        <a href="tel:+4792039045" class="inline-flex items-center justify-center px-8 py-4 border border-cream/20 text-cream tracking-wide uppercase text-sm hover:border-gold hover:text-gold transition-all">
+          Call +47 920 39 045
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits -->
+  <section class="py-20 px-6 border-b border-dark-border/40">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 fade-in">
+        {[
+          ['Audio and video in the same studio', 'Multi-camera setup with professional lighting.'],
+          ['Fixed quote before we start', 'You know what it costs before we begin.'],
+          ['Experienced engineers', '10+ years of audio production experience.'],
+          ['15 min from Oslo central', '3 min walk from Fjellhamar station.'],
+          ['Free parking', 'Easy to arrive with guests and gear.'],
+          ['Ready for publishing', 'Delivered in every standard podcast format.'],
+        ].map(([title, desc]) => (
+          <div class="flex gap-3 items-start">
+            <span class="text-gold text-lg leading-none mt-0.5">✓</span>
+            <div>
+              <p class="font-semibold text-sm mb-1">{title}</p>
+              <p class="text-cream/60 text-sm">{desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   </section>
 
@@ -137,6 +175,33 @@ const services = [
       },
     ]}
   />
+
+  <!-- Studio photos -->
+  <section class="py-24 px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="mb-10 fade-in">
+        <p class="font-mono text-gold tracking-[0.15em] uppercase text-xs mb-4">The studio</p>
+        <h2 class="text-3xl md:text-4xl font-serif font-semibold leading-[1.05]">The room you record in</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 fade-in">
+        <img src="/images/podcast/recording-podcast.png" alt="Podcast recording at Mobula Music" loading="lazy" class="w-full aspect-[4/3] object-cover md:col-span-2 md:row-span-2 md:aspect-auto md:h-full" />
+        <img src="/images/podcast/podkast-studio.jpeg" alt="Podcast studio with professional lighting" loading="lazy" class="w-full aspect-[4/3] object-cover" />
+        <img src="/images/studio/producing-podcast.png" alt="Podcast production and editing" loading="lazy" class="w-full aspect-[4/3] object-cover" />
+      </div>
+    </div>
+  </section>
+
+  {kunder.length > 0 && (
+    <section class="py-24 px-6 bg-dark-light/30">
+      <div class="max-w-5xl mx-auto">
+        <div class="mb-10 fade-in">
+          <p class="font-mono text-gold tracking-[0.15em] uppercase text-xs mb-4">Client stories</p>
+          <h2 class="text-3xl md:text-4xl font-serif font-semibold leading-[1.05]">What podcast clients say</h2>
+        </div>
+        <KundeSitater kunder={kunder} />
+      </div>
+    </section>
+  )}
 
   <!-- FAQ -->
   <Faq

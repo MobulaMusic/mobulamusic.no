@@ -118,6 +118,21 @@ const referanser = (await listReferanser()).filter(r => r.kategori === 'strykere
     ]}
   />
 
+  <!-- Studio photos -->
+  <section class="py-24 px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="mb-10 fade-in">
+        <p class="font-mono text-gold tracking-[0.15em] uppercase text-xs mb-4">The studio</p>
+        <h2 class="text-3xl md:text-4xl font-serif font-semibold leading-[1.05]">A room for strings and classical ensembles</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 fade-in">
+        <img src="/images/studio/strings-main-studio.png" alt="String players recording in the main studio at Mobula Music" loading="lazy" class="w-full aspect-[4/3] object-cover" />
+        <img src="/images/studio/cello-side-studio.png" alt="Cellist in the side studio at Mobula Music" loading="lazy" class="w-full aspect-[4/3] object-cover" />
+        <img src="/images/studio/strykekvartett-nfs.jpg" alt="String quartet Nordic Film Strings in the studio" loading="lazy" class="w-full aspect-[4/3] object-cover" />
+      </div>
+    </div>
+  </section>
+
   {referanser.length > 0 && (
     <section class="py-28 px-6 bg-dark-light/30">
       <div class="max-w-5xl mx-auto">

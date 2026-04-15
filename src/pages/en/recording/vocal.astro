@@ -4,8 +4,11 @@ import Layout from '../../../layouts/Layout.astro';
 import Mobula from '../../../components/Mobula.astro';
 import PasserFor from '../../../components/PasserFor.astro';
 import ABPlayer from '../../../components/ABPlayer.astro';
-import { listReferanser } from '../../../lib/content';
+import Faq from '../../../components/Faq.astro';
+import KundeSitater from '../../../components/KundeSitater.astro';
+import { listReferanser, listKunder } from '../../../lib/content';
 const referanser = (await listReferanser()).filter(r => r.kategori === 'vokal');
+const kunder = (await listKunder()).filter(k => k.tags?.some(t => ['vokal', 'innspilling'].includes(t))).slice(0, 2);
 ---
 
 <Layout
@@ -26,11 +29,45 @@ const referanser = (await listReferanser()).filter(r => r.kategori === 'vokal');
         <a href="/en/recording" class="hover:text-gold-light">Recording</a> / Vocal Recording
       </p>
       <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif font-semibold leading-[1.05] mb-8 max-w-4xl">
-        Make your voice shine
+        Vocal recording<br />in Lørenskog
       </h1>
-      <p class="text-cream/80 text-xl md:text-2xl max-w-2xl leading-relaxed">
-        Professional vocal recording for artists, backing singers and classical vocalists. Acoustically treated vocal rooms in Lørenskog — a short trip from central Oslo.
+      <p class="text-cream/80 text-xl md:text-2xl max-w-2xl leading-relaxed mb-4">
+        Acoustically treated vocal rooms, experienced engineers and a fixed quote before we start. Lead, choir or classical — 15 min from Oslo central station.
       </p>
+      <p class="text-gold text-lg md:text-xl font-semibold mb-10">Packages from NOK 4 500 incl. VAT</p>
+      <div class="flex flex-col sm:flex-row gap-4">
+        <a href="/en/contact?tjeneste=vokal" class="inline-flex items-center justify-center gap-3 px-8 py-4 bg-gold text-dark font-semibold tracking-wide uppercase text-sm hover:bg-gold-light transition-colors">
+          <span class="w-2 h-2 rounded-full bg-[#ff9f3d] bpm-pulse"></span>
+          Get a quote
+        </a>
+        <a href="tel:+4792039045" class="inline-flex items-center justify-center px-8 py-4 border border-cream/20 text-cream tracking-wide uppercase text-sm hover:border-gold hover:text-gold transition-all">
+          Call +47 920 39 045
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits -->
+  <section class="py-20 px-6 border-b border-dark-border/40">
+    <div class="max-w-5xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 fade-in">
+        {[
+          ['Acoustically treated vocal rooms', 'Multiple rooms for different voices and genres.'],
+          ['Fixed quote before we start', 'You know what it costs before we begin.'],
+          ['Experienced engineers', '10+ years of vocal recording experience.'],
+          ['15 min from Oslo central', '3 min walk from Fjellhamar station.'],
+          ['Free parking', 'Easy to arrive with gear or a band.'],
+          ['Top microphones', 'Neumann, Sennheiser, Shure — chosen for your voice.'],
+        ].map(([title, desc]) => (
+          <div class="flex gap-3 items-start">
+            <span class="text-gold text-lg leading-none mt-0.5">✓</span>
+            <div>
+              <p class="font-semibold text-sm mb-1">{title}</p>
+              <p class="text-cream/60 text-sm">{desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   </section>
 
@@ -82,6 +119,21 @@ const referanser = (await listReferanser()).filter(r => r.kategori === 'vokal');
     ]}
   />
 
+  <!-- Studio photos -->
+  <section class="py-24 px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="mb-10 fade-in">
+        <p class="font-mono text-gold tracking-[0.15em] uppercase text-xs mb-4">The studio</p>
+        <h2 class="text-3xl md:text-4xl font-serif font-semibold leading-[1.05]">The rooms we record in</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 fade-in">
+        <img src="/images/studio/opera-main-studio.png" alt="Classical vocalist recording in the main studio at Mobula Music" loading="lazy" class="w-full aspect-[4/5] object-cover" />
+        <img src="/images/studio/vokalrom-1.jpeg" alt="Acoustically treated vocal booth at Mobula Music" loading="lazy" class="w-full aspect-[4/5] object-cover" />
+        <img src="/images/studio/vokalrom-2.jpeg" alt="Vocal booth with Neumann microphone" loading="lazy" class="w-full aspect-[4/5] object-cover" />
+      </div>
+    </div>
+  </section>
+
   {referanser.length > 0 && (
     <section class="py-28 px-6 bg-dark-light/30">
       <div class="max-w-5xl mx-auto">
@@ -93,6 +145,48 @@ const referanser = (await listReferanser()).filter(r => r.kategori === 'vokal');
       </div>
     </section>
   )}
+
+  {kunder.length > 0 && (
+    <section class="py-24 px-6">
+      <div class="max-w-5xl mx-auto">
+        <div class="mb-10 fade-in">
+          <p class="font-mono text-gold tracking-[0.15em] uppercase text-xs mb-4">Client stories</p>
+          <h2 class="text-3xl md:text-4xl font-serif font-semibold leading-[1.05]">What vocalists say</h2>
+        </div>
+        <KundeSitater kunder={kunder} />
+      </div>
+    </section>
+  )}
+
+  <Faq
+    title="Frequently asked questions"
+    items={[
+      {
+        q: 'What does it cost?',
+        a: 'Starter packages from NOK 4 500 incl. VAT, covering recording, mix and mastering of one vocal song. See our <a href="/en/pricing" class="text-gold hover:underline">pricing</a> for a full overview, or send us a message and we\'ll give you a fixed quote before we start.',
+      },
+      {
+        q: 'How do I book?',
+        a: 'Send us a message via the <a href="/en/contact" class="text-gold hover:underline">contact form</a>, call +47 920 39 045, or email post@mobulamusic.com. We reply within 1–2 days with questions and a fixed quote.',
+      },
+      {
+        q: 'Can I come by first to see the studio?',
+        a: 'Yes, absolutely. Many clients want to see the room and meet the engineer before booking. Send us a message and we\'ll arrange a time that works.',
+      },
+      {
+        q: 'How long does a vocal session take?',
+        a: 'A simple lead vocal for one song takes 2–3 hours including setup. Multiple songs or layered harmonies take longer. We\'ll give you an honest estimate before you book so you don\'t end up with too much or too little time.',
+      },
+      {
+        q: 'How many takes can I do?',
+        a: 'As many as you need within the time you\'ve booked. We recommend multiple takes of each phrase so we can comp the best version in the mix.',
+      },
+      {
+        q: 'What happens after I send the form?',
+        a: 'You\'ll hear back within 1–2 days. We ask a few follow-up questions about your project, suggest an approach, and send a fixed quote. Once you accept, we find a date that works.',
+      },
+    ]}
+  />
 
   <section class="py-28 px-6">
     <div class="max-w-3xl mx-auto text-center fade-in">
