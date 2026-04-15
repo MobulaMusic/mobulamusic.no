@@ -1,0 +1,184 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Mobula from '../../components/Mobula.astro';
+import PasserFor from '../../components/PasserFor.astro';
+import Faq from '../../components/Faq.astro';
+
+const BOOKING_URL = 'https://booking.mobulamusic.no/';
+---
+
+<Layout
+  title="Studio Rental by the Hour — Main Studio NOK 250/hr | Mobula Music"
+  description="Rent our main studio by the hour for rehearsal and pre-production. NOK 250 per hour with PA and drum kit included. Self-service booking online — a short trip from central Oslo."
+  lang="en"
+  altLang="/timeleie"
+>
+  <!-- Hero -->
+  <section class="relative pt-32 md:pt-40 pb-20 md:pb-24 px-6 overflow-hidden bg-dark">
+    <div class="absolute inset-0" style="background: radial-gradient(ellipse at 30% 40%, #10242f 0%, #0b1a22 60%, #071217 100%);"></div>
+    <div class="absolute top-[10%] right-[5%] w-[500px] h-[500px] bg-gold/10 rounded-full blur-[140px] hero-glow"></div>
+    <div class="absolute inset-y-0 right-0 flex items-center pointer-events-none">
+      <Mobula class="w-[min(80vw,1000px)] translate-x-[30%] opacity-[0.12]" c1="#7af0c8" c2="#7af0c8" c3="#7af0c8" />
+    </div>
+
+    <div class="relative max-w-5xl mx-auto">
+      <p class="font-mono text-gold tracking-[0.2em] uppercase text-sm mb-6">Rental</p>
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif font-semibold leading-[1.05] mb-8 max-w-4xl">
+        Rent the studio<br />for rehearsal and pre-prod
+      </h1>
+      <p class="text-cream/80 text-xl md:text-2xl max-w-2xl leading-relaxed">
+        Rent our main studio by the hour for rehearsal, pre-production or drilling before a gig. <span class="text-gold font-semibold">NOK 250 per hour</span> — PA and drum kit included. Self-service booking online.
+      </p>
+      <div class="mt-10 flex flex-col sm:flex-row gap-4">
+        <a href={BOOKING_URL} target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-3 px-8 py-4 bg-gold text-dark font-semibold tracking-wide uppercase text-sm hover:bg-gold-light transition-colors">
+          <span class="w-2 h-2 rounded-full bg-[#ff9f3d] bpm-pulse"></span>
+          Check availability & book
+        </a>
+        <a href="#whats-included" class="inline-flex items-center justify-center px-8 py-4 border border-cream/20 text-cream tracking-wide uppercase text-sm hover:border-gold hover:text-gold transition-all">
+          See what's included
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- The room -->
+  <section class="py-28 px-6">
+    <div class="max-w-5xl mx-auto">
+      <div class="mb-12 fade-in">
+        <p class="font-mono text-gold tracking-[0.15em] uppercase text-xs mb-4">01 — The room</p>
+        <h2 class="text-4xl md:text-5xl font-serif font-semibold leading-[1.05] max-w-2xl">50 m² main studio</h2>
+      </div>
+
+      <div class="fade-in max-w-3xl">
+        <p class="text-cream/75 leading-relaxed mb-4 text-lg">
+          The same room we use to record bands and ensembles — acoustically treated, natural reverb, plenty of space for a full band. Perfect for rehearsing in a room that actually sounds good, drilling a setlist before a gig, or running pre-production before a session.
+        </p>
+        <p class="text-cream/60 text-sm">Suitable for: bands, ensembles and larger lineups.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Price & included -->
+  <section id="whats-included" class="py-28 px-6 bg-dark-light/30">
+    <div class="max-w-5xl mx-auto">
+      <div class="mb-12 fade-in">
+        <p class="font-mono text-gold tracking-[0.15em] uppercase text-xs mb-4">02 — Price & included</p>
+        <h2 class="text-4xl md:text-5xl font-serif font-semibold leading-[1.05]">NOK 250 per hour</h2>
+        <p class="text-cream/70 mt-4 max-w-2xl">One flat hourly rate — no setup fee, no extra charge for the gear already in the room. You don't have to drag a PA or drum kit across town.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 fade-in">
+        <div class="bg-dark-card border border-dark-border/60 rounded-2xl p-6">
+          <h3 class="text-lg font-serif font-semibold mb-3 text-gold">PA system</h3>
+          <p class="text-cream/75 text-sm leading-relaxed">
+            Full PA setup with microphones, stands and monitors. Just plug in and you'll have a good sound from the first minute.
+          </p>
+        </div>
+        <div class="bg-dark-card border border-dark-border/60 rounded-2xl p-6">
+          <h3 class="text-lg font-serif font-semibold mb-3 text-gold">Drum kit</h3>
+          <p class="text-cream/75 text-sm leading-relaxed">
+            Drum kit set up and ready to go, with cymbals. Drummers are welcome to bring their own sticks and snare — everything else is there.
+          </p>
+        </div>
+      </div>
+
+      <div class="mt-8 bg-dark-card border border-dark-border/60 rounded-2xl p-6 fade-in max-w-2xl">
+        <p class="font-mono text-gold text-xs tracking-[0.15em] uppercase mb-2">Add-on</p>
+        <h3 class="text-lg font-serif font-semibold mb-2">Nord Stage 4</h3>
+        <p class="text-cream/75 text-sm leading-relaxed">
+          Need a keyboard? You can add the Nord Stage 4 as an optional extra when you book — selected directly in the booking system.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- When it fits -->
+  <PasserFor
+    title="When does hourly rental fit?"
+    label="Welcome"
+    intro="Hourly rental is for when you need a great room for a few hours — not a full recording session. Self-service and flexible."
+    items={[
+      'You\'re a band wanting to rehearse in a room that actually sounds good.',
+      'You\'re going on tour and need to drill the setlist before the first gig.',
+      'You\'re an artist preparing material ahead of a studio session (pre-production).',
+      'You have a gig on Saturday and need a room on Friday night.',
+      'You\'re a producer and want an extra room for a few hours.',
+    ]}
+  />
+
+  <!-- How to book -->
+  <section class="py-28 px-6">
+    <div class="max-w-5xl mx-auto">
+      <div class="mb-12 fade-in">
+        <p class="font-mono text-gold tracking-[0.15em] uppercase text-xs mb-4">03 — How to book</p>
+        <h2 class="text-4xl md:text-5xl font-serif font-semibold leading-[1.05]">Three steps</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 fade-in">
+        <div>
+          <div class="font-mono text-gold text-3xl mb-4">01</div>
+          <h3 class="text-lg font-serif font-semibold mb-2">Pick a time</h3>
+          <p class="text-cream/70 text-sm leading-relaxed">Check the calendar for open slots and choose how many hours you need.</p>
+        </div>
+        <div>
+          <div class="font-mono text-gold text-3xl mb-4">02</div>
+          <h3 class="text-lg font-serif font-semibold mb-2">Pay online</h3>
+          <p class="text-cream/70 text-sm leading-relaxed">You get a confirmation with the address and entry instructions right away.</p>
+        </div>
+        <div>
+          <div class="font-mono text-gold text-3xl mb-4">03</div>
+          <h3 class="text-lg font-serif font-semibold mb-2">Come and play</h3>
+          <p class="text-cream/70 text-sm leading-relaxed">The room is ready at your booked time — walk in, set up and start playing.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <Faq
+    title="Frequently asked questions"
+    items={[
+      {
+        q: 'How much does it cost per hour?',
+        a: 'NOK 250 per hour, one flat rate. You pay in the booking system when you book, and get confirmation right away.',
+      },
+      {
+        q: 'Is an engineer present during the rental?',
+        a: 'No — hourly rental is self-service, without an engineer. If you want to record or need help with the sound, book a regular recording session instead and we\'ll staff the room.',
+      },
+      {
+        q: 'Can we record what we rehearse?',
+        a: 'Hourly rental does not include recording. If you need a recording, book a recording session and we\'ll be ready with an engineer and signal chain.',
+      },
+      {
+        q: 'Do we need to bring anything ourselves?',
+        a: 'Instruments, guitar amps, sticks and personal gear. PA and drum kit are already there. The Nord Stage 4 can be rented as an add-on directly in the booking system.',
+      },
+      {
+        q: 'How long can I book at a time?',
+        a: 'From one hour and up. Want the room for a whole day? Pick the number of hours that fits — the longer the block, the more flexibility you get.',
+      },
+    ]}
+  />
+
+  <!-- CTA -->
+  <section class="py-28 px-6">
+    <div class="max-w-3xl mx-auto text-center fade-in">
+      <h2 class="text-3xl md:text-5xl font-serif font-semibold mb-6 leading-tight">
+        Book the studio by the hour
+      </h2>
+      <p class="text-cream/80 text-lg mb-10 max-w-xl mx-auto">
+        Check availability and book directly online. You get a confirmation immediately.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href={BOOKING_URL} target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-3 px-8 py-4 bg-gold text-dark font-semibold tracking-wide uppercase text-sm hover:bg-gold-light transition-colors">
+          <span class="w-2 h-2 rounded-full bg-[#ff9f3d] bpm-pulse"></span>
+          Book the studio
+        </a>
+        <a href="/en/contact" class="inline-flex items-center justify-center px-8 py-4 border border-cream/20 text-cream tracking-wide uppercase text-sm hover:border-gold hover:text-gold transition-all">
+          Got a question?
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

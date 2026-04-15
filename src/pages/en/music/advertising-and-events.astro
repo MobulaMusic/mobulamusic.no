@@ -1,0 +1,105 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import Mobula from '../../../components/Mobula.astro';
+import PasserFor from '../../../components/PasserFor.astro';
+---
+
+<Layout
+  title="Music for Advertising & Events — Sound Logos, Jingles & Campaign Music | Mobula Music"
+  description="Custom music for commercials, campaigns, product launches and events. From sound logo to full arrangement. Fast delivery for agencies and brands."
+  lang="en"
+  altLang="/musikk/reklame-og-event"
+>
+  <!-- Hero -->
+  <section class="relative pt-32 md:pt-40 pb-20 md:pb-24 px-6 overflow-hidden bg-dark">
+    <div class="absolute inset-0" style="background: radial-gradient(ellipse at 30% 40%, #10242f 0%, #0b1a22 60%, #071217 100%);"></div>
+    <div class="absolute top-[10%] right-[5%] w-[500px] h-[500px] bg-gold/10 rounded-full blur-[140px] hero-glow"></div>
+    <div class="absolute inset-y-0 right-0 flex items-center pointer-events-none">
+      <Mobula class="w-[min(80vw,1000px)] translate-x-[30%] opacity-[0.12]" c1="#7af0c8" c2="#7af0c8" c3="#7af0c8" />
+    </div>
+
+    <div class="relative max-w-5xl mx-auto">
+      <p class="font-mono text-gold tracking-[0.2em] uppercase text-sm mb-6">
+        <a href="/en/music" class="hover:text-gold-light">We create music</a> / Advertising &amp; Events
+      </p>
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif font-semibold leading-[1.05] mb-8 max-w-4xl">
+        Music that sells<br />the message
+      </h1>
+      <p class="text-cream/80 text-xl md:text-2xl max-w-2xl leading-relaxed">
+        Original music for commercials, campaigns, product launches and events. From jingle to fully orchestrated spot — tailored to your brand.
+      </p>
+    </div>
+  </section>
+
+  <!-- What we make -->
+  <section class="py-28 px-6">
+    <div class="max-w-5xl mx-auto">
+      <div class="mb-16 fade-in">
+        <p class="font-mono text-gold tracking-[0.15em] uppercase text-xs mb-4">01 — What we make</p>
+        <h2 class="text-4xl md:text-5xl font-serif font-semibold leading-[1.05] max-w-2xl">Format that fits<br />the message</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10 fade-in">
+        <div>
+          <h3 class="text-xl font-serif font-semibold mb-3 text-gold">Commercials</h3>
+          <p class="text-cream/75 leading-relaxed">
+            Music for TV commercials, social media and cinema ads. We adapt length and versions for every platform.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-xl font-serif font-semibold mb-3 text-gold">Campaigns &amp; launches</h3>
+          <p class="text-cream/75 leading-relaxed">
+            Consistent musical identity for longer campaigns, product launches and brand series.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-xl font-serif font-semibold mb-3 text-gold">Events &amp; stage</h3>
+          <p class="text-cream/75 leading-relaxed">
+            Music for conferences, galas, trade shows and product presentations — ready for playback or live performance.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-xl font-serif font-semibold mb-3 text-gold">Sound logo &amp; jingle</h3>
+          <p class="text-cream/75 leading-relaxed">
+            Short, recognisable musical signatures you can use consistently across every channel.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Who it fits -->
+  <PasserFor
+    title="Built for brands and agencies"
+    label="Welcome"
+    intro="We work directly with brands and with agencies on projects where the music has to hit exactly right."
+    items={[
+      'You\'re an agency with a client who needs original music.',
+      'You\'re a brand with a new campaign or product launch.',
+      'You\'re planning an event and need music that sets the tone.',
+      'You create content for social media and need audio that stands out.',
+      'You want to build a unique musical identity for your brand.',
+    ]}
+  />
+
+  <!-- CTA -->
+  <section class="py-28 px-6">
+    <div class="max-w-3xl mx-auto text-center fade-in">
+      <h2 class="text-3xl md:text-5xl font-serif font-semibold mb-6 leading-tight">
+        Got a brief?
+      </h2>
+      <p class="text-cream/80 text-lg mb-10 max-w-xl mx-auto">
+        Send us the brief or a short description — we'll come back with ideas and a fixed&nbsp;quote.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/en/contact" class="inline-flex items-center justify-center gap-3 px-8 py-4 bg-gold text-dark font-semibold tracking-wide uppercase text-sm hover:bg-gold-light transition-colors">
+          <span class="w-2 h-2 rounded-full bg-[#ff9f3d] bpm-pulse"></span>
+          Get in touch
+        </a>
+        <a href="/en/music" class="inline-flex items-center justify-center px-8 py-4 border border-cream/20 text-cream tracking-wide uppercase text-sm hover:border-gold hover:text-gold transition-all">
+          See other services
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

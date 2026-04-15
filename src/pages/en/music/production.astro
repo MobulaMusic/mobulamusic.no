@@ -1,0 +1,127 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import Mobula from '../../../components/Mobula.astro';
+import PasserFor from '../../../components/PasserFor.astro';
+import SlikJobberVi from '../../../components/SlikJobberVi.astro';
+---
+
+<Layout
+  title="Music Production — Finish Your Song | Mobula Music"
+  description="Got a song idea or half-finished demo? We take it to a finished production. Arrangement, production, mix and mastering — you own the song and keep full rights."
+  lang="en"
+  altLang="/musikk/produsering"
+>
+  <!-- Hero -->
+  <section class="relative pt-32 md:pt-40 pb-20 md:pb-24 px-6 overflow-hidden bg-dark">
+    <div class="absolute inset-0" style="background: radial-gradient(ellipse at 30% 40%, #10242f 0%, #0b1a22 60%, #071217 100%);"></div>
+    <div class="absolute top-[10%] right-[5%] w-[500px] h-[500px] bg-gold/10 rounded-full blur-[140px] hero-glow"></div>
+    <div class="absolute inset-y-0 right-0 flex items-center pointer-events-none">
+      <Mobula class="w-[min(80vw,1000px)] translate-x-[30%] opacity-[0.12]" c1="#7af0c8" c2="#7af0c8" c3="#7af0c8" />
+    </div>
+
+    <div class="relative max-w-5xl mx-auto">
+      <p class="font-mono text-gold tracking-[0.2em] uppercase text-sm mb-6">
+        <a href="/en/music" class="hover:text-gold-light">We create music</a> / Production
+      </p>
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif font-semibold leading-[1.05] mb-8 max-w-4xl">
+        Finish the song<br />you started
+      </h1>
+      <p class="text-cream/80 text-xl md:text-2xl max-w-2xl leading-relaxed">
+        Everyone has an idea that never quite got finished. A voice memo, a half-finished demo, a lyric you hum a melody to. We take it the rest of the way.
+      </p>
+    </div>
+  </section>
+
+  <!-- What we do -->
+  <section class="py-28 px-6">
+    <div class="max-w-5xl mx-auto">
+      <div class="mb-16 fade-in">
+        <p class="font-mono text-gold tracking-[0.15em] uppercase text-xs mb-4">01 — What we do</p>
+        <h2 class="text-4xl md:text-5xl font-serif font-semibold leading-[1.05] max-w-2xl">From idea to track</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10 fade-in">
+        <div>
+          <h3 class="text-xl font-serif font-semibold mb-3 text-gold">Production from scratch</h3>
+          <p class="text-cream/75 leading-relaxed">
+            You hum, sing or play us an idea. We build the whole production — drums, bass, harmony, arrangement and mix — around it.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-xl font-serif font-semibold mb-3 text-gold">Finish your demo</h3>
+          <p class="text-cream/75 leading-relaxed">
+            Got a song in Logic, Ableton or GarageBand that never quite gets finished? We help with arrangement, mix and mastering to get it where you want it.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-xl font-serif font-semibold mb-3 text-gold">Co-writing &amp; arrangement</h3>
+          <p class="text-cream/75 leading-relaxed">
+            We work with you on songwriting — melody, lyrics and arrangement. You keep the voice, we bring the toolbox.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-xl font-serif font-semibold mb-3 text-gold">Track for streaming</h3>
+          <p class="text-cream/75 leading-relaxed">
+            We deliver a finished mastered track ready for Spotify, Apple Music and every other platform. You own the music.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Who it fits -->
+  <PasserFor
+    title="Built for every kind of writer"
+    label="Welcome"
+    intro="You don't need to read music, know chords or have a finished arrangement. That's what we're here for."
+    items={[
+      'You have a voice memo with a melody idea and don\'t know what to do with it.',
+      'You\'re a singer-songwriter with songs that need production before release.',
+      'You make music in a DAW but can\'t quite reach the professional polish you\'re after.',
+      'You write lyrics and need a composer/producer to bring the music.',
+      'You\'re trying out a song idea for the first time and looking for a reliable partner.',
+    ]}
+  />
+
+  <!-- Process -->
+  <SlikJobberVi
+    label="Process"
+    title="How it works"
+    intro="Every project is unique — but we have a few fixed steps that make the work predictable."
+    steps={[
+      {
+        title: 'Share the idea',
+        body: 'Send us whatever you have: an audio recording, a demo, lyrics or just a description of what you want. We discuss direction and pricing.',
+      },
+      {
+        title: 'Sketch & dialogue',
+        body: 'We make a first sketch for you to listen to. You give feedback. We fine-tune until the direction feels right.',
+      },
+      {
+        title: 'Production & mastering',
+        body: 'Full production, mix and mastering. You receive finished files ready for release or onward use.',
+      },
+    ]}
+  />
+
+  <!-- CTA -->
+  <section class="py-28 px-6">
+    <div class="max-w-3xl mx-auto text-center fade-in">
+      <h2 class="text-3xl md:text-5xl font-serif font-semibold mb-6 leading-tight">
+        Send us your song
+      </h2>
+      <p class="text-cream/80 text-lg mb-10 max-w-xl mx-auto">
+        Whatever the format — voice memo, DAW project, lyrics or just a description. We'll take it from there.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/en/contact" class="inline-flex items-center justify-center gap-3 px-8 py-4 bg-gold text-dark font-semibold tracking-wide uppercase text-sm hover:bg-gold-light transition-colors">
+          <span class="w-2 h-2 rounded-full bg-[#ff9f3d] bpm-pulse"></span>
+          Get in touch
+        </a>
+        <a href="/en/music" class="inline-flex items-center justify-center px-8 py-4 border border-cream/20 text-cream tracking-wide uppercase text-sm hover:border-gold hover:text-gold transition-all">
+          See other services
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

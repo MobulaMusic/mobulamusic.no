@@ -124,6 +124,7 @@ export default defineConfig({
     '/en/kurs-i-arrangering': '/en/music',
     '/en/service-page/musikkrommet-1': '/en/recording/band-and-ensemble',
     '/en/service-page/podkaststudio-timeleie': '/en/podcast',
+    '/en/music/composition-for-theatre': '/en/music/stage-and-theatre',
     '/en/product-page/digitalt-gavekort-5-timer-innspilling': 'https://booking.mobulamusic.no/shop',
     '/en/product-page/fysisk-gavekort-2-timer-innspilling-enkel-miks': 'https://booking.mobulamusic.no/shop',
 
