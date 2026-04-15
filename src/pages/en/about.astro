@@ -111,11 +111,68 @@ import Mobula from '../../components/Mobula.astro';
     </div>
   </section>
 
-  <!-- Location -->
+  <!-- The studios -->
   <section class="py-28 px-6 bg-dark-light">
     <div class="max-w-7xl mx-auto">
+      <div class="flex flex-col md:flex-row md:items-end md:justify-between mb-16 gap-6 fade-in">
+        <div>
+          <p class="font-mono text-gold tracking-[0.15em] uppercase text-xs mb-4">03 — The studios</p>
+          <h2 class="text-4xl md:text-5xl font-serif font-semibold leading-[1.05] max-w-2xl">Four rooms<br />that work together</h2>
+        </div>
+        <p class="text-cream/70 text-base md:text-lg max-w-md leading-relaxed">
+          All live rooms are wired to the same control room — you can record large ensembles with good separation, or move the vocalist to a separate room mid-session.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 fade-in">
+        <div class="relative overflow-hidden aspect-[3/4] group">
+          <img src="/images/studio/store-studio.jpeg" loading="lazy" decoding="async" alt="50 m² main studio at Mobula Music — ideal for bands, concert bands and strings" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04] [filter:saturate(0.72)_contrast(0.95)_brightness(0.92)]" />
+          <div class="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-dark to-transparent pointer-events-none"></div>
+          <div class="absolute inset-0 ring-1 ring-inset ring-cream/10"></div>
+          <div class="absolute bottom-4 left-4 right-4">
+            <p class="font-mono text-cream/60 text-[10px] tracking-widest uppercase mb-1">50 m²</p>
+            <h3 class="text-lg font-serif font-semibold text-white">Main studio</h3>
+          </div>
+        </div>
+
+        <div class="relative overflow-hidden aspect-[3/4] group">
+          <img src="/images/studio/kontrollrom.jpeg" loading="lazy" decoding="async" alt="Control room for mix and mastering at Mobula Music in Lørenskog" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04] [filter:saturate(0.72)_contrast(0.95)_brightness(0.92)]" />
+          <div class="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-dark to-transparent pointer-events-none"></div>
+          <div class="absolute inset-0 ring-1 ring-inset ring-cream/10"></div>
+          <div class="absolute bottom-4 left-4 right-4">
+            <p class="font-mono text-cream/60 text-[10px] tracking-widest uppercase mb-1">Mix &amp; production</p>
+            <h3 class="text-lg font-serif font-semibold text-white">Control room</h3>
+          </div>
+        </div>
+
+        <div class="relative overflow-hidden aspect-[3/4] group">
+          <img src="/images/studio/vokalrom-1.jpeg" loading="lazy" decoding="async" alt="Acoustically treated vocal room for lead vocals, choir and audiobook recording" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04] [filter:saturate(0.72)_contrast(0.95)_brightness(0.92)]" />
+          <div class="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-dark to-transparent pointer-events-none"></div>
+          <div class="absolute inset-0 ring-1 ring-inset ring-cream/10"></div>
+          <div class="absolute bottom-4 left-4 right-4">
+            <p class="font-mono text-cream/60 text-[10px] tracking-widest uppercase mb-1">Dry &amp; close</p>
+            <h3 class="text-lg font-serif font-semibold text-white">Vocal room</h3>
+          </div>
+        </div>
+
+        <div class="relative overflow-hidden aspect-[3/4] group">
+          <img src="/images/studio/sidestudio.jpeg" loading="lazy" decoding="async" alt="Side studio for smaller recordings and podcast production" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04] [filter:saturate(0.72)_contrast(0.95)_brightness(0.92)]" />
+          <div class="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-dark to-transparent pointer-events-none"></div>
+          <div class="absolute inset-0 ring-1 ring-inset ring-cream/10"></div>
+          <div class="absolute bottom-4 left-4 right-4">
+            <p class="font-mono text-cream/60 text-[10px] tracking-widest uppercase mb-1">Smaller setups</p>
+            <h3 class="text-lg font-serif font-semibold text-white">Side studio</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Location -->
+  <section class="py-28 px-6">
+    <div class="max-w-7xl mx-auto">
       <div class="mb-16 fade-in">
-        <p class="font-mono text-gold tracking-[0.15em] uppercase text-xs mb-4">03 — Location</p>
+        <p class="font-mono text-gold tracking-[0.15em] uppercase text-xs mb-4">04 — Location</p>
         <h2 class="text-4xl md:text-5xl font-serif font-semibold leading-[1.05] max-w-2xl">Easy to reach</h2>
       </div>
 
@@ -165,7 +222,7 @@ import Mobula from '../../components/Mobula.astro';
   </section>
 
   <!-- CTA -->
-  <section class="py-28 px-6">
+  <section class="py-28 px-6 bg-dark-light">
     <div class="max-w-3xl mx-auto text-center fade-in">
       <h2 class="text-3xl md:text-5xl font-serif font-semibold mb-6 leading-tight">
         Drop by for a coffee
