@@ -2,6 +2,67 @@
 import Mobula from './Mobula.astro';
 
 const currentYear = new Date().getFullYear();
+const isEn = Astro.url.pathname.startsWith('/en');
+
+const t = isEn
+  ? {
+      tagline: 'Production house for recording, podcast and music production.',
+      services: 'Services',
+      recording: 'Recording',
+      podcast: 'Podcast',
+      music: 'Music',
+      rental: 'Studio rental by the hour',
+      pricing: 'Pricing',
+      shop: 'Gift cards & digital tools',
+      company: 'Company',
+      about: 'About',
+      blog: 'Blog',
+      contact: 'Contact',
+      privacy: 'Privacy',
+      contactHeader: 'Contact',
+      copyright: 'All rights reserved.',
+      hrefs: {
+        recording: '/en/recording',
+        podcast: '/en/podcast',
+        music: '/en/music',
+        rental: '/en/rental',
+        pricing: '/en/pricing',
+        about: '/en/about',
+        blog: '/nyheter',
+        contact: '/en/contact',
+        privacy: '/en/privacy',
+        home: '/en',
+      },
+    }
+  : {
+      tagline: 'Produksjonshus for innspilling, podkast og musikkproduksjon.',
+      services: 'Tjenester',
+      recording: 'Innspilling',
+      podcast: 'Podkast',
+      music: 'Musikk',
+      rental: 'Timeleie øvingsrom',
+      pricing: 'Priser',
+      shop: 'Gavekort & digitale verktøy',
+      company: 'Selskap',
+      about: 'Om oss',
+      blog: 'Blogg',
+      contact: 'Kontakt',
+      privacy: 'Personvern',
+      contactHeader: 'Kontakt',
+      copyright: 'Alle rettigheter reservert.',
+      hrefs: {
+        recording: '/innspilling',
+        podcast: '/podkast',
+        music: '/musikk',
+        rental: '/timeleie',
+        pricing: '/priser',
+        about: '/om-oss',
+        blog: '/nyheter',
+        contact: '/kontakt',
+        privacy: '/personvern',
+        home: '/',
+      },
+    };
 ---
 
 <footer class="bg-dark-light border-t border-dark-border">
@@ -9,42 +70,42 @@ const currentYear = new Date().getFullYear();
     <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
       <!-- Brand -->
       <div class="md:col-span-1">
-        <a href="/" class="flex items-center gap-3 mb-4" aria-label="Mobula Music">
+        <a href={t.hrefs.home} class="flex items-center gap-3 mb-4" aria-label="Mobula Music">
           <Mobula class="h-9 w-auto" c1="#1f8e6e" c2="#7af0c8" c3="#c4f9e2" />
           <span class="text-lg font-semibold tracking-wide">MOBULA MUSIC</span>
         </a>
         <p class="text-gray-text text-sm leading-relaxed">
-          Produksjonshus for innspilling, podkast og musikkproduksjon.
+          {t.tagline}
         </p>
       </div>
 
-      <!-- Tjenester -->
+      <!-- Services -->
       <div>
-        <h3 class="text-sm font-semibold uppercase tracking-wider text-gold mb-4">Tjenester</h3>
+        <h3 class="text-sm font-semibold uppercase tracking-wider text-gold mb-4">{t.services}</h3>
         <ul class="space-y-3">
-          <li><a href="/innspilling" class="text-gray-text text-sm hover:text-cream transition-colors">Innspilling</a></li>
-          <li><a href="/podkast" class="text-gray-text text-sm hover:text-cream transition-colors">Podkast</a></li>
-          <li><a href="/musikk" class="text-gray-text text-sm hover:text-cream transition-colors">Musikk</a></li>
-          <li><a href="/timeleie" class="text-gray-text text-sm hover:text-cream transition-colors">Timeleie øvingsrom</a></li>
-          <li><a href="/priser" class="text-gray-text text-sm hover:text-cream transition-colors">Priser</a></li>
-          <li><a href="https://booking.mobulamusic.no/shop" target="_blank" rel="noopener" class="text-gray-text text-sm hover:text-cream transition-colors">Gavekort & digitale verktøy</a></li>
+          <li><a href={t.hrefs.recording} class="text-gray-text text-sm hover:text-cream transition-colors">{t.recording}</a></li>
+          <li><a href={t.hrefs.podcast} class="text-gray-text text-sm hover:text-cream transition-colors">{t.podcast}</a></li>
+          <li><a href={t.hrefs.music} class="text-gray-text text-sm hover:text-cream transition-colors">{t.music}</a></li>
+          <li><a href={t.hrefs.rental} class="text-gray-text text-sm hover:text-cream transition-colors">{t.rental}</a></li>
+          <li><a href={t.hrefs.pricing} class="text-gray-text text-sm hover:text-cream transition-colors">{t.pricing}</a></li>
+          <li><a href="https://booking.mobulamusic.no/shop" target="_blank" rel="noopener" class="text-gray-text text-sm hover:text-cream transition-colors">{t.shop}</a></li>
         </ul>
       </div>
 
-      <!-- Selskap -->
+      <!-- Company -->
       <div>
-        <h3 class="text-sm font-semibold uppercase tracking-wider text-gold mb-4">Selskap</h3>
+        <h3 class="text-sm font-semibold uppercase tracking-wider text-gold mb-4">{t.company}</h3>
         <ul class="space-y-3">
-          <li><a href="/om-oss" class="text-gray-text text-sm hover:text-cream transition-colors">Om oss</a></li>
-          <li><a href="/nyheter" class="text-gray-text text-sm hover:text-cream transition-colors">Blogg</a></li>
-          <li><a href="/kontakt" class="text-gray-text text-sm hover:text-cream transition-colors">Kontakt</a></li>
-          <li><a href="/personvern" class="text-gray-text text-sm hover:text-cream transition-colors">Personvern</a></li>
+          <li><a href={t.hrefs.about} class="text-gray-text text-sm hover:text-cream transition-colors">{t.about}</a></li>
+          <li><a href={t.hrefs.blog} class="text-gray-text text-sm hover:text-cream transition-colors">{t.blog}</a></li>
+          <li><a href={t.hrefs.contact} class="text-gray-text text-sm hover:text-cream transition-colors">{t.contact}</a></li>
+          <li><a href={t.hrefs.privacy} class="text-gray-text text-sm hover:text-cream transition-colors">{t.privacy}</a></li>
         </ul>
       </div>
 
-      <!-- Kontakt -->
+      <!-- Contact -->
       <div>
-        <h3 class="text-sm font-semibold uppercase tracking-wider text-gold mb-4">Kontakt</h3>
+        <h3 class="text-sm font-semibold uppercase tracking-wider text-gold mb-4">{t.contactHeader}</h3>
         <ul class="space-y-3 text-gray-text text-sm">
           <li>Fjellhammerveien 52</li>
           <li>1472 Fjellhamar</li>
@@ -73,7 +134,7 @@ const currentYear = new Date().getFullYear();
 
     <!-- Bottom -->
     <div class="mt-12 pt-8 border-t border-dark-border flex flex-col md:flex-row justify-between items-center gap-4">
-      <p class="text-gray-text text-xs">&copy; {currentYear} Mobula Music AS. Org.nr: 294554769. Alle rettigheter reservert.</p>
+      <p class="text-gray-text text-xs">&copy; {currentYear} Mobula Music AS. Org.nr: 294554769. {t.copyright}</p>
     </div>
   </div>
 </footer>
