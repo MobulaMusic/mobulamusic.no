@@ -64,7 +64,7 @@ export default defineConfig({
     '/service-page/musikkrommet-timeleie-2': '/timeleie',
     '/service-page/produsentrommet-1': '/timeleie',
     '/service-page/produsentrommet-timeleie': '/timeleie',
-    '/service-page/podkaststudio-timeleie': '/timeleie',
+    '/service-page/podkaststudio-timeleie': '/podkast',
     '/service-page/vokalinnspilling': '/innspilling/vokal',
 
     // Gavekort / produkt-sider → ekstern shop
@@ -123,7 +123,7 @@ export default defineConfig({
     '/en/spille-inn-podcast': '/en/podcast',
     '/en/kurs-i-arrangering': '/en/music',
     '/en/service-page/musikkrommet-1': '/en/rental',
-    '/en/service-page/podkaststudio-timeleie': '/en/rental',
+    '/en/service-page/podkaststudio-timeleie': '/en/podcast',
     '/en/music/composition-for-theatre': '/en/music/stage-and-theatre',
     '/en/product-page/digitalt-gavekort-5-timer-innspilling': 'https://booking.mobulamusic.no/shop',
     '/en/product-page/fysisk-gavekort-2-timer-innspilling-enkel-miks': 'https://booking.mobulamusic.no/shop',
