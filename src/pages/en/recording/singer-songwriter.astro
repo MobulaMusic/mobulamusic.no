@@ -1,0 +1,117 @@
+---
+export const prerender = false;
+import Layout from '../../../layouts/Layout.astro';
+import Mobula from '../../../components/Mobula.astro';
+import PasserFor from '../../../components/PasserFor.astro';
+import ABPlayer from '../../../components/ABPlayer.astro';
+import { listReferanser } from '../../../lib/content';
+const referanser = (await listReferanser()).filter(r => r.kategori === 'singer-songwriter');
+---
+
+<Layout
+  title="Singer-Songwriter Recording — Demo, Single & EP | Mobula Music"
+  description="Recording studio for singer-songwriters near Oslo. Record your songs solo or with a full band — from first demo to finished single ready for Spotify. We tailor the production to your song."
+  lang="en"
+  altLang="/innspilling/singer-songwriter"
+>
+  <section class="relative pt-32 md:pt-40 pb-20 md:pb-24 px-6 overflow-hidden bg-dark">
+    <div class="absolute inset-0" style="background: radial-gradient(ellipse at 30% 40%, #10242f 0%, #0b1a22 60%, #071217 100%);"></div>
+    <div class="absolute top-[10%] right-[5%] w-[500px] h-[500px] bg-gold/10 rounded-full blur-[140px] hero-glow"></div>
+    <div class="absolute inset-y-0 right-0 flex items-center pointer-events-none">
+      <Mobula class="w-[min(80vw,1000px)] translate-x-[30%] opacity-[0.12]" c1="#7af0c8" c2="#7af0c8" c3="#7af0c8" />
+    </div>
+
+    <div class="relative max-w-5xl mx-auto">
+      <p class="font-mono text-gold tracking-[0.2em] uppercase text-sm mb-6">
+        <a href="/en/recording" class="hover:text-gold-light">Recording</a> / Singer-Songwriter
+      </p>
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif font-semibold leading-[1.05] mb-8 max-w-4xl">
+        Get your songs<br />out into the world
+      </h1>
+      <p class="text-cream/80 text-xl md:text-2xl max-w-2xl leading-relaxed">
+        For artists who write their own songs and want them recorded properly. Alone with a guitar, or with a full band production — we'll find the format that fits the song.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-28 px-6">
+    <div class="max-w-5xl mx-auto">
+      <div class="mb-16 fade-in">
+        <p class="font-mono text-gold tracking-[0.15em] uppercase text-xs mb-4">01 — What you get</p>
+        <h2 class="text-3xl md:text-4xl font-serif font-semibold leading-[1.05] max-w-2xl">Everything you need,<br />nothing more</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10 fade-in">
+        <div>
+          <h3 class="text-xl font-serif font-semibold mb-3 text-gold">Intimate production</h3>
+          <p class="text-cream/75 leading-relaxed">
+            Guitar and voice, piano and voice, or just vocals. We find microphones and rooms that capture what's close and honest in what you do.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-xl font-serif font-semibold mb-3 text-gold">Full band production</h3>
+          <p class="text-cream/75 leading-relaxed">
+            Does your song need drums, bass and layered arrangements? We build the arrangement with you and record everything — whether you have a band or need session musicians.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-xl font-serif font-semibold mb-3 text-gold">Arrangement and production</h3>
+          <p class="text-cream/75 leading-relaxed">
+            If you're unsure where the song should go next, we can help with arrangement and production — not just technical recording. See <a href="/en/music" class="text-gold hover:underline">Music</a> for more.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-xl font-serif font-semibold mb-3 text-gold">Ready for release</h3>
+          <p class="text-cream/75 leading-relaxed">
+            We deliver a finished mastered track ready for Spotify, Apple Music and everything else. You own the song and the recordings.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <PasserFor
+    title="Built for you, whatever the song"
+    label="Welcome"
+    intro="We've recorded many first singles, and just as many song number 47 in someone's career. Both matter equally."
+    items={[
+      'You have a song you\'ve been sitting on and finally want to release it.',
+      'You have a demo and want to turn it into a real release.',
+      'You have several songs you want to collect into an EP.',
+      'You want help finding your sound — not just recording it.',
+      'You\'ve never done this before and want a calm first session.',
+    ]}
+  />
+
+  {referanser.length > 0 && (
+    <section class="py-28 px-6 bg-dark-light/30">
+      <div class="max-w-5xl mx-auto">
+        <div class="mb-12 fade-in">
+          <p class="font-mono text-gold tracking-[0.15em] uppercase text-xs mb-4">Before / after</p>
+          <h2 class="text-3xl md:text-4xl font-serif font-semibold leading-[1.05]">Singer-songwriter — raw vs. mixed</h2>
+        </div>
+        <ABPlayer referanser={referanser} />
+      </div>
+    </section>
+  )}
+
+  <section class="py-28 px-6">
+    <div class="max-w-3xl mx-auto text-center fade-in">
+      <h2 class="text-3xl md:text-5xl font-serif font-semibold mb-6 leading-tight">
+        Send us your song
+      </h2>
+      <p class="text-cream/80 text-lg mb-10 max-w-xl mx-auto">
+        A voice memo, a demo, lyrics or just a description. We'll take it from&nbsp;there.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/en/contact" class="inline-flex items-center justify-center gap-3 px-8 py-4 bg-gold text-dark font-semibold tracking-wide uppercase text-sm hover:bg-gold-light transition-colors">
+          <span class="w-2 h-2 rounded-full bg-[#ff9f3d] bpm-pulse"></span>
+          Get in touch
+        </a>
+        <a href="/en/recording" class="inline-flex items-center justify-center px-8 py-4 border border-cream/20 text-cream tracking-wide uppercase text-sm hover:border-gold hover:text-gold transition-all">
+          See other services
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

@@ -7,6 +7,7 @@ import Faq from '../../components/Faq.astro';
 
 const services = [
   {
+    href: '/en/recording/singer-songwriter',
     num: '01',
     title: 'Singer-Songwriter',
     intro: 'Demo, single or EP. For artists writing their own songs and ready to record them properly — alone or with a band.',
@@ -14,6 +15,7 @@ const services = [
     alt: 'Singer-songwriter recording an original song at Mobula Music',
   },
   {
+    href: '/en/recording/vocal',
     num: '02',
     title: 'Vocal Recording',
     intro: 'Lead vocals, backing vocals, classical soloists or choirs. Microphones and rooms tailored to your voice.',
@@ -21,6 +23,7 @@ const services = [
     alt: 'Vocal recording with professional condenser microphone',
   },
   {
+    href: '/en/recording/voice-over-and-audiobook',
     num: '03',
     title: 'Voice-Over & Audiobook',
     intro: 'Audiobooks, e-learning, advertising, film and game voicing. Quiet rooms, low noise floor, set up for long sessions.',
@@ -28,6 +31,7 @@ const services = [
     alt: 'Voice-over recording session at Mobula Music',
   },
   {
+    href: '/en/recording/band-and-ensemble',
     num: '04',
     title: 'Band & Ensemble',
     intro: 'Bands, concert bands, choirs and larger ensembles. 50 m² main studio with multiple connected live rooms.',
@@ -35,6 +39,7 @@ const services = [
     alt: 'Band recording live in the main studio at Mobula Music',
   },
   {
+    href: '/en/recording/strings-and-classical',
     num: '05',
     title: 'Strings & Classical',
     intro: 'Chamber ensembles, string orchestra and classical groups. Join our regular shared sessions to split the cost of live strings.',
@@ -98,20 +103,23 @@ const services = [
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
         {services.map((s) => (
-          <div class="group fade-in">
+          <a href={s.href} class="group fade-in">
             <div class="relative overflow-hidden aspect-[4/3] mb-5 bg-dark">
               <img src={s.image} alt={s.alt} class="w-full h-full object-cover transition-all duration-700 group-hover:scale-[1.04] [filter:saturate(0.72)_contrast(0.95)_brightness(0.92)] group-hover:[filter:saturate(0.85)_contrast(1)_brightness(1)]" />
               <div class="absolute inset-0 bg-[#0b1a22] mix-blend-multiply opacity-30 pointer-events-none"></div>
               <div class="absolute inset-0 bg-gradient-to-tr from-[#7af0c8]/10 via-transparent to-[#c9a2ff]/10 mix-blend-overlay pointer-events-none"></div>
               <div class="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-dark/80 to-transparent pointer-events-none"></div>
-              <div class="absolute inset-0 ring-1 ring-inset ring-cream/10"></div>
+              <div class="absolute inset-0 ring-1 ring-inset ring-cream/10 group-hover:ring-gold/60 transition-all duration-500"></div>
               <span class="absolute top-4 left-4 font-mono text-gold text-xs tracking-widest">{s.num}</span>
             </div>
-            <div>
-              <h3 class="text-2xl md:text-3xl font-serif font-semibold mb-2">{s.title}</h3>
-              <p class="text-cream/70 text-sm leading-relaxed">{s.intro}</p>
+            <div class="flex items-start justify-between gap-4">
+              <div>
+                <h3 class="text-2xl md:text-3xl font-serif font-semibold mb-2 group-hover:text-gold transition-colors">{s.title}</h3>
+                <p class="text-cream/70 text-sm leading-relaxed max-w-xs">{s.intro}</p>
+              </div>
+              <span class="shrink-0 text-gold translate-y-1 transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true">→</span>
             </div>
-          </div>
+          </a>
         ))}
       </div>
     </div>

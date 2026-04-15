@@ -1,0 +1,113 @@
+---
+export const prerender = false;
+import Layout from '../../../layouts/Layout.astro';
+import Mobula from '../../../components/Mobula.astro';
+import PasserFor from '../../../components/PasserFor.astro';
+import ABPlayer from '../../../components/ABPlayer.astro';
+import { listReferanser } from '../../../lib/content';
+const referanser = (await listReferanser()).filter(r => r.kategori === 'lydbok-og-voice-over');
+---
+
+<Layout
+  title="Audiobook & Voice-Over Studio near Oslo | Mobula Music"
+  description="Professional voice recording for audiobooks, e-learning, advertising, film and games. Quiet rooms, top microphones, experienced engineers. A short trip from central Oslo."
+  lang="en"
+  altLang="/innspilling/lydbok-og-voice-over"
+>
+  <section class="relative pt-32 md:pt-40 pb-20 md:pb-24 px-6 overflow-hidden bg-dark">
+    <div class="absolute inset-0" style="background: radial-gradient(ellipse at 30% 40%, #10242f 0%, #0b1a22 60%, #071217 100%);"></div>
+    <div class="absolute top-[10%] right-[5%] w-[500px] h-[500px] bg-gold/10 rounded-full blur-[140px] hero-glow"></div>
+    <div class="absolute inset-y-0 right-0 flex items-center pointer-events-none">
+      <Mobula class="w-[min(80vw,1000px)] translate-x-[30%] opacity-[0.12]" c1="#7af0c8" c2="#7af0c8" c3="#7af0c8" />
+    </div>
+
+    <div class="relative max-w-5xl mx-auto">
+      <p class="font-mono text-gold tracking-[0.2em] uppercase text-sm mb-6">
+        <a href="/en/recording" class="hover:text-gold-light">Recording</a> / Voice-Over & Audiobook
+      </p>
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif font-semibold leading-[1.05] mb-8 max-w-4xl">
+        The voice at its cleanest
+      </h1>
+      <p class="text-cream/80 text-xl md:text-2xl max-w-2xl leading-relaxed">
+        Audiobooks, e-learning, advertising, games and film. Quiet rooms, professional microphones and engineers who know the difference between a good take and a finished one.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-28 px-6">
+    <div class="max-w-5xl mx-auto">
+      <div class="mb-16 fade-in">
+        <p class="font-mono text-gold tracking-[0.15em] uppercase text-xs mb-4">01 — What we record</p>
+        <h2 class="text-3xl md:text-4xl font-serif font-semibold leading-[1.05] max-w-2xl">Voice recording, clean and precise</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10 fade-in">
+        <div>
+          <h3 class="text-xl font-serif font-semibold mb-3 text-gold">Audiobooks</h3>
+          <p class="text-cream/75 leading-relaxed">
+            Full books or shorter texts. We set up for long sessions with direction, pauses and post-processing — delivering files that are ready for release.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-xl font-serif font-semibold mb-3 text-gold">Voice-over</h3>
+          <p class="text-cream/75 leading-relaxed">
+            For advertising, explainer videos, e-learning, games and film. Precise timing, multiple takes and fast delivery in the format you need.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-xl font-serif font-semibold mb-3 text-gold">Recording to picture</h3>
+          <p class="text-cream/75 leading-relaxed">
+            We record in sync with video — for film, animation, explainer videos and any production where the timing has to match the image exactly.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-xl font-serif font-semibold mb-3 text-gold">Direction and engineering</h3>
+          <p class="text-cream/75 leading-relaxed">
+            Experienced engineers who adapt the setup to the voice and the genre. Direction is available if you need it. Everything is ready when you walk in.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <PasserFor
+    title="Built for every kind of voice work"
+    label="Welcome"
+    intro="We work just as happily with authors recording their first book as with agencies and production companies on ongoing deliveries."
+    items={[
+      'You\'re an author recording your own book.',
+      'You\'re a publisher or production company in need of a reliable studio.',
+      'You\'re an agency needing voice-over for ads or video.',
+      'You work in e-learning and need fast delivery across multiple modules.',
+      'You develop games, animation or film and need character voices.',
+    ]}
+  />
+
+  {referanser.length > 0 && (
+    <section class="py-28 px-6 bg-dark-light/30">
+      <div class="max-w-5xl mx-auto">
+        <div class="mb-12 fade-in">
+          <p class="font-mono text-gold tracking-[0.15em] uppercase text-xs mb-4">Before / after</p>
+          <h2 class="text-3xl md:text-4xl font-serif font-semibold leading-[1.05]">Voice recording — raw vs. finished</h2>
+        </div>
+        <ABPlayer referanser={referanser} />
+      </div>
+    </section>
+  )}
+
+  <section class="py-28 px-6">
+    <div class="max-w-3xl mx-auto text-center fade-in">
+      <h2 class="text-3xl md:text-5xl font-serif font-semibold mb-6 leading-tight">Book a voice session</h2>
+      <p class="text-cream/80 text-lg mb-10 max-w-xl mx-auto">Tell us about the project — length, format and deadline — and we'll give you a fixed&nbsp;quote.</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/en/contact" class="inline-flex items-center justify-center gap-3 px-8 py-4 bg-gold text-dark font-semibold tracking-wide uppercase text-sm hover:bg-gold-light transition-colors">
+          <span class="w-2 h-2 rounded-full bg-[#ff9f3d] bpm-pulse"></span>
+          Get in touch
+        </a>
+        <a href="/en/recording" class="inline-flex items-center justify-center px-8 py-4 border border-cream/20 text-cream tracking-wide uppercase text-sm hover:border-gold hover:text-gold transition-all">
+          See other services
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

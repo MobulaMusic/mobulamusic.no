@@ -1,0 +1,148 @@
+---
+export const prerender = false;
+import Layout from '../../../layouts/Layout.astro';
+import Mobula from '../../../components/Mobula.astro';
+import PasserFor from '../../../components/PasserFor.astro';
+import ABPlayer from '../../../components/ABPlayer.astro';
+import { listReferanser } from '../../../lib/content';
+const referanser = (await listReferanser()).filter(r => r.kategori === 'strykere-og-klassisk');
+---
+
+<Layout
+  title="String Recording & Shared Sessions — Affordable Real Strings | Mobula Music"
+  description="Professional string players on your track without blowing the budget. We arrange regular shared sessions where several artists split the cost. Private bookings for film and album projects."
+  lang="en"
+  altLang="/innspilling/strykere-og-klassisk"
+>
+  <section class="relative pt-32 md:pt-40 pb-20 md:pb-24 px-6 overflow-hidden bg-dark">
+    <div class="absolute inset-0" style="background: radial-gradient(ellipse at 30% 40%, #10242f 0%, #0b1a22 60%, #071217 100%);"></div>
+    <div class="absolute top-[10%] right-[5%] w-[500px] h-[500px] bg-gold/10 rounded-full blur-[140px] hero-glow"></div>
+    <div class="absolute inset-y-0 right-0 flex items-center pointer-events-none">
+      <Mobula class="w-[min(80vw,1000px)] translate-x-[30%] opacity-[0.12]" c1="#7af0c8" c2="#7af0c8" c3="#7af0c8" />
+    </div>
+
+    <div class="relative max-w-5xl mx-auto">
+      <p class="font-mono text-gold tracking-[0.2em] uppercase text-sm mb-6">
+        <a href="/en/recording" class="hover:text-gold-light">Recording</a> / Strings & Classical
+      </p>
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif font-semibold leading-[1.05] mb-8 max-w-4xl">
+        Strings and classical<br />ensembles
+      </h1>
+      <p class="text-cream/80 text-xl md:text-2xl max-w-2xl leading-relaxed">
+        String recording in Norway — from violin solo and string quartet to full string orchestra. We work with professional string players and run regular shared sessions to make real strings more accessible.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-28 px-6">
+    <div class="max-w-5xl mx-auto">
+      <div class="mb-16 fade-in">
+        <p class="font-mono text-gold tracking-[0.15em] uppercase text-xs mb-4">01 — What we record</p>
+        <h2 class="text-3xl md:text-4xl font-serif font-semibold leading-[1.05] max-w-2xl">Classical quality,<br />all the way</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10 fade-in">
+        <div>
+          <h3 class="text-xl font-serif font-semibold mb-3 text-gold">Solo and chamber</h3>
+          <p class="text-cream/75 leading-relaxed">
+            From violin solo to string quartet and wind ensembles. We choose microphones, placement and rooms based on the lineup and repertoire.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-xl font-serif font-semibold mb-3 text-gold">String orchestra</h3>
+          <p class="text-cream/75 leading-relaxed">
+            The main studio comfortably seats up to around 12 string players live. For larger sessions we work with overdubs or external locations.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-xl font-serif font-semibold mb-3 text-gold">Classical vocalists and choirs</h3>
+          <p class="text-cream/75 leading-relaxed">
+            Solo vocalists, small choirs and ensembles with baroque or contemporary classical repertoire. We work dry or with natural reverb depending on preference.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-xl font-serif font-semibold mb-3 text-gold">Scores and arrangements</h3>
+          <p class="text-cream/75 leading-relaxed">
+            Have the music but no score? See <a href="/en/music" class="text-gold hover:underline">Music</a> — we prepare full scores and individual parts.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Shared sessions -->
+  <section class="py-28 px-6 bg-dark-light">
+    <div class="max-w-5xl mx-auto">
+      <div class="mb-12 fade-in">
+        <p class="font-mono text-gold tracking-[0.15em] uppercase text-xs mb-4">02 — Shared sessions</p>
+        <h2 class="text-3xl md:text-4xl font-serif font-semibold leading-[1.05] max-w-2xl mb-6">Real strings at a fraction of the cost</h2>
+        <p class="text-cream/85 text-lg leading-relaxed max-w-3xl">
+          Real strings are expensive — we know. That's why Mobula Music runs regular <strong class="text-cream">shared string sessions</strong>, where several artists and composers split the cost of a single recording day with professional string players. A unique offering in Norway — and a way in for anyone who otherwise wouldn't have the budget for string arrangements on their track.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 fade-in">
+        <div class="p-6 border border-cream/10">
+          <p class="font-mono text-gold text-xs tracking-widest uppercase mb-3">01</p>
+          <h3 class="text-xl font-serif font-semibold mb-2">Register interest</h3>
+          <p class="text-cream/75 text-sm leading-relaxed">Send us your score or a sketch — if you don't have a score, we can write the string arrangement for you.</p>
+        </div>
+        <div class="p-6 border border-cream/10">
+          <p class="font-mono text-gold text-xs tracking-widest uppercase mb-3">02</p>
+          <h3 class="text-xl font-serif font-semibold mb-2">We collect songs</h3>
+          <p class="text-cream/75 text-sm leading-relaxed">Once enough songs are confirmed, we set a date and book the musicians.</p>
+        </div>
+        <div class="p-6 border border-cream/10">
+          <p class="font-mono text-gold text-xs tracking-widest uppercase mb-3">03</p>
+          <h3 class="text-xl font-serif font-semibold mb-2">Recording day</h3>
+          <p class="text-cream/75 text-sm leading-relaxed">We record the songs one after another. You get the stems and finished recordings.</p>
+        </div>
+      </div>
+
+      <p class="mt-10 text-cream/70 text-sm max-w-3xl">
+        Shared sessions are a way to get real strings on a budget that fits both amateur and professional artists. <a href="/en/contact" class="text-gold hover:underline">Get in touch</a> to be notified about the next session.
+      </p>
+    </div>
+  </section>
+
+  <PasserFor
+    title="Built for real strings"
+    label="Welcome"
+    intro="Real strings belong in serious projects. We lower the threshold without lowering the quality."
+    items={[
+      'You\'re a composer with a project that calls for real strings.',
+      'You\'re an artist who wants live string arrangements on your track.',
+      'You lead a chamber ensemble recording repertoire.',
+      'You have a song that needs real strings — without breaking the bank.',
+      'You work in film, advertising or theatre and need a classical sound.',
+    ]}
+  />
+
+  {referanser.length > 0 && (
+    <section class="py-28 px-6 bg-dark-light/30">
+      <div class="max-w-5xl mx-auto">
+        <div class="mb-12 fade-in">
+          <p class="font-mono text-gold tracking-[0.15em] uppercase text-xs mb-4">Before / after</p>
+          <h2 class="text-3xl md:text-4xl font-serif font-semibold leading-[1.05]">Strings — raw vs. mixed</h2>
+        </div>
+        <ABPlayer referanser={referanser} />
+      </div>
+    </section>
+  )}
+
+  <section class="py-28 px-6">
+    <div class="max-w-3xl mx-auto text-center fade-in">
+      <h2 class="text-3xl md:text-5xl font-serif font-semibold mb-6 leading-tight">Book strings</h2>
+      <p class="text-cream/80 text-lg mb-10 max-w-xl mx-auto">Tell us about the project, the ensemble and the budget — we'll find a solution that fits.</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/en/contact" class="inline-flex items-center justify-center gap-3 px-8 py-4 bg-gold text-dark font-semibold tracking-wide uppercase text-sm hover:bg-gold-light transition-colors">
+          <span class="w-2 h-2 rounded-full bg-[#ff9f3d] bpm-pulse"></span>
+          Get in touch
+        </a>
+        <a href="/en/recording" class="inline-flex items-center justify-center px-8 py-4 border border-cream/20 text-cream tracking-wide uppercase text-sm hover:border-gold hover:text-gold transition-all">
+          See other services
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
