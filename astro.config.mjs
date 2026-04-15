@@ -40,5 +40,6 @@ export default defineConfig({
     '/teamet': '/om-oss',
     '/vårt-studio': '/om-oss#studio',
     '/blog': '/nyheter',
+    '/komposisjon': '/musikk',
   },
 });
