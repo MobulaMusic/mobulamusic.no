@@ -8,8 +8,8 @@ const BOOKING_URL = 'https://booking.mobulamusic.no/';
 ---
 
 <Layout
-  title="Timeleie av øvingsrom — Hovedstudio & Sidestudio | Mobula Music"
-  description="Leie studio på timebasis til øving og preproduksjon. Hovedstudio og sidestudio med PA og trommesett inkludert. Selvbetjent booking via nett — kort vei fra Oslo og Lillestrøm."
+  title="Timeleie av øvingsrom — Hovedstudio 250,-/time | Mobula Music"
+  description="Leie hovedstudio på timebasis til øving og preproduksjon. 250 kr per time, med PA og trommesett inkludert. Selvbetjent booking via nett — kort vei fra Oslo og Lillestrøm."
 >
   <!-- Hero -->
   <section class="relative pt-32 md:pt-40 pb-20 md:pb-24 px-6 overflow-hidden bg-dark">
@@ -25,7 +25,7 @@ const BOOKING_URL = 'https://booking.mobulamusic.no/';
         Leie studio<br />til øving og preprod
       </h1>
       <p class="text-cream/80 text-xl md:text-2xl max-w-2xl leading-relaxed">
-        Samme rom som vi spiller inn i — tilgjengelig på timebasis når du trenger et godt sted å øve, drille setlista eller forberede innspillingen. Selvbetjent booking via nett.
+        Leie hovedstudioet vårt på timebasis til øving, preproduksjon eller drilling før en spillejobb. <span class="text-gold font-semibold">250 kr per time</span> — PA og trommesett inkludert. Selvbetjent booking via nett.
       </p>
       <div class="mt-10 flex flex-col sm:flex-row gap-4">
         <a href={BOOKING_URL} target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-3 px-8 py-4 bg-gold text-dark font-semibold tracking-wide uppercase text-sm hover:bg-gold-light transition-colors">
@@ -39,39 +39,30 @@ const BOOKING_URL = 'https://booking.mobulamusic.no/';
     </div>
   </section>
 
-  <!-- Rom -->
+  <!-- Rommet -->
   <section class="py-28 px-6">
     <div class="max-w-5xl mx-auto">
-      <div class="mb-16 fade-in">
-        <p class="font-mono text-gold tracking-[0.15em] uppercase text-xs mb-4">01 — Rom til leie</p>
-        <h2 class="text-4xl md:text-5xl font-serif font-semibold leading-[1.05] max-w-2xl">Hovedstudio eller<br />sidestudio</h2>
+      <div class="mb-12 fade-in">
+        <p class="font-mono text-gold tracking-[0.15em] uppercase text-xs mb-4">01 — Rommet</p>
+        <h2 class="text-4xl md:text-5xl font-serif font-semibold leading-[1.05] max-w-2xl">Hovedstudio på 50 m²</h2>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-10 fade-in">
-        <div>
-          <h3 class="text-xl font-serif font-semibold mb-3 text-gold">Hovedstudio</h3>
-          <p class="text-cream/75 leading-relaxed mb-4">
-            Hovedrommet vårt på 50 m² er bygget for å høres bra ut live. Perfekt for fullt band som vil øve med god separasjon mellom instrumenter, eller for å prøve ut en setlist før spillejobb. Akustisk behandlet med naturlig romklang.
-          </p>
-          <p class="text-cream/60 text-sm">Passer: band, ensembler, større besetninger.</p>
-        </div>
-        <div>
-          <h3 class="text-xl font-serif font-semibold mb-3 text-gold">Sidestudio</h3>
-          <p class="text-cream/75 leading-relaxed mb-4">
-            Mindre rom til mer intim preproduksjon, solo-øving, eller mindre konstellasjoner. Tørrere lyd, god plass til gitarforsterker, tangenter og lignende — eller bare et sted å jobbe konsentrert med låtmateriale.
-          </p>
-          <p class="text-cream/60 text-sm">Passer: singer-songwriter, duo/trio, produsenter.</p>
-        </div>
+      <div class="fade-in max-w-3xl">
+        <p class="text-cream/75 leading-relaxed mb-4 text-lg">
+          Samme rom som vi spiller inn band og ensembler i — akustisk behandlet, naturlig romklang, god plass til et fullt band. Perfekt for å øve i et rom som høres bra ut, drille en setlist før en spillejobb, eller kjøre preproduksjon før en innspilling.
+        </p>
+        <p class="text-cream/60 text-sm">Passer: band, ensembler og større besetninger.</p>
       </div>
     </div>
   </section>
 
-  <!-- Hva er inkludert -->
+  <!-- Pris & inkludert -->
   <section id="hva-er-inkludert" class="py-28 px-6 bg-dark-light/30">
     <div class="max-w-5xl mx-auto">
       <div class="mb-12 fade-in">
-        <p class="font-mono text-gold tracking-[0.15em] uppercase text-xs mb-4">02 — Inkludert i leien</p>
-        <h2 class="text-4xl md:text-5xl font-serif font-semibold leading-[1.05]">Du slipper å slepe utstyr</h2>
+        <p class="font-mono text-gold tracking-[0.15em] uppercase text-xs mb-4">02 — Pris & inkludert</p>
+        <h2 class="text-4xl md:text-5xl font-serif font-semibold leading-[1.05]">250 kr per time</h2>
+        <p class="text-cream/70 mt-4 max-w-2xl">Én fast timepris — ingen oppstartsgebyr, ingen ekstra kostnader for utstyret som står der. Du slipper å slepe PA og trommesett.</p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 fade-in">
@@ -119,8 +110,8 @@ const BOOKING_URL = 'https://booking.mobulamusic.no/';
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 fade-in">
         <div>
           <div class="font-mono text-gold text-3xl mb-4">01</div>
-          <h3 class="text-lg font-serif font-semibold mb-2">Velg rom og tid</h3>
-          <p class="text-cream/70 text-sm leading-relaxed">Se ledige tider i booking-kalenderen og velg hovedstudio eller sidestudio.</p>
+          <h3 class="text-lg font-serif font-semibold mb-2">Velg tid</h3>
+          <p class="text-cream/70 text-sm leading-relaxed">Se ledige tider i booking-kalenderen og velg hvor mange timer du trenger.</p>
         </div>
         <div>
           <div class="font-mono text-gold text-3xl mb-4">02</div>
@@ -142,7 +133,7 @@ const BOOKING_URL = 'https://booking.mobulamusic.no/';
     items={[
       {
         q: 'Hvor mye koster det per time?',
-        a: 'Timepris varierer mellom hovedstudio og sidestudio. Du ser oppdaterte priser i booking-kalenderen før du bekrefter.',
+        a: '250 kr per time, én fast pris. Du betaler i booking-systemet når du bestiller, og får bekreftelse med én gang.',
       },
       {
         q: 'Er det tekniker tilstede når jeg leier?',
