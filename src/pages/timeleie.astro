@@ -1,0 +1,186 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Mobula from '../components/Mobula.astro';
+import PasserFor from '../components/PasserFor.astro';
+import Faq from '../components/Faq.astro';
+
+const BOOKING_URL = 'https://booking.mobulamusic.no/';
+---
+
+<Layout
+  title="Timeleie av øvingsrom — Hovedstudio & Sidestudio | Mobula Music"
+  description="Leie studio på timebasis til øving og preproduksjon. Hovedstudio og sidestudio med PA og trommesett inkludert. Selvbetjent booking via nett — kort vei fra Oslo og Lillestrøm."
+>
+  <!-- Hero -->
+  <section class="relative pt-32 md:pt-40 pb-20 md:pb-24 px-6 overflow-hidden bg-dark">
+    <div class="absolute inset-0" style="background: radial-gradient(ellipse at 30% 40%, #10242f 0%, #0b1a22 60%, #071217 100%);"></div>
+    <div class="absolute top-[10%] right-[5%] w-[500px] h-[500px] bg-gold/10 rounded-full blur-[140px] hero-glow"></div>
+    <div class="absolute inset-y-0 right-0 flex items-center pointer-events-none">
+      <Mobula class="w-[min(80vw,1000px)] translate-x-[30%] opacity-[0.12]" c1="#7af0c8" c2="#7af0c8" c3="#7af0c8" />
+    </div>
+
+    <div class="relative max-w-5xl mx-auto">
+      <p class="font-mono text-gold tracking-[0.2em] uppercase text-sm mb-6">Timeleie</p>
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif font-semibold leading-[1.05] mb-8 max-w-4xl">
+        Leie studio<br />til øving og preprod
+      </h1>
+      <p class="text-cream/80 text-xl md:text-2xl max-w-2xl leading-relaxed">
+        Samme rom som vi spiller inn i — tilgjengelig på timebasis når du trenger et godt sted å øve, drille setlista eller forberede innspillingen. Selvbetjent booking via nett.
+      </p>
+      <div class="mt-10 flex flex-col sm:flex-row gap-4">
+        <a href={BOOKING_URL} target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-3 px-8 py-4 bg-gold text-dark font-semibold tracking-wide uppercase text-sm hover:bg-gold-light transition-colors">
+          <span class="w-2 h-2 rounded-full bg-[#ff9f3d] bpm-pulse"></span>
+          Sjekk tilgjengelighet & book
+        </a>
+        <a href="#hva-er-inkludert" class="inline-flex items-center justify-center px-8 py-4 border border-cream/20 text-cream tracking-wide uppercase text-sm hover:border-gold hover:text-gold transition-all">
+          Se hva som er inkludert
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Rom -->
+  <section class="py-28 px-6">
+    <div class="max-w-5xl mx-auto">
+      <div class="mb-16 fade-in">
+        <p class="font-mono text-gold tracking-[0.15em] uppercase text-xs mb-4">01 — Rom til leie</p>
+        <h2 class="text-4xl md:text-5xl font-serif font-semibold leading-[1.05] max-w-2xl">Hovedstudio eller<br />sidestudio</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10 fade-in">
+        <div>
+          <h3 class="text-xl font-serif font-semibold mb-3 text-gold">Hovedstudio</h3>
+          <p class="text-cream/75 leading-relaxed mb-4">
+            Hovedrommet vårt på 50 m² er bygget for å høres bra ut live. Perfekt for fullt band som vil øve med god separasjon mellom instrumenter, eller for å prøve ut en setlist før spillejobb. Akustisk behandlet med naturlig romklang.
+          </p>
+          <p class="text-cream/60 text-sm">Passer: band, ensembler, større besetninger.</p>
+        </div>
+        <div>
+          <h3 class="text-xl font-serif font-semibold mb-3 text-gold">Sidestudio</h3>
+          <p class="text-cream/75 leading-relaxed mb-4">
+            Mindre rom til mer intim preproduksjon, solo-øving, eller mindre konstellasjoner. Tørrere lyd, god plass til gitarforsterker, tangenter og lignende — eller bare et sted å jobbe konsentrert med låtmateriale.
+          </p>
+          <p class="text-cream/60 text-sm">Passer: singer-songwriter, duo/trio, produsenter.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hva er inkludert -->
+  <section id="hva-er-inkludert" class="py-28 px-6 bg-dark-light/30">
+    <div class="max-w-5xl mx-auto">
+      <div class="mb-12 fade-in">
+        <p class="font-mono text-gold tracking-[0.15em] uppercase text-xs mb-4">02 — Inkludert i leien</p>
+        <h2 class="text-4xl md:text-5xl font-serif font-semibold leading-[1.05]">Du slipper å slepe utstyr</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 fade-in">
+        <div class="bg-dark-card border border-dark-border/60 rounded-2xl p-6">
+          <h3 class="text-lg font-serif font-semibold mb-3 text-gold">PA-anlegg</h3>
+          <p class="text-cream/75 text-sm leading-relaxed">
+            Fullt PA-oppsett med mikrofoner, stativer og monitorer. Bare kom og koble til — du får en god lydbilde fra første minutt.
+          </p>
+        </div>
+        <div class="bg-dark-card border border-dark-border/60 rounded-2xl p-6">
+          <h3 class="text-lg font-serif font-semibold mb-3 text-gold">Trommesett</h3>
+          <p class="text-cream/75 text-sm leading-relaxed">
+            Ferdig oppsatt trommesett med cymbaler. Trommisene tar med egne stikker og snare hvis ønskelig, men resten er på plass og klart til bruk.
+          </p>
+        </div>
+      </div>
+
+      <p class="text-cream/60 text-sm mt-8 max-w-2xl">
+        Har du behov for ekstra utstyr — forsterkere, keyboard, perkusjon — si fra på forhånd så finner vi en løsning.
+      </p>
+    </div>
+  </section>
+
+  <!-- Passer for deg -->
+  <PasserFor
+    title="Når passer timeleie?"
+    intro="Timeleie er for deg som trenger et godt rom i noen timer, ikke en full innspillingssesjon. Selvbetjent og fleksibelt."
+    items={[
+      'Dere er et band som vil øve i et rom som høres bra ut.',
+      'Dere skal på turné og trenger å drille setlista før første konsert.',
+      'Du er artist og vil gå gjennom materialet før studioinnspilling (preproduksjon).',
+      'Dere har spillejobb på lørdag og trenger et rom fredag kveld.',
+      'Du er produsent og vil ha et ekstra rom i noen timer.',
+    ]}
+  />
+
+  <!-- Slik booker du -->
+  <section class="py-28 px-6">
+    <div class="max-w-5xl mx-auto">
+      <div class="mb-12 fade-in">
+        <p class="font-mono text-gold tracking-[0.15em] uppercase text-xs mb-4">03 — Slik booker du</p>
+        <h2 class="text-4xl md:text-5xl font-serif font-semibold leading-[1.05]">Tre steg</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 fade-in">
+        <div>
+          <div class="font-mono text-gold text-3xl mb-4">01</div>
+          <h3 class="text-lg font-serif font-semibold mb-2">Velg rom og tid</h3>
+          <p class="text-cream/70 text-sm leading-relaxed">Se ledige tider i booking-kalenderen og velg hovedstudio eller sidestudio.</p>
+        </div>
+        <div>
+          <div class="font-mono text-gold text-3xl mb-4">02</div>
+          <h3 class="text-lg font-serif font-semibold mb-2">Betal på nett</h3>
+          <p class="text-cream/70 text-sm leading-relaxed">Du får bekreftelse, adresse og instruksjoner tilsendt umiddelbart.</p>
+        </div>
+        <div>
+          <div class="font-mono text-gold text-3xl mb-4">03</div>
+          <h3 class="text-lg font-serif font-semibold mb-2">Kom og spill</h3>
+          <p class="text-cream/70 text-sm leading-relaxed">Rommet er klart til tiden du har booket — kom inn, sett opp og kjør i gang.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <Faq
+    title="Vanlige spørsmål"
+    items={[
+      {
+        q: 'Hvor mye koster det per time?',
+        a: 'Timepris varierer mellom hovedstudio og sidestudio. Du ser oppdaterte priser i booking-kalenderen før du bekrefter.',
+      },
+      {
+        q: 'Er det tekniker tilstede når jeg leier?',
+        a: 'Nei — timeleie er selvbetjent, uten tekniker. Skal dere spille inn eller trenger hjelp med lyden, book en vanlig innspillingssesjon i stedet så bemanner vi rommet.',
+      },
+      {
+        q: 'Kan jeg spille inn det vi øver på?',
+        a: 'Timeleie inkluderer ikke innspilling. Trenger du opptak, bestill en innspillingstime så er vi klare med tekniker og signalkjede for deg.',
+      },
+      {
+        q: 'Må vi ha med noe selv?',
+        a: 'Instrumenter, gitarforsterkere, stikker og personlig utstyr. PA og trommesett er der allerede. Si fra på forhånd hvis dere trenger noe spesifikt, så sjekker vi om vi har det.',
+      },
+      {
+        q: 'Hvor lenge kan jeg booke om gangen?',
+        a: 'Fra én time og oppover. Skal dere ha rommet en hel dag, velg antall timer som passer — jo lengre bolk, jo mer fleksibilitet får dere.',
+      },
+    ]}
+  />
+
+  <!-- CTA -->
+  <section class="py-28 px-6">
+    <div class="max-w-3xl mx-auto text-center fade-in">
+      <h2 class="text-3xl md:text-5xl font-serif font-semibold mb-6 leading-tight">
+        Book studio på timebasis
+      </h2>
+      <p class="text-cream/80 text-lg mb-10 max-w-xl mx-auto">
+        Sjekk ledige tider og book direkte på nett. Du får bekreftelse med én gang.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href={BOOKING_URL} target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-3 px-8 py-4 bg-gold text-dark font-semibold tracking-wide uppercase text-sm hover:bg-gold-light transition-colors">
+          <span class="w-2 h-2 rounded-full bg-[#ff9f3d] bpm-pulse"></span>
+          Book øvingsrom
+        </a>
+        <a href="/kontakt" class="inline-flex items-center justify-center px-8 py-4 border border-cream/20 text-cream tracking-wide uppercase text-sm hover:border-gold hover:text-gold transition-all">
+          Spør om noe
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
