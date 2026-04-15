@@ -23,10 +23,18 @@ const tracksJson = film?.tracks ? JSON.stringify(film.tracks, null, 2) : '[]';
     </label>
   </div>
 
-  <label class="block">
-    <span class="text-sm text-neutral-400">Plakat (URL)</span>
-    <input name="poster" value={film?.poster || ''} class="mt-1 w-full rounded bg-neutral-800 px-3 py-2" />
-  </label>
+  <div>
+    <span class="text-sm text-neutral-400">Plakat</span>
+    <div class="mt-1 flex gap-2 items-start">
+      <input name="poster" id="poster" value={film?.poster || ''} placeholder="/uploads/..." class="flex-1 rounded bg-neutral-800 px-3 py-2 font-mono text-sm" />
+      <label class="rounded border border-neutral-700 px-3 py-2 text-xs hover:bg-neutral-800 cursor-pointer whitespace-nowrap">
+        Last opp
+        <input type="file" accept="image/*" class="hidden image-upload" data-target="poster" />
+      </label>
+    </div>
+    {film?.poster && <img src={film.poster} alt="Plakat" class="mt-2 h-32 rounded border border-neutral-800" id="poster-preview" />}
+    {!film?.poster && <img src="" alt="" class="mt-2 h-32 rounded border border-neutral-800 hidden" id="poster-preview" />}
+  </div>
 
   <label class="block">
     <span class="text-sm text-neutral-400">Beskrivelse</span>
@@ -136,6 +144,25 @@ const tracksJson = film?.tracks ? JSON.stringify(film.tracks, null, 2) : '[]';
     tracks.push({ title: '', src: '', duration: '' });
     render();
   });
+  // Generic image upload for poster field.
+  document.querySelectorAll<HTMLInputElement>('.image-upload').forEach((inp) => {
+    inp.addEventListener('change', async () => {
+      const file = inp.files?.[0];
+      if (!file) return;
+      const target = document.getElementById(inp.dataset.target!) as HTMLInputElement;
+      const fd = new FormData();
+      fd.append('file', file);
+      const res = await fetch('/api/admin/image-upload', { method: 'POST', body: fd });
+      const data = await res.json();
+      if (data.url) {
+        target.value = data.url;
+        const preview = document.getElementById('poster-preview') as HTMLImageElement | null;
+        if (preview) { preview.src = data.url; preview.classList.remove('hidden'); }
+      }
+      inp.value = '';
+    });
+  });
+
   uploadInput.addEventListener('change', async () => {
     const file = uploadInput.files?.[0];
     if (!file) return;

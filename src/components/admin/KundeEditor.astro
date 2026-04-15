@@ -34,10 +34,17 @@ const { kunde, mode } = Astro.props;
     </label>
   </div>
 
-  <label class="block">
-    <span class="text-sm text-neutral-400">Logo (URL)</span>
-    <input name="logo" value={kunde?.logo || ''} class="mt-1 w-full rounded bg-neutral-800 px-3 py-2" />
-  </label>
+  <div>
+    <span class="text-sm text-neutral-400">Logo</span>
+    <div class="mt-1 flex gap-2 items-start">
+      <input name="logo" id="logo" value={kunde?.logo || ''} placeholder="/uploads/..." class="flex-1 rounded bg-neutral-800 px-3 py-2 font-mono text-sm" />
+      <label class="rounded border border-neutral-700 px-3 py-2 text-xs hover:bg-neutral-800 cursor-pointer whitespace-nowrap">
+        Last opp
+        <input type="file" accept="image/*" class="hidden logo-upload" />
+      </label>
+    </div>
+    <img id="logo-preview" src={kunde?.logo || ''} alt="" class:list={["mt-2 h-16 rounded border border-neutral-800", !kunde?.logo && 'hidden']} />
+  </div>
 
   <label class="block">
     <span class="text-sm text-neutral-400">Tags (kommaseparert — brukes for å plassere sitatet på relevante sider)</span>
@@ -61,3 +68,23 @@ const { kunde, mode } = Astro.props;
     <button class="text-sm text-red-400 hover:text-red-300" onclick="return confirm('Slette kunde?')">Slett</button>
   </form>
 )}
+
+<script>
+  const up = document.querySelector<HTMLInputElement>('.logo-upload');
+  up?.addEventListener('change', async () => {
+    const file = up.files?.[0];
+    if (!file) return;
+    const target = document.getElementById('logo') as HTMLInputElement;
+    const preview = document.getElementById('logo-preview') as HTMLImageElement;
+    const fd = new FormData();
+    fd.append('file', file);
+    const res = await fetch('/api/admin/image-upload', { method: 'POST', body: fd });
+    const data = await res.json();
+    if (data.url) {
+      target.value = data.url;
+      preview.src = data.url;
+      preview.classList.remove('hidden');
+    }
+    up.value = '';
+  });
+</script>

@@ -18,10 +18,17 @@ const today = new Date().toISOString().slice(0, 10);
       <span class="text-sm text-neutral-400">Dato</span>
       <input name="date" type="date" value={today} required class="mt-1 rounded bg-neutral-800 px-3 py-2" />
     </label>
-    <label class="block">
-      <span class="text-sm text-neutral-400">Bilde (URL)</span>
-      <input name="image" class="mt-1 w-full rounded bg-neutral-800 px-3 py-2" />
-    </label>
+    <div>
+      <span class="text-sm text-neutral-400">Bilde</span>
+      <div class="mt-1 flex gap-2 items-start">
+        <input name="image" id="image" placeholder="/uploads/..." class="flex-1 rounded bg-neutral-800 px-3 py-2 font-mono text-sm" />
+        <label class="rounded border border-neutral-700 px-3 py-2 text-xs hover:bg-neutral-800 cursor-pointer whitespace-nowrap">
+          Last opp
+          <input type="file" accept="image/*" id="image-file" class="hidden" />
+        </label>
+      </div>
+      <img id="image-preview" src="" alt="" class="mt-2 h-32 rounded border border-neutral-800 hidden" />
+    </div>
     <label class="block">
       <span class="text-sm text-neutral-400">Tags (kommaseparert)</span>
       <input name="tags" class="mt-1 w-full rounded bg-neutral-800 px-3 py-2" />
@@ -35,4 +42,24 @@ const today = new Date().toISOString().slice(0, 10);
       <a href="/admin/posts" class="rounded border border-neutral-700 px-4 py-2 text-sm">Avbryt</a>
     </div>
   </form>
+
+  <script>
+    const fileInput = document.getElementById('image-file') as HTMLInputElement;
+    fileInput?.addEventListener('change', async () => {
+      const file = fileInput.files?.[0];
+      if (!file) return;
+      const target = document.getElementById('image') as HTMLInputElement;
+      const preview = document.getElementById('image-preview') as HTMLImageElement;
+      const fd = new FormData();
+      fd.append('file', file);
+      const res = await fetch('/api/admin/image-upload', { method: 'POST', body: fd });
+      const data = await res.json();
+      if (data.url) {
+        target.value = data.url;
+        preview.src = data.url;
+        preview.classList.remove('hidden');
+      }
+      fileInput.value = '';
+    });
+  </script>
 </AdminLayout>
