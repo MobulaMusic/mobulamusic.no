@@ -87,6 +87,7 @@ const langSwitchLabel = isEn ? 'NO' : 'EN';
       ))}
       <a
         href={langSwitchHref}
+        data-lang-switch
         class="text-xs font-mono tracking-widest text-cream/60 hover:text-gold transition-colors duration-200"
         aria-label={`Switch to ${langSwitchLabel === 'EN' ? 'English' : 'Norwegian'}`}
       >
@@ -137,6 +138,7 @@ const langSwitchLabel = isEn ? 'NO' : 'EN';
       </a>
       <a
         href={langSwitchHref}
+        data-lang-switch
         class="mt-2 text-center text-xs font-mono tracking-widest text-cream/60 hover:text-gold transition-colors py-2"
       >
         {langSwitchLabel === 'EN' ? 'English version' : 'Norsk versjon'}
@@ -146,6 +148,29 @@ const langSwitchLabel = isEn ? 'NO' : 'EN';
 </header>
 
 <script>
+  // Preserve scroll position across language switch.
+  // Store scroll as a ratio (0–1) of the document height so it works
+  // even if the translated page is a different total length.
+  const SCROLL_KEY = 'mobula_lang_switch_scroll_ratio';
+  document.querySelectorAll<HTMLAnchorElement>('a[data-lang-switch]').forEach((a) => {
+    a.addEventListener('click', () => {
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const ratio = docHeight > 0 ? window.scrollY / docHeight : 0;
+      sessionStorage.setItem(SCROLL_KEY, String(ratio));
+    });
+  });
+  const savedRatio = sessionStorage.getItem(SCROLL_KEY);
+  if (savedRatio !== null) {
+    sessionStorage.removeItem(SCROLL_KEY);
+    const restore = () => {
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      window.scrollTo({ top: Math.round(parseFloat(savedRatio) * docHeight), behavior: 'instant' as ScrollBehavior });
+    };
+    // Wait for layout so scrollHeight is accurate, including lazy-loaded images.
+    if (document.readyState === 'complete') requestAnimationFrame(restore);
+    else window.addEventListener('load', () => requestAnimationFrame(restore));
+  }
+
   // Scroll behavior: transparent → solid background
   const header = document.getElementById('site-header')!;
   const onScroll = () => {
