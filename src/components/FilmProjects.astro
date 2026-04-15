@@ -57,10 +57,25 @@ const CREW: { key: keyof FilmProject; label: string }[] = [
       )}
       <div class:list={["md:flex", embedUrl && 'md:block']}>
         {!embedUrl && (
-          <div class="md:w-[320px] md:shrink-0 relative">
-            <div class="aspect-[2/3] md:aspect-auto md:absolute md:inset-0">
+          <div class="md:w-[320px] md:shrink-0 relative bg-dark">
+            <div class="aspect-[2/3] md:aspect-auto md:absolute md:inset-0 overflow-hidden">
               {project.poster ? (
-                <img src={project.poster} alt={project.title} loading="lazy" class="w-full h-full object-cover object-top" />
+                <>
+                  <img
+                    src={project.poster}
+                    alt=""
+                    aria-hidden="true"
+                    loading="lazy"
+                    class="absolute inset-0 w-full h-full object-cover scale-110 blur-2xl opacity-40"
+                  />
+                  <div class="absolute inset-0 bg-gradient-to-b from-dark/30 via-transparent to-dark/40"></div>
+                  <img
+                    src={project.poster}
+                    alt={project.title}
+                    loading="lazy"
+                    class="relative w-full h-full object-contain p-4"
+                  />
+                </>
               ) : (
                 <div class="w-full h-full bg-cream/5 flex items-center justify-center">
                   <span class="text-cream/20 text-xs uppercase tracking-wider">Film</span>
