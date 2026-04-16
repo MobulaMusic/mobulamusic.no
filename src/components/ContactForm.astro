@@ -232,19 +232,25 @@ const serviceOptions = lang === 'en'
       };
 
       try {
-        const webhookUrl = import.meta.env.PUBLIC_CRM_WEBHOOK_URL || '';
-        if (!webhookUrl) {
-          throw new Error('Webhook URL not configured');
+        const thanksUrl = formEl.dataset.thanksUrl || '/takk';
+
+        // Build FormData for the server endpoint
+        const serverData = new FormData();
+        serverData.append('_form', formName);
+        serverData.append('_redirect', thanksUrl);
+        for (const [k, v] of formData.entries()) {
+          serverData.append(k, v as string);
+        }
+        if (serviceType && !formData.get('service')) {
+          serverData.append('service', serviceType);
         }
 
-        const response = await fetch(webhookUrl, {
+        const response = await fetch('/api/forms', {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(payload),
+          body: serverData,
         });
 
-        if (response.ok) {
-          const thanksUrl = formEl.dataset.thanksUrl || '/takk';
+        if (response.ok || response.redirected) {
           window.location.href = thanksUrl;
           return;
         } else {

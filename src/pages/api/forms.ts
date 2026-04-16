@@ -67,6 +67,17 @@ export const POST: APIRoute = async ({ request, redirect }) => {
     createdAt: new Date().toISOString(),
   });
 
+  // Forward to CRM webhook if configured
+  const webhookUrl = process.env.PUBLIC_CRM_WEBHOOK_URL || '';
+  if (webhookUrl) {
+    const submissions = Object.entries(data).map(([k, v]) => ({ label: k, value: v }));
+    fetch(webhookUrl, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ data: { formName, submissions } }),
+    }).catch(err => console.error('CRM webhook failed:', err));
+  }
+
   const customerEmail = data.email || data.Email || '';
   const firstName = data.fornavn || data.Fornavn || data.firstName || 'der';
 
@@ -111,6 +122,8 @@ export const POST: APIRoute = async ({ request, redirect }) => {
     });
   }
 
-  const redirectTo = String(form.get('_redirect') || '/');
-  return redirect(redirectTo);
+  return new Response(JSON.stringify({ ok: true }), {
+    status: 200,
+    headers: { 'Content-Type': 'application/json' },
+  });
 };
