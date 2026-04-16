@@ -75,6 +75,15 @@ const extraSchemas = Array.isArray(schema) ? schema : (schema ? [schema] : []);
 <!DOCTYPE html>
 <html lang={htmlLang}>
 <head>
+  <!-- Google Tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=GT-MQXZXRPX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'GT-MQXZXRPX');
+  </script>
+
   <meta name="robots" content="noindex, nofollow" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
