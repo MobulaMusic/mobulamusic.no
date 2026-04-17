@@ -88,7 +88,7 @@ const t = isEn
           <li><a href={t.hrefs.music} class="text-gray-text text-sm hover:text-cream transition-colors">{t.music}</a></li>
           <li><a href={t.hrefs.rental} class="text-gray-text text-sm hover:text-cream transition-colors">{t.rental}</a></li>
           <li><a href={t.hrefs.pricing} class="text-gray-text text-sm hover:text-cream transition-colors">{t.pricing}</a></li>
-          <li><a href="https://booking.mobulamusic.no/shop" target="_blank" rel="noopener" class="text-gray-text text-sm hover:text-cream transition-colors">{t.shop}</a></li>
+          <li><a href={isEn ? 'https://booking.mobulamusic.no/en/shop' : 'https://booking.mobulamusic.no/shop'} target="_blank" rel="noopener" class="text-gray-text text-sm hover:text-cream transition-colors">{t.shop}</a></li>
         </ul>
       </div>
 
