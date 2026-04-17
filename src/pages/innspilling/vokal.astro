@@ -13,7 +13,7 @@ const kunder = (await listKunder()).filter(k => k.tags?.some(t => ['vokal', 'inn
 
 <Layout
   title="Vokalinnspilling i Lørenskog — 15 min fra Oslo S | Mobula Music"
-  description="Profesjonell vokalinnspilling i akustisk behandlede rom. Lead-vokal, kor eller klassisk. Pakker fra 4 500 kr inkl. mva. 15 min fra Oslo S, gratis parkering."
+  description="Profesjonell vokalinnspilling i akustisk behandlede rom. Lead-vokal, kor eller klassisk. 15 min fra Oslo S, gratis parkering."
   altLang="/en/recording/vocal"
 >
   <section class="relative pt-32 md:pt-40 pb-20 md:pb-24 px-6 overflow-hidden bg-dark">
@@ -33,7 +33,6 @@ const kunder = (await listKunder()).filter(k => k.tags?.some(t => ['vokal', 'inn
       <p class="text-cream/80 text-xl md:text-2xl max-w-2xl leading-relaxed mb-4">
         Akustisk behandlede vokalrom, erfarne teknikere og fast pris før vi starter. Lead-vokal, kor eller klassisk — 15 min fra Oslo S.
       </p>
-      <p class="text-gold text-lg md:text-xl font-semibold mb-10">Pakker fra 4 500 kr inkl. mva.</p>
       <div class="flex flex-col sm:flex-row gap-4">
         <a href="/kontakt?tjeneste=vokal" class="inline-flex items-center justify-center gap-3 px-8 py-4 bg-gold text-dark font-semibold tracking-wide uppercase text-sm hover:bg-gold-light transition-colors">
           <span class="w-2 h-2 rounded-full bg-[#ff9f3d] bpm-pulse"></span>
@@ -160,7 +159,7 @@ const kunder = (await listKunder()).filter(k => k.tags?.some(t => ['vokal', 'inn
     items={[
       {
         q: 'Hva koster det?',
-        a: 'Vi har startpakker fra 4 500 kr inkl. mva. som dekker innspilling, mix og mastering av en vokallåt. Se <a href="/priser" class="text-gold hover:underline">prisene våre</a> for full oversikt, eller send oss en henvendelse så gir vi et fast tilbud før vi starter.',
+        a: 'Se <a href="/priser" class="text-gold hover:underline">prisene våre</a> for full oversikt, eller send oss en henvendelse så gir vi et fast tilbud før vi starter.',
       },
       {
         q: 'Hvordan booker jeg?',

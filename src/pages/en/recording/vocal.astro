@@ -34,7 +34,6 @@ const kunder = (await listKunder()).filter(k => k.tags?.some(t => ['vokal', 'inn
       <p class="text-cream/80 text-xl md:text-2xl max-w-2xl leading-relaxed mb-4">
         Acoustically treated vocal rooms, experienced engineers and a fixed quote before we start. Lead, choir or classical — 15 min from Oslo central station.
       </p>
-      <p class="text-gold text-lg md:text-xl font-semibold mb-10">Packages from NOK 4 500 incl. VAT</p>
       <div class="flex flex-col sm:flex-row gap-4">
         <a href="/en/contact?tjeneste=vokal" class="inline-flex items-center justify-center gap-3 px-8 py-4 bg-gold text-dark font-semibold tracking-wide uppercase text-sm hover:bg-gold-light transition-colors">
           <span class="w-2 h-2 rounded-full bg-[#ff9f3d] bpm-pulse"></span>
@@ -163,7 +162,7 @@ const kunder = (await listKunder()).filter(k => k.tags?.some(t => ['vokal', 'inn
     items={[
       {
         q: 'What does it cost?',
-        a: 'Starter packages from NOK 4 500 incl. VAT, covering recording, mix and mastering of one vocal song. See our <a href="/en/pricing" class="text-gold hover:underline">pricing</a> for a full overview, or send us a message and we\'ll give you a fixed quote before we start.',
+        a: 'See our <a href="/en/pricing" class="text-gold hover:underline">pricing</a> for a full overview, or send us a message and we\'ll give you a fixed quote before we start.',
       },
       {
         q: 'How do I book?',
