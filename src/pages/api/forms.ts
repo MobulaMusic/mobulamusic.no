@@ -70,7 +70,19 @@ export const POST: APIRoute = async ({ request, redirect }) => {
   // Forward to CRM webhook if configured
   const webhookUrl = process.env.PUBLIC_CRM_WEBHOOK_URL || '';
   if (webhookUrl) {
-    const submissions = Object.entries(data).map(([k, v]) => ({ label: k, value: v }));
+    // Map field names to labels expected by CRM
+    const labelMap: Record<string, string> = {
+      fornavn: 'Fornavn',
+      etternavn: 'Etternavn',
+      email: 'Email',
+      telefon: 'Telefon',
+      service: 'Henvendelsen gjelder',
+      melding: 'Din melding',
+    };
+    const submissions = Object.entries(data).map(([k, v]) => ({
+      label: labelMap[k] || k,
+      value: v,
+    }));
     fetch(webhookUrl, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
