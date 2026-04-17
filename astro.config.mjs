@@ -4,7 +4,7 @@ import sitemap from '@astrojs/sitemap';
 import node from '@astrojs/node';
 
 export default defineConfig({
-  site: 'https://mobula.no',
+  site: 'https://www.mobulamusic.no',
   output: 'static',
   adapter: node({ mode: 'standalone' }),
   security: {
