@@ -13,13 +13,6 @@ export default defineConfig({
   },
   integrations: [
     sitemap({
-      i18n: {
-        defaultLocale: 'no',
-        locales: {
-          no: 'nb-NO',
-          en: 'en-US',
-        },
-      },
       filter: (page) => !page.includes('/admin'),
       changefreq: 'weekly',
       priority: 0.7,
