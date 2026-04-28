@@ -1,10 +1,12 @@
 ---
 export const prerender = false;
+import { Image } from 'astro:assets';
 import Layout from '../../layouts/Layout.astro';
 import Mobula from '../../components/Mobula.astro';
 import PasserFor from '../../components/PasserFor.astro';
 import ABPlayer from '../../components/ABPlayer.astro';
 import { listReferanser } from '../../lib/content';
+import { voiceOverFilm, voiceStudio, voiceOverRegi } from '../../assets/images';
 const referanser = (await listReferanser()).filter(r => r.kategori === 'lydbok-og-voice-over');
 ---
 
@@ -88,9 +90,9 @@ const referanser = (await listReferanser()).filter(r => r.kategori === 'lydbok-o
         <h2 class="text-3xl md:text-4xl font-serif font-semibold leading-[1.05]">Taleopptak-studio</h2>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-4 fade-in">
-        <img src="/images/voice-over/voice-over-film.png" alt="Voice-over innspilling til film hos Mobula Music" loading="lazy" class="w-full aspect-[4/3] object-cover" />
-        <img src="/images/voice-over/voice-studio.jpg" alt="Voice-over-studio hos Mobula Music" loading="lazy" class="w-full aspect-[4/3] object-cover" />
-        <img src="/images/voice-over/voice-over-regi.jpeg" alt="Voice-over-innspilling med regi" loading="lazy" class="w-full aspect-[4/3] object-cover" />
+        <Image src={voiceOverFilm} alt="Voice-over innspilling til film hos Mobula Music" widths={[400, 800, 1200]} sizes="(min-width: 768px) 33vw, 100vw" format="webp" loading="lazy" class="w-full aspect-[4/3] object-cover" />
+        <Image src={voiceStudio} alt="Voice-over-studio hos Mobula Music" widths={[400, 800, 1200]} sizes="(min-width: 768px) 33vw, 100vw" format="webp" loading="lazy" class="w-full aspect-[4/3] object-cover" />
+        <Image src={voiceOverRegi} alt="Voice-over-innspilling med regi" widths={[400, 800, 1200]} sizes="(min-width: 768px) 33vw, 100vw" format="webp" loading="lazy" class="w-full aspect-[4/3] object-cover" />
       </div>
     </div>
   </section>

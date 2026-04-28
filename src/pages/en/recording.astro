@@ -1,5 +1,7 @@
 ---
 export const prerender = false;
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
 import Layout from '../../layouts/Layout.astro';
 import Mobula from '../../components/Mobula.astro';
 import PasserFor from '../../components/PasserFor.astro';
@@ -8,16 +10,17 @@ import Faq from '../../components/Faq.astro';
 import ABPlayer from '../../components/ABPlayer.astro';
 import KundeSitater from '../../components/KundeSitater.astro';
 import { listReferanser, listKunder } from '../../lib/content';
+import { singerSongwriter, vokalinnspilling, voiceStudio, jazzbandMainStudio, stringsMainStudio, trumpetSideStudio } from '../../assets/images';
 const referanser = await listReferanser();
 const kunder = (await listKunder()).filter(k => k.tags?.some(t => ['innspilling', 'mix', 'mastering', 'vokal', 'band', 'strykere'].includes(t))).slice(0, 4);
 
-const services = [
+const services: { href: string; num: string; title: string; intro: string; image: ImageMetadata; alt: string }[] = [
   {
     href: '/en/recording/singer-songwriter',
     num: '01',
     title: 'Singer-Songwriter',
     intro: 'Demo, single or EP. For artists writing their own songs and ready to record them properly — alone or with a band.',
-    image: '/images/studio/singer-songwriter.jpeg',
+    image: singerSongwriter,
     alt: 'Singer-songwriter recording an original song at Mobula Music',
   },
   {
@@ -25,7 +28,7 @@ const services = [
     num: '02',
     title: 'Vocal Recording',
     intro: 'Lead vocals, backing vocals, classical soloists or choirs. Microphones and rooms tailored to your voice.',
-    image: '/images/studio/vokalinnspilling.jpeg',
+    image: vokalinnspilling,
     alt: 'Vocal recording with professional condenser microphone',
   },
   {
@@ -33,7 +36,7 @@ const services = [
     num: '03',
     title: 'Voice-Over & Audiobook',
     intro: 'Audiobooks, e-learning, advertising, film and game voicing. Quiet rooms, low noise floor, set up for long sessions.',
-    image: '/images/voice-over/voice-studio.jpg',
+    image: voiceStudio,
     alt: 'Voice-over recording session at Mobula Music',
   },
   {
@@ -41,7 +44,7 @@ const services = [
     num: '04',
     title: 'Band & Ensemble',
     intro: 'Bands, concert bands, choirs and larger ensembles. 50 m² main studio with multiple connected live rooms.',
-    image: '/images/studio/jazzband-main-studio.png',
+    image: jazzbandMainStudio,
     alt: 'Jazz band recording in the main studio at Mobula Music',
   },
   {
@@ -49,7 +52,7 @@ const services = [
     num: '05',
     title: 'Strings & Classical',
     intro: 'Chamber ensembles, string orchestra and classical groups. Join our regular shared sessions to split the cost of live strings.',
-    image: '/images/studio/strings-main-studio.png',
+    image: stringsMainStudio,
     alt: 'String players recording in the main studio',
   },
 ];
@@ -96,9 +99,12 @@ const services = [
 
   <!-- Studio photo -->
   <section class="relative overflow-hidden">
-    <img
-      src="/images/studio/trumpet-side-studio.png"
+    <Image
+      src={trumpetSideStudio}
       alt="Trumpet player recording in the side studio at Mobula Music"
+      widths={[400, 800, 1200]}
+      sizes="(min-width: 768px) 33vw, 100vw"
+      format="webp"
       loading="lazy"
       class="w-full h-[50vh] md:h-[65vh] object-cover"
     />
@@ -122,7 +128,7 @@ const services = [
         {services.map((s) => (
           <a href={s.href} class="group fade-in">
             <div class="relative overflow-hidden aspect-[4/3] mb-5 bg-dark">
-              <img src={s.image} alt={s.alt} class="w-full h-full object-cover transition-all duration-700 group-hover:scale-[1.04] [filter:saturate(0.82)_contrast(0.98)_brightness(1)] group-hover:[filter:saturate(0.9)_contrast(1)_brightness(1.05)]" />
+              <Image src={s.image} alt={s.alt} widths={[400, 800, 1200]} sizes="(min-width: 768px) 33vw, 100vw" format="webp" loading="lazy" class="w-full h-full object-cover transition-all duration-700 group-hover:scale-[1.04] [filter:saturate(0.82)_contrast(0.98)_brightness(1)] group-hover:[filter:saturate(0.9)_contrast(1)_brightness(1.05)]" />
               <div class="absolute inset-0 bg-[#0b1a22] mix-blend-multiply opacity-15 pointer-events-none"></div>
               <div class="absolute inset-0 bg-gradient-to-tr from-[#7af0c8]/10 via-transparent to-[#c9a2ff]/10 mix-blend-overlay pointer-events-none"></div>
               <div class="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-dark/80 to-transparent pointer-events-none"></div>

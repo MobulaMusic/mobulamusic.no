@@ -1,8 +1,10 @@
 ---
+import { Image } from 'astro:assets';
 import Layout from '../../layouts/Layout.astro';
 import Mobula from '../../components/Mobula.astro';
 import PasserFor from '../../components/PasserFor.astro';
 import Faq from '../../components/Faq.astro';
+import { popbandPreprodMainStudio } from '../../assets/images';
 
 const BOOKING_URL = 'https://booking.mobulamusic.no/en';
 ---
@@ -56,7 +58,7 @@ const BOOKING_URL = 'https://booking.mobulamusic.no/en';
           </p>
           <p class="text-cream/60 text-sm">Suitable for: bands, ensembles and larger lineups.</p>
         </div>
-        <img src="/images/studio/popband-preprod-main-studio.png" alt="Pop band in pre-production in the main studio at Mobula Music" loading="lazy" class="w-full aspect-[4/3] object-cover rounded-xl" />
+        <Image src={popbandPreprodMainStudio} alt="Pop band in pre-production in the main studio at Mobula Music" widths={[400, 800, 1200]} sizes="(min-width: 768px) 33vw, 100vw" format="webp" loading="lazy" class="w-full aspect-[4/3] object-cover rounded-xl" />
       </div>
     </div>
   </section>

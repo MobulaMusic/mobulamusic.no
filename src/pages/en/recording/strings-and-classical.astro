@@ -1,10 +1,12 @@
 ---
 export const prerender = false;
+import { Image } from 'astro:assets';
 import Layout from '../../../layouts/Layout.astro';
 import Mobula from '../../../components/Mobula.astro';
 import PasserFor from '../../../components/PasserFor.astro';
 import ABPlayer from '../../../components/ABPlayer.astro';
 import { listReferanser } from '../../../lib/content';
+import { stringsMainStudio, celloSideStudio, strykekvartettNfs } from '../../../assets/images';
 const referanser = (await listReferanser()).filter(r => r.kategori === 'strykere-og-klassisk');
 ---
 
@@ -126,9 +128,9 @@ const referanser = (await listReferanser()).filter(r => r.kategori === 'strykere
         <h2 class="text-3xl md:text-4xl font-serif font-semibold leading-[1.05]">A room for strings and classical ensembles</h2>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-4 fade-in">
-        <img src="/images/studio/strings-main-studio.png" alt="String players recording in the main studio at Mobula Music" loading="lazy" class="w-full aspect-[4/3] object-cover" />
-        <img src="/images/studio/cello-side-studio.png" alt="Cellist in the side studio at Mobula Music" loading="lazy" class="w-full aspect-[4/3] object-cover" />
-        <img src="/images/studio/strykekvartett-nfs.jpg" alt="String quartet Nordic Film Strings in the studio" loading="lazy" class="w-full aspect-[4/3] object-cover" />
+        <Image src={stringsMainStudio} alt="String players recording in the main studio at Mobula Music" widths={[400, 800, 1200]} sizes="(min-width: 768px) 33vw, 100vw" format="webp" loading="lazy" class="w-full aspect-[4/3] object-cover" />
+        <Image src={celloSideStudio} alt="Cellist in the side studio at Mobula Music" widths={[400, 800, 1200]} sizes="(min-width: 768px) 33vw, 100vw" format="webp" loading="lazy" class="w-full aspect-[4/3] object-cover" />
+        <Image src={strykekvartettNfs} alt="String quartet Nordic Film Strings in the studio" widths={[400, 800, 1200]} sizes="(min-width: 768px) 33vw, 100vw" format="webp" loading="lazy" class="w-full aspect-[4/3] object-cover" />
       </div>
     </div>
   </section>

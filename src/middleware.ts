@@ -24,5 +24,12 @@ export const onRequest = defineMiddleware(async (context, next) => {
     context.locals.user = user;
   }
 
-  return next();
+  const response = await next();
+
+  // Cache static assets aggressively
+  if (pathname.startsWith('/fonts/') || pathname.startsWith('/og/') || pathname.startsWith('/_astro/')) {
+    response.headers.set('Cache-Control', 'public, max-age=31536000, immutable');
+  }
+
+  return response;
 });

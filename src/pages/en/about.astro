@@ -1,6 +1,8 @@
 ---
+import { Image } from 'astro:assets';
 import Layout from '../../layouts/Layout.astro';
 import Mobula from '../../components/Mobula.astro';
+import { haakonEsplo, olaiForsund, storeStudio, kontrollrom, vokalrom1, sidestudio } from '../../assets/images';
 ---
 
 <Layout
@@ -84,7 +86,7 @@ import Mobula from '../../components/Mobula.astro';
       <div class="grid grid-cols-1 md:grid-cols-2 gap-10 fade-in">
         <div>
           <div class="relative overflow-hidden aspect-[3/4] mb-6 group bg-dark">
-            <img src="/images/team/haakon-esplo.jpg" loading="lazy" decoding="async" alt="Haakon Esplo — composer, musician and managing director at Mobula Music" class="w-full h-full object-cover object-top scale-[1.25] origin-top -translate-y-[6%] transition-all duration-700 group-hover:scale-[1.28] [filter:saturate(0.72)_contrast(0.82)_brightness(0.98)] group-hover:[filter:saturate(0.85)_contrast(0.88)_brightness(1.02)]" />
+            <Image src={haakonEsplo} alt="Haakon Esplo — composer, musician and managing director at Mobula Music" widths={[400, 800, 1200]} sizes="(min-width: 768px) 33vw, 100vw" format="webp" loading="lazy" decoding="async" class="w-full h-full object-cover object-top scale-[1.25] origin-top -translate-y-[6%] transition-all duration-700 group-hover:scale-[1.28] [filter:saturate(0.72)_contrast(0.82)_brightness(0.98)] group-hover:[filter:saturate(0.85)_contrast(0.88)_brightness(1.02)]" />
             <div class="absolute inset-0 bg-[#0b1a22] mix-blend-multiply opacity-30 pointer-events-none"></div>
             <div class="absolute inset-0 ring-1 ring-inset ring-cream/10"></div>
           </div>
@@ -97,7 +99,7 @@ import Mobula from '../../components/Mobula.astro';
 
         <div>
           <div class="relative overflow-hidden aspect-[3/4] mb-6 group bg-dark">
-            <img src="/images/team/olai-forsund.jpeg" loading="lazy" decoding="async" alt="Olai Førsund — composer and musician at Mobula Music" class="w-full h-full object-cover transition-all duration-700 group-hover:scale-[1.03] [filter:saturate(0.63)_contrast(0.95)_brightness(0.92)] group-hover:[filter:saturate(0.78)_contrast(1)_brightness(1)]" />
+            <Image src={olaiForsund} alt="Olai Førsund — composer and musician at Mobula Music" widths={[400, 800, 1200]} sizes="(min-width: 768px) 33vw, 100vw" format="webp" loading="lazy" decoding="async" class="w-full h-full object-cover transition-all duration-700 group-hover:scale-[1.03] [filter:saturate(0.63)_contrast(0.95)_brightness(0.92)] group-hover:[filter:saturate(0.78)_contrast(1)_brightness(1)]" />
             <div class="absolute inset-0 bg-[#0b1a22] mix-blend-multiply opacity-30 pointer-events-none"></div>
             <div class="absolute inset-0 ring-1 ring-inset ring-cream/10"></div>
           </div>
@@ -126,7 +128,7 @@ import Mobula from '../../components/Mobula.astro';
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 fade-in">
         <div class="relative overflow-hidden aspect-[3/4] group">
-          <img src="/images/studio/store-studio.jpeg" loading="lazy" decoding="async" alt="50 m² main studio at Mobula Music — ideal for bands, concert bands and strings" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04] [filter:saturate(0.72)_contrast(0.95)_brightness(0.92)]" />
+          <Image src={storeStudio} alt="50 m² main studio at Mobula Music — ideal for bands, concert bands and strings" widths={[400, 800, 1200]} sizes="(min-width: 768px) 33vw, 100vw" format="webp" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04] [filter:saturate(0.72)_contrast(0.95)_brightness(0.92)]" />
           <div class="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-dark to-transparent pointer-events-none"></div>
           <div class="absolute inset-0 ring-1 ring-inset ring-cream/10"></div>
           <div class="absolute bottom-4 left-4 right-4">
@@ -136,7 +138,7 @@ import Mobula from '../../components/Mobula.astro';
         </div>
 
         <div class="relative overflow-hidden aspect-[3/4] group">
-          <img src="/images/studio/kontrollrom.jpeg" loading="lazy" decoding="async" alt="Control room for mix and mastering at Mobula Music in Lørenskog" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04] [filter:saturate(0.72)_contrast(0.95)_brightness(0.92)]" />
+          <Image src={kontrollrom} alt="Control room for mix and mastering at Mobula Music in Lørenskog" widths={[400, 800, 1200]} sizes="(min-width: 768px) 33vw, 100vw" format="webp" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04] [filter:saturate(0.72)_contrast(0.95)_brightness(0.92)]" />
           <div class="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-dark to-transparent pointer-events-none"></div>
           <div class="absolute inset-0 ring-1 ring-inset ring-cream/10"></div>
           <div class="absolute bottom-4 left-4 right-4">
@@ -146,7 +148,7 @@ import Mobula from '../../components/Mobula.astro';
         </div>
 
         <div class="relative overflow-hidden aspect-[3/4] group">
-          <img src="/images/studio/vokalrom-1.jpeg" loading="lazy" decoding="async" alt="Acoustically treated vocal room for lead vocals, choir and audiobook recording" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04] [filter:saturate(0.72)_contrast(0.95)_brightness(0.92)]" />
+          <Image src={vokalrom1} alt="Acoustically treated vocal room for lead vocals, choir and audiobook recording" widths={[400, 800, 1200]} sizes="(min-width: 768px) 33vw, 100vw" format="webp" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04] [filter:saturate(0.72)_contrast(0.95)_brightness(0.92)]" />
           <div class="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-dark to-transparent pointer-events-none"></div>
           <div class="absolute inset-0 ring-1 ring-inset ring-cream/10"></div>
           <div class="absolute bottom-4 left-4 right-4">
@@ -156,7 +158,7 @@ import Mobula from '../../components/Mobula.astro';
         </div>
 
         <div class="relative overflow-hidden aspect-[3/4] group">
-          <img src="/images/studio/sidestudio.jpeg" loading="lazy" decoding="async" alt="Side studio for smaller recordings and podcast production" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04] [filter:saturate(0.72)_contrast(0.95)_brightness(0.92)]" />
+          <Image src={sidestudio} alt="Side studio for smaller recordings and podcast production" widths={[400, 800, 1200]} sizes="(min-width: 768px) 33vw, 100vw" format="webp" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04] [filter:saturate(0.72)_contrast(0.95)_brightness(0.92)]" />
           <div class="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-dark to-transparent pointer-events-none"></div>
           <div class="absolute inset-0 ring-1 ring-inset ring-cream/10"></div>
           <div class="absolute bottom-4 left-4 right-4">

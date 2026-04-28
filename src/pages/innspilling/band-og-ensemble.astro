@@ -1,10 +1,12 @@
 ---
 export const prerender = false;
+import { Image } from 'astro:assets';
 import Layout from '../../layouts/Layout.astro';
 import Mobula from '../../components/Mobula.astro';
 import PasserFor from '../../components/PasserFor.astro';
 import ABPlayer from '../../components/ABPlayer.astro';
 import { listReferanser } from '../../lib/content';
+import { jazzbandMainStudio, windBandMainStudio, drumsSideStudio } from '../../assets/images';
 const referanser = (await listReferanser()).filter(r => r.kategori === 'band-og-ensemble');
 ---
 
@@ -88,9 +90,9 @@ const referanser = (await listReferanser()).filter(r => r.kategori === 'band-og-
         <h2 class="text-3xl md:text-4xl font-serif font-semibold leading-[1.05]">Rom for hele besetningen</h2>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-4 fade-in">
-        <img src="/images/studio/jazzband-main-studio.png" alt="Jazzband under innspilling i hovedstudio hos Mobula Music" loading="lazy" class="w-full aspect-[4/3] object-cover" />
-        <img src="/images/studio/wind-band-main-studio.png" alt="Korps under innspilling i hovedstudio" loading="lazy" class="w-full aspect-[4/3] object-cover" />
-        <img src="/images/studio/drums-side-studio.png" alt="Trommesett satt opp i sidestudio hos Mobula Music" loading="lazy" class="w-full aspect-[4/3] object-cover" />
+        <Image src={jazzbandMainStudio} alt="Jazzband under innspilling i hovedstudio hos Mobula Music" widths={[400, 800, 1200]} sizes="(min-width: 768px) 33vw, 100vw" format="webp" loading="lazy" class="w-full aspect-[4/3] object-cover" />
+        <Image src={windBandMainStudio} alt="Korps under innspilling i hovedstudio" widths={[400, 800, 1200]} sizes="(min-width: 768px) 33vw, 100vw" format="webp" loading="lazy" class="w-full aspect-[4/3] object-cover" />
+        <Image src={drumsSideStudio} alt="Trommesett satt opp i sidestudio hos Mobula Music" widths={[400, 800, 1200]} sizes="(min-width: 768px) 33vw, 100vw" format="webp" loading="lazy" class="w-full aspect-[4/3] object-cover" />
       </div>
     </div>
   </section>

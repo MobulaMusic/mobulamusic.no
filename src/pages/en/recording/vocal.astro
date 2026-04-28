@@ -1,5 +1,6 @@
 ---
 export const prerender = false;
+import { Image } from 'astro:assets';
 import Layout from '../../../layouts/Layout.astro';
 import Mobula from '../../../components/Mobula.astro';
 import PasserFor from '../../../components/PasserFor.astro';
@@ -7,6 +8,7 @@ import ABPlayer from '../../../components/ABPlayer.astro';
 import Faq from '../../../components/Faq.astro';
 import KundeSitater from '../../../components/KundeSitater.astro';
 import { listReferanser, listKunder } from '../../../lib/content';
+import { operaMainStudio, vokalrom1, vokalrom2 } from '../../../assets/images';
 const referanser = (await listReferanser()).filter(r => r.kategori === 'vokal');
 const kunder = (await listKunder()).filter(k => k.tags?.some(t => ['vokal', 'innspilling'].includes(t))).slice(0, 2);
 ---
@@ -126,9 +128,9 @@ const kunder = (await listKunder()).filter(k => k.tags?.some(t => ['vokal', 'inn
         <h2 class="text-3xl md:text-4xl font-serif font-semibold leading-[1.05]">The rooms we record in</h2>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-4 fade-in">
-        <img src="/images/studio/opera-main-studio.png" alt="Classical vocalist recording in the main studio at Mobula Music" loading="lazy" class="w-full aspect-[4/5] object-cover" />
-        <img src="/images/studio/vokalrom-1.jpeg" alt="Acoustically treated vocal booth at Mobula Music" loading="lazy" class="w-full aspect-[4/5] object-cover" />
-        <img src="/images/studio/vokalrom-2.jpeg" alt="Vocal booth with Neumann microphone" loading="lazy" class="w-full aspect-[4/5] object-cover" />
+        <Image src={operaMainStudio} alt="Classical vocalist recording in the main studio at Mobula Music" widths={[400, 800, 1200]} sizes="(min-width: 768px) 33vw, 100vw" format="webp" loading="lazy" class="w-full aspect-[4/5] object-cover" />
+        <Image src={vokalrom1} alt="Acoustically treated vocal booth at Mobula Music" widths={[400, 800, 1200]} sizes="(min-width: 768px) 33vw, 100vw" format="webp" loading="lazy" class="w-full aspect-[4/5] object-cover" />
+        <Image src={vokalrom2} alt="Vocal booth with Neumann microphone" widths={[400, 800, 1200]} sizes="(min-width: 768px) 33vw, 100vw" format="webp" loading="lazy" class="w-full aspect-[4/5] object-cover" />
       </div>
     </div>
   </section>
