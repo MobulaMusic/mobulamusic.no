@@ -26,9 +26,13 @@ export const onRequest = defineMiddleware(async (context, next) => {
 
   const response = await next();
 
-  // Cache static assets aggressively
+  // Cache static assets aggressively (hashed filenames = safe to cache forever)
   if (pathname.startsWith('/fonts/') || pathname.startsWith('/og/') || pathname.startsWith('/_astro/')) {
     response.headers.set('Cache-Control', 'public, max-age=31536000, immutable');
+  }
+  // Cache HTML pages at CDN edge for 1 hour, revalidate in background
+  else if (!isAdmin && !isAdminApi && !pathname.startsWith('/api/') && !pathname.startsWith('/uploads/')) {
+    response.headers.set('Cache-Control', 'public, s-maxage=3600, stale-while-revalidate=86400');
   }
 
   return response;

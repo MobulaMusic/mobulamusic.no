@@ -30,10 +30,10 @@ import nordicFilmStringsStrings from '../assets/images/strings/nordic-film-strin
     <!-- Warm tonal wash over the photo -->
     <div class="absolute inset-0 mix-blend-multiply" style="background: radial-gradient(ellipse at 65% 40%, rgba(40,28,18,0.35) 0%, rgba(11,26,34,0.85) 55%, rgba(7,18,23,0.95) 100%);"></div>
 
-    <!-- Accent glows: warm amber + mint + lavender -->
-    <div class="absolute top-[20%] right-[15%] w-[560px] h-[560px] rounded-full blur-[160px] hero-glow" style="background: rgba(255,159,61,0.18);"></div>
-    <div class="absolute top-[10%] right-[5%] w-[480px] h-[480px] bg-gold/10 rounded-full blur-[160px] hero-glow"></div>
-    <div class="absolute bottom-[5%] left-[5%] w-[520px] h-[520px] bg-[color:var(--color-accent-2)]/10 rounded-full blur-[140px] hero-glow"></div>
+    <!-- Accent glows (hidden on mobile via CSS to save GPU) -->
+    <div class="absolute top-[20%] right-[15%] w-[560px] h-[560px] rounded-full blur-[100px] hero-glow" style="background: rgba(255,159,61,0.18);"></div>
+    <div class="absolute top-[10%] right-[5%] w-[480px] h-[480px] bg-gold/10 rounded-full blur-[100px] hero-glow"></div>
+    <div class="absolute bottom-[5%] left-[5%] w-[520px] h-[520px] bg-[color:var(--color-accent-2)]/10 rounded-full blur-[100px] hero-glow"></div>
 
     <!-- Left fade so title stays legible -->
     <div class="absolute inset-0 bg-gradient-to-r from-dark via-dark/85 via-40% to-transparent"></div>

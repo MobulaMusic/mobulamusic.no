@@ -143,6 +143,34 @@ h1, h2, h3 {
   animation: heroGlow 8s ease-in-out infinite;
 }
 
+/* Disable GPU-heavy effects on mobile / low-power devices */
+@media (max-width: 768px) {
+  .hero-glow {
+    display: none !important;
+  }
+  .hero-zoom {
+    animation: none;
+    transform: scale(1.02);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-glow,
+  .hero-zoom,
+  .hero-fade,
+  .bpm-pulse {
+    animation: none;
+  }
+  .hero-fade {
+    opacity: 1;
+  }
+  .fade-in {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
 .hero-fade {
   opacity: 0;
   animation: heroFadeUp 0.8s ease-out forwards;
