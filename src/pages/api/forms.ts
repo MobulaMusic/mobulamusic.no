@@ -101,7 +101,7 @@ export const POST: APIRoute = async ({ request, redirect }) => {
     emails.push(
       resend.emails.send({
         from: 'Mobula Music <noreply@mobulamusic.com>',
-        to: ['mail@haakonesplo.no'],
+        to: ['post@mobulamusic.com'],
         subject: `Ny henvendelse: ${formName}`,
         html: buildNotificationHtml(formName, data),
       })
