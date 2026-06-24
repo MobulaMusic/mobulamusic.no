@@ -1,0 +1,63 @@
+---
+// Compact gift-card promo band. Reused across pages — no extra menu item.
+// Links to the gift-card tab in the web shop (buy + "wish for this").
+const isEn = Astro.url.pathname.startsWith('/en');
+const shopBase = isEn
+  ? 'https://booking.mobulamusic.no/en/shop'
+  : 'https://booking.mobulamusic.no/shop';
+const shopUrl = `${shopBase}?tab=gavekort`;
+
+const t = isEn
+  ? {
+      eyebrow: 'Gift card',
+      title: 'Give — or wish for — studio time',
+      body: 'A gift card for recording, mixing, mastering or any other service we offer. Buy one yourself, or send a little hint to whoever should give it.',
+      cta: 'See gift cards',
+      wish: 'or send a wish-list hint',
+    }
+  : {
+      eyebrow: 'Gavekort',
+      title: 'Gi bort – eller ønsk deg – studiotid',
+      body: 'Gavekort på innspilling, miksing, mastering eller en hvilken som helst annen tjeneste hos oss. Kjøp det selv, eller send et lite hint til den som skal gi gaven.',
+      cta: 'Se gavekort',
+      wish: 'eller send et ønske-hint',
+    };
+---
+
+<section class="px-6 py-16 md:py-20">
+  <div class="max-w-5xl mx-auto fade-in">
+    <div class="card-glass card-hover rounded-lg relative overflow-hidden">
+      <!-- Accent glows (mint + lavender), mirroring the site's hero -->
+      <div class="absolute -top-16 -right-10 w-64 h-64 rounded-full blur-[90px] bg-gold/10 pointer-events-none" aria-hidden="true"></div>
+      <div class="absolute -bottom-20 -left-12 w-64 h-64 rounded-full blur-[90px] bg-[color:var(--color-accent-2)]/10 pointer-events-none" aria-hidden="true"></div>
+
+      <div class="relative flex flex-col md:flex-row md:items-center gap-7 md:gap-9 p-8 md:p-10">
+        <!-- Gift icon -->
+        <span class="shrink-0 inline-flex items-center justify-center w-14 h-14 rounded-full bg-gold/10 ring-1 ring-gold/30 text-3xl leading-none" aria-hidden="true">🎁</span>
+
+        <!-- Text -->
+        <div class="flex-1">
+          <p class="font-mono text-gold tracking-[0.15em] uppercase text-xs mb-2">{t.eyebrow}</p>
+          <h2 class="text-2xl md:text-3xl font-serif font-semibold leading-tight mb-3">{t.title}</h2>
+          <p class="text-cream/70 text-sm md:text-base leading-relaxed max-w-xl">{t.body}</p>
+        </div>
+
+        <!-- CTA -->
+        <div class="shrink-0 flex flex-col items-start md:items-end gap-2.5">
+          <a
+            href={shopUrl}
+            target="_blank"
+            rel="noopener"
+            class="group inline-flex items-center gap-3 px-7 py-3.5 bg-gold text-dark font-semibold tracking-wide uppercase text-sm rounded-sm hover:bg-gold-light transition-colors whitespace-nowrap"
+          >
+            {t.cta}
+            <span class="transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true">→</span>
+          </a>
+          <a href={shopUrl} target="_blank" rel="noopener" class="text-gray-text text-xs hover:text-gold transition-colors">
+            {t.wish}
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

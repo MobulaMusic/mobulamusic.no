@@ -8,6 +8,7 @@ import PasserFor from '../components/PasserFor.astro';
 import SlikJobberVi from '../components/SlikJobberVi.astro';
 import Faq from '../components/Faq.astro';
 import ABPlayer from '../components/ABPlayer.astro';
+import Gavekort from '../components/Gavekort.astro';
 import KundeSitater from '../components/KundeSitater.astro';
 import { listReferanser, listKunder } from '../lib/content';
 import { singerSongwriter, vokalinnspilling, voiceStudio, jazzbandMainStudio, stringsMainStudio, trumpetSideStudio } from '../assets/images';
@@ -220,6 +221,8 @@ const services: { href: string; num: string; title: string; intro: string; image
       },
     ]}
   />
+
+  <Gavekort />
 
   <!-- CTA -->
   <section class="py-28 px-6">
