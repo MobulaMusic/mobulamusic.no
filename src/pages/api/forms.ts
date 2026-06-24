@@ -25,7 +25,7 @@ function buildConfirmationHtml(firstName: string, lang: string): string {
     return `
     <div style="font-family:sans-serif;max-width:600px;margin:0 auto">
       <h2 style="color:#1a1a1a">Thank you for your inquiry, ${firstName}!</h2>
-      <p>We have received your message and will get back to you as soon as possible, usually within 1–2 business days.</p>
+      <p>We have received your message and will get back to you quickly.</p>
       <p>In the meantime, feel free to check out our website: <a href="https://mobulamusic.no/en">mobulamusic.no</a></p>
       <p>Best regards,<br><strong>Mobula Music</strong><br>
       <a href="tel:+4792039045">+47 920 39 045</a><br>
@@ -36,7 +36,7 @@ function buildConfirmationHtml(firstName: string, lang: string): string {
   return `
     <div style="font-family:sans-serif;max-width:600px;margin:0 auto">
       <h2 style="color:#1a1a1a">Takk for din henvendelse, ${firstName}!</h2>
-      <p>Vi har mottatt meldingen din og vil ta kontakt med deg så snart som mulig, vanligvis innen 1–2 virkedager.</p>
+      <p>Vi har mottatt meldingen din og gir deg raskt svar.</p>
       <p>I mellomtiden kan du gjerne ta en titt på nettsiden vår: <a href="https://mobulamusic.no">mobulamusic.no</a></p>
       <p>Med vennlig hilsen,<br><strong>Mobula Music</strong><br>
       <a href="tel:+4792039045">+47 920 39 045</a><br>
