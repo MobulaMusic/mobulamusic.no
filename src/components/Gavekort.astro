@@ -1,11 +1,10 @@
 ---
 // Compact gift-card promo band. Reused across pages — no extra menu item.
-// Links to the gift-card tab in the web shop (buy + "wish for this").
+// Links to the gift-card landing page in the web shop (buy + "wish for this").
 const isEn = Astro.url.pathname.startsWith('/en');
-const shopBase = isEn
-  ? 'https://booking.mobulamusic.no/en/shop'
-  : 'https://booking.mobulamusic.no/shop';
-const shopUrl = `${shopBase}?tab=gavekort`;
+const shopUrl = isEn
+  ? 'https://booking.mobulamusic.no/en/gavekort'
+  : 'https://booking.mobulamusic.no/gavekort';
 
 const t = isEn
   ? {
