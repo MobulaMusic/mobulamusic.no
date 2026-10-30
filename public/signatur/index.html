@@ -33,8 +33,6 @@
     <button data-variant="helaar-diskret">Hele året (diskret)</button>
     <button data-variant="jul-medium">🎄 Jul (medium)</button>
     <button data-variant="helaar-medium">Hele året (medium)</button>
-    <button data-variant="jul">🎄 Jul (stor)</button>
-    <button data-variant="helaar">Hele året (stor)</button>
   </div>
 
   <div id="cards"></div>
@@ -69,44 +67,6 @@
 
   var GAVEKORT = 'https://booking.mobulamusic.no/gavekort';
   var FONT = 'Helvetica,Arial,sans-serif';
-
-  // Gaveboksen nederst i signaturen, i logoens lyseblå og navy.
-  var GIFT_BOX = {
-    jul:
-      '<table cellpadding="0" cellspacing="0" border="0" width="100%" bgcolor="#f1f6f9" style="border-collapse:collapse;background-color:#f1f6f9;border-left:4px solid #80afca;border-radius:6px;">' +
-        '<tr>' +
-          '<td valign="top" style="padding:14px 16px 14px 16px;">' +
-            '<div style="font-family:' + FONT + ';font-size:11px;line-height:14px;letter-spacing:2px;color:#5f8fab;padding-bottom:6px;">✳&nbsp; JULEGAVETIPS &nbsp;✳</div>' +
-            '<div style="font-family:' + FONT + ';font-size:16px;line-height:21px;font-weight:bold;color:#33414e;padding-bottom:6px;">Hva ønsker du deg til jul?</div>' +
-            '<div style="font-family:' + FONT + ';font-size:13px;line-height:19px;color:#33414e;padding-bottom:12px;">Ønsk deg studiotid! Send et gavetips rett fra nettsiden vår, så vet familien hva som skal under treet.</div>' +
-            '<table cellpadding="0" cellspacing="0" border="0" style="border-collapse:separate;margin-bottom:14px;"><tr>' +
-              ['Studioinnspilling', 'Miksing', 'Mastering', 'og mer'].map(function (s) {
-                return '<td style="padding:0 6px 0 0;"><a href="' + GAVEKORT + '#kort" style="display:inline-block;padding:4px 10px;border:1px solid #c6dbe8;background-color:#ffffff;border-radius:12px;font-family:' + FONT + ';font-size:12px;line-height:16px;color:#33414e;text-decoration:none;white-space:nowrap;">' + s + '</a></td>';
-              }).join('') +
-            '</tr></table>' +
-            '<table cellpadding="0" cellspacing="0" border="0" style="border-collapse:separate;"><tr>' +
-              '<td bgcolor="#33414e" style="background-color:#33414e;border-radius:6px;">' +
-                '<a href="' + GAVEKORT + '#kort" style="display:inline-block;padding:8px 16px;font-family:' + FONT + ';font-size:13px;line-height:18px;font-weight:bold;color:#ffffff;text-decoration:none;border-radius:6px;">🎁 Send et juleønske&nbsp;&rarr;</a>' +
-              '</td>' +
-            '</tr></table>' +
-            '<div style="font-family:' + FONT + ';font-size:12px;line-height:18px;padding-top:8px;"><a href="' + GAVEKORT + '" style="color:#5a7684;text-decoration:underline;">eller gi et gavekort i julegave</a></div>' +
-          '</td>' +
-        '</tr>' +
-      '</table>',
-    helaar:
-      '<table cellpadding="0" cellspacing="0" border="0" width="100%" bgcolor="#f1f6f9" style="border-collapse:collapse;background-color:#f1f6f9;border-left:4px solid #80afca;border-radius:6px;">' +
-        '<tr><td style="padding:14px 16px 4px 16px;font-family:' + FONT + ';font-size:14px;line-height:20px;font-weight:bold;color:#33414e;">🎁 Ønsker du deg studiotid?</td></tr>' +
-        '<tr><td style="padding:0 16px 12px 16px;font-family:' + FONT + ';font-size:13px;line-height:19px;color:#33414e;">Send et gavetips rett fra nettsiden vår, så vet familie og venner hva du ønsker deg. Gavekort på studioinnspilling, miksing, mastering og andre tjenester.</td></tr>' +
-        '<tr><td style="padding:0 16px 14px 16px;">' +
-          '<table cellpadding="0" cellspacing="0" border="0" style="border-collapse:separate;"><tr>' +
-            '<td bgcolor="#33414e" style="background-color:#33414e;border-radius:6px;">' +
-              '<a href="' + GAVEKORT + '#kort" style="display:inline-block;padding:8px 16px;font-family:' + FONT + ';font-size:13px;line-height:18px;font-weight:bold;color:#ffffff;text-decoration:none;border-radius:6px;">Send et ønske-hint&nbsp;&rarr;</a>' +
-            '</td>' +
-            '<td style="padding-left:12px;font-family:' + FONT + ';font-size:12px;line-height:18px;"><a href="' + GAVEKORT + '" style="color:#5a7684;text-decoration:underline;">eller gi et gavekort</a></td>' +
-          '</tr></table>' +
-        '</td></tr>' +
-      '</table>',
-  };
 
   var LINK = 'color:#5a7684;text-decoration:underline;';
 
@@ -147,8 +107,10 @@
     var dim = 'color:#8aa3ad;text-decoration:none;';
     return '' +
       '<table cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;font-family:' + FONT + ';color:#33414e;max-width:460px;">' +
-        '<tr><td style="padding:0 0 8px 0;"><a href="https://www.mobulamusic.no/" style="text-decoration:none;"><img src="https://www.mobulamusic.no/logo-package/png/mobula-horisontal-800.png" width="140" alt="Mobula Music" style="display:block;border:0;width:140px;height:auto;"></a></td></tr>' +
-        '<tr><td style="padding:0;font-size:13px;line-height:18px;color:#33414e;"><b>' + p.name + '</b><span style="color:#5a7684;"> · ' + p.title + ', Mobula Music AS</span></td></tr>' +
+        '<tr><td style="padding:0 0 10px 0;font-size:13px;line-height:18px;color:#33414e;">Med vennlig hilsen</td></tr>' +
+        '<tr><td style="padding:0;font-size:14px;line-height:19px;font-weight:bold;color:#33414e;">' + p.name + '</td></tr>' +
+        '<tr><td style="padding:0 0 10px 0;font-size:12px;line-height:17px;color:#5a7684;">' + p.title + ', Mobula Music AS</td></tr>' +
+        '<tr><td style="padding:0 0 8px 0;"><a href="https://www.mobulamusic.no/" style="text-decoration:none;"><img src="https://www.mobulamusic.no/logo-package/png/mobula-horisontal-800.png" width="180" alt="Mobula Music" style="display:block;border:0;width:180px;height:auto;"></a></td></tr>' +
         '<tr><td style="padding:0;font-size:12px;line-height:18px;color:#33414e;">' +
           '<a href="tel:' + p.tel + '" style="color:#33414e;text-decoration:none;">' + p.phone + '</a>' + sep +
           '<a href="mailto:' + p.email + '" style="color:#33414e;text-decoration:none;">' + p.email + '</a>' + sep +
@@ -166,30 +128,11 @@
       '</table>';
   }
 
+  // To tomme linjer etter signaturen, fordi e-postprogrammene legger den over sitert tekst
+  var TRAILING = '<div><br></div><div><br></div>';
+
   function signature(p, variant) {
-    if (GIFT_LINE[variant]) return compactSignature(p, variant, false);
-    if (GIFT_MEDIUM[variant]) return compactSignature(p, variant, true);
-    var sep = '<span style="color:#80afca;">&nbsp;|&nbsp;</span>';
-    var dot = '<span style="color:#c6dbe8;">&nbsp;·&nbsp;</span>';
-    var dim = 'color:#8aa3ad;text-decoration:none;';
-    return '' +
-      '<table cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;font-family:' + FONT + ';color:#33414e;max-width:540px;">' +
-        '<tr><td style="padding:0 0 14px 0;"><a href="https://www.mobulamusic.no/" style="text-decoration:none;"><img src="https://www.mobulamusic.no/logo-package/png/mobula-horisontal-800.png" width="180" alt="Mobula Music" style="display:block;border:0;width:180px;height:auto;"></a></td></tr>' +
-        '<tr><td style="padding:0;font-size:15px;line-height:20px;font-weight:bold;color:#33414e;">' + p.name + '</td></tr>' +
-        '<tr><td style="padding:0 0 8px 0;font-size:13px;line-height:18px;color:#5a7684;">' + p.title + ' · Mobula Music AS</td></tr>' +
-        '<tr><td style="padding:0;font-size:13px;line-height:20px;color:#33414e;">' +
-          '<a href="tel:' + p.tel + '" style="color:#33414e;text-decoration:none;">' + p.phone + '</a>' + sep +
-          '<a href="mailto:' + p.email + '" style="color:#33414e;text-decoration:none;">' + p.email + '</a>' + sep +
-          '<a href="https://www.mobulamusic.no/" style="color:#33414e;text-decoration:none;font-weight:bold;">mobulamusic.no</a>' +
-        '</td></tr>' +
-        '<tr><td style="padding:0 0 16px 0;font-size:12px;line-height:18px;color:#8aa3ad;">' +
-          'Fjellhamarveien 52, 1472 Fjellhamar' + '<span style="color:#c6dbe8;">&nbsp;|&nbsp;</span>' +
-          '<a href="https://www.instagram.com/mobula.music" style="' + dim + '">Instagram</a>' + dot +
-          '<a href="https://www.facebook.com/MobulaMusicAS/" style="' + dim + '">Facebook</a>' + dot +
-          '<a href="https://www.youtube.com/@mobulamusic_studio" style="' + dim + '">YouTube</a>' +
-        '</td></tr>' +
-        '<tr><td style="padding:0;">' + GIFT_BOX[variant] + '</td></tr>' +
-      '</table>';
+    return compactSignature(p, variant, !!GIFT_MEDIUM[variant]) + TRAILING;
   }
 
   function render(variant) {
