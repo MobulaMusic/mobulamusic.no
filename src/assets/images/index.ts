@@ -11,7 +11,6 @@ export { default as singerSongwriter } from './studio/singer-songwriter.jpeg';
 export { default as vokalinnspilling } from './studio/vokalinnspilling.jpeg';
 export { default as jazzbandMainStudio } from './studio/jazzband-main-studio.jpg';
 export { default as stringsMainStudio } from './studio/strings-main-studio.jpg';
-export { default as trumpetSideStudio } from './studio/trumpet-side-studio.jpg';
 export { default as operaMainStudio } from './studio/opera-main-studio.jpg';
 export { default as celloSideStudio } from './studio/cello-side-studio.jpg';
 export { default as drumsSideStudio } from './studio/drums-side-studio.jpg';

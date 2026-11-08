@@ -28,7 +28,6 @@ const PNG_TO_JPEG = [
   'popband-preprod-main-studio.png',
   'producing-podcast.png',
   'strings-main-studio.png',
-  'trumpet-side-studio.png',
   'wind-band-main-studio.png',
   'vokalrom-forside.png',
   'recording-podcast.png',
