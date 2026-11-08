@@ -18,22 +18,7 @@ const MIN_SIZE_FOR_RESIZE = 2 * 1024 * 1024; // 2 MB
 
 // PNGs that are photographs/renders (no meaningful transparency)
 const PNG_TO_JPEG = [
-  'gemini-studio.png',
-  'gemini-studio-2.png',
-  'gemini-studio-3.png',
-  'cello-side-studio.png',
-  'drums-side-studio.png',
-  'jazzband-main-studio.png',
-  'opera-main-studio.png',
-  'popband-preprod-main-studio.png',
-  'producing-podcast.png',
-  'strings-main-studio.png',
-  'wind-band-main-studio.png',
-  'vokalrom-forside.png',
-  'recording-podcast.png',
-  'originalmusikk.png',
   'podkast-hero.png',
-  'voice-over-film.png',
 ];
 
 async function getImageFiles(dir) {

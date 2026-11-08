@@ -6,7 +6,7 @@ import Mobula from '../../../components/Mobula.astro';
 import PasserFor from '../../../components/PasserFor.astro';
 import ABPlayer from '../../../components/ABPlayer.astro';
 import { listReferanser } from '../../../lib/content';
-import { jazzbandMainStudio, windBandMainStudio, drumsSideStudio } from '../../../assets/images';
+import { storeStudio, kontrollrom, sidestudio } from '../../../assets/images';
 const referanser = (await listReferanser()).filter(r => r.kategori === 'band-og-ensemble');
 ---
 
@@ -93,9 +93,9 @@ const referanser = (await listReferanser()).filter(r => r.kategori === 'band-og-
         <h2 class="text-3xl md:text-4xl font-serif font-semibold leading-[1.05]">A room for the whole ensemble</h2>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-4 fade-in">
-        <Image src={jazzbandMainStudio} alt="Jazz band recording in the main studio at Mobula Music" widths={[400, 800, 1200]} sizes="(min-width: 768px) 33vw, 100vw" format="webp" loading="lazy" class="w-full aspect-[4/3] object-cover" />
-        <Image src={windBandMainStudio} alt="Concert band recording in the main studio" widths={[400, 800, 1200]} sizes="(min-width: 768px) 33vw, 100vw" format="webp" loading="lazy" class="w-full aspect-[4/3] object-cover" />
-        <Image src={drumsSideStudio} alt="Drum kit set up in the side studio" widths={[400, 800, 1200]} sizes="(min-width: 768px) 33vw, 100vw" format="webp" loading="lazy" class="w-full aspect-[4/3] object-cover" />
+        <Image src={storeStudio} alt="The 50 m² main studio at Mobula Music" widths={[400, 800, 1200]} sizes="(min-width: 768px) 33vw, 100vw" format="webp" loading="lazy" class="w-full aspect-[4/3] object-cover" />
+        <Image src={kontrollrom} alt="Control room with a view into the main studio at Mobula Music" widths={[400, 800, 1200]} sizes="(min-width: 768px) 33vw, 100vw" format="webp" loading="lazy" class="w-full aspect-[4/3] object-cover" />
+        <Image src={sidestudio} alt="Side studio for drums and smaller sessions at Mobula Music" widths={[400, 800, 1200]} sizes="(min-width: 768px) 33vw, 100vw" format="webp" loading="lazy" class="w-full aspect-[4/3] object-cover" />
       </div>
     </div>
   </section>

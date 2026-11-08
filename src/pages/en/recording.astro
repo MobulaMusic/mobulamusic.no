@@ -11,7 +11,7 @@ import ABPlayer from '../../components/ABPlayer.astro';
 import KundeSitater from '../../components/KundeSitater.astro';
 import Gavekort from '../../components/Gavekort.astro';
 import { listReferanser, listKunder } from '../../lib/content';
-import { singerSongwriter, vokalinnspilling, voiceStudio, jazzbandMainStudio, stringsMainStudio } from '../../assets/images';
+import { singerSongwriter, vokalinnspilling, voiceStudio, storeStudio, strykekvartettNfs } from '../../assets/images';
 const referanser = await listReferanser();
 const kunder = (await listKunder()).filter(k => k.tags?.some(t => ['innspilling', 'mix', 'mastering', 'vokal', 'band', 'strykere'].includes(t))).slice(0, 4);
 
@@ -45,16 +45,16 @@ const services: { href: string; num: string; title: string; intro: string; image
     num: '04',
     title: 'Band & Ensemble',
     intro: 'Bands, concert bands, choirs and larger ensembles. 50 m² main studio with multiple connected live rooms.',
-    image: jazzbandMainStudio,
-    alt: 'Jazz band recording in the main studio at Mobula Music',
+    image: storeStudio,
+    alt: 'The 50 m² main studio at Mobula Music',
   },
   {
     href: '/en/recording/strings-and-classical',
     num: '05',
     title: 'Strings & Classical',
     intro: 'Chamber ensembles, string orchestra and classical groups. Join our regular shared sessions to split the cost of live strings.',
-    image: stringsMainStudio,
-    alt: 'String players recording in the main studio',
+    image: strykekvartettNfs,
+    alt: 'String quartet Nordic Film Strings in the studio',
   },
 ];
 ---

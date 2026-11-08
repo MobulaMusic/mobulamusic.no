@@ -11,7 +11,7 @@ import ABPlayer from '../components/ABPlayer.astro';
 import Gavekort from '../components/Gavekort.astro';
 import KundeSitater from '../components/KundeSitater.astro';
 import { listReferanser, listKunder } from '../lib/content';
-import { singerSongwriter, vokalinnspilling, voiceStudio, jazzbandMainStudio, stringsMainStudio } from '../assets/images';
+import { singerSongwriter, vokalinnspilling, voiceStudio, storeStudio, strykekvartettNfs } from '../assets/images';
 const referanser = await listReferanser();
 const kunder = (await listKunder()).filter(k => k.tags?.some(t => ['innspilling', 'mix', 'mastering', 'vokal', 'band', 'strykere'].includes(t))).slice(0, 4);
 
@@ -45,16 +45,16 @@ const services: { href: string; num: string; title: string; intro: string; image
     num: '04',
     title: 'Band & ensemble',
     intro: 'Band, korps, kor eller andre store besetninger. Hovedstudio på 50 m² med flere tilkoblede rom.',
-    image: jazzbandMainStudio,
-    alt: 'Jazzband under innspilling i hovedstudio på 50 m² hos Mobula Music',
+    image: storeStudio,
+    alt: 'Hovedstudio på 50 m² hos Mobula Music',
   },
   {
     href: '/innspilling/strykere-og-klassisk',
     num: '05',
     title: 'Strykere & klassisk',
     intro: 'Kammerensembler, strykeorkester og klassiske besetninger. Ta del i jevnlige fellesinnspillinger for å dele kostnad.',
-    image: stringsMainStudio,
-    alt: 'Strykere under innspilling av klassisk musikk i hovedstudio',
+    image: strykekvartettNfs,
+    alt: 'Strykekvartett Nordic Film Strings i studio',
   },
 ];
 ---

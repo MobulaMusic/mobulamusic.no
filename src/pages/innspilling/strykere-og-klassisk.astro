@@ -6,7 +6,7 @@ import Mobula from '../../components/Mobula.astro';
 import PasserFor from '../../components/PasserFor.astro';
 import ABPlayer from '../../components/ABPlayer.astro';
 import { listReferanser } from '../../lib/content';
-import { stringsMainStudio, celloSideStudio, strykekvartettNfs } from '../../assets/images';
+import { strykekvartettNfs } from '../../assets/images';
 const referanser = (await listReferanser()).filter(r => r.kategori === 'strykere-og-klassisk');
 ---
 
@@ -124,10 +124,8 @@ const referanser = (await listReferanser()).filter(r => r.kategori === 'strykere
         <p class="font-mono text-gold tracking-[0.15em] uppercase text-xs mb-4">Studioet</p>
         <h2 class="text-3xl md:text-4xl font-serif font-semibold leading-[1.05]">Rom for strykere og klassiske besetninger</h2>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 fade-in">
-        <Image src={stringsMainStudio} alt="Strykere under innspilling i hovedstudio hos Mobula Music" widths={[400, 800, 1200]} sizes="(min-width: 768px) 33vw, 100vw" format="webp" loading="lazy" class="w-full aspect-[4/3] object-cover" />
-        <Image src={celloSideStudio} alt="Cellist i sidestudio hos Mobula Music" widths={[400, 800, 1200]} sizes="(min-width: 768px) 33vw, 100vw" format="webp" loading="lazy" class="w-full aspect-[4/3] object-cover" />
-        <Image src={strykekvartettNfs} alt="Strykekvartett Nordic Film Strings i studio" widths={[400, 800, 1200]} sizes="(min-width: 768px) 33vw, 100vw" format="webp" loading="lazy" class="w-full aspect-[4/3] object-cover" />
+      <div class="grid grid-cols-1 max-w-3xl gap-4 fade-in">
+        <Image src={strykekvartettNfs} alt="Strykekvartett Nordic Film Strings i studio" widths={[400, 800, 1200]} sizes="(min-width: 768px) 768px, 100vw" format="webp" loading="lazy" class="w-full aspect-[4/3] object-cover" />
       </div>
     </div>
   </section>

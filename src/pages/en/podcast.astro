@@ -9,7 +9,7 @@ import SlikJobberVi from '../../components/SlikJobberVi.astro';
 import Faq from '../../components/Faq.astro';
 import KundeSitater from '../../components/KundeSitater.astro';
 import { listKunder } from '../../lib/content';
-import { podkastStudio, klipping, lyddesign, originalmusikk, opplaring, recordingPodcast, producingPodcast } from '../../assets/images';
+import { podkastStudio, klipping, lyddesign, produsentrommet, opplaring } from '../../assets/images';
 const kunder = (await listKunder()).filter(k => k.tags?.some(t => ['podkast', 'podcast'].includes(t))).slice(0, 2);
 
 const services = [
@@ -38,7 +38,7 @@ const services = [
     num: '04',
     title: 'Original Music',
     intro: 'Custom theme music, jingles and background tracks composed specifically for your show. You own the music.',
-    image: originalmusikk as ImageMetadata,
+    image: produsentrommet as ImageMetadata,
     alt: 'Original music composition for podcast',
   },
   {
@@ -185,10 +185,8 @@ const services = [
         <p class="font-mono text-gold tracking-[0.15em] uppercase text-xs mb-4">The studio</p>
         <h2 class="text-3xl md:text-4xl font-serif font-semibold leading-[1.05]">The room you record in</h2>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 fade-in">
-        <Image src={recordingPodcast} alt="Podcast recording at Mobula Music" widths={[400, 800, 1200]} sizes="(min-width: 768px) 33vw, 100vw" format="webp" loading="lazy" class="w-full aspect-[4/3] object-cover md:col-span-2 md:row-span-2 md:aspect-auto md:h-full" />
-        <Image src={podkastStudio} alt="Podcast studio with professional lighting" widths={[400, 800, 1200]} sizes="(min-width: 768px) 33vw, 100vw" format="webp" loading="lazy" class="w-full aspect-[4/3] object-cover" />
-        <Image src={producingPodcast} alt="Podcast production and editing" widths={[400, 800, 1200]} sizes="(min-width: 768px) 33vw, 100vw" format="webp" loading="lazy" class="w-full aspect-[4/3] object-cover" />
+      <div class="grid grid-cols-1 max-w-3xl gap-4 fade-in">
+        <Image src={podkastStudio} alt="Podcast studio with professional lighting" widths={[400, 800, 1200]} sizes="(min-width: 768px) 768px, 100vw" format="webp" loading="lazy" class="w-full aspect-[4/3] object-cover" />
       </div>
     </div>
   </section>

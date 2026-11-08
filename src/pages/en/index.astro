@@ -3,7 +3,7 @@ import Layout from '../../layouts/Layout.astro';
 import PasserFor from '../../components/PasserFor.astro';
 import Faq from '../../components/Faq.astro';
 import { Image } from 'astro:assets';
-import { geminiStudio3, storeStudio, podkastStudio, nordicFilmStrings, noterDaw, scenekunst } from '../../assets/images';
+import { storeStudio, podkastStudio, nordicFilmStrings, noterDaw, scenekunst } from '../../assets/images';
 import Gavekort from '../../components/Gavekort.astro';
 ---
 
@@ -18,7 +18,7 @@ import Gavekort from '../../components/Gavekort.astro';
     <!-- Studio photo background -->
     <div class="absolute inset-0">
       <Image
-        src={geminiStudio3}
+        src={storeStudio}
         alt=""
         widths={[800, 1200, 1600, 1920]}
         sizes="100vw"
