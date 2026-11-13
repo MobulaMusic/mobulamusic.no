@@ -111,8 +111,8 @@ export const POST: APIRoute = async ({ request, redirect }) => {
     // 2. Confirmation to the customer
     if (customerEmail) {
       const subject = lang === 'en'
-        ? 'We have received your inquiry — Mobula Music'
-        : 'Vi har mottatt din henvendelse — Mobula Music';
+        ? 'We have received your inquiry | Mobula Music'
+        : 'Vi har mottatt din henvendelse | Mobula Music';
 
       emails.push(
         resend.emails.send({

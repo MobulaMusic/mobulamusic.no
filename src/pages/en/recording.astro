@@ -8,6 +8,7 @@ import PasserFor from '../../components/PasserFor.astro';
 import SlikJobberVi from '../../components/SlikJobberVi.astro';
 import Faq from '../../components/Faq.astro';
 import ABPlayer from '../../components/ABPlayer.astro';
+import Utgivelser from '../../components/Utgivelser.astro';
 import KundeSitater from '../../components/KundeSitater.astro';
 import Gavekort from '../../components/Gavekort.astro';
 import { listReferanser, listKunder } from '../../lib/content';
@@ -20,7 +21,7 @@ const services: { href: string; num: string; title: string; intro: string; image
     href: '/en/recording/singer-songwriter',
     num: '01',
     title: 'Singer-Songwriter',
-    intro: 'Demo, single or EP. For artists writing their own songs and ready to record them properly — alone or with a band.',
+    intro: 'Demo, single or EP. For artists writing their own songs and ready to record them properly, alone or with a band.',
     image: singerSongwriter,
     alt: 'Singer-songwriter recording an original song at Mobula Music',
   },
@@ -60,8 +61,8 @@ const services: { href: string; num: string; title: string; intro: string; image
 ---
 
 <Layout
-  title="Recording Studio in Oslo — Vocal, Band & Strings | Mobula Music"
-  description="Professional recording studio just outside Oslo. Vocal recording, band, choir, strings, voice-over and audiobook. From first demo to finished single — for artists and English-speaking residents in Norway."
+  title="Recording Studio in Oslo: Vocal, Band & Strings | Mobula Music"
+  description="Professional recording studio just outside Oslo. Vocal recording, band, choir, strings, voice-over and audiobook. From first demo to finished single. For artists and English-speaking residents in Norway."
   lang="en"
   altLang="/innspilling"
 >
@@ -79,7 +80,7 @@ const services: { href: string; num: string; title: string; intro: string; image
         From first demo<br />to finished record
       </h1>
       <p class="text-cream/80 text-xl md:text-2xl max-w-2xl leading-relaxed">
-        A professional recording studio in Lørenskog — 15 minutes from Oslo by train. Singer-songwriter, vocalist, band, strings or audiobook. We have the rooms, gear and engineers to make it sound the way you want.
+        A professional recording studio in Lørenskog, 15 minutes from Oslo by train. Singer-songwriter, vocalist, band, strings or audiobook. We have the rooms, gear and engineers to make it sound the way you want.
       </p>
     </div>
   </section>
@@ -141,12 +142,14 @@ const services: { href: string; num: string; title: string; intro: string; image
         <div class="mb-12 fade-in">
           <p class="font-mono text-gold tracking-[0.15em] uppercase text-xs mb-4">Before / after</p>
           <h2 class="text-4xl md:text-5xl font-serif font-semibold leading-[1.05] mb-4">Hear the difference</h2>
-          <p class="text-cream/70 max-w-2xl">Raw recordings compared to finished mix and master. Toggle between versions on the fly — playback stays in the same position.</p>
+          <p class="text-cream/70 max-w-2xl">Raw recordings compared to finished mix and master. Toggle between versions on the fly. Playback stays in the same position.</p>
         </div>
         <ABPlayer referanser={referanser} />
       </div>
     </section>
   )}
+
+  <Utgivelser lang="en" />
 
   {kunder.length > 0 && (
     <section class="py-28 px-6">
@@ -168,7 +171,7 @@ const services: { href: string; num: string; title: string; intro: string; image
           <p class="font-mono text-gold tracking-[0.15em] uppercase text-xs mb-2">Just need a rehearsal room?</p>
           <h3 class="font-serif text-2xl md:text-3xl font-semibold mb-2">Rent the studio by the hour</h3>
           <p class="text-cream/70 leading-relaxed">
-            Rent the main studio by the hour for rehearsal or pre-production — NOK 250 per hour, PA and drum kit included. Self-service booking, no engineer. Perfect before a recording session or a gig.
+            Rent the main studio by the hour for rehearsal or pre-production. NOK 250 per hour, PA and drum kit included. Self-service booking, no engineer. Perfect before a recording session or a gig.
           </p>
         </div>
         <a href="/en/rental" class="shrink-0 inline-flex items-center justify-center gap-2 px-6 py-3 border border-gold text-gold tracking-wide uppercase text-sm hover:bg-gold hover:text-dark transition-all">
@@ -191,7 +194,7 @@ const services: { href: string; num: string; title: string; intro: string; image
       },
       {
         title: 'Studio session',
-        body: 'You come to the studio in Lørenskog. The engineer and gear are ready. You focus on the music — we handle the rest.',
+        body: 'You come to the studio in Lørenskog. The engineer and gear are ready. You focus on the music, we handle the rest.',
       },
       {
         title: 'Mix, master & deliver',
@@ -219,7 +222,7 @@ const services: { href: string; num: string; title: string; intro: string; image
       },
       {
         q: 'Can you provide musicians and instruments I don\'t have?',
-        a: 'Yes. We have a network of professional musicians we work with — vocalists, strings, winds and rhythm section. We can help you find the right players for your project.',
+        a: 'Yes. We have a network of professional musicians we work with: vocalists, strings, winds and rhythm section. We can help you find the right players for your project.',
       },
       {
         q: 'How much time should I book?',
@@ -237,7 +240,7 @@ const services: { href: string; num: string; title: string; intro: string; image
         Book a session
       </h2>
       <p class="text-cream/80 text-lg mb-10 max-w-xl mx-auto">
-        Tell us about your project — we'll get back to you quickly with questions, ideas and a fixed&nbsp;quote.
+        Tell us about your project, and we'll get back to you quickly with questions, ideas and a fixed&nbsp;quote.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a href="/en/contact" class="inline-flex items-center justify-center gap-3 px-8 py-4 bg-gold text-dark font-semibold tracking-wide uppercase text-sm hover:bg-gold-light transition-colors">

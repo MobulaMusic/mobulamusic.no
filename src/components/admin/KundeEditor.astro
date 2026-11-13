@@ -47,7 +47,7 @@ const { kunde, mode } = Astro.props;
   </div>
 
   <label class="block">
-    <span class="text-sm text-neutral-400">Tags (kommaseparert — brukes for å plassere sitatet på relevante sider)</span>
+    <span class="text-sm text-neutral-400">Tags (kommaseparert, brukes for å plassere sitatet på relevante sider)</span>
     <input name="tags" value={(kunde?.tags || []).join(', ')} placeholder="film, vokal, band" class="mt-1 w-full rounded bg-neutral-800 px-3 py-2" />
   </label>
 

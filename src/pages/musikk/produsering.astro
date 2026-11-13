@@ -3,11 +3,12 @@ import Layout from '../../layouts/Layout.astro';
 import Mobula from '../../components/Mobula.astro';
 import PasserFor from '../../components/PasserFor.astro';
 import SlikJobberVi from '../../components/SlikJobberVi.astro';
+import Utgivelser from '../../components/Utgivelser.astro';
 ---
 
 <Layout
-  title="Musikkproduksjon — Fullfør Låtprosjektet Ditt | Mobula Music"
-  description="Har du en låtidé eller halvferdig demo? Vi tar den videre til ferdig produksjon. Arrangement, produsering, mix og mastering — du eier låta og får full brukerrett."
+  title="Musikkproduksjon: Fullfør Låtprosjektet Ditt | Mobula Music"
+  description="Har du en låtidé eller halvferdig demo? Vi tar den videre til ferdig produksjon. Arrangement, produsering, mix og mastering. Du eier låta og får full brukerrett."
   altLang="/en/music/production"
 >
   <!-- Hero -->
@@ -35,7 +36,7 @@ import SlikJobberVi from '../../components/SlikJobberVi.astro';
   <section class="py-28 px-6">
     <div class="max-w-5xl mx-auto">
       <div class="mb-16 fade-in">
-        <p class="font-mono text-gold tracking-[0.15em] uppercase text-xs mb-4">01 — Hva vi gjør</p>
+        <p class="font-mono text-gold tracking-[0.15em] uppercase text-xs mb-4">01 · Hva vi gjør</p>
         <h2 class="text-4xl md:text-5xl font-serif font-semibold leading-[1.05] max-w-2xl">Fra idé til track</h2>
       </div>
 
@@ -43,7 +44,7 @@ import SlikJobberVi from '../../components/SlikJobberVi.astro';
         <div>
           <h3 class="text-xl font-serif font-semibold mb-3 text-gold">Produksjon fra bunnen</h3>
           <p class="text-cream/75 leading-relaxed">
-            Du summer, synger eller spiller oss en idé. Vi bygger hele produksjonen — trommer, bass, harmonikk, arrangement og mix — rundt den.
+            Du summer, synger eller spiller oss en idé. Vi bygger hele produksjonen rundt den: trommer, bass, harmonikk, arrangement og mix.
           </p>
         </div>
         <div>
@@ -55,7 +56,7 @@ import SlikJobberVi from '../../components/SlikJobberVi.astro';
         <div>
           <h3 class="text-xl font-serif font-semibold mb-3 text-gold">Co-writing &amp; arrangement</h3>
           <p class="text-cream/75 leading-relaxed">
-            Vi jobber sammen med deg på låtskriving — både melodi, tekst og arrangement. Du holder stemmen, vi bringer verktøykassa.
+            Vi jobber sammen med deg på låtskriving, både melodi, tekst og arrangement. Du holder stemmen, vi bringer verktøykassa.
           </p>
         </div>
         <div>
@@ -85,7 +86,7 @@ import SlikJobberVi from '../../components/SlikJobberVi.astro';
   <SlikJobberVi
     label="Prosessen"
     title="Slik ser det ut"
-    intro="Hvert prosjekt er unikt — men vi har noen faste steg som gjør arbeidet forutsigbart."
+    intro="Hvert prosjekt er unikt, men vi har noen faste steg som gjør arbeidet forutsigbart."
     steps={[
       {
         title: 'Del ideen',
@@ -102,6 +103,8 @@ import SlikJobberVi from '../../components/SlikJobberVi.astro';
     ]}
   />
 
+  <Utgivelser only={['vil-ikke-vil']} class="bg-dark-light/30" />
+
   <!-- CTA -->
   <section class="py-28 px-6">
     <div class="max-w-3xl mx-auto text-center fade-in">
@@ -109,7 +112,7 @@ import SlikJobberVi from '../../components/SlikJobberVi.astro';
         Send oss låta di
       </h2>
       <p class="text-cream/80 text-lg mb-10 max-w-xl mx-auto">
-        Uansett format — voice-memo, DAW-prosjekt, tekstfil, eller bare en beskrivelse. Vi tar det videre.
+        Uansett format: voice-memo, DAW-prosjekt, tekstfil, eller bare en beskrivelse. Vi tar det videre.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a href="/kontakt" class="inline-flex items-center justify-center gap-3 px-8 py-4 bg-gold text-dark font-semibold tracking-wide uppercase text-sm hover:bg-gold-light transition-colors">

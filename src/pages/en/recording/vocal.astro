@@ -14,8 +14,8 @@ const kunder = (await listKunder()).filter(k => k.tags?.some(t => ['vokal', 'inn
 ---
 
 <Layout
-  title="Vocal Recording near Oslo — Lead, Choir & Classical | Mobula Music"
-  description="Professional vocal recording in acoustically treated rooms near Oslo. Lead vocals, backing vocals, classical soloists or choirs — microphones and rooms tailored to your voice."
+  title="Vocal Recording near Oslo: Lead, Choir & Classical | Mobula Music"
+  description="Professional vocal recording in acoustically treated rooms near Oslo. Lead vocals, backing vocals, classical soloists or choirs. Microphones and rooms tailored to your voice."
   lang="en"
   altLang="/innspilling/vokal"
 >
@@ -34,7 +34,7 @@ const kunder = (await listKunder()).filter(k => k.tags?.some(t => ['vokal', 'inn
         Vocal recording<br />in Lørenskog
       </h1>
       <p class="text-cream/80 text-xl md:text-2xl max-w-2xl leading-relaxed mb-4">
-        Acoustically treated vocal rooms, experienced engineers and a fixed quote before we start. Lead, choir or classical — 15 min from Oslo central station.
+        Acoustically treated vocal rooms, experienced engineers and a fixed quote before we start. Lead, choir or classical, 15 min from Oslo central station.
       </p>
       <div class="flex flex-col sm:flex-row gap-4">
         <a href="/en/contact?tjeneste=vokal" class="inline-flex items-center justify-center gap-3 px-8 py-4 bg-gold text-dark font-semibold tracking-wide uppercase text-sm hover:bg-gold-light transition-colors">
@@ -58,7 +58,7 @@ const kunder = (await listKunder()).filter(k => k.tags?.some(t => ['vokal', 'inn
           ['Experienced engineers', '10+ years of vocal recording experience.'],
           ['15 min from Oslo central', '3 min walk from Fjellhamar station.'],
           ['Free parking', 'Easy to arrive with gear or a band.'],
-          ['Top microphones', 'Neumann, Sennheiser, Shure — chosen for your voice.'],
+          ['Top microphones', 'Neumann, Sennheiser, Shure. Chosen for your voice.'],
         ].map(([title, desc]) => (
           <div class="flex gap-3 items-start">
             <span class="text-gold text-lg leading-none mt-0.5">✓</span>
@@ -75,7 +75,7 @@ const kunder = (await listKunder()).filter(k => k.tags?.some(t => ['vokal', 'inn
   <section class="py-28 px-6">
     <div class="max-w-5xl mx-auto">
       <div class="mb-16 fade-in">
-        <p class="font-mono text-gold tracking-[0.15em] uppercase text-xs mb-4">01 — What we offer</p>
+        <p class="font-mono text-gold tracking-[0.15em] uppercase text-xs mb-4">01 · What we offer</p>
         <h2 class="text-3xl md:text-4xl font-serif font-semibold leading-[1.05] max-w-2xl">Vocal rooms tailored<br />to your voice</h2>
       </div>
 
@@ -83,7 +83,7 @@ const kunder = (await listKunder()).filter(k => k.tags?.some(t => ['vokal', 'inn
         <div>
           <h3 class="text-xl font-serif font-semibold mb-3 text-gold">Lead vocals</h3>
           <p class="text-cream/75 leading-relaxed">
-            Several vocal rooms for recording lead vocals — from dry and close to more open and airy. We choose microphones, room and signal chain based on the character of your voice and the genre you work in.
+            Several vocal rooms for recording lead vocals, from dry and close to more open and airy. We choose microphones, room and signal chain based on the character of your voice and the genre you work in.
           </p>
         </div>
         <div>
@@ -95,7 +95,7 @@ const kunder = (await listKunder()).filter(k => k.tags?.some(t => ['vokal', 'inn
         <div>
           <h3 class="text-xl font-serif font-semibold mb-3 text-gold">Classical solo and choir</h3>
           <p class="text-cream/75 leading-relaxed">
-            Our main studio has a natural reverberation that suits classical vocalists, ensembles and smaller choirs. We can record with room sound or dry for post-production — suited for lieder, opera and sacred repertoire.
+            Our main studio has a natural reverberation that suits classical vocalists, ensembles and smaller choirs. We can record with room sound or dry for post-production, suited for lieder, opera and sacred repertoire.
           </p>
         </div>
         <div>
@@ -139,7 +139,7 @@ const kunder = (await listKunder()).filter(k => k.tags?.some(t => ['vokal', 'inn
       <div class="max-w-5xl mx-auto">
         <div class="mb-12 fade-in">
           <p class="font-mono text-gold tracking-[0.15em] uppercase text-xs mb-4">Before / after</p>
-          <h2 class="text-3xl md:text-4xl font-serif font-semibold leading-[1.05]">Vocal examples — raw vs. mixed</h2>
+          <h2 class="text-3xl md:text-4xl font-serif font-semibold leading-[1.05]">Vocal examples: raw vs. mixed</h2>
         </div>
         <ABPlayer referanser={referanser} />
       </div>
@@ -191,7 +191,7 @@ const kunder = (await listKunder()).filter(k => k.tags?.some(t => ['vokal', 'inn
   <section class="py-28 px-6">
     <div class="max-w-3xl mx-auto text-center fade-in">
       <h2 class="text-3xl md:text-5xl font-serif font-semibold mb-6 leading-tight">Book a vocal session</h2>
-      <p class="text-cream/80 text-lg mb-10 max-w-xl mx-auto">Tell us about your project — what genre, how many songs — and we'll find the time and vocal room that fits.</p>
+      <p class="text-cream/80 text-lg mb-10 max-w-xl mx-auto">Tell us about your project (what genre, how many songs) and we'll find the time and vocal room that fits.</p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a href="/en/contact" class="inline-flex items-center justify-center gap-3 px-8 py-4 bg-gold text-dark font-semibold tracking-wide uppercase text-sm hover:bg-gold-light transition-colors">
           <span class="w-2 h-2 rounded-full bg-[#ff9f3d] bpm-pulse"></span>

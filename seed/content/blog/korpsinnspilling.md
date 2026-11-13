@@ -14,10 +14,10 @@ Alle våre innspillingsrom er koblet til samme kontrollrom, noe som gir stor fle
 
 ### Fordeler med studioinnspilling
 
-- **Kontrollert akustikk** — Ingen uønsket romklang eller støy
-- **Profesjonelt utstyr** — Mikrofoner og utstyr tilpasset store ensembler
-- **Fleksibel redigering** — Mulighet for å ta om enkelte seksjoner
-- **Høy kvalitet** — Resultat som er klart for utgivelse eller sending
+- **Kontrollert akustikk:** Ingen uønsket romklang eller støy
+- **Profesjonelt utstyr:** Mikrofoner og utstyr tilpasset store ensembler
+- **Fleksibel redigering:** Mulighet for å ta om enkelte seksjoner
+- **Høy kvalitet:** Resultat som er klart for utgivelse eller sending
 
 ## Praktisk informasjon
 

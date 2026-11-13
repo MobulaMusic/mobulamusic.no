@@ -14,10 +14,10 @@ Fellesinnspilling er et konsept der flere artister og komponister deler på inns
 
 ## Slik fungerer det
 
-1. **Dialog** — Vi diskuterer ditt arrangement og dine behov
-2. **Forberedelse** — Du leverer noter og referanser i forkant
-3. **Innspilling** — Profesjonelle musikere spiller inn ditt arrangement
-4. **Levering** — Du mottar ferdige lydfiler i ønsket format
+1. **Dialog:** Vi diskuterer ditt arrangement og dine behov
+2. **Forberedelse:** Du leverer noter og referanser i forkant
+3. **Innspilling:** Profesjonelle musikere spiller inn ditt arrangement
+4. **Levering:** Du mottar ferdige lydfiler i ønsket format
 
 ## Hvem passer dette for?
 

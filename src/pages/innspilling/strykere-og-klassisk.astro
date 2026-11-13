@@ -5,13 +5,14 @@ import Layout from '../../layouts/Layout.astro';
 import Mobula from '../../components/Mobula.astro';
 import PasserFor from '../../components/PasserFor.astro';
 import ABPlayer from '../../components/ABPlayer.astro';
+import Utgivelser from '../../components/Utgivelser.astro';
 import { listReferanser } from '../../lib/content';
 import { strykekvartettNfs } from '../../assets/images';
 const referanser = (await listReferanser()).filter(r => r.kategori === 'strykere-og-klassisk');
 ---
 
 <Layout
-  title="Strykeinnspilling & Fellesinnspilling — Rimelig Tilgang til Profesjonelle Strykere | Mobula Music"
+  title="Strykeinnspilling & Fellesinnspilling: Rimelig Tilgang til Profesjonelle Strykere | Mobula Music"
   description="Profesjonelle strykere til låten din uten å sprekke budsjettet. Vi arrangerer jevnlige fellesinnspillinger der flere artister deler kostnaden. Også privat booking for film og album."
   altLang="/en/recording/strings-and-classical"
 >
@@ -30,7 +31,7 @@ const referanser = (await listReferanser()).filter(r => r.kategori === 'strykere
         Strykere og klassiske<br />besetninger
       </h1>
       <p class="text-cream/80 text-xl md:text-2xl max-w-2xl leading-relaxed">
-        Strykeinnspilling i Norge — fra fiolinsolo og strykekvartett til fullt strykeorkester. Vi samarbeider med profesjonelle strykemusikere og arrangerer jevnlige fellesinnspillinger for å gjøre levende strykere mer tilgjengelig.
+        Strykeinnspilling i Norge, fra fiolinsolo og strykekvartett til fullt strykeorkester. Vi samarbeider med profesjonelle strykemusikere og arrangerer jevnlige fellesinnspillinger for å gjøre levende strykere mer tilgjengelig.
       </p>
     </div>
   </section>
@@ -38,7 +39,7 @@ const referanser = (await listReferanser()).filter(r => r.kategori === 'strykere
   <section class="py-28 px-6">
     <div class="max-w-5xl mx-auto">
       <div class="mb-16 fade-in">
-        <p class="font-mono text-gold tracking-[0.15em] uppercase text-xs mb-4">01 — Hva vi spiller inn</p>
+        <p class="font-mono text-gold tracking-[0.15em] uppercase text-xs mb-4">01 · Hva vi spiller inn</p>
         <h2 class="text-3xl md:text-4xl font-serif font-semibold leading-[1.05] max-w-2xl">Klassisk kvalitet,<br />hele veien</h2>
       </div>
 
@@ -64,7 +65,7 @@ const referanser = (await listReferanser()).filter(r => r.kategori === 'strykere
         <div>
           <h3 class="text-xl font-serif font-semibold mb-3 text-gold">Noter og arrangementer</h3>
           <p class="text-cream/75 leading-relaxed">
-            Har du musikken, men mangler noter? Se <a href="/musikk/noter-for-daw" class="text-gold hover:underline">Noter til musikere</a> — vi lager ferdige partitur og stemmer.
+            Har du musikken, men mangler noter? Se <a href="/musikk/noter-for-daw" class="text-gold hover:underline">Noter til musikere</a>. Vi lager ferdige partitur og stemmer.
           </p>
         </div>
       </div>
@@ -75,10 +76,10 @@ const referanser = (await listReferanser()).filter(r => r.kategori === 'strykere
   <section class="py-28 px-6 bg-dark-light">
     <div class="max-w-5xl mx-auto">
       <div class="mb-12 fade-in">
-        <p class="font-mono text-gold tracking-[0.15em] uppercase text-xs mb-4">02 — Fellesinnspillinger</p>
+        <p class="font-mono text-gold tracking-[0.15em] uppercase text-xs mb-4">02 · Fellesinnspillinger</p>
         <h2 class="text-3xl md:text-4xl font-serif font-semibold leading-[1.05] max-w-2xl mb-6">Strykere til en brøkdel av prisen</h2>
         <p class="text-cream/85 text-lg leading-relaxed max-w-3xl">
-          Ekte strykere er dyrt. Det vet vi. Derfor arrangerer Mobula Music jevnlige <strong class="text-cream">fellesinnspillinger for strykere</strong>, der flere artister og komponister deler kostnaden for én innspillingsdag med profesjonelle strykemusikere. En unik tjeneste i Norge — og en vei inn for deg som ellers ikke hadde hatt budsjett til strykearrangement på låta.
+          Ekte strykere er dyrt. Det vet vi. Derfor arrangerer Mobula Music jevnlige <strong class="text-cream">fellesinnspillinger for strykere</strong>, der flere artister og komponister deler kostnaden for én innspillingsdag med profesjonelle strykemusikere. En unik tjeneste i Norge, og en vei inn for deg som ellers ikke hadde hatt budsjett til strykearrangement på låta.
         </p>
       </div>
 
@@ -86,7 +87,7 @@ const referanser = (await listReferanser()).filter(r => r.kategori === 'strykere
         <div class="p-6 border border-cream/10">
           <p class="font-mono text-gold text-xs tracking-widest uppercase mb-3">01</p>
           <h3 class="text-xl font-serif font-semibold mb-2">Meld interesse</h3>
-          <p class="text-cream/75 text-sm leading-relaxed">Send oss notene eller en skisse — har du ikke noter, kan vi lage strykearrangementet for deg.</p>
+          <p class="text-cream/75 text-sm leading-relaxed">Send oss notene eller en skisse. Har du ikke noter, kan vi lage strykearrangementet for deg.</p>
         </div>
         <div class="p-6 border border-cream/10">
           <p class="font-mono text-gold text-xs tracking-widest uppercase mb-3">02</p>
@@ -112,7 +113,7 @@ const referanser = (await listReferanser()).filter(r => r.kategori === 'strykere
       'Du er komponist med et prosjekt som krever ekte strykere.',
       'Du er artist som vil ha levende strykearrangementer på låta di.',
       'Du leder et kammerensemble som skal spille inn repertoar.',
-      'Du har en låt som trenger ekte strykere — uten å koste skjorta.',
+      'Du har en låt som trenger ekte strykere, uten å koste skjorta.',
       'Du jobber med film, reklame eller scene og trenger klassisk lyd.',
     ]}
   />
@@ -135,17 +136,19 @@ const referanser = (await listReferanser()).filter(r => r.kategori === 'strykere
       <div class="max-w-5xl mx-auto">
         <div class="mb-12 fade-in">
           <p class="font-mono text-gold tracking-[0.15em] uppercase text-xs mb-4">Før / etter</p>
-          <h2 class="text-3xl md:text-4xl font-serif font-semibold leading-[1.05]">Strykere — rå vs. mikset</h2>
+          <h2 class="text-3xl md:text-4xl font-serif font-semibold leading-[1.05]">Strykere: rå vs. mikset</h2>
         </div>
         <ABPlayer referanser={referanser} />
       </div>
     </section>
   )}
 
+  <Utgivelser only={['vil-ikke-vil']} />
+
   <section class="py-28 px-6">
     <div class="max-w-3xl mx-auto text-center fade-in">
       <h2 class="text-3xl md:text-5xl font-serif font-semibold mb-6 leading-tight">Book strykere</h2>
-      <p class="text-cream/80 text-lg mb-10 max-w-xl mx-auto">Fortell oss om prosjektet, ensemble og budsjett — vi finner løsningen som passer.</p>
+      <p class="text-cream/80 text-lg mb-10 max-w-xl mx-auto">Fortell oss om prosjektet, ensemble og budsjett, så finner vi løsningen som passer.</p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a href="/kontakt" class="inline-flex items-center justify-center gap-3 px-8 py-4 bg-gold text-dark font-semibold tracking-wide uppercase text-sm hover:bg-gold-light transition-colors">
           <span class="w-2 h-2 rounded-full bg-[#ff9f3d] bpm-pulse"></span>

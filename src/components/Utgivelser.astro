@@ -1,0 +1,84 @@
+---
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+import maybeI from '../assets/images/utgivelser/maybe-i.jpg';
+import picturePerfect from '../assets/images/utgivelser/picture-perfect.jpg';
+import vilIkkeVil from '../assets/images/utgivelser/vil-ikke-vil.jpg';
+import memoriesOfATailor from '../assets/images/utgivelser/memories-of-a-tailor.jpg';
+
+type Rolle = 'miks' | 'master' | 'innspilling' | 'produksjon' | 'strykearr';
+interface Utgivelse {
+  id: string;
+  title: string;
+  artist: string;
+  cover: ImageMetadata;
+  url: string;
+  roller: Rolle[];
+  detalj?: { no: string; en: string };
+}
+
+const ALLE: Utgivelse[] = [
+  { id: 'maybe-i', title: 'Maybe I', artist: 'Amelie Aldner', cover: maybeI, url: 'https://open.spotify.com/track/7IB3ahXtaMF516ONKH3yP7', roller: ['miks', 'master'] },
+  { id: 'picture-perfect', title: 'Picture Perfect', artist: 'Amelie Aldner', cover: picturePerfect, url: 'https://open.spotify.com/track/5nPFqv9JfeLEZrH1Yeoa34', roller: ['miks', 'master'] },
+  { id: 'vil-ikke-vil', title: 'Vil ikke vil', artist: 'Skauleis', cover: vilIkkeVil, url: 'https://open.spotify.com/track/0ucANlIUmPhf9sGePMfDJN', roller: ['innspilling', 'produksjon', 'strykearr'] },
+  { id: 'memories-of-a-tailor', title: 'Memories of a Tailor', artist: 'Loon Martian', cover: memoriesOfATailor, url: 'https://open.spotify.com/track/67TvvhdfpXvrk6cHfDXcrj', roller: ['innspilling'], detalj: { no: 'Piano i store studio', en: 'Piano in the large studio' } },
+];
+
+const ROLLE_TEKST: Record<Rolle, { no: string; en: string }> = {
+  miks: { no: 'Miks', en: 'Mix' },
+  master: { no: 'Master', en: 'Master' },
+  innspilling: { no: 'Innspilling', en: 'Recording' },
+  produksjon: { no: 'Produksjon', en: 'Production' },
+  strykearr: { no: 'Strykearrangement', en: 'String arrangement' },
+};
+
+interface Props {
+  lang?: 'no' | 'en';
+  /** Vis bare disse (id). Utelat for å vise alle. */
+  only?: string[];
+  /** Ekstra klasser på seksjonen, f.eks. bakgrunn. */
+  class?: string;
+}
+const { lang = 'no', only, class: className = '' } = Astro.props;
+const en = lang === 'en';
+const items = only ? ALLE.filter(u => only.includes(u.id)) : ALLE;
+const single = items.length === 1;
+const gridCols = single ? 'grid-cols-1 max-w-2xl' : items.length >= 4 ? 'grid-cols-2 md:grid-cols-4' : items.length === 3 ? 'grid-cols-2 md:grid-cols-3' : 'grid-cols-2 max-w-xl';
+---
+<section class:list={['py-28 px-6', className]}>
+  <div class="max-w-6xl mx-auto">
+    <div class="mb-12 max-w-2xl fade-in">
+      <p class="font-mono text-gold tracking-[0.15em] uppercase text-xs mb-4">{en ? 'Releases' : 'Utgivelser'}</p>
+      <h2 class="text-3xl md:text-4xl font-serif font-semibold leading-[1.05] mb-4">{en ? 'Released from the studio' : 'Utgitt fra studioet'}</h2>
+      <p class="text-cream/70 text-lg leading-relaxed">
+        {en
+          ? 'A small selection of the releases we have worked on over the past year.'
+          : 'Et lite utvalg av utgivelsene vi har jobbet med det siste året.'}
+      </p>
+    </div>
+
+    <div class:list={['grid gap-x-5 gap-y-10 fade-in', gridCols]}>
+      {items.map(u => (
+        <a href={u.url} target="_blank" rel="noopener" class:list={['group', single ? 'flex items-center gap-6 sm:gap-8' : 'block']} aria-label={`${u.title}, ${u.artist}. ${en ? 'Listen on Spotify' : 'Lytt på Spotify'}`}>
+          <div class:list={['relative overflow-hidden rounded-md shadow-lg shadow-black/40', single ? 'w-40 sm:w-56 shrink-0' : 'mb-4']}>
+            <Image src={u.cover} alt="" widths={[240, 480]} sizes="(min-width: 768px) 25vw, 50vw" format="webp" loading="lazy" class="w-full aspect-square object-cover transition-transform duration-500 group-hover:scale-[1.03]" />
+            <span class="absolute bottom-3 right-3 w-11 h-11 rounded-full bg-gold text-dark flex items-center justify-center opacity-0 translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z" /></svg>
+            </span>
+          </div>
+          <div class="min-w-0">
+          <h3 class="font-serif text-lg font-semibold leading-tight group-hover:text-gold transition-colors">{u.title}</h3>
+          <p class="text-cream/60 text-sm mb-3">{u.artist}</p>
+          <ul class="flex flex-wrap gap-1.5">
+            {u.roller.map(r => (
+              <li class="font-mono text-[10px] uppercase tracking-[0.12em] text-gold border border-gold/30 rounded px-1.5 py-0.5">{ROLLE_TEKST[r][lang]}</li>
+            ))}
+          </ul>
+          {u.detalj && <p class="text-cream/50 text-xs mt-2">{u.detalj[lang]}</p>}
+          {single && <p class="mt-4 text-sm text-cream underline decoration-gold/50 underline-offset-4 group-hover:text-gold">{en ? 'Listen on Spotify' : 'Lytt på Spotify'} ↗</p>}
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>

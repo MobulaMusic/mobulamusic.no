@@ -4,6 +4,7 @@ import { Image } from 'astro:assets';
 import Layout from '../../../layouts/Layout.astro';
 import Mobula from '../../../components/Mobula.astro';
 import PasserFor from '../../../components/PasserFor.astro';
+import Referanseprosjekter from '../../../components/Referanseprosjekter.astro';
 import ABPlayer from '../../../components/ABPlayer.astro';
 import { listReferanser } from '../../../lib/content';
 import { voiceStudio, voiceOverRegi } from '../../../assets/images';
@@ -39,7 +40,7 @@ const referanser = (await listReferanser()).filter(r => r.kategori === 'lydbok-o
   <section class="py-28 px-6">
     <div class="max-w-5xl mx-auto">
       <div class="mb-16 fade-in">
-        <p class="font-mono text-gold tracking-[0.15em] uppercase text-xs mb-4">01 — What we record</p>
+        <p class="font-mono text-gold tracking-[0.15em] uppercase text-xs mb-4">01 · What we record</p>
         <h2 class="text-3xl md:text-4xl font-serif font-semibold leading-[1.05] max-w-2xl">Voice recording, clean and precise</h2>
       </div>
 
@@ -47,7 +48,7 @@ const referanser = (await listReferanser()).filter(r => r.kategori === 'lydbok-o
         <div>
           <h3 class="text-xl font-serif font-semibold mb-3 text-gold">Audiobooks</h3>
           <p class="text-cream/75 leading-relaxed">
-            Full books or shorter texts. We set up for long sessions with direction, pauses and post-processing — delivering files that are ready for release.
+            Full books or shorter texts. We set up for long sessions with direction, pauses and post-processing, delivering files that are ready for release.
           </p>
         </div>
         <div>
@@ -59,7 +60,7 @@ const referanser = (await listReferanser()).filter(r => r.kategori === 'lydbok-o
         <div>
           <h3 class="text-xl font-serif font-semibold mb-3 text-gold">Recording to picture</h3>
           <p class="text-cream/75 leading-relaxed">
-            We record in sync with video — for film, animation, explainer videos and any production where the timing has to match the image exactly.
+            We record in sync with video, for film, animation and any production where the timing has to hit the picture.
           </p>
         </div>
         <div>
@@ -71,15 +72,9 @@ const referanser = (await listReferanser()).filter(r => r.kategori === 'lydbok-o
         <div>
           <h3 class="text-xl font-serif font-semibold mb-3 text-gold">We'll find the narrator</h3>
           <p class="text-cream/75 leading-relaxed">
-            No voice lined up yet? We help you find the right narrator for your audiobook. Through our network of professional voice actors and readers we match the text, genre and audience with a voice that fits.
+            No voice lined up yet? We suggest narrators from our network, with sample recordings so you can hear them before you choose. We handle the practical side and you end up with a finished audiobook.
           </p>
         </div>
-      </div>
-
-      <div class="mt-14 max-w-3xl border-l-2 border-gold/40 pl-6 fade-in">
-        <p class="text-cream/80 text-lg leading-relaxed">
-          Many people come to us without a narrator in place — and we sort that out. Tell us about the project and we'll suggest suitable voices, with sample recordings so you can hear the candidates before you decide. We handle the practical side around narrator, direction and post-production, so you're left with a finished audiobook.
-        </p>
       </div>
     </div>
   </section>
@@ -101,21 +96,18 @@ const referanser = (await listReferanser()).filter(r => r.kategori === 'lydbok-o
   <section class="py-28 px-6 bg-dark-light/30">
     <div class="max-w-3xl mx-auto">
       <div class="mb-10 fade-in">
-        <p class="font-mono text-gold tracking-[0.15em] uppercase text-xs mb-4">02 — Why it's worth it</p>
+        <p class="font-mono text-gold tracking-[0.15em] uppercase text-xs mb-4">02 · Why it's worth it</p>
         <h2 class="text-3xl md:text-4xl font-serif font-semibold leading-[1.05]">"Good enough" audio isn't good enough</h2>
       </div>
       <div class="space-y-6 text-cream/80 text-lg leading-relaxed fade-in">
         <p>
-          An audiobook isn't a three-minute track someone hears once. It's hours with your voice right in the listener's ear. That's when everything you didn't notice during the recording suddenly becomes obvious: the faint room reflection from the living room, the fan in the background, the breath that lands too close, the mouth noises between sentences. What sounds "perfectly fine" for a couple of seconds becomes exhausting over a whole book — and that's exactly when the listener switches off.
+          An audiobook is hours of a voice right in the listener's ear. Room reflections, fans, breaths and mouth noises you don't notice for a few seconds become exhausting over a whole book. That's when the listener switches off.
         </p>
         <p>
-          Many people assume a good microphone and a quiet room is enough. But the difference between a home recording and a professional audiobook rarely comes down to gear alone — it's in a room built for speech, in the direction that keeps pace and energy even across the chapters, and in the post-production that removes what the ear shouldn't have to work past. It's the sum of many small choices that makes an audiobook feel effortless to listen to.
+          The difference rarely comes down to the microphone alone. It's a room built for speech, direction that keeps pace and energy even across the chapters, and post-production that removes what the ear shouldn't have to work past.
         </p>
         <p>
-          It's also what publishers, distributors and streaming platforms actually require. An audiobook that doesn't meet the technical mark gets rejected or has to be re-recorded — and then the "cheap" option has become the expensive one. We deliver files that are ready for release the first time, in the format and to the standard the recipient expects.
-        </p>
-        <p>
-          Put simply: your voice deserves to be heard the way it really sounds. We make sure the only thing the listener notices is the story.
+          Publishers and streaming platforms have technical requirements. We deliver files that pass the first time, so you don't have to record again.
         </p>
       </div>
     </div>
@@ -135,12 +127,25 @@ const referanser = (await listReferanser()).filter(r => r.kategori === 'lydbok-o
     </div>
   </section>
 
+  <section class="py-28 px-6 bg-dark-light/30">
+    <div class="max-w-5xl mx-auto">
+      <div class="mb-12 fade-in">
+        <p class="font-mono text-gold tracking-[0.15em] uppercase text-xs mb-4">References</p>
+        <h2 class="text-3xl md:text-4xl font-serif font-semibold leading-[1.05] mb-4">Recorded with us</h2>
+        <p class="text-cream/70 text-lg leading-relaxed max-w-2xl">A few of the projects we have worked on over the past year.</p>
+      </div>
+      <div class="fade-in">
+        <Referanseprosjekter lang="en" />
+      </div>
+    </div>
+  </section>
+
   {referanser.length > 0 && (
-    <section class="py-28 px-6 bg-dark-light/30">
+    <section class="py-28 px-6">
       <div class="max-w-5xl mx-auto">
         <div class="mb-12 fade-in">
           <p class="font-mono text-gold tracking-[0.15em] uppercase text-xs mb-4">Before / after</p>
-          <h2 class="text-3xl md:text-4xl font-serif font-semibold leading-[1.05]">Voice recording — raw vs. finished</h2>
+          <h2 class="text-3xl md:text-4xl font-serif font-semibold leading-[1.05]">Voice recording: raw and finished</h2>
         </div>
         <ABPlayer referanser={referanser} />
       </div>
@@ -150,7 +155,7 @@ const referanser = (await listReferanser()).filter(r => r.kategori === 'lydbok-o
   <section class="py-28 px-6">
     <div class="max-w-3xl mx-auto text-center fade-in">
       <h2 class="text-3xl md:text-5xl font-serif font-semibold mb-6 leading-tight">Book a voice session</h2>
-      <p class="text-cream/80 text-lg mb-10 max-w-xl mx-auto">Tell us about the project — length, format and deadline — and we'll give you a fixed&nbsp;quote.</p>
+      <p class="text-cream/80 text-lg mb-10 max-w-xl mx-auto">Tell us the length, format and deadline, and we'll give you a fixed&nbsp;quote.</p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a href="/en/contact" class="inline-flex items-center justify-center gap-3 px-8 py-4 bg-gold text-dark font-semibold tracking-wide uppercase text-sm hover:bg-gold-light transition-colors">
           <span class="w-2 h-2 rounded-full bg-[#ff9f3d] bpm-pulse"></span>

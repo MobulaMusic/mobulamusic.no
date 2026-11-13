@@ -1,0 +1,63 @@
+---
+import { Image } from 'astro:assets';
+import { helikopterperspektiv, maydayRedningsselskapet } from '../assets/images';
+
+interface Props { lang?: 'no' | 'en'; }
+const { lang = 'no' } = Astro.props;
+const en = lang === 'en';
+
+const LYDBOK_URL = 'https://www.ark.no/produkt/helikopterperspektiv-9788269413427';
+
+const projects = [
+  {
+    image: helikopterperspektiv,
+    title: 'Helikopterperspektiv',
+    meta: en ? 'Audiobook · Line Svingen · 2026' : 'Lydbok · Line Svingen · 2026',
+    text: en
+      ? 'Line Svingen recorded her own book about leadership, power and responsibility with us. We directed the sessions and handled the edit, so the finished files were ready for release.'
+      : 'Line Svingen leste inn sin egen bok om ledelse, makt og ansvar hos oss. Vi hadde regi på innspillingen og tok oss av etterarbeidet, slik at filene var klare for utgivelse.',
+    links: [
+      { href: LYDBOK_URL, label: en ? 'Buy the audiobook' : 'Kjøp lydboka' },
+      { href: 'https://www.linesvingen.no/bok/', label: en ? 'Buy the printed book' : 'Kjøp papirboka' },
+    ],
+  },
+  {
+    image: maydayRedningsselskapet,
+    title: 'Mayday: Redningsselskapet',
+    meta: en ? 'Voice-over · Viaplay · 2026' : 'Voice-over · Viaplay · 2026',
+    text: en
+      ? 'Voice-over for the Viaplay series about Redningsselskapet, the Norwegian sea rescue service. Recorded to picture for Underdog Media Group.'
+      : 'Voice-over til Viaplay-serien om Redningsselskapet. Spilt inn mot bilde for Underdog Media Group.',
+    links: [],
+  },
+];
+---
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+  {projects.map(p => (
+    <article class="flex gap-5 sm:gap-6 bg-dark-card border border-dark-border/60 rounded-2xl p-5 sm:p-6">
+      <Image
+        src={p.image}
+        alt={en ? `Cover: ${p.title}` : `Omslag: ${p.title}`}
+        widths={[160, 320]}
+        sizes="160px"
+        format="webp"
+        loading="lazy"
+        class="w-28 sm:w-36 aspect-[2/3] object-cover rounded-md shrink-0 shadow-lg shadow-black/40"
+      />
+      <div class="flex flex-col min-w-0">
+        <h3 class="font-serif text-xl sm:text-2xl font-semibold leading-tight mb-1">{p.title}</h3>
+        <p class="text-gold text-sm mb-3">{p.meta}</p>
+        <p class="text-cream/70 text-sm leading-relaxed">{p.text}</p>
+        {p.links.length > 0 && (
+          <div class="mt-auto pt-4 flex flex-wrap gap-x-5 gap-y-2">
+            {p.links.map(l => (
+              <a href={l.href} target="_blank" rel="noopener" class="text-sm text-cream underline decoration-gold/50 underline-offset-4 hover:text-gold hover:decoration-gold transition-colors">
+                {l.label} ↗
+              </a>
+            ))}
+          </div>
+        )}
+      </div>
+    </article>
+  ))}
+</div>

@@ -4,11 +4,12 @@ import { Image } from 'astro:assets';
 import { storeStudio, podkastStudio, noterDaw, vokalrom1, nordicFilmStrings, sidestudio } from '../assets/images';
 import nordicFilmStringsStrings from '../assets/images/strings/nordic-film-strings.jpg';
 import Gavekort from '../components/Gavekort.astro';
+import Utgivelser from '../components/Utgivelser.astro';
 ---
 
 <Layout
-  title="Lydstudio på Østlandet — Innspilling, Podkast & Musikkproduksjon | Mobula Music"
-  description="Lydstudio i Lørenskog med kort vei fra Oslo og Lillestrøm. Innspilling av vokal, band og strykere, podkastproduksjon, filmmusikk og noteproduksjon — alt under ett tak."
+  title="Lydstudio på Østlandet: Innspilling, Podkast & Musikkproduksjon | Mobula Music"
+  description="Lydstudio i Lørenskog med kort vei fra Oslo og Lillestrøm. Innspilling av vokal, band og strykere, podkastproduksjon, filmmusikk og noteproduksjon, alt under ett tak."
   altLang="/en"
 >
   <!-- Hero -->
@@ -47,7 +48,7 @@ import Gavekort from '../components/Gavekort.astro';
         Rom for kreativitet<br />&amp; god lyd
       </h1>
       <p class="hero-fade hero-fade-3 text-cream/85 text-xl md:text-2xl max-w-2xl mb-12 leading-relaxed">
-        Innspilling, podkast og musikkproduksjon — fra første idé til ferdig mix.<br class="hidden md:block" />Lørenskog, en kort kjøretur fra Oslo og Lillestrøm.
+        Innspilling, podkast og musikkproduksjon, fra første idé til ferdig mix.<br class="hidden md:block" />Lørenskog, en kort kjøretur fra Oslo og Lillestrøm.
       </p>
       <div class="hero-fade hero-fade-4 flex flex-col sm:flex-row gap-4">
         <a href="/kontakt" class="group inline-flex items-center gap-3 px-8 py-4 bg-gold text-dark font-semibold tracking-wide uppercase text-sm rounded-sm hover:bg-gold-light transition-colors">
@@ -73,11 +74,11 @@ import Gavekort from '../components/Gavekort.astro';
     <div class="relative max-w-7xl mx-auto">
       <div class="flex flex-col md:flex-row md:items-end md:justify-between mb-20 gap-6 fade-in">
         <div>
-          <p class="font-mono text-gold tracking-[0.15em] uppercase text-xs mb-4">01 — Våre tjenester</p>
+          <p class="font-mono text-gold tracking-[0.15em] uppercase text-xs mb-4">01 · Våre tjenester</p>
           <h2 class="text-4xl md:text-5xl lg:text-6xl font-serif font-semibold leading-[1.05] max-w-2xl">Hva kan vi hjelpe<br />deg med?</h2>
         </div>
         <p class="text-cream/70 text-base md:text-lg max-w-md leading-relaxed">
-          Innspilling, podkast, originalmusikk og notesetting — fire kjerneområder under ett tak i Lørenskog. Fra første idé til ferdig mix og mastering.
+          Innspilling, podkast, originalmusikk og notesetting: fire kjerneområder under ett tak i Lørenskog. Fra første idé til ferdig mix og mastering.
         </p>
       </div>
 
@@ -85,7 +86,7 @@ import Gavekort from '../components/Gavekort.astro';
         <!-- Innspilling -->
         <a href="/innspilling" class="group fade-in">
           <div class="relative overflow-hidden aspect-[4/3] mb-5 bg-dark">
-            <Image src={storeStudio} alt="Hovedstudioet til Mobula Music — stor innspillingssal for band, ensemble og vokalist" widths={[400, 800, 1200]} sizes="(min-width: 768px) 33vw, 100vw" format="webp" class="w-full h-full object-cover transition-all duration-700 group-hover:scale-[1.04] [filter:saturate(0.85)_contrast(0.98)_brightness(1)] group-hover:[filter:saturate(1)_contrast(1)_brightness(1.05)]" loading="lazy" />
+            <Image src={storeStudio} alt="Hovedstudioet til Mobula Music, stor innspillingssal for band, ensemble og vokalist" widths={[400, 800, 1200]} sizes="(min-width: 768px) 33vw, 100vw" format="webp" class="w-full h-full object-cover transition-all duration-700 group-hover:scale-[1.04] [filter:saturate(0.85)_contrast(0.98)_brightness(1)] group-hover:[filter:saturate(1)_contrast(1)_brightness(1.05)]" loading="lazy" />
             <div class="absolute inset-0 bg-[#0b1a22] mix-blend-multiply opacity-15 pointer-events-none"></div>
             <div class="absolute inset-0 bg-gradient-to-tr from-[#7af0c8]/10 via-transparent to-[#c9a2ff]/10 mix-blend-overlay pointer-events-none"></div>
             <div class="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-dark/80 to-transparent pointer-events-none"></div>
@@ -114,7 +115,7 @@ import Gavekort from '../components/Gavekort.astro';
           <div class="flex items-start justify-between gap-4">
             <div>
               <h3 class="text-2xl md:text-3xl font-serif font-semibold mb-2 group-hover:text-gold transition-colors">Podkast</h3>
-              <p class="text-cream/70 text-sm leading-relaxed max-w-xs">Innspilling, klipping, lyddesign, originalmusikk og opplæring — alt under ett tak.</p>
+              <p class="text-cream/70 text-sm leading-relaxed max-w-xs">Innspilling, klipping, lyddesign, originalmusikk og opplæring, alt under ett tak.</p>
             </div>
             <span class="shrink-0 text-gold translate-y-1 transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true">→</span>
           </div>
@@ -167,11 +168,11 @@ import Gavekort from '../components/Gavekort.astro';
       <!-- Section header -->
       <div class="flex flex-col md:flex-row md:items-end md:justify-between mb-20 gap-6 fade-in">
         <div>
-          <p class="font-mono text-gold tracking-[0.15em] uppercase text-xs mb-4">02 — Hvorfor Mobula</p>
+          <p class="font-mono text-gold tracking-[0.15em] uppercase text-xs mb-4">02 · Hvorfor Mobula</p>
           <h2 class="text-4xl md:text-5xl lg:text-6xl font-serif font-semibold leading-[1.05] max-w-2xl">Et studio bygget<br />for kvalitet</h2>
         </div>
         <p class="text-cream/70 text-base md:text-lg max-w-md leading-relaxed">
-          Akustisk optimaliserte innspillingsrom, profesjonelt utstyr og erfarne teknikere — plassert i Lørenskog, bare minutter fra Oslo sentrum med tog. Teknisk håndverk kombinert med kunstnerisk forståelse.
+          Akustisk optimaliserte innspillingsrom, profesjonelt utstyr og erfarne teknikere, plassert i Lørenskog, bare minutter fra Oslo sentrum med tog. Teknisk håndverk kombinert med kunstnerisk forståelse.
         </p>
       </div>
 
@@ -219,6 +220,8 @@ import Gavekort from '../components/Gavekort.astro';
     </div>
   </section>
 
+  <Utgivelser />
+
   <Gavekort />
 
   <!-- CTA -->
@@ -228,7 +231,7 @@ import Gavekort from '../components/Gavekort.astro';
         Klar for å komme i gang?
       </h2>
       <p class="text-cream/80 text-lg mb-10 max-w-xl mx-auto">
-        Enten du trenger innspilling, podkast eller skreddersydd musikk — vi hjelper deg fra idé til ferdig resultat.
+        Enten du trenger innspilling, podkast eller skreddersydd musikk, hjelper vi deg fra idé til ferdig resultat.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a href="/kontakt" class="inline-flex items-center justify-center gap-3 px-8 py-4 bg-gold text-dark font-semibold tracking-wide uppercase text-sm hover:bg-gold-light transition-colors">

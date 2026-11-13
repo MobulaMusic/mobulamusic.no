@@ -5,13 +5,14 @@ import Layout from '../../../layouts/Layout.astro';
 import Mobula from '../../../components/Mobula.astro';
 import PasserFor from '../../../components/PasserFor.astro';
 import ABPlayer from '../../../components/ABPlayer.astro';
+import Utgivelser from '../../../components/Utgivelser.astro';
 import { listReferanser } from '../../../lib/content';
 import { strykekvartettNfs } from '../../../assets/images';
 const referanser = (await listReferanser()).filter(r => r.kategori === 'strykere-og-klassisk');
 ---
 
 <Layout
-  title="String Recording & Shared Sessions — Affordable Real Strings | Mobula Music"
+  title="String Recording & Shared Sessions: Affordable Real Strings | Mobula Music"
   description="Professional string players on your track without blowing the budget. We arrange regular shared sessions where several artists split the cost. Private bookings for film and album projects."
   lang="en"
   altLang="/innspilling/strykere-og-klassisk"
@@ -31,7 +32,7 @@ const referanser = (await listReferanser()).filter(r => r.kategori === 'strykere
         Strings and classical<br />ensembles
       </h1>
       <p class="text-cream/80 text-xl md:text-2xl max-w-2xl leading-relaxed">
-        String recording in Norway — from violin solo and string quartet to full string orchestra. We work with professional string players and run regular shared sessions to make real strings more accessible.
+        String recording in Norway, from violin solo and string quartet to full string orchestra. We work with professional string players and run regular shared sessions to make real strings more accessible.
       </p>
     </div>
   </section>
@@ -39,7 +40,7 @@ const referanser = (await listReferanser()).filter(r => r.kategori === 'strykere
   <section class="py-28 px-6">
     <div class="max-w-5xl mx-auto">
       <div class="mb-16 fade-in">
-        <p class="font-mono text-gold tracking-[0.15em] uppercase text-xs mb-4">01 — What we record</p>
+        <p class="font-mono text-gold tracking-[0.15em] uppercase text-xs mb-4">01 · What we record</p>
         <h2 class="text-3xl md:text-4xl font-serif font-semibold leading-[1.05] max-w-2xl">Classical quality,<br />all the way</h2>
       </div>
 
@@ -65,7 +66,7 @@ const referanser = (await listReferanser()).filter(r => r.kategori === 'strykere
         <div>
           <h3 class="text-xl font-serif font-semibold mb-3 text-gold">Scores and arrangements</h3>
           <p class="text-cream/75 leading-relaxed">
-            Have the music but no score? See <a href="/en/music" class="text-gold hover:underline">Music</a> — we prepare full scores and individual parts.
+            Have the music but no score? See <a href="/en/music" class="text-gold hover:underline">Music</a>. We prepare full scores and individual parts.
           </p>
         </div>
       </div>
@@ -76,10 +77,10 @@ const referanser = (await listReferanser()).filter(r => r.kategori === 'strykere
   <section class="py-28 px-6 bg-dark-light">
     <div class="max-w-5xl mx-auto">
       <div class="mb-12 fade-in">
-        <p class="font-mono text-gold tracking-[0.15em] uppercase text-xs mb-4">02 — Shared sessions</p>
+        <p class="font-mono text-gold tracking-[0.15em] uppercase text-xs mb-4">02 · Shared sessions</p>
         <h2 class="text-3xl md:text-4xl font-serif font-semibold leading-[1.05] max-w-2xl mb-6">Real strings at a fraction of the cost</h2>
         <p class="text-cream/85 text-lg leading-relaxed max-w-3xl">
-          Real strings are expensive — we know. That's why Mobula Music runs regular <strong class="text-cream">shared string sessions</strong>, where several artists and composers split the cost of a single recording day with professional string players. A unique offering in Norway — and a way in for anyone who otherwise wouldn't have the budget for string arrangements on their track.
+          Real strings are expensive. We know. That's why Mobula Music runs regular <strong class="text-cream">shared string sessions</strong>, where several artists and composers split the cost of a single recording day with professional string players. A unique offering in Norway, and a way in for anyone who otherwise wouldn't have the budget for string arrangements on their track.
         </p>
       </div>
 
@@ -87,7 +88,7 @@ const referanser = (await listReferanser()).filter(r => r.kategori === 'strykere
         <div class="p-6 border border-cream/10">
           <p class="font-mono text-gold text-xs tracking-widest uppercase mb-3">01</p>
           <h3 class="text-xl font-serif font-semibold mb-2">Register interest</h3>
-          <p class="text-cream/75 text-sm leading-relaxed">Send us your score or a sketch — if you don't have a score, we can write the string arrangement for you.</p>
+          <p class="text-cream/75 text-sm leading-relaxed">Send us your score or a sketch. If you don't have a score, we can write the string arrangement for you.</p>
         </div>
         <div class="p-6 border border-cream/10">
           <p class="font-mono text-gold text-xs tracking-widest uppercase mb-3">02</p>
@@ -115,7 +116,7 @@ const referanser = (await listReferanser()).filter(r => r.kategori === 'strykere
       'You\'re a composer with a project that calls for real strings.',
       'You\'re an artist who wants live string arrangements on your track.',
       'You lead a chamber ensemble recording repertoire.',
-      'You have a song that needs real strings — without breaking the bank.',
+      'You have a song that needs real strings, without breaking the bank.',
       'You work in film, advertising or theatre and need a classical sound.',
     ]}
   />
@@ -138,17 +139,19 @@ const referanser = (await listReferanser()).filter(r => r.kategori === 'strykere
       <div class="max-w-5xl mx-auto">
         <div class="mb-12 fade-in">
           <p class="font-mono text-gold tracking-[0.15em] uppercase text-xs mb-4">Before / after</p>
-          <h2 class="text-3xl md:text-4xl font-serif font-semibold leading-[1.05]">Strings — raw vs. mixed</h2>
+          <h2 class="text-3xl md:text-4xl font-serif font-semibold leading-[1.05]">Strings: raw vs. mixed</h2>
         </div>
         <ABPlayer referanser={referanser} />
       </div>
     </section>
   )}
 
+  <Utgivelser lang="en" only={['vil-ikke-vil']} />
+
   <section class="py-28 px-6">
     <div class="max-w-3xl mx-auto text-center fade-in">
       <h2 class="text-3xl md:text-5xl font-serif font-semibold mb-6 leading-tight">Book strings</h2>
-      <p class="text-cream/80 text-lg mb-10 max-w-xl mx-auto">Tell us about the project, the ensemble and the budget — we'll find a solution that fits.</p>
+      <p class="text-cream/80 text-lg mb-10 max-w-xl mx-auto">Tell us about the project, the ensemble and the budget and we'll find a solution that fits.</p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a href="/en/contact" class="inline-flex items-center justify-center gap-3 px-8 py-4 bg-gold text-dark font-semibold tracking-wide uppercase text-sm hover:bg-gold-light transition-colors">
           <span class="w-2 h-2 rounded-full bg-[#ff9f3d] bpm-pulse"></span>

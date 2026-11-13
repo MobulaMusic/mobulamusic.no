@@ -30,3 +30,7 @@ export { default as voiceOverRegi } from './voice-over/voice-over-regi.jpeg';
 // Team images
 export { default as haakonEsplo } from './team/haakon-esplo.jpg';
 export { default as olaiForsund } from './team/olai-forsund.jpeg';
+
+// Referanseprosjekter
+export { default as helikopterperspektiv } from './referanser/helikopterperspektiv.jpeg';
+export { default as maydayRedningsselskapet } from './referanser/mayday-redningsselskapet.jpeg';

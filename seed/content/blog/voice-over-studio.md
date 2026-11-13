@@ -14,11 +14,11 @@ Vårt voice-over studio er spesielt designet for taleopptak. Rommet har svært l
 
 ### Perfekt for
 
-- **Dokudrama og dokumentar** — Fortellerstemme med riktig atmosfære
-- **TV-produksjoner** — Voice-over for serier og programmer
-- **Reklame** — Profesjonelle innlesninger for radio og TV
-- **E-læring** — Kursmateriell og instruksjonsvideoer
-- **Lydbøker** — Innlesing i komfortabelt og stille miljø
+- **Dokudrama og dokumentar:** Fortellerstemme med riktig atmosfære
+- **TV-produksjoner:** Voice-over for serier og programmer
+- **Reklame:** Profesjonelle innlesninger for radio og TV
+- **E-læring:** Kursmateriell og instruksjonsvideoer
+- **Lydbøker:** Innlesing i komfortabelt og stille miljø
 
 ## Utstyret
 
