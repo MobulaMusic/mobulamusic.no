@@ -1,6 +1,7 @@
 ---
 export const prerender = false;
 import Layout from '../../layouts/Layout.astro';
+import Gavekort from '../../components/Gavekort.astro';
 import Mobula from '../../components/Mobula.astro';
 import PasserFor from '../../components/PasserFor.astro';
 import ABPlayer from '../../components/ABPlayer.astro';
@@ -79,6 +80,8 @@ const referanser = (await listReferanser()).filter(r => r.kategori === 'singer-s
       'Du har aldri gjort dette før og vil ha en trygg start.',
     ]}
   />
+
+  <Gavekort />
 
   {referanser.length > 0 && (
     <section class="py-28 px-6 bg-dark-light/30">

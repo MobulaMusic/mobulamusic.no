@@ -2,6 +2,7 @@
 export const prerender = false;
 import { Image } from 'astro:assets';
 import Layout from '../../../layouts/Layout.astro';
+import Gavekort from '../../../components/Gavekort.astro';
 import Mobula from '../../../components/Mobula.astro';
 import PasserFor from '../../../components/PasserFor.astro';
 import ABPlayer from '../../../components/ABPlayer.astro';
@@ -119,6 +120,8 @@ const kunder = (await listKunder()).filter(k => k.tags?.some(t => ['vokal', 'inn
       'You want a calm, unhurried environment for your vocal takes.',
     ]}
   />
+
+  <Gavekort />
 
   <!-- Studio photos -->
   <section class="py-24 px-6">

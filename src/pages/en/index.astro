@@ -61,6 +61,9 @@ import Utgivelser from '../../components/Utgivelser.astro';
           Our services
         </a>
       </div>
+      <div class="hero-fade hero-fade-4 mt-8">
+        <Gavekort variant="inline" />
+      </div>
     </div>
 
     <!-- Scroll indicator -->
@@ -173,6 +176,8 @@ import Utgivelser from '../../components/Utgivelser.astro';
     </div>
   </section>
 
+  <Gavekort />
+
   <!-- Passer for (English) -->
   <PasserFor
     title="Built for your project"
@@ -212,8 +217,6 @@ import Utgivelser from '../../components/Utgivelser.astro';
   />
 
   <Utgivelser lang="en" />
-
-  <Gavekort />
 
   <!-- CTA -->
   <section class="py-28 px-6">

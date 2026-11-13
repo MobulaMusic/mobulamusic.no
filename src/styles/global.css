@@ -211,3 +211,8 @@ h1, h2, h3 {
 }
 
 
+
+/* Julesesong: se Gavekort.astro og Layout.astro */
+.jul-on { display: none; }
+html[data-jul] .jul-on { display: inline; }
+html[data-jul] .jul-off { display: none; }

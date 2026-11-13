@@ -1,6 +1,7 @@
 ---
 export const prerender = false;
 import Layout from '../../../layouts/Layout.astro';
+import Gavekort from '../../../components/Gavekort.astro';
 import Mobula from '../../../components/Mobula.astro';
 import PasserFor from '../../../components/PasserFor.astro';
 import ABPlayer from '../../../components/ABPlayer.astro';
@@ -82,6 +83,8 @@ const referanser = (await listReferanser()).filter(r => r.kategori === 'singer-s
       'You\'ve never done this before and want a calm first session.',
     ]}
   />
+
+  <Gavekort />
 
   {referanser.length > 0 && (
     <section class="py-28 px-6 bg-dark-light/30">

@@ -75,6 +75,8 @@ const extraSchemas = Array.isArray(schema) ? schema : (schema ? [schema] : []);
 <!DOCTYPE html>
 <html lang={htmlLang}>
 <head>
+  <!-- Julesesong (1. nov til 24. des): viser juletekst på gavekort, se Gavekort.astro -->
+  <script is:inline>(function(){var d=new Date(),m=d.getMonth();if(m===10||(m===11&&d.getDate()<=24))document.documentElement.setAttribute('data-jul','');})();</script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{title}</title>

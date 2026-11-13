@@ -59,6 +59,9 @@ import Utgivelser from '../components/Utgivelser.astro';
           Våre tjenester
         </a>
       </div>
+      <div class="hero-fade hero-fade-4 mt-8">
+        <Gavekort variant="inline" />
+      </div>
     </div>
 
     <!-- Scroll indicator -->
@@ -162,6 +165,8 @@ import Utgivelser from '../components/Utgivelser.astro';
     </div>
   </section>
 
+  <Gavekort />
+
   <!-- Why Mobula -->
   <section class="py-28 md:py-36 px-6 bg-dark-light">
     <div class="max-w-7xl mx-auto">
@@ -221,8 +226,6 @@ import Utgivelser from '../components/Utgivelser.astro';
   </section>
 
   <Utgivelser />
-
-  <Gavekort />
 
   <!-- CTA -->
   <section class="py-28 px-6">
