@@ -1,6 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
+import Gavekort from '../components/Gavekort.astro';
 import Mobula from '../components/Mobula.astro';
 import PasserFor from '../components/PasserFor.astro';
 import Faq from '../components/Faq.astro';
@@ -163,6 +164,8 @@ const BOOKING_URL = 'https://booking.mobulamusic.no/';
       },
     ]}
   />
+
+  <Gavekort />
 
   <!-- CTA -->
   <section class="py-28 px-6">

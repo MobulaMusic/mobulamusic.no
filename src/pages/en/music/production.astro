@@ -1,5 +1,6 @@
 ---
 import Layout from '../../../layouts/Layout.astro';
+import Gavekort from '../../../components/Gavekort.astro';
 import Mobula from '../../../components/Mobula.astro';
 import PasserFor from '../../../components/PasserFor.astro';
 import SlikJobberVi from '../../../components/SlikJobberVi.astro';
@@ -106,6 +107,8 @@ import Utgivelser from '../../../components/Utgivelser.astro';
   />
 
   <Utgivelser lang="en" only={['vil-ikke-vil']} class="bg-dark-light/30" />
+
+  <Gavekort />
 
   <!-- CTA -->
   <section class="py-28 px-6">

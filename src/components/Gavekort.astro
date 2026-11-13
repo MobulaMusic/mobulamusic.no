@@ -15,6 +15,8 @@ const isEn = Astro.url.pathname.startsWith('/en');
 const shopUrl = isEn
   ? 'https://booking.mobulamusic.no/en/gavekort'
   : 'https://booking.mobulamusic.no/gavekort';
+// ?onske åpner skjemaet for ønsketips direkte i nettbutikken
+const wishUrl = `${shopUrl}?onske`;
 
 const t = isEn
   ? {
@@ -22,22 +24,24 @@ const t = isEn
       eyebrowJul: 'Christmas gift idea',
       title: 'Give studio time, or wish for it',
       titleJul: 'Give studio time for Christmas',
-      body: 'A gift card for recording, mixing, mastering or any other service we offer. Buy one yourself, or send a little hint to whoever should give it.',
-      cta: 'See gift cards',
-      wish: 'or send a wish-list hint',
-      inline: 'Give studio time with a gift card',
-      inlineJul: 'Christmas gift idea: give studio time',
+      body: 'A gift card for recording, mixing, mastering or any other service we offer.',
+      cta: 'Buy a gift card',
+      wish: 'Wish for this',
+      wishHelp: 'Would you like studio time yourself? Send a hint and we will email whoever is giving the gift.',
+      inline: 'Give or wish for studio time',
+      inlineJul: 'Christmas gift idea: Give or wish for studio time',
     }
   : {
       eyebrow: 'Gavekort',
       eyebrowJul: 'Julegaveidé',
       title: 'Gi bort studiotid, eller ønsk deg det',
       titleJul: 'Gi bort studiotid til jul',
-      body: 'Gavekort på innspilling, miksing, mastering eller en hvilken som helst annen tjeneste hos oss. Kjøp det selv, eller send et lite hint til den som skal gi gaven.',
-      cta: 'Se gavekort',
-      wish: 'eller send et ønske-hint',
-      inline: 'Gi bort studiotid med gavekort',
-      inlineJul: 'Julegaveidé: gi bort studiotid',
+      body: 'Gavekort på innspilling, miksing, mastering eller en hvilken som helst annen tjeneste hos oss.',
+      cta: 'Kjøp gavekort',
+      wish: 'Ønsk deg dette',
+      wishHelp: 'Vil du selv ha studiotid? Send et hint, så sender vi en e-post til den som skal gi gaven.',
+      inline: 'Gi bort eller ønsk deg studiotid',
+      inlineJul: 'Julegaveidé: Gi bort eller ønsk deg studiotid',
     };
 ---
 
@@ -72,20 +76,28 @@ const t = isEn
               <span class="jul-off">{t.title}</span><span class="jul-on">{t.titleJul}</span>
             </h2>
             <p class="text-cream/70 text-sm md:text-base leading-relaxed max-w-xl">{t.body}</p>
+            <p class="mt-3 text-cream/60 text-sm leading-relaxed max-w-xl">
+              {t.wishHelp}
+            </p>
           </div>
 
-          <div class="shrink-0 flex flex-col items-start md:items-end gap-2.5">
+          <div class="shrink-0 flex flex-col sm:flex-row md:flex-col gap-3 md:items-stretch">
             <a
               href={shopUrl}
               target="_blank"
               rel="noopener"
-              class="group inline-flex items-center gap-3 px-7 py-3.5 bg-gold text-dark font-semibold tracking-wide uppercase text-sm rounded-sm hover:bg-gold-light transition-colors whitespace-nowrap"
+              class="group inline-flex items-center justify-center gap-3 px-7 py-3.5 bg-gold text-dark font-semibold tracking-wide uppercase text-sm rounded-sm hover:bg-gold-light transition-colors whitespace-nowrap"
             >
               {t.cta}
               <span class="transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true">→</span>
             </a>
-            <a href={shopUrl} target="_blank" rel="noopener" class="text-gray-text text-xs hover:text-gold transition-colors">
-              {t.wish}
+            <a
+              href={wishUrl}
+              target="_blank"
+              rel="noopener"
+              class="inline-flex items-center justify-center gap-2 px-7 py-3.5 border border-gold/40 text-cream tracking-wide uppercase text-sm rounded-sm hover:border-gold hover:text-gold transition-colors whitespace-nowrap"
+            >
+              <span aria-hidden="true">🎁</span> {t.wish}
             </a>
           </div>
         </div>
