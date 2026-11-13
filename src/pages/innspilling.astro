@@ -11,6 +11,7 @@ import ABPlayer from '../components/ABPlayer.astro';
 import Gavekort from '../components/Gavekort.astro';
 import KundeSitater from '../components/KundeSitater.astro';
 import Utgivelser from '../components/Utgivelser.astro';
+import Referanseprosjekter from '../components/Referanseprosjekter.astro';
 import { listReferanser, listKunder } from '../lib/content';
 import { singerSongwriter, vokalinnspilling, voiceStudio, storeStudio, strykekvartettNfs } from '../assets/images';
 const referanser = await listReferanser();
@@ -147,7 +148,10 @@ const services: { href: string; num: string; title: string; intro: string; image
     </section>
   )}
 
-  <Utgivelser />
+  <Utgivelser>
+    <h3 class="font-serif text-2xl font-semibold mb-8">Lydbok og voice-over</h3>
+    <Referanseprosjekter />
+  </Utgivelser>
 
   {kunder.length > 0 && (
     <section class="py-28 px-6">

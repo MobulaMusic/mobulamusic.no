@@ -6,7 +6,7 @@ import picturePerfect from '../assets/images/utgivelser/picture-perfect.jpg';
 import vilIkkeVil from '../assets/images/utgivelser/vil-ikke-vil.jpg';
 import memoriesOfATailor from '../assets/images/utgivelser/memories-of-a-tailor.jpg';
 
-type Rolle = 'miks' | 'master' | 'innspilling' | 'produksjon' | 'strykearr';
+type Rolle = 'miks' | 'master' | 'innspilling' | 'strykeinnspilling' | 'produksjon' | 'strykearr';
 interface Utgivelse {
   id: string;
   title: string;
@@ -20,7 +20,7 @@ interface Utgivelse {
 const ALLE: Utgivelse[] = [
   { id: 'maybe-i', title: 'Maybe I', artist: 'Amelie Aldner', cover: maybeI, url: 'https://open.spotify.com/track/7IB3ahXtaMF516ONKH3yP7', roller: ['miks', 'master'] },
   { id: 'picture-perfect', title: 'Picture Perfect', artist: 'Amelie Aldner', cover: picturePerfect, url: 'https://open.spotify.com/track/5nPFqv9JfeLEZrH1Yeoa34', roller: ['miks', 'master'] },
-  { id: 'vil-ikke-vil', title: 'Vil ikke vil', artist: 'Skauleis', cover: vilIkkeVil, url: 'https://open.spotify.com/track/0ucANlIUmPhf9sGePMfDJN', roller: ['innspilling', 'produksjon', 'strykearr'] },
+  { id: 'vil-ikke-vil', title: 'Vil ikke vil', artist: 'Skauleis', cover: vilIkkeVil, url: 'https://open.spotify.com/track/0ucANlIUmPhf9sGePMfDJN', roller: ['innspilling', 'strykeinnspilling', 'produksjon', 'strykearr'] },
   { id: 'memories-of-a-tailor', title: 'Memories of a Tailor', artist: 'Loon Martian', cover: memoriesOfATailor, url: 'https://open.spotify.com/track/67TvvhdfpXvrk6cHfDXcrj', roller: ['innspilling'], detalj: { no: 'Piano i store studio', en: 'Piano in the large studio' } },
 ];
 
@@ -28,6 +28,7 @@ const ROLLE_TEKST: Record<Rolle, { no: string; en: string }> = {
   miks: { no: 'Miks', en: 'Mix' },
   master: { no: 'Master', en: 'Master' },
   innspilling: { no: 'Innspilling', en: 'Recording' },
+  strykeinnspilling: { no: 'Strykeinnspilling', en: 'String recording' },
   produksjon: { no: 'Produksjon', en: 'Production' },
   strykearr: { no: 'Strykearrangement', en: 'String arrangement' },
 };
@@ -57,6 +58,7 @@ const gridCols = single ? 'grid-cols-1 max-w-2xl' : items.length >= 4 ? 'grid-co
       </p>
     </div>
 
+    {Astro.slots.has('default') && <h3 class="font-serif text-2xl font-semibold mb-8">{en ? 'Music' : 'Musikk'}</h3>}
     <div class:list={['grid gap-x-5 gap-y-10 fade-in', gridCols]}>
       {items.map(u => (
         <a href={u.url} target="_blank" rel="noopener" class:list={['group', single ? 'flex items-center gap-6 sm:gap-8' : 'block']} aria-label={`${u.title}, ${u.artist}. ${en ? 'Listen on Spotify' : 'Lytt på Spotify'}`}>
@@ -80,5 +82,10 @@ const gridCols = single ? 'grid-cols-1 max-w-2xl' : items.length >= 4 ? 'grid-co
         </a>
       ))}
     </div>
+    {Astro.slots.has('default') && (
+      <div class="mt-20">
+        <slot />
+      </div>
+    )}
   </div>
 </section>
